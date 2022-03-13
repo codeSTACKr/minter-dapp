@@ -11,10 +11,17 @@ const {
   CONTRACT_NAME,
   CONTRACT_SYMBOL,
   CONTRACT_TYPE,
-  MINT_TO_ADDRESS,
   METADATA_UPDATABLE,
   ROYALTY_SHARE,
   ROYALTY_ADDRESS,
+  MAX_SUPPLY,
+  MINT_PRICE,
+  OWNER_ADDRESS,
+  TREASURY_ADDRESS,
+  PUBLIC_MINT_START_DATE,
+  BASE_URI,
+  PREREVEAL_TOKEN_URI,
+  PRESALE_MINT_START_DATE
 } = require(`${basePath}/src/config.js`);
 
 const deployContract = async () => {
@@ -38,11 +45,18 @@ const deployContract = async () => {
       chain: CHAIN.toLowerCase(),
       name: CONTRACT_NAME,
       symbol: CONTRACT_SYMBOL,
-      owner_address: MINT_TO_ADDRESS,
-      type: CONTRACT_TYPE,
+      owner_address: OWNER_ADDRESS,
       metadata_updatable: METADATA_UPDATABLE,
       royalties_share: ROYALTY_SHARE,
       royalties_address: ROYALTY_ADDRESS,
+      max_supply: MAX_SUPPLY,
+      mint_price: MINT_PRICE,
+      tokens_per_mint: TOKENS_PER_MINT,
+      treasury_address: TREASURY_ADDRESS,
+      public_mint_start_date: PUBLIC_MINT_START_DATE,
+      presale_mint_start_date: PRESALE_MINT_START_DATE,
+      base_uri: BASE_URI,
+      prereveal_token_uri: PREREVEAL_TOKEN_URI,
     };
     const options = {
       method: "POST",

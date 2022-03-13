@@ -47,13 +47,21 @@ const AUTH = "cd604374-c889-404a-b6e7-cdb0dcb1e892";
 const LIMIT = 2; // Your API key rate limit
 const CONTRACT_NAME = 'testSTACKr Collection';
 const CONTRACT_SYMBOL = 'TSC';
-const CONTRACT_TYPE = 'erc721';
-const MINT_TO_ADDRESS = '0xd8B808A887326F45B2D0cd999709Aa6264CeF919';
-// const MINT_TO_ADDRESS = 'YOUR WALLET ADDRESS HERE';
+const OWNER_ADDRESS = '0xd8B808A887326F45B2D0cd999709Aa6264CeF919';
+// const OWNER_ADDRESS = 'YOUR WALLET ADDRESS HERE';
+const TREASURY_ADDRESS = '0xd8B808A887326F45B2D0cd999709Aa6264CeF919';
+// const TREASURY_ADDRESS = 'TREASURY WALLET ADDRESS HERE';
+const MAX_SUPPLY = 5000; // The maximum number of NFTs that can be minted. CANNOT BE UPDATED!
+const MINT_PRICE = 10; // Minting price per NFT in MATIC. CANNOT BE UPDATED!
+const TOKENS_PER_MINT = 10; // maximum number of NFTs a user can mint in a single transaction. CANNOT BE UPDATED!
+const PUBLIC_MINT_START_DATE = null;
+const PRESALE_MINT_START_DATE = null;
 const CHAIN = 'rinkeby';
 const METADATA_UPDATABLE = true; // set to false if you don't want to allow metadata updates after minting
 const ROYALTY_SHARE = 1000; // Percentage of the token price that goes to the royalty address. 100 bps = 1%
 const ROYALTY_ADDRESS = "0xd8B808A887326F45B2D0cd999709Aa6264CeF919"; // Address that will receive the royalty
+const BASE_URI = null;
+const PREREVEAL_TOKEN_URI = null;
 // ** OPTIONAL **
 let CONTRACT_ADDRESS = "YOUR CONTRACT ADDRESS"; // If you want to manually include it
 // Generic Metadata is optional if you want to reveal your NFTs
@@ -165,7 +173,8 @@ module.exports = {
   AUTH,
   LIMIT,
   CONTRACT_ADDRESS,
-  MINT_TO_ADDRESS,
+  OWNER_ADDRESS,
+  TREASURY_ADDRESS,
   CHAIN,
   GENERIC,
   GENERIC_TITLE,
@@ -179,4 +188,11 @@ module.exports = {
   METADATA_UPDATABLE,
   ROYALTY_SHARE,
   ROYALTY_ADDRESS,
+  MAX_SUPPLY,
+  MINT_PRICE,
+  TOKENS_PER_MINT,
+  PRESALE_MINT_START_DATE,
+  PUBLIC_MINT_START_DATE,
+  BASE_URI,
+  PREREVEAL_TOKEN_URI
 };
