@@ -7,13 +7,15 @@ const network = NETWORK.eth;
 
 // General metadata for Ethereum
 const namePrefix = "testSTACKr Collection";
+// const namePrefix = "YOUR COLLECTION NAME";
 const description = "Test collection description";
+// const description = "Remember to replace this description";
 const baseUri = "ipfs://NewUriToReplace"; // This will be replaced automatically
 
 // If you have selected Solana then the collection starts from 0 automatically
 const layerConfigurations = [
   {
-    growEditionSizeTo: 20,
+    growEditionSizeTo: 5,
     layersOrder: [
       { name: "Background" },
       { name: "Eyeball" },
@@ -41,38 +43,43 @@ const extraMetadata = {
 };
 
 // NFTPort Info
+
 // ** REQUIRED **
 const AUTH = "cd604374-c889-404a-b6e7-cdb0dcb1e892";
 // const AUTH = "YOUR API KEY HERE";
 const LIMIT = 2; // Your API key rate limit
+const CHAIN = 'rinkeby'; // only rinkeby or polygon
 const CONTRACT_NAME = 'testSTACKr Collection';
 const CONTRACT_SYMBOL = 'TSC';
+const METADATA_UPDATABLE = true; // set to false if you don't want to allow metadata updates after minting
 const OWNER_ADDRESS = '0xd8B808A887326F45B2D0cd999709Aa6264CeF919';
 // const OWNER_ADDRESS = 'YOUR WALLET ADDRESS HERE';
 const TREASURY_ADDRESS = '0xd8B808A887326F45B2D0cd999709Aa6264CeF919';
 // const TREASURY_ADDRESS = 'TREASURY WALLET ADDRESS HERE';
 const MAX_SUPPLY = 5000; // The maximum number of NFTs that can be minted. CANNOT BE UPDATED!
-const MINT_PRICE = 10; // Minting price per NFT in MATIC. CANNOT BE UPDATED!
+const MINT_PRICE = .001; // Minting price per NFT. Rinkeby = ETH, Polygon = MATIC. CANNOT BE UPDATED!
 const TOKENS_PER_MINT = 10; // maximum number of NFTs a user can mint in a single transaction. CANNOT BE UPDATED!
-const PUBLIC_MINT_START_DATE = null;
-const PRESALE_MINT_START_DATE = null;
-const CHAIN = 'rinkeby';
-const METADATA_UPDATABLE = true; // set to false if you don't want to allow metadata updates after minting
+const PUBLIC_MINT_START_DATE = "2022-03-20T11:30:48+00:00"; // This is required. Eg: 2022-02-08T11:30:48+00:00
+const PRESALE_MINT_START_DATE = "2022-03-13T11:30:48+00:00"; // delete
+// const PRESALE_MINT_START_DATE = null; // Optional. Eg: 2022-02-08T11:30:48+00:00
 const ROYALTY_SHARE = 1000; // Percentage of the token price that goes to the royalty address. 100 bps = 1%
 const ROYALTY_ADDRESS = "0xd8B808A887326F45B2D0cd999709Aa6264CeF919"; // Address that will receive the royalty
-const BASE_URI = null;
-const PREREVEAL_TOKEN_URI = null;
+const BASE_URI = null; // only update if you want to manually set the base uri
+const PREREVEAL_TOKEN_URI = null; // only update if you want to manually set the prereveal token uri
+const PRESALE_WHITELISTED_ADDRESSES = []; // only update if you want to manually set the whitelisted addresses
+
 // ** OPTIONAL **
 let CONTRACT_ADDRESS = "YOUR CONTRACT ADDRESS"; // If you want to manually include it
 // Generic Metadata is optional if you want to reveal your NFTs
 const GENERIC = true; // Set to true if you want to upload generic metas and reveal the real NFTs in the future
-const GENERIC_TITLE = "Unknown"; // Replace with what you want the generic titles to say.
+// const GENERIC = false; // Set to true if you want to upload generic metas and reveal the real NFTs in the future
+const GENERIC_TITLE = CONTRACT_NAME; // Replace with what you want the generic titles to say if you want it to be different from the contract name.
 const GENERIC_DESCRIPTION = "Unknown"; // Replace with what you want the generic descriptions to say.
-const GENERIC_IMAGE = [
-  "https://ipfs.io/ipfs/QmUf9tDbkqnfHkQaMdFWSGAeXwVXWA61pFED7ypx4hcsfh",
-]; // Replace with your generic image(s). If multiple, separate with a comma.
-const REVEAL_PROMPT = true; // Set to false if you want to disable the prompt to confirm each reveal.
-const INTERVAL = 900000; // Milliseconds. This is the interval for it to check for sales and reveal the NFT. 900000 = 15 minutes.
+const GENERIC_IMAGE = "https://ipfs.io/ipfs/QmUf9tDbkqnfHkQaMdFWSGAeXwVXWA61pFED7ypx4hcsfh"; // Replace with your generic image that will display for all NFTs pre-reveal.
+
+
+// const REVEAL_PROMPT = true; // Set to false if you want to disable the prompt to confirm each reveal.
+// const INTERVAL = 900000; // Milliseconds. This is the interval for it to check for sales and reveal the NFT. 900000 = 15 minutes.
 
 // Automatically set contract address if deployed using the deployContract.js script
 try {
@@ -183,7 +190,6 @@ module.exports = {
   INTERVAL,
   CONTRACT_NAME,
   CONTRACT_SYMBOL,
-  CONTRACT_TYPE,
   REVEAL_PROMPT,
   METADATA_UPDATABLE,
   ROYALTY_SHARE,
@@ -194,5 +200,6 @@ module.exports = {
   PRESALE_MINT_START_DATE,
   PUBLIC_MINT_START_DATE,
   BASE_URI,
-  PREREVEAL_TOKEN_URI
+  PREREVEAL_TOKEN_URI,
+  PRESALE_WHITELISTED_ADDRESSES
 };

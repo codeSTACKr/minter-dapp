@@ -8,7 +8,6 @@ const { fetchWithRetry } = require(`${basePath}/utils/functions/fetchWithRetry.j
 const { GENERIC } = require(`${basePath}/src/config.js`);
 
 const regex = new RegExp("^([0-9]+).json$");
-let genericUploaded = false;
 
 if (!fs.existsSync(path.join(`${basePath}/build`, "/ipfsMetas"))) {
   fs.mkdirSync(path.join(`${basePath}/build`, "ipfsMetas"));
@@ -18,7 +17,7 @@ let readDir = `${basePath}/build/json`;
 let writeDir = `${basePath}/build/ipfsMetas`;
 
 async function main() {
-  console.log(`Starting upload of ${GENERIC ? genericUploaded ? 'generic ' : '' : ''}metadata...`);
+  console.log(`Starting upload of metadata...`);
   const files = fs.readdirSync(readDir);
   files.sort(function (a, b) {
     return a.split(".")[0] - b.split(".")[0];
@@ -44,21 +43,50 @@ async function main() {
       `${writeDir}/_ipfsMetasResponse.json`,
       JSON.stringify(response, null, 2)
     );
-    console.log(`${GENERIC ? genericUploaded ? 'Generic m' : 'M' : 'M'}etadata uploaded!`);
+    console.log(`Metadata uploaded!`);
   } catch (err) {
     console.log(`Catch: ${err}`);
   }
 
   // Upload Generic Metadata if GENERIC is true
-  if (GENERIC && !genericUploaded) {
+  if (GENERIC) {
+    console.log(`Starting upload of generic metadata...`);
     if (!fs.existsSync(path.join(`${basePath}/build`, "/ipfsMetasGeneric"))) {
       fs.mkdirSync(path.join(`${basePath}/build`, "ipfsMetasGeneric"));
     }
     readDir = `${basePath}/build/genericJson`;
     writeDir = `${basePath}/build/ipfsMetasGeneric`;
-    
-    genericUploaded = true;
-    main();
+
+    let jsonFile = fs.readFileSync(`${readDir}/_metadata.json`);
+    let metaData = JSON.parse(jsonFile);
+    const uploadedMeta = `${writeDir}/_ipfsMetasResponse.json`;
+
+    const genericObject = {
+      "name": metaData.name,
+      "description": metaData.description,
+      "file_url": metaData.image,
+      "external_url": metaData?.external_url,
+      "custom_fields": {
+        "date": metaData.date,
+        "compiler": "HashLips Art Engine - codeSTACKr Modified"
+      }
+    }
+
+    try {
+      const url = "https://api.nftport.xyz/v0/metadata";
+      const options = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(genericObject),
+      };
+      const response = await fetchWithRetry(url, options);
+      fs.writeFileSync(uploadedMeta, JSON.stringify(response, null, 2));
+      console.log(`Generic metadata uploaded!`);
+    } catch (err) {
+      console.log(`Catch: ${err}`);
+    }
   }
 }
 

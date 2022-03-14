@@ -18,6 +18,7 @@
     "rarity_md": "node utils/functions/getRarity_fromMetadata",
     "rarity_rank": "node utils/functions/rarity_rank.js",
     "preview": "node utils/preview.js",
+    "update_contract": "node utils/nftport/updateContract.js %npm_config_u%",
     "pixelate": "node utils/pixelate.js",
     "update_info": "node utils/update_info.js",
     "preview_gif": "node utils/preview_gif.js",

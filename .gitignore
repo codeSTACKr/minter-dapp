@@ -144,3 +144,5 @@ dist
 .DS_Store
 
 build*
+# Local Netlify folder
+.netlify

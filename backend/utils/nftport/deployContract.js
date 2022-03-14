@@ -6,16 +6,17 @@ const yesno = require('yesno');
 const {
   fetchWithRetry,
 } = require(`${basePath}/utils/functions/fetchWithRetry.js`);
-const {
+let {
   CHAIN,
+  GENERIC,
   CONTRACT_NAME,
   CONTRACT_SYMBOL,
-  CONTRACT_TYPE,
   METADATA_UPDATABLE,
   ROYALTY_SHARE,
   ROYALTY_ADDRESS,
   MAX_SUPPLY,
   MINT_PRICE,
+  TOKENS_PER_MINT,
   OWNER_ADDRESS,
   TREASURY_ADDRESS,
   PUBLIC_MINT_START_DATE,
@@ -35,12 +36,45 @@ const deployContract = async () => {
     process.exit(0);
   }
 
+  if(GENERIC) {
+    try {
+      let jsonFile = fs.readFileSync(`${basePath}/build/ipfsMetasGeneric/_ipfsMetasResponse.json`);
+      let metaData = JSON.parse(jsonFile);
+      if(metaData.response === "OK" && metaData.error === null) {
+        if(!PREREVEAL_TOKEN_URI) {
+          PREREVEAL_TOKEN_URI = metaData.metadata_uri;
+        }
+      } else {
+        console.log('There is an issue with the metadata upload. Please check the /build/_ipfsMetasGeneric/_ipfsMetasResponse.json file for more information. Running "npm run upload_metadata" may fix this issue.');
+      }
+    } catch (err) {
+      console.log(`/build/_ipfsMetasGeneric/_ipfsMetasResponse.json file not found. Run "npm run upload_metadata" first.`);
+      console.log(`Catch: ${err}`);
+      process.exit(0);
+    }
+  } else {
+    try {
+      let jsonFile = fs.readFileSync(`${basePath}/build/ipfsMetas/_ipfsMetasResponse.json`);
+      let metaData = JSON.parse(jsonFile);
+      if(metaData.response === "OK" && metaData.error === null) {
+        if(!BASE_URI) {
+          BASE_URI = metaData.metadata_directory_ipfs_uri;
+        }
+      } else {
+        console.log('There is an issue with the metadata upload. Please check the /build/_ipfsMetas/_ipfsMetasResponse.json file for more information. Running "npm run upload_metadata" may fix this issue.');
+      }
+    } catch (err) {
+      console.log(`/build/_ipfsMetasGeneric/_ipfsMetasResponse.json file not found. Run "npm run upload_metadata" first.`);
+      process.exit(0);
+    }
+  }
+
   if (!fs.existsSync(path.join(`${basePath}/build`, "/contract"))) {
     fs.mkdirSync(path.join(`${basePath}/build`, "contract"));
   }
 
   try {
-    const url = `https://api.nftport.xyz/v0/contracts`;
+    const url = `https://api.nftport.xyz/v0/contracts/collections`;
     const contract = {
       chain: CHAIN.toLowerCase(),
       name: CONTRACT_NAME,
@@ -68,12 +102,13 @@ const deployContract = async () => {
     const response = await fetchWithRetry(url, options);
     fs.writeFileSync(`${basePath}/build/contract/_deployContractResponse.json`, JSON.stringify(response, null, 2));
     if(response.response === "OK") {
-      console.log(`Contract ${CONTRACT_NAME} deployment started.`);
+      console.log(`Contract deployment started.`);
     } else {
-      console.log(`Contract ${CONTRACT_NAME} deployment failed`);
+      console.log(`Contract deployment failed`);
     }
+    console.log(`Check /build/contract/_deployContractResponse.json for more information. Run "npm run get_contract" to get the contract details.`);
   } catch (error) {
-    console.log(`CATCH: Contract ${CONTRACT_NAME} deployment failed`, `ERROR: ${error}`);
+    console.log(`CATCH: Contract deployment failed`, `ERROR: ${error}`);
   }
 };
 
