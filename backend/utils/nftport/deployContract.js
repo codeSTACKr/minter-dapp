@@ -22,7 +22,8 @@ let {
   PUBLIC_MINT_START_DATE,
   BASE_URI,
   PREREVEAL_TOKEN_URI,
-  PRESALE_MINT_START_DATE
+  PRESALE_MINT_START_DATE,
+  PRESALE_WHITELISTED_ADDRESSES
 } = require(`${basePath}/src/config.js`);
 
 const deployContract = async () => {
@@ -91,6 +92,7 @@ const deployContract = async () => {
       presale_mint_start_date: PRESALE_MINT_START_DATE,
       base_uri: BASE_URI,
       prereveal_token_uri: PREREVEAL_TOKEN_URI,
+      presale_whitelisted_addresses: PRESALE_WHITELISTED_ADDRESSES
     };
     const options = {
       method: "POST",

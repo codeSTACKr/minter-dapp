@@ -5,14 +5,15 @@
 /* GLOBAL STYLES */
 
 :root {
-  --font-primary: 'Poppins', sans-serif;
-  --font-secondary: 'Arvo', serif;
-  --font-code: 'Roboto', monospace;
+  --font-primary: "Poppins", sans-serif;
+  --font-secondary: "Arvo", serif;
+  --font-code: "Roboto", monospace;
   --bg-color: #00163f;
   --font-color: #ffffff;
   --btn-bg-color: #ffffff;
   --accent-color: #be7efe;
-  --header-shadow: #000 0px 0px 5px;
+  --header-shadow: var(--accent-color) 0px 0px 5px;
+  --card-shadow: var(--accent-color) 0px 0px 20px;
 }
 
 * {
@@ -36,11 +37,14 @@ body {
   max-width: 960px;
   margin: 0 auto;
   padding: 1rem 2rem;
+  justify-content: center;
+  overflow: hidden;
 }
 
 /* HEADER */
 
 header {
+  background-color: var(--bg-color);
   box-shadow: var(--header-shadow);
 }
 
@@ -67,9 +71,10 @@ header .container {
   font-style: italic;
   font-weight: bold;
   font-size: 1rem;
+  text-align: center;
   text-transform: capitalize;
   transition: all 0.3s ease;
-  box-shadow: 4px 4px 0 0 var(--accent-color);
+  box-shadow: var(--header-shadow);
   cursor: pointer;
   position: relative;
   text-decoration: none;
@@ -77,6 +82,9 @@ header .container {
 }
 .btn:hover {
   box-shadow: none;
+}
+.btn:disabled {
+  cursor: default;
 }
 
 .wallet-btn {
@@ -91,10 +99,35 @@ header .container {
   padding: 1.5rem 3rem;
 }
 
+/* CARD */
+
+.card {
+  position: relative;
+  background-color: var(--bg-color);
+  border-radius: 5px;
+  border: 3px solid var(--accent-color);
+  box-shadow: var(--card-shadow);
+  padding: 5rem;
+  margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateX(100vw);
+  transition: all 0.5s ease-in-out;
+}
+
+.show-card {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 /* COUNTDOWN SECTION */
 
 section {
   flex: 1 1 auto;
+}
+
+#countdown {
+  display: none;
+  text-align: center;
 }
 
 .countdown {
@@ -102,12 +135,11 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
 }
 
 .countdown ul {
   display: flex;
-  gap: 2rem
+  gap: 2rem;
 }
 .countdown .clock-item {
   list-style: none;
@@ -148,18 +180,120 @@ section {
   text-align: center;
 }
 
-.countdown p {
+.countdown h2 {
+  margin-top: 1rem;
+}
+
+.countdown > p {
   font-size: 1.1rem;
   font-family: var(--font-secondary);
   margin-bottom: 2rem;
   text-align: center;
 }
 
-/* OWNER STYLES */
+/* MINT CONTAINER */
 
-.owner-status {
-  font-size: 2rem;
+.mint-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
   text-align: center;
+  margin-bottom: 2rem;
+}
+
+.mint-qty {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--accent-color);
+  border-radius: 5px;
+}
+
+.mint-qty > span {
+  display: flex;
+}
+
+.mint-btn {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin: auto;
+}
+
+.input-number {
+  height: 100%;
+  padding: 1rem;
+  vertical-align: top;
+  text-align: center;
+  outline: none;
+}
+
+.input-number,
+.input-number-decrement,
+.input-number-increment {
+  user-select: none;
+}
+
+.total-price-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 0 2rem;
+}
+
+.total-price-container p {
+  color: var(--accent-color);
+}
+
+/* MINTED CONTAINER */
+
+.minted-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.minted-container h1 {
+  font-size: 5rem;
+  margin-bottom: 2rem;
+}
+
+.minted-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.minted-container p {
+  margin: 1rem 0;
+}
+
+/* SLIDDER */
+
+.splide {
+  position: absolute;
+  top: 90px;
+  left: 5rem;
+  z-index: -1;
+  opacity: 0.7;
+}
+
+.splide__slide {
+  border: var(--accent-color) solid;
+  border-width: 5px 10px;
+}
+
+.splide__slide img {
+  width: 100%;
 }
 
 /* MEDIA QUERIES */
@@ -170,14 +304,43 @@ section {
   }
   .wallet-btn {
     margin-left: 0;
-    padding: 1rem;
+    padding: 0.5rem 1rem;
     max-width: 8rem;
+  }
+  .countdown ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .countdown .clock-item {
+    width: 100%;
+  }
+  .countdown .clock-item .count-number {
+    font-size: 1.5rem;
+  }
+  .countdown .clock-item .count-text {
+    font-size: 1rem;
   }
   .countdown h1 {
     font-size: 2rem;
+    margin: 1rem 0;
+  }
+  .countdown h2 {
+    padding-top: 0.5rem;
   }
   .countdown p {
     font-size: 1rem;
   }
+  .card {
+    padding: 1rem;
+  }
+  .mint-qty .btn {
+    padding: 1rem;
+    font-size: 13px;
+  }
 }
- 
+
+/* UTILITIES */
+
+.hidden {
+  display: none;
+}

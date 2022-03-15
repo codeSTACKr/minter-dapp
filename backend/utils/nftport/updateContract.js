@@ -1,3 +1,4 @@
+const fs = require("fs");
 const basePath = process.cwd();
 const yesno = require('yesno');
 let [UPDATE] = process.argv.slice(2);
@@ -33,7 +34,8 @@ switch (UPDATE) {
     updateValue = PRESALE_MINT_START_DATE;
     break;
   case "presale_whitelisted_addresses":
-    contract.presale_whitelisted_addresses = PRESALE_WHITELISTED_ADDRESSES;
+    const addresses = PRESALE_WHITELISTED_ADDRESSES.map(address => address.toLowerCase());
+    contract.presale_whitelisted_addresses = addresses;
     updateValue = PRESALE_WHITELISTED_ADDRESSES;
     break;
   case "royalty_share":
@@ -49,10 +51,39 @@ switch (UPDATE) {
     updateValue = CONTRACT_ADDRESS;
     break;
   case "base_uri":
+    if(!BASE_URI) {
+      try {
+        let jsonFile = fs.readFileSync(`${basePath}/build/ipfsMetas/_ipfsMetasResponse.json`);
+        let metaData = JSON.parse(jsonFile);
+        if(metaData.response === "OK" && metaData.error === null) {
+          BASE_URI = metaData.metadata_directory_ipfs_uri;
+        } else {
+          console.log('There is an issue with the metadata upload. Please check the /build/_ipfsMetas/_ipfsMetasResponse.json file for more information. Running "npm run upload_metadata" may fix this issue.');
+        }
+      } catch (err) {
+        console.log(`/build/_ipfsMetasGeneric/_ipfsMetasResponse.json file not found. Run "npm run upload_metadata" first.`);
+        process.exit(0);
+      }
+    }
     contract.base_uri = BASE_URI;
     updateValue = BASE_URI;
     break;
   case "prereveal_token_uri":
+    if(!PREREVEAL_TOKEN_URI) {
+      try {
+        let jsonFile = fs.readFileSync(`${basePath}/build/ipfsMetasGeneric/_ipfsMetasResponse.json`);
+        let metaData = JSON.parse(jsonFile);
+        if(metaData.response === "OK" && metaData.error === null) {
+          PREREVEAL_TOKEN_URI = metaData.metadata_uri;
+        } else {
+          console.log('There is an issue with the metadata upload. Please check the /build/_ipfsMetasGeneric/_ipfsMetasResponse.json file for more information. Running "npm run upload_metadata" may fix this issue.');
+        }
+      } catch (err) {
+        console.log(`/build/_ipfsMetasGeneric/_ipfsMetasResponse.json file not found. Run "npm run upload_metadata" first.`);
+        console.log(`Catch: ${err}`);
+        process.exit(0);
+      }
+    }
     contract.prereveal_token_uri = PREREVEAL_TOKEN_URI;
     updateValue = PREREVEAL_TOKEN_URI;
     break;

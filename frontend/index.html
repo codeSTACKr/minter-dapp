@@ -7,10 +7,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="images/x-icon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/x-icon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/x-icon/favicon-16x16.png">
-    <link rel="manifest" href="images/x-icon/site.webmanifest">
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="images/x-icon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/x-icon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/x-icon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="images/x-icon/site.webmanifest" />
+    <link rel="stylesheet" href="css/three-dots.min.css" />
+    <link rel="stylesheet" href="css/splide.min.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -30,7 +46,7 @@
             <img src="images/header/discord.webp" alt="Discord" />
           </a>
           <a
-            href="https://twitter.com/CodeCats10k"
+            href="https://twitter.com/codeSTACKr"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -51,54 +67,111 @@
     </header>
 
     <section class="container">
-      <div class="owner-status"></div>
-      <div class="countdown">
-        <ul
-          id="countdown"
-          class="count-down"
-          data-date="Feb 17, 2022 4:00:00 PM UTC"
-        >
-          <li class="clock-item">
-            <span class="count-number days">20</span>
-            <p class="count-text">Days</p>
-          </li>
+      <div class="countdown card">
+        <div id="countdown">
+          <ul class="count-down" data-date="">
+            <li class="clock-item">
+              <span class="count-number days">20</span>
+              <p class="count-text">Days</p>
+            </li>
 
-          <li class="clock-item">
-            <span class="count-number hours">20</span>
-            <p class="count-text">Hour</p>
-          </li>
+            <li class="clock-item">
+              <span class="count-number hours">20</span>
+              <p class="count-text">Hour</p>
+            </li>
 
-          <li class="clock-item">
-            <span class="count-number minutes">20</span>
-            <p class="count-text">Min</p>
-          </li>
+            <li class="clock-item">
+              <span class="count-number minutes">20</span>
+              <p class="count-text">Min</p>
+            </li>
 
-          <li class="clock-item">
-            <span class="count-number seconds">20</span>
-            <p class="count-text">Sec</p>
-          </li>
-        </ul>
-        <h1>NFT Drop Coming Soon!!</h1>
-               
-        <p>A new batch of cute cats will be available very soon!</p>
-        <a href="https://discord.gg/A9CnsVzzkZ" target="_blank" rel="noopener noreferrer" class="hero-btn btn"
+            <li class="clock-item">
+              <span class="count-number seconds">20</span>
+              <p class="count-text">Sec</p>
+            </li>
+          </ul>
+          <h2 id="subHeading">Pre-Sale Countdown</h2>
+        </div>
+        <h1 id="mainHeading">NFT Drop Coming Soon!!</h1>
+        <p id="mainText">
+          A new batch of cute cats will be available very soon!
+        </p>
+        <a
+          id="actionButton"
+          href="https://discord.gg/A9CnsVzzkZ"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hero-btn btn"
           ><span>Join the Catmmunity</span>
+        </a>
+        <div id="mintContainer" class="mint-container hidden">
+          <div class="info-container">
+            <div>
+              <h3>Supply</h3>
+              <p id="totalSupply">100</p>
+            </div>
+            <div>
+              <h3>Price Per Mint</h3>
+              <p id="pricePerMint">1 ETH</p>
+            </div>
+            <div>
+              <h3>Max</h3>
+              <p id="maxPerMint">5 per wallet</p>
+            </div>
+          </div>
+          <div class="mint-qty">
+            <span>
+              <button class="input-number-decrement btn" id="mintDecrement">–</button>
+              <input
+                id="mintInput"
+                class="input-number btn"
+                type="number"
+                value="1"
+                min="1"
+                max="5"
+              />
+              <button class="input-number-increment btn" id="mintIncrement">+</button>
+            </span>
+            <button id="setQtyMax" class="btn">SET MAX</button>
+          </div>
+          <div class="total-price-container">
+            <h3>Total</h3>
+            <p id="totalPrice">.001 ETH</p>
+          </div>
+          <button id="mintButton" class="hero-btn btn mint-btn">Mint</button>
+        </div>
+      </div>
+      <div class="minted-container card show-card hidden">
+        <h1>🎉</h1>
+        <h2>Minted!</h2>
+        <p>Here's your trasaction link:</p>
+        <a id="mintedTxnBtn" href="" target="_blank" rel="noopener noreferrer">
+          <button class="hero-btn btn">View Transaction</button>
+        </a>
+        <p>View it in the collection:</p>
+        <a
+          id="mintedLinkBtn"
+          href="https://testnets.opensea.io/collection/teststackr-collection"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <button class="hero-btn btn">View Collection</button>
         </a>
       </div>
     </section>
 
-    <section>
+    <!-- <section>
       <h1>MINT</h1>
       <div>
         <div id="address">Wallet not connected</div>
-  
+
         <div>
           <button id="connect" onclick="connect()">Connect your wallet</button>
         </div>
         <div>
           <div>Minting price per token: <a id="price" target="_blank"></a></div>
           <div>Maximum tokens per mint: <span id="maxAmount"></span></div>
-  
+
           <div>
             <input
               id="amount"
@@ -108,15 +181,49 @@
               max="10"
               value="1"
             />
-            
           </div>
         </div>
-      </div>      
+      </div>
       <button id="mint" onclick="mint()">Mint</button>
-    </section>
+    </section> -->
 
-    <script src="https://cdn.jsdelivr.net/npm/@metamask/onboarding@1.0.1/dist/metamask-onboarding.bundle.js"></script>
+    <div class="splide">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">
+            <img src="images/slider/0.png" />
+          </li>
+          <li class="splide__slide">
+            <img src="images/slider/1.png" />
+          </li>
+          <li class="splide__slide">
+            <img src="images/slider/2.png" />
+          </li>
+          <li class="splide__slide">
+            <img src="images/slider/3.png" />
+          </li>
+          <li class="splide__slide">
+            <img src="images/slider/4.png" />
+          </li>
+          <li class="splide__slide">
+            <img src="images/slider/5.png" />
+          </li>
+          <li class="splide__slide">
+            <img src="images/slider/6.png" />
+          </li>
+          <li class="splide__slide">
+            <img src="images/slider/7.png" />
+          </li>
+          <li class="splide__slide">
+            <img src="images/slider/8.png" />
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="js/metamask-onboarding.bundle.js"></script>
     <script src="js/web3.min.js"></script>
+    <script src="js/splide.min.js"></script>
     <script src="js/constants.js"></script>
     <script src="js/countdown.js"></script>
     <script src="js/app.js"></script>
