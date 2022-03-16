@@ -83,6 +83,7 @@ async function loadInfo() {
   const actionButton = document.getElementById("actionButton");
   const mintContainer = document.getElementById("mintContainer");
   const mintButton = document.getElementById("mintButton");
+  const spinner = document.getElementById("spinner");
 
   let startTime = "";
   if (publicMintActive) {
@@ -130,6 +131,9 @@ async function loadInfo() {
   clockdiv.setAttribute("data-date", startTime);
   countdown();
 
+  // HIDE SPINNER
+  spinner.classList.add('hidden');
+  
   // SHOW CARD
   setTimeout(() => {
     const countdownCard = document.querySelector('.countdown');

@@ -296,6 +296,14 @@ section {
   width: 100%;
 }
 
+/* SPINNER */
+.dot-spin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(3);
+}
+
 /* MEDIA QUERIES */
 
 @media screen and (max-width: 768px) {
