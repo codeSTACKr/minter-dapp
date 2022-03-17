@@ -10,15 +10,17 @@
 
 Video: 
 
-🌟 [How To Create An ENTIRE NFT Collection (10,000+) & MINT with ZERO Coding Knowledge v2.0](https://youtu.be/quGdJweadFM)
+🌟 [DAPP VIDEO HERE]()
 
-Base code is from [hashlips_art_engine](https://github.com/HashLips/hashlips_art_engine)
+Base art generator code is from [hashlips_art_engine](https://github.com/HashLips/hashlips_art_engine)
 
-Minting uses [NFTPort](https://nftport.xyz)
+Contract uses [NFTPort](https://nftport.xyz)
 
 Join the Discord server for more help from the community: [codeSTACKr Discord](https://discord.gg/A9CnsVzzkZ)
 
 ## INSTALLATION
+
+### Backend
 
 - Clone this repo or download the latest release zip file.
 - Unzip, if needed, and open the folder in VS Code.
@@ -26,8 +28,8 @@ Join the Discord server for more help from the community: [codeSTACKr Discord](h
 ```
  npm install
 ```
-- Copy your image layers into the `layers` folder.
-- Use the `src/config.js` file to set up your layers and NFT information.
+- Copy your image layers into the `/backend/layers` folder.
+- Use the `/backend/src/config.js` file to set up your layers and NFT information.
 
 ## COMMANDS
 
@@ -35,8 +37,8 @@ Generate:
 ```
 $ npm run generate
 ```
-- Generates unique images based on the layers in the `layers` folder.
-- WARNING: This command deletes the `build` folder if it exists!
+- Generates unique images based on the layers in the `/backend/layers` folder.
+- WARNING: This command deletes the `/backend/build` folder if it exists!
 
 Rarity (Hashlips): 
 ```
@@ -70,28 +72,28 @@ Create Generic Metadata:
 $ npm run create_generic
 ```
 
-- Creates generic metadata using the settings from the `src/config.js` file.
+- Creates generic metadata using the settings from the `/backend/src/config.js` file.
 
 Upload Files/Images: 
 ```
 $ npm run upload_files
 ```
 
-- Uploads all files in the `build/images` folder.
+- Uploads all files in the `/backend/build/images` folder.
 
 Upload Metadata: 
 ```
 $ npm run upload_metadata
 ```
 
-- Uploads all `.json` files in both the `build/json` folder and, if it exists, the `build/genericJson` folder as well. 
+- Uploads all `.json` files in both the `/backend/build/json` folder and, if it exists, the `/backend/build/genericJson` folder as well. 
 
 Deploy Contract: 
 ```
 $ npm run deploy_contract
 ```
 
-- Deploys a contract to the blockchain using the settings from the `src/config.js` file.
+- Deploys a contract to the blockchain using the settings from the `/backend/src/config.js` file.
 
 Get Contract: 
 ```
@@ -100,36 +102,28 @@ $ npm run get_contract
 
 - Gets the deployed contract details using the transactions hash from the Deploy Contract command. 
 
-Mint: 
+Update Contract:
 ```
-$ npm run mint
-```
-
-- Running this command with no flags will mint all NFTs
-- `--start=1`
-  - The start flag indicates the edition number to start minting from.
-- `--end=100`
-  - The end flag indicates the edition number to stop at.
-- To start at a number and continue minting all, do not include the end flag.
-- Make both flags the same number to only mint a single NFT.
-- NOTE: The start and end numbers are inclusive.
-
-Reveal: 
-```
-$ npm run reveal
+$ npm run update_public_mint_start_date
+$ npm run update_presale_mint_start_date
+$ npm run update_presale_whitelisted_addresses
+$ npm run update_presale_whitelisted_addresses_remove
+$ npm run update_royalty_share
+$ npm run update_royalty_address
+$ npm run update_base_uri
+$ npm run update_prereveal_token_uri
 ```
 
-- Checks the contract owners wallet to see which NFTs have sold and reveals all sold NFTs.
-- Including the `--start=1` and/or `--end=100` flags will reveal only the specified edition or range of editions.
-- Make both flags the same number to only reveal a single NFT.
-
-Check Transactions: 
-```
-$ npm run check_txns --dir=minted
-```
-
-- Verifies the success of mint or reveal transactions.
-- The `--dir` flag is required. Accepted values are `minted` or `revealed`.
+- Updates specific fields of the contract using the settings from the `/backend/src/config.js` file.
+- Available fields to update:
+  - `prereveal_token_uri` - This will update the pre-reveal token uri for all NFTs. (Hidden image)
+  - `base_uri` - This will update the base uri for all NFTs and reveal all.
+  - `public_mint_start_date` - Eg: 2022-02-08T11:30:48+00:00
+  - `presale_mint_start_date` - Eg: 2022-02-08T11:30:48+00:00
+  - `presale_whitelisted_addresses` - Adds address(es) to the whitelist
+  - `presale_whitelisted_addresses_remove` - Removes address(es) from the whitelist
+  - `royalties_share` - Updates the royalty share
+  - `royalties_address` - Updates the royalty wallet address
 
 Refresh OpenSea: 
 ```
@@ -139,4 +133,4 @@ $ npm run refresh_os --start=1 --end=100
 - Refreshes the listing for the specified editions on OpenSea.
 - Both the `--start` and `--end` flags are required.
 
-## Reference the [video](https://youtu.be/quGdJweadFM) for more details.
+## Reference the [video]() for more details.

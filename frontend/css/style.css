@@ -9,6 +9,7 @@
   --font-secondary: "Arvo", serif;
   --font-code: "Roboto", monospace;
   --bg-color: #00163f;
+  --bg-color-transparent: #00163f80;
   --font-color: #ffffff;
   --btn-bg-color: #ffffff;
   --accent-color: #be7efe;
@@ -58,6 +59,40 @@ header .container {
   display: flex;
   gap: 2rem;
   align-items: center;
+}
+
+/* NOT CONNECTED */
+.not-connected {
+  text-align: center;
+  margin: 0 auto 0 35vw;
+  opacity: 0;
+  transform: translateY(10vh);
+  transition: all 0.5s ease-in-out;
+}
+
+.show-not-connected {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.not-connected h1 {
+  text-shadow: 2px 2px 0 var(--accent-color);
+  font-style: italic;
+  margin: 2rem 0;
+  font-size: 3.5rem;
+}
+
+.not-connected p {
+  font-size: 1.1rem;
+  font-family: var(--font-secondary);
+  line-height: 1.8;
+}
+
+.not-connected a {
+  text-decoration: none;
+  color: var(--accent-color);
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 /* BUTTONS */
@@ -314,6 +349,12 @@ section {
     margin-left: 0;
     padding: 0.5rem 1rem;
     max-width: 8rem;
+  }
+  .not-connected {
+    background-color: var(--bg-color-transparent);
+    border-radius: 5px;
+    padding: 2rem;
+    margin: 0 auto;
   }
   .countdown ul {
     display: grid;
