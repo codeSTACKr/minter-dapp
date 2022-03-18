@@ -3,14 +3,14 @@
 ## Table of Contents
 
 - [RESOURCES](#resources)
-- [Installation](#installation)
+- [INSTALLATION](#installation)
 - [COMMANDS](#commands)
 
 ## RESOURCES
 
 Video: 
 
-🌟 [DAPP VIDEO HERE]()
+🌟 [EASY Minting dApp | Whitelisting | Entire Process!! Create an Entire NFT Collection (10,000+)](https://youtu.be/cLB7u0KQFIs)
 
 Base art generator code is from [hashlips_art_engine](https://github.com/HashLips/hashlips_art_engine)
 
@@ -133,4 +133,4 @@ $ npm run refresh_os --start=1 --end=100
 - Refreshes the listing for the specified editions on OpenSea.
 - Both the `--start` and `--end` flags are required.
 
-## Reference the [video]() for more details.
+## Reference the [video](https://youtu.be/cLB7u0KQFIs) for more details.

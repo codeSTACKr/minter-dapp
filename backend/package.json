@@ -1,5 +1,5 @@
 {
-  "name": "minter-dapp",
+  "name": "minter-dapp-backend",
   "version": "0.0.1",
   "description": "Generate an NFT collection and deploy a minting dapp easy!!",
   "main": "index.js",
