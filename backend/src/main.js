@@ -330,6 +330,7 @@ function shuffle(array) {
 const startCreating = async () => {
   let layerConfigIndex = 0;
   let editionCount = 1;
+  let editionStartOffset = 100;
   let failedCount = 0;
   let abstractedIndexes = [];
   for (
