@@ -5,16 +5,21 @@
 /* GLOBAL STYLES */
 
 :root {
-  --font-primary: "Poppins", sans-serif;
-  --font-secondary: "Arvo", serif;
-  --font-code: "Roboto", monospace;
-  --bg-color: #00163f;
-  --bg-color-transparent: #00163f80;
+  /* --font-primary: "Poppins", sans-serif; */
+  /* --font-secondary: "Arvo", serif; */
+  /* --font-code: "Roboto", monospace; */
+  --bg-color: #000000;
+  --bg-color-transparent: #00000080;
   --font-color: #ffffff;
   --btn-bg-color: #ffffff;
-  --accent-color: #be7efe;
+  --accent-color: #000000;
   --header-shadow: var(--accent-color) 0px 0px 5px;
   --card-shadow: var(--accent-color) 0px 0px 20px;
+}
+
+@font-face {
+  font-family: Remover;
+  src: url(../font/Remover-mLoV2.ttf);
 }
 
 * {
@@ -29,7 +34,8 @@ body {
   flex-flow: column;
   height: 100vh;
   color: var(--font-color);
-  font-family: var(--font-primary);
+  /* font-family: var(--font-primary); */
+  font-family: Remover;
 }
 
 .container {
