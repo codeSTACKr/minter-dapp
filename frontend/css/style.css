@@ -41,14 +41,33 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  max-width: 960px;
+  max-width: 1120px;
   margin: 0 auto;
   padding: 1rem 2rem;
   justify-content: center;
   overflow: hidden;
 }
 
+.info-menus {
+  display: flex;
+  flex-direction: column;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.info-menus h1 {
+  font-size: 75px;
+}
+
 /* HEADER */
+
+.no-link-underscore {
+  text-decoration: none;
+}
 
 header {
   background-color: var(--bg-color);

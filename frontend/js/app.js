@@ -1,14 +1,91 @@
 let accounts;
+let currentLanguage = (localStorage.getItem("language") === null) ? "en" : localStorage.getItem("language");
 
-// METAMASK CONNECTION
-window.addEventListener("DOMContentLoaded", async () => {
+// English-Portuguese convertion
+function updatePageLanguage() {
+  // All HTML elements  
+  const headerMenuAbout = document.getElementById("aboutMenu");
+  const headerMenuRoadmap = document.getElementById("roadmapMenu");
+  const headerMenuTeam = document.getElementById("teamMenu");
+  const headerMenuFAQ = document.getElementById("faqMenu");
+
+  const aboutH1 = document.getElementById("aboutH1");
+  const roadmapH1 = document.getElementById("roadmapH1");
+  const teamH1 = document.getElementById("teamH1");
+  const faqH1 = document.getElementById("faqH1");
+
+  const aboutP = document.getElementById("aboutP");
+  const roadmapP = document.getElementById("roadmapP");
+  const teamP = document.getElementById("teamP");
+  const faqP = document.getElementById("faqP");
+
   const welcomeH1 = document.getElementById("welcomeH1");
   const welcomeH2 = document.getElementById("welcomeH2");
   const welcomeP = document.getElementById("welcomeP");
 
-  welcomeH1.innerText = welcome_h1;
-  welcomeH2.innerText = welcome_h2;
-  welcomeP.innerHTML = welcome_p;
+  const daysP = document.getElementById("daysP");
+  const hoursP = document.getElementById("hoursP");
+  const minutesP = document.getElementById("minutesP");
+  const secondsP = document.getElementById("secondsP");
+
+  if (currentLanguage === "pt") {
+    headerMenuAbout.innerText = header_menu_about_pt;
+    headerMenuRoadmap.innerText = header_menu_roadmap_pt;
+    headerMenuTeam.innerHTML = header_menu_team_pt;
+    headerMenuFAQ.innerHTML = header_menu_faq_pt;
+
+    welcomeH1.innerText = welcome_h1_pt;
+    welcomeH2.innerText = welcome_h2_pt;
+    welcomeP.innerHTML = welcome_p_pt;
+
+    aboutH1.innerText = header_menu_about_pt;
+    roadmapH1.innerText = header_menu_roadmap_pt;
+    teamH1.innerText = header_menu_team_pt;
+    faqH1.innerText = header_menu_faq_pt;
+
+    aboutP.innerText = content_menu_about_pt;
+    roadmapP.innerText = content_menu_roadmap_pt;
+    teamP.innerText = content_menu_team_pt;
+    faqP.innerText = content_menu_faq_pt;
+
+    daysP.innerText = days_pt;
+    hoursP.innerText = hours_pt;
+    minutesP.innerText = minutes_pt;
+    secondsP.innerText = seconds_pt;
+
+  }
+  else {
+    headerMenuAbout.innerText = header_menu_about;
+    headerMenuRoadmap.innerText = header_menu_roadmap;
+    headerMenuTeam.innerHTML = header_menu_team;
+    headerMenuFAQ.innerHTML = header_menu_faq;
+
+    welcomeH1.innerText = welcome_h1;
+    welcomeH2.innerText = welcome_h2;
+    welcomeP.innerHTML = welcome_p;
+
+    aboutH1.innerText = header_menu_about;
+    roadmapH1.innerText = header_menu_roadmap;
+    teamH1.innerText = header_menu_team;
+    faqH1.innerText = header_menu_faq;
+
+    aboutP.innerText = content_menu_about;
+    roadmapP.innerText = content_menu_roadmap;
+    teamP.innerText = content_menu_team;
+    faqP.innerText = content_menu_faq;
+  }
+
+}
+
+// METAMASK CONNECTION
+window.addEventListener("DOMContentLoaded", async () => {
+  // const welcomeH1 = document.getElementById("welcomeH1");
+  // const welcomeH2 = document.getElementById("welcomeH2");
+  // const welcomeP = document.getElementById("welcomeP");
+
+  // welcomeH1.innerText = welcome_h1;
+  // welcomeH2.innerText = welcome_h2;
+  // welcomeP.innerHTML = welcome_p;
 
   if (window.ethereum) {
     window.web3 = new Web3(window.ethereum);
@@ -44,21 +121,36 @@ window.addEventListener("DOMContentLoaded", async () => {
       updateConnectStatus();
     });
   }
+
+  // English and Portuguese language logic  
+  const ptLangFlag = document.getElementById("pt");
+  ptLangFlag.onclick = () => {
+    localStorage.setItem("language", "pt");
+    updatePageLanguage();
+  }
+
+  const enLangFlag = document.getElementById("en");
+  enLangFlag.onclick = () => {
+    localStorage.setItem("language", "en");
+    updatePageLanguage();
+  }
+
+  updatePageLanguage();
+
 });
 
 const updateConnectStatus = async () => {
   const onboarding = new MetaMaskOnboarding();
-  
+
   const onboardButton = document.getElementById("connectWallet");
   const notConnected = document.querySelector('.not-connected');
   const spinner = document.getElementById("spinner");
   if (!MetaMaskOnboarding.isMetaMaskInstalled()) {
-    onboardButton.innerText = "Install MetaMask!";
-    console.log("HELLOWWWW3!!");
-    console.log(MetaMaskOnboarding);
-    console.log(MetaMaskOnboarding.isMetaMaskInstalled());
+    (currentLanguage === "pt") ? onboardButton.innerText = install_metamask_pt : onboardButton.innerText = install_metamask;
+    // onboardButton.innerText = "Install MetaMask!";
     onboardButton.onclick = () => {
-      onboardButton.innerText = "Connecting...";
+      //onboardButton.innerText = "Connecting...";
+      (currentLanguage === "pt") ? onboardButton.innerText = connecting_pt : onboardButton.innerText = connecting;
       onboardButton.disabled = true;
       onboarding.startOnboarding();
       // HIDE SPINNER
@@ -78,7 +170,8 @@ const updateConnectStatus = async () => {
     window.contract = new web3.eth.Contract(abi, contractAddress);
     loadInfo();
   } else {
-    onboardButton.innerText = "Connect MetaMask!";
+    //onboardButton.innerText = "Connect MetaMask!";
+    (currentLanguage === "pt") ? onboardButton.innerText = connect_metamask_pt : onboardButton.innerText = connect_metamask;
     // HIDE SPINNER
     spinner.classList.add('hidden');
     notConnected.classList.remove('hidden');
@@ -106,9 +199,9 @@ const updateConnectStatus = async () => {
 
 async function checkChain() {
   let chainId = 0;
-  if(chain === 'rinkeby') {
+  if (chain === 'rinkeby') {
     chainId = 4;
-  } else if(chain === 'polygon') {
+  } else if (chain === 'polygon') {
     chainId = 137;
   }
   if (window.ethereum.networkVersion !== chainId) {
@@ -119,10 +212,10 @@ async function checkChain() {
       });
       updateConnectStatus();
     } catch (err) {
-        // This error code indicates that the chain has not been added to MetaMask.
+      // This error code indicates that the chain has not been added to MetaMask.
       if (err.code === 4902) {
         try {
-          if(chain === 'rinkeby') {
+          if (chain === 'rinkeby') {
             await window.ethereum.request({
               method: 'wallet_addEthereumChain',
               params: [
@@ -134,7 +227,7 @@ async function checkChain() {
                 },
               ],
             });
-          } else if(chain === 'polygon') {
+          } else if (chain === 'polygon') {
             await window.ethereum.request({
               method: 'wallet_addEthereumChain',
               params: [
@@ -170,17 +263,32 @@ async function loadInfo() {
 
   let startTime = "";
   if (publicMintActive) {
-    mainHeading.innerText = h1_public_mint;
-    mainText.innerText = p_public_mint;
+    if (currentLanguage === "pt") {
+      mainHeading.innerText = h1_public_mint_pt;
+      mainText.innerText = p_public_mint_pt;
+      mintButton.innerText = button_public_mint_pt;
+    }
+    else {
+      mainHeading.innerText = h1_public_mint;
+      mainText.innerText = p_public_mint;
+      mintButton.innerText = button_public_mint;
+    }
+
     actionButton.classList.add('hidden');
-    mintButton.innerText = button_public_mint;
     mintContainer.classList.remove('hidden');
     setTotalPrice();
   } else if (presaleMintActive) {
     startTime = window.info.runtimeConfig.publicMintStart;
-    mainHeading.innerText = h1_presale_mint;
-    subHeading.innerText = h2_presale_mint;
-    
+
+    if (currentLanguage === "pt") {
+      mainHeading.innerText = h1_presale_mint_pt;
+      subHeading.innerText = h2_presale_mint_pt;
+    }
+    else {
+      mainHeading.innerText = h1_presale_mint;
+      subHeading.innerText = h2_presale_mint;
+    }
+
     try {
       // CHECK IF WHITELISTED
       const merkleData = await fetch(
@@ -188,27 +296,58 @@ async function loadInfo() {
       );
       const merkleJson = await merkleData.json();
       const whitelisted = await contract.methods.isWhitelisted(window.address, merkleJson).call();
-      if(!whitelisted) {
-        mainText.innerText = p_presale_mint_not_whitelisted;
-        actionButton.innerText = button_presale_mint_not_whitelisted;
+      if (!whitelisted) {
+
+        if (currentLanguage === "pt") {
+          mainText.innerText = p_presale_mint_not_whitelisted_pt;
+          actionButton.innerText = button_presale_mint_not_whitelisted_pt;
+        }
+        else {
+          mainText.innerText = p_presale_mint_not_whitelisted;
+          actionButton.innerText = button_presale_mint_not_whitelisted;
+        }
       } else {
-        mainText.innerText = p_presale_mint_whitelisted;
-        actionButton.classList.add('hidden');
-        mintButton.innerText = button_presale_mint_whitelisted;
+
+        if (currentLanguage === "pt") {
+          mainText.innerText = p_presale_mint_whitelisted_pt;
+          mintButton.innerText = button_presale_mint_whitelisted_pt;
+        }
+        else {
+          mainText.innerText = p_presale_mint_whitelisted;
+          mintButton.innerText = button_presale_mint_whitelisted;
+        }
+
         mintContainer.classList.remove('hidden');
+        actionButton.classList.add('hidden');
       }
-    } catch(e) {
+    } catch (e) {
       // console.log(e);
-      mainText.innerText = p_presale_mint_already_minted;
-      actionButton.innerText = button_presale_already_minted;
+
+      if (currentLanguage === "pt") {
+        mainText.innerText = p_presale_mint_already_minted_pt;
+        actionButton.innerText = button_presale_already_minted_pt;
+      }
+      else {
+        mainText.innerText = p_presale_mint_already_minted;
+        actionButton.innerText = button_presale_already_minted;
+      }
     }
     setTotalPrice();
   } else {
     startTime = window.info.runtimeConfig.presaleMintStart;
-    mainHeading.innerText = h1_presale_coming_soon;
-    subHeading.innerText = h2_presale_coming_soon;
-    mainText.innerText = p_presale_coming_soon;
-    actionButton.innerText = button_presale_coming_soon;
+    if (currentLanguage === "pt") {
+      mainHeading.innerText = h1_presale_coming_soon_pt;
+      subHeading.innerText = h2_presale_coming_soon_pt;
+      mainText.innerText = p_presale_coming_soon_pt;
+      actionButton.innerText = button_presale_coming_soon_pt;
+    }
+    else {
+      mainHeading.innerText = h1_presale_coming_soon;
+      subHeading.innerText = h2_presale_coming_soon;
+      mainText.innerText = p_presale_coming_soon;
+      actionButton.innerText = button_presale_coming_soon;
+    }
+
   }
 
   const clockdiv = document.getElementById("countdown");
@@ -225,7 +364,7 @@ async function loadInfo() {
   }, 1000);
 
   let priceType = '';
-  if(chain === 'rinkeby') {
+  if (chain === 'rinkeby') {
     priceType = 'ETH';
   } else if (chain === 'polygon') {
     priceType = 'MATIC';
@@ -235,7 +374,7 @@ async function loadInfo() {
   const maxPerMint = document.getElementById("maxPerMint");
   const totalSupply = document.getElementById("totalSupply");
   const mintInput = document.getElementById("mintInput");
-  
+
   pricePerMint.innerText = `${price} ${priceType}`;
   maxPerMint.innerText = `${info.deploymentConfig.tokensPerMint}`;
   totalSupply.innerText = `${info.deploymentConfig.maxSupply}`;
@@ -249,14 +388,14 @@ async function loadInfo() {
   const max = mintInput.attributes.max.value || false;
   mintDecrement.onclick = () => {
     let value = parseInt(mintInput.value) - 1 || 1;
-    if(!min || value >= min) {
+    if (!min || value >= min) {
       mintInput.value = value;
       setTotalPrice()
     }
   };
   mintIncrement.onclick = () => {
     let value = parseInt(mintInput.value) + 1 || 1;
-    if(!max || value <= max) {
+    if (!max || value <= max) {
       mintInput.value = value;
       setTotalPrice()
     }
@@ -281,16 +420,16 @@ function setTotalPrice() {
   const mintInputValue = parseInt(mintInput.value);
   const totalPrice = document.getElementById("totalPrice");
   const mintButton = document.getElementById("mintButton");
-  if(mintInputValue < 1 || mintInputValue > info.deploymentConfig.tokensPerMint) {
-    totalPrice.innerText = 'INVALID QUANTITY';
+  if (mintInputValue < 1 || mintInputValue > info.deploymentConfig.tokensPerMint) {
+    (currentLanguage === "pt") ? totalPrice.innerHTML = invalid_quantity_pt : totalPrice.innerText = invalid_quantity;
     mintButton.disabled = true;
     mintInput.disabled = true;
     return;
   }
   const totalPriceWei = BigInt(info.deploymentConfig.mintPrice) * BigInt(mintInputValue);
-  
+
   let priceType = '';
-  if(chain === 'rinkeby') {
+  if (chain === 'rinkeby') {
     priceType = 'ETH';
   } else if (chain === 'polygon') {
     priceType = 'MATIC';
@@ -304,7 +443,7 @@ function setTotalPrice() {
 async function mint() {
   const mintButton = document.getElementById("mintButton");
   mintButton.disabled = true;
-  const spinner = '<div class="dot-elastic"></div><span>Waiting for transaction...</span>';
+  const spinner = (currentLanguage === "pt") ? '<div class="dot-elastic"></div><span>Esperando a transação...</span>' : '<div class="dot-elastic"></div><span>Waiting for transaction...</span>';
   mintButton.innerHTML = spinner;
 
   const amount = parseInt(document.getElementById("mintInput").value);
@@ -318,8 +457,8 @@ async function mint() {
       const mintTransaction = await contract.methods
         .mint(amount)
         .send({ from: window.address, value: value.toString() });
-      if(mintTransaction) {
-        if(chain === 'rinkeby') {
+      if (mintTransaction) {
+        if (chain === 'rinkeby') {
           const url = `https://rinkeby.etherscan.io/tx/${mintTransaction.transactionHash}`;
           const mintedContainer = document.querySelector('.minted-container');
           const countdownContainer = document.querySelector('.countdown');
@@ -331,16 +470,30 @@ async function mint() {
         console.log("Minuted successfully!", `Transaction Hash: ${mintTransaction.transactionHash}`);
       } else {
         const mainText = document.getElementById("mainText");
-        mainText.innerText = mint_failed;
-        mintButton.innerText = button_public_mint;
-        mintButton.disabled = false;
+        if (currentLanguage === "pt") {
+          mainText.innerText = mint_failed_pt;
+          mintButton.innerText = button_public_mint_pt;
+        }
+        else {
+          mainText.innerText = mint_failed;
+          mintButton.innerText = button_public_mint;
+        }
 
+        mintButton.disabled = false;
         console.log("Failed to mint!");
       }
-    } catch(e) {
+    } catch (e) {
       const mainText = document.getElementById("mainText");
-      mainText.innerText = mint_failed;
-      mintButton.innerText = button_public_mint;
+
+      if (currentLanguage === "pt") {
+        mainText.innerText = mint_failed_pt;
+        mintButton.innerText = button_public_mint_pt;
+      }
+      else {
+        mainText.innerText = mint_failed;
+        mintButton.innerText = button_public_mint;
+      }
+
       mintButton.disabled = false;
 
       console.log(e);
@@ -355,8 +508,8 @@ async function mint() {
       const presaleMintTransaction = await contract.methods
         .presaleMint(amount, merkleJson)
         .send({ from: window.address, value: value.toString() });
-      if(presaleMintTransaction) {
-        if(chain === 'rinkeby') {
+      if (presaleMintTransaction) {
+        if (chain === 'rinkeby') {
           const url = `https://rinkeby.etherscan.io/tx/${presaleMintTransaction.transactionHash}`;
           const mintedContainer = document.querySelector('.minted-container');
           const countdownContainer = document.querySelector('.countdown');
@@ -368,16 +521,29 @@ async function mint() {
         console.log("Minuted successfully!", `Transaction Hash: ${presaleMintTransaction.transactionHash}`);
       } else {
         const mainText = document.getElementById("mainText");
-        mainText.innerText = mint_failed;
-        mintButton.innerText = button_presale_mint_whitelisted;
+        if (currentLanguage === "pt") {
+          mainText.innerText = mint_failed_pt;
+          mintButton.innerText = button_presale_mint_whitelisted_pt;
+        }
+        else {
+          mainText.innerText = mint_failed;
+          mintButton.innerText = button_presale_mint_whitelisted;
+        }
+
         mintButton.disabled = false;
 
         console.log("Failed to mint!");
       }
-    } catch(e) {
+    } catch (e) {
       const mainText = document.getElementById("mainText");
-      mainText.innerText = mint_failed;
-      mintButton.innerText = button_presale_mint_whitelisted;
+      if (currentLanguage === "pt") {
+        mainText.innerText = mint_failed_pt;
+        mintButton.innerText = button_presale_mint_whitelisted_pt;
+      }
+      else {
+        mainText.innerText = mint_failed;
+        mintButton.innerText = button_presale_mint_whitelisted;
+      }
       mintButton.disabled = false;
 
       // console.log(e);

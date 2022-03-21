@@ -21,8 +21,62 @@ const button_presale_mint_not_whitelisted = "Get on the Whitelist";
 const button_presale_already_minted = "Join The Community";
 const button_public_mint = "Mint Your NFT";
 const mint_failed = "Minting failed. 😢 Please try again.";
+// custom constants
+const header_menu_about = "About";
+const header_menu_roadmap = "Roadmap";
+const header_menu_team = "Team";
+const header_menu_faq = "FAQ";
+const content_menu_about = "The Emo Kids Club NFT Project is a decentralized initiative to promote the emo culture #EmoIsBack!!";
+const content_menu_roadmap = "Coming Soon";
+const content_menu_team = "Coming Soon";
+const content_menu_faq = "Coming Soon";
+const install_metamask = "Install MetaMask!";
+const connecting = "Connecting...";
+const connect_metamask = "Connect MetaMask!";
+const invalid_quantity = "INVALID QUANTITY";
+const days = "days";
+const hours = "hours";
+const minutes = "min";
+const seconds = "sec";
 
 // Portuguese labels
+const welcome_h1_pt = "Bem-vindo ao projeto NFT Emo Kids Club!!";
+const welcome_h2_pt = "Connecte a Metamask para começar.";
+const welcome_p_pt = 'O projeto NFT  Emo Kids Club é uma iniciativa decentralizada afim de promover a cultura Emo, onde as pessoas possam colaborar e se divertir!!';
+const h1_presale_coming_soon_pt = "NFT Drop em breve!!";
+const h1_presale_mint_pt = "WhiteList Minting Aberto!!";
+const h1_public_mint_pt = "Minting Público Aberto!!";
+const h2_presale_coming_soon_pt = "Contagem regressiva WhiteList Minting";
+const h2_presale_mint_pt = "Contagem Regressiva Minting Público";
+const p_presale_coming_soon_pt = "Estamos trabalhando com carinho e dedicação no lançamento desta coleção NFT. Fique ligado para mais novidades!!";
+const p_presale_mint_not_whitelisted_pt = "Você não está na whitelist de pré-venda... 😢";
+const p_presale_mint_whitelisted_pt = "Você está na whitelist de pré-venda! 🎉";
+const p_presale_mint_already_minted_pt = "Você ja mintou o seu NFT, obrigado!! 🎉";
+const p_public_mint_pt = "Não precisa de whitelist, Minting público está aberto! 🎉";
+const button_presale_coming_soon_pt = "Garanta a sua  Whitelist";
+const button_presale_mint_whitelisted_pt = "Mint o seu NFT especial";
+const button_presale_mint_not_whitelisted_pt = "Garanta a sua  Whitelist";
+const button_presale_already_minted_pt = "Junte-se a comunidade";
+const button_public_mint_pt = "Mint o seu  NFT";
+const mint_failed_pt = "O Minting falhou. 😢 Por favor, tente novamente.";
+// custom constants
+const header_menu_about_pt = "Sobre";
+const header_menu_roadmap_pt = "Roadmap";
+const header_menu_team_pt = "Time";
+const header_menu_faq_pt = "FAQ";
+const content_menu_about_pt = 'O projeto NFT  Emo Kids Club é uma iniciativa decentralizada afim de promover a cultura Emo, onde as pessoas possam colaborar e se divertir #EmoIsBack!!'
+const content_menu_roadmap_pt = "Em Breve";
+const content_menu_team_pt = "Em Breve";
+const content_menu_faq_pt = "Em Breve";
+const install_metamask_pt = "Instalar MetaMask!";
+const connecting_pt = "Conectando...";
+const connect_metamask_pt = "Conectar MetaMask!";
+const invalid_quantity_pt = "QUANTIDADE INVÁLIDA";
+const days_pt = "dias";
+const hours_pt = "horas";
+const minutes_pt = "min";
+const seconds_pt = "seg";
+
 
 const abi = [
   {

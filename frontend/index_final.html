@@ -26,28 +26,34 @@
         </a>
       </div>
 
-      <h1><a href="/">About</a></h1>
-      <h1><a href="/">Road Map</a></h1>
-      <h1><a href="/">Team</a></h1>
-      <h1><a href="/">FAQ</a></h1>
+      <h1><a id="aboutMenu" href="#aboutSection" style="color: white;">About</a></h1>
+      <h1><a id="roadmapMenu" href="#roadmapSection" style="color: white;">Roadmap</a></h1>
+      <h1><a id="teamMenu" href="#teamSection" style="color: white;">Team</a></h1>
+      <h1><a id="faqMenu" href="#faqSection" style="color: white;">FAQ</a></h1>
 
-      <div class="menu">
-        <a href="https://discord.gg/vC4UqYTX" target="_blank" rel="noopener noreferrer">
+      <class="menu">
+        <a href="https://discord.gg/vC4UqYTX" target="_blank" rel="noopener noreferrer" class="no-link-underscore">
           <img src="images/header/discord.webp" alt="Discord" />
         </a>
-        <a href="https://twitter.com/nftemokidsclub" target="_blank" rel="noopener noreferrer">
+        <a href="https://twitter.com/nftemokidsclub" target="_blank" rel="noopener noreferrer" class="no-link-underscore">
           <img src="images/header/twitter.webp" alt="Twitter" />
         </a>
-        <a href="https://www.instagram.com/emokidsclubnft/" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.instagram.com/emokidsclubnft/" target="_blank" rel="noopener noreferrer" class="no-link-underscore">
           <img src="images/header/instagram.png" alt="Instagram" />
         </a>
-        <a href="https://opensea.io/" target="_blank" rel="noopener noreferrer">
+        <a href="https://opensea.io/" target="_blank" rel="noopener noreferrer" class="no-link-underscore">
           <img src="images/header/opensea.webp" alt="Opensea" />
         </a>
         <button class="wallet-btn btn" id="connectWallet">
           <span>Connect Wallet</span>
         </button>
-      </div>
+        <a href="/" id="en" style="margin-left: 50px;" class="no-link-underscore" data-reload>
+          <img src="images/header/united-states.svg" alt="English" width="25px" />
+        </a>
+        <a href="/" data-reload id="pt">
+          <img src="images/header/brazil.svg" alt="English" width="25px" />
+        </a>
+    </div>
     </div>
   </header>
 
@@ -69,22 +75,22 @@
         <ul class="count-down" data-date="">
           <li class="clock-item">
             <span class="count-number days">20</span>
-            <p class="count-text">Days</p>
+            <p id="daysP" class="count-text">Days</p>
           </li>
 
           <li class="clock-item">
             <span class="count-number hours">20</span>
-            <p class="count-text">Hour</p>
+            <p id="hoursP" class="count-text">Hour</p>
           </li>
 
           <li class="clock-item">
             <span class="count-number minutes">20</span>
-            <p class="count-text">Min</p>
+            <p id="minutesP" class="count-text">Min</p>
           </li>
 
           <li class="clock-item">
             <span class="count-number seconds">20</span>
-            <p class="count-text">Sec</p>
+            <p id="secondsP" class="count-text">Sec</p>
           </li>
         </ul>
         <h2 id="subHeading">Pre-Sale Countdown</h2>
@@ -176,6 +182,44 @@
       </ul>
     </div>
   </div>
+
+  <!-- Menus Content -->
+  <section class="info-menus" id="aboutSection">
+    <div>
+      <h1 id="aboutH1">ABOUT</h1>
+      <p id="aboutP">
+        The Emo Kids Club NFT Project is a decentralized initiative to promote the emo culture #EmoIsBack!!
+      </p>
+      
+    </div>
+  </section>
+
+  <section class="info-menus" id="roadmapSection">
+    <div>
+      <h1 id="roadmapH1">ROADMAP</h1>
+      <p id="roadmapP">
+        Coming Soon
+      </p>
+    </div>
+  </section>
+
+  <section class="info-menus" id="teamSection">
+    <div>
+      <h1 id="teamH1">Team</h1>
+      <p id="teamP">
+        Coming Soon
+      </p>
+    </div>
+  </section>
+
+  <section class="info-menus" id="faqSection">
+    <div>
+      <h1 id="faqH1">FAQ</h1>
+      <p id="faqP">
+        Coming Soon
+      </p>
+    </div>
+  </section>
 
   <script src="js/metamask-onboarding.bundle.js"></script>
   <script src="js/web3.min.js"></script>
