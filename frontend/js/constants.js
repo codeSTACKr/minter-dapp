@@ -1,9 +1,10 @@
 const contractAddress = "0x674Afff2c9705838DF52ea1D76F4eB121F4fe230"; //Replace with your own contract address
 const chain = 'rinkeby'; // rinkeby or polygon
 
+// English labels
 const welcome_h1 = "Welcome to the Emo Kids Club NFT Project!!";
 const welcome_h2 = "Connect to MetaMask to Get Started";
-const welcome_p = 'The Emo Kids Club  NFT Project is a decentralized, CHANGE IT HERE';
+const welcome_p = 'The Emo Kids Club  NFT Project is a decentralized initiative to promote the Emo Culture where people can collaborate and have fun!!';
 const h1_presale_coming_soon = "NFT Drop Coming Soon!!";
 const h1_presale_mint = "Pre-Sale Minting Open!!";
 const h1_public_mint = "Public Minting Open!!";
@@ -20,6 +21,8 @@ const button_presale_mint_not_whitelisted = "Get on the Whitelist";
 const button_presale_already_minted = "Join The Community";
 const button_public_mint = "Mint Your NFT";
 const mint_failed = "Minting failed. 😢 Please try again.";
+
+// Portuguese labels
 
 const abi = [
   {

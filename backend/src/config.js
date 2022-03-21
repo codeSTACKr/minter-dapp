@@ -80,13 +80,13 @@ const TOKENS_PER_MINT = 3; // maximum number of NFTs a user can mint in a single
 const PUBLIC_MINT_START_DATE = "2022-05-31T11:30:48+00:00"; // This is required. Eg: 2022-02-08T11:30:48+00:00
 
 // OPTIONAL CONTRACT DETAILS THAT CAN BE UPDATED LATER.
-const PRESALE_MINT_START_DATE = "2022-05-24T11:30:48+00:00"; // Optional. Eg: 2022-02-08T11:30:48+00:00 => +00 is the time zone
+const PRESALE_MINT_START_DATE = "2022-03-19T11:30:48+00:00"; // Optional. Eg: 2022-02-08T11:30:48+00:00 => +00 is the time zone
 const ROYALTY_SHARE = 350; // Percentage of the token price that goes to the royalty address. 100 bps = 1%
 const ROYALTY_ADDRESS = "0xCfCf1A4D4e4066615407630dF6e4B84d5e498CdF"; // Address that will receive the royalty
 const BASE_URI = null; // only update if you want to manually set the base uri
 const PREREVEAL_TOKEN_URI = null; // only update if you want to manually set the prereveal token uri
 const PRESALE_WHITELISTED_ADDRESSES = ["0xCfCf1A4D4e4066615407630dF6e4B84d5e498CdF", 
-  "0xf5dec37016197dbab8e1e2bb0d1de58c5af34983"]; // only update if you want to manually set the whitelisted addresses
+  "0xf5dec37016197dbab8e1e2bb0d1de58c5af34983", "0x213B0e6608A3baDf60883c69CAF480b07a448342"]; // only update if you want to manually set the whitelisted addresses
 
 // ** OPTIONAL **
 let CONTRACT_ADDRESS = "YOUR CONTRACT ADDRESS"; // If you want to manually include it
