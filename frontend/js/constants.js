@@ -41,7 +41,7 @@ const seconds = "sec";
 
 // Portuguese labels
 const welcome_h1_pt = "Bem-vindo ao projeto NFT Emo Kids Club!!";
-const welcome_h2_pt = "Connecte a Metamask para começar.";
+const welcome_h2_pt = "Conecte a Metamask para começar.";
 const welcome_p_pt = 'O projeto NFT  Emo Kids Club é uma iniciativa decentralizada afim de promover a cultura Emo, onde as pessoas possam colaborar e se divertir!!';
 const h1_presale_coming_soon_pt = "NFT Drop em breve!!";
 const h1_presale_mint_pt = "WhiteList Minting Aberto!!";
