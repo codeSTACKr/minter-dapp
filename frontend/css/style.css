@@ -45,7 +45,7 @@ body {
   margin: 0 auto;
   padding: 1rem 2rem;
   justify-content: center;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 /* HEADER */
