@@ -46,6 +46,12 @@ const p_transaction_link = "Here's your trasaction link:";
 const button_view_transaction = "View Transaction";
 const p_view_collection = "View it in the collection:";
 const button_view_collection = "View Collection";
+const h3_Supply = "Supply";
+const h3_PricePerMint = "Price Per Mint";
+const h3_MaxPerTxn = "Max per Transaction";
+const set_QtyMaxText = "SET MAX";
+
+
 
 // Portuguese labels
 const welcome_h1_pt = "Bem-vindo ao projeto NFT Emo Kids Club!!";
@@ -89,6 +95,10 @@ const p_transaction_link_pt = "Aqui está o link da transação:";
 const button_view_transaction_pt = "Ver Transação";
 const p_view_collection_pt = "Ver NFT na Coleção:";
 const button_view_collection_pt = "Ver Coleção";
+const h3_Supply_pt = "Oferta";
+const h3_PricePerMint_pt = "Preço Por Mint";
+const h3_MaxPerTxn_pt = "Qtd Max por Transaction";
+const set_QtyMaxText_pt = "Quantidade Máxima";
 
 
 const abi = [

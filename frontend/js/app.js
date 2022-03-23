@@ -34,6 +34,11 @@ function updatePageLanguage() {
   const pViewCollection = document.getElementById("pViewCollection");
   const buttonViewCollection = document.getElementById("buttonViewCollection");
 
+  const h3Supply = document.getElementById("h3Supply");
+  const h3PricePerMint = document.getElementById("h3PricePerMint");
+  const h3MaxPerTxn = document.getElementById("h3MaxPerTxn");
+  const setQtyMaxText = document.getElementById("setQtyMaxText");
+
   if (currentLanguage === "pt") {
     headerMenuAbout.innerText = header_menu_about_pt;
     headerMenuRoadmap.innerText = header_menu_roadmap_pt;
@@ -65,6 +70,11 @@ function updatePageLanguage() {
     pViewCollection.innerText = p_view_collection_pt;
     buttonViewCollection.innerText = button_view_collection_pt;
 
+    h3Supply.innerText = h3_Supply_pt;
+    h3PricePerMint.innerText = h3_PricePerMint_pt;
+    h3MaxPerTxn.innerText = h3_MaxPerTxn_pt;
+    setQtyMaxText.innerText = set_QtyMaxText_pt;
+
   }
   else {
     headerMenuAbout.innerText = header_menu_about;
@@ -91,6 +101,11 @@ function updatePageLanguage() {
     buttonViwTxn.innerText = button_view_transaction;
     pViewCollection.innerText = p_view_collection;
     buttonViewCollection.innerText = button_view_collection;
+
+    h3Supply.innerText = h3_Supply;
+    h3PricePerMint.innerText = h3_PricePerMint;
+    h3MaxPerTxn.innerText = h3_MaxPerTxn;
+    setQtyMaxText.innerText = set_QtyMaxText;
 
   }
 
