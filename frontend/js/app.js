@@ -454,11 +454,11 @@ function setTotalPrice() {
   const mintInputValue = parseInt(mintInput.value);
   const totalPrice = document.getElementById("totalPrice");
   const mintButton = document.getElementById("mintButton");
-  if (mintInputValue == null || mintInputValue < 1 || mintInputValue > info.deploymentConfig.tokensPerMint) {
+  if (mintInputValue == "" || mintInputValue < 1 || mintInputValue > info.deploymentConfig.tokensPerMint) {
     (currentLanguage === "pt") ? totalPrice.innerHTML = invalid_quantity_pt : totalPrice.innerText = invalid_quantity;
     mintButton.disabled = true;
     //mintInput.disabled = true;
-    console.log(mintInputValue);
+    console.log("Valeu = " + mintInputValue);
     mintInput.value = 1;
     return;
   }
