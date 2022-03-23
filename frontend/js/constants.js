@@ -1,6 +1,9 @@
 const contractAddress = "0xb69bfae6B4b72f99980F4fcc312cAf45B0F50242"; //Replace with your own contract address
 const chain = 'rinkeby'; // rinkeby or polygon
 
+// Force GIT Sync
+const forceSync = "Force Sync = 1";
+
 // English labels
 const welcome_h1 = "Welcome to the Emo Kids Club NFT Project!!";
 const welcome_h2 = "Connect to MetaMask to Get Started";
