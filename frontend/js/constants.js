@@ -97,7 +97,7 @@ const p_view_collection_pt = "Ver NFT na Coleção:";
 const button_view_collection_pt = "Ver Coleção";
 const h3_Supply_pt = "Oferta";
 const h3_PricePerMint_pt = "Preço Por Mint";
-const h3_MaxPerTxn_pt = "Qtd Max por Transaction";
+const h3_MaxPerTxn_pt = "Qtd Max por Transação";
 const set_QtyMaxText_pt = "Quantidade Máxima";
 
 
