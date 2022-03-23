@@ -37,7 +37,7 @@ function updatePageLanguage() {
   const h3Supply = document.getElementById("h3Supply");
   const h3PricePerMint = document.getElementById("h3PricePerMint");
   const h3MaxPerTxn = document.getElementById("h3MaxPerTxn");
-  const setQtyMaxText = document.getElementById("setQtyMaxText");
+  const setQtyMaxText = document.getElementById("setQtyMax");
 
   if (currentLanguage === "pt") {
     headerMenuAbout.innerText = header_menu_about_pt;
