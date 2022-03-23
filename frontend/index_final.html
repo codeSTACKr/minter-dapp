@@ -35,10 +35,12 @@
         <a href="https://discord.gg/vC4UqYTX" target="_blank" rel="noopener noreferrer" class="no-link-underscore">
           <img src="images/header/discord.webp" alt="Discord" />
         </a>
-        <a href="https://twitter.com/nftemokidsclub" target="_blank" rel="noopener noreferrer" class="no-link-underscore">
+        <a href="https://twitter.com/nftemokidsclub" target="_blank" rel="noopener noreferrer"
+          class="no-link-underscore">
           <img src="images/header/twitter.webp" alt="Twitter" />
         </a>
-        <a href="https://www.instagram.com/emokidsclubnft/" target="_blank" rel="noopener noreferrer" class="no-link-underscore">
+        <a href="https://www.instagram.com/emokidsclubnft/" target="_blank" rel="noopener noreferrer"
+          class="no-link-underscore">
           <img src="images/header/instagram.png" alt="Instagram" />
         </a>
         <a href="https://opensea.io/" target="_blank" rel="noopener noreferrer" class="no-link-underscore">
@@ -120,7 +122,8 @@
         <div class="mint-qty">
           <span>
             <button class="input-number-decrement btn" id="mintDecrement">–</button>
-            <input id="mintInput" class="input-number btn" type="number" value="1" min="1" max="5" />
+            <input id="mintInput" class="input-number btn" type="number" value="1" min="1" max="5"
+              oninput="this.value = this.value.replace(/[^1-9.]/g, '').replace(/(\..*)\./g, '$1')" />
             <button class="input-number-increment btn" id="mintIncrement">+</button>
           </span>
           <button id="setQtyMax" class="btn">SET MAX</button>
@@ -190,7 +193,7 @@
       <p id="aboutP">
         The Emo Kids Club NFT Project is a decentralized initiative to promote the emo culture #EmoIsBack!!
       </p>
-      
+
     </div>
   </section>
 
