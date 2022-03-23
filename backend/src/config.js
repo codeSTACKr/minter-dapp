@@ -7,15 +7,15 @@ const { NETWORK } = require(`${basePath}/constants/network.js`);
 const network = NETWORK.eth;
 
 // General metadata for Ethereum
-const namePrefix = "Emo Kids Club v4";
-const description = "#EMO is not dead!!";
+const namePrefix = "EKC v5";
+const description = "#EMO is back!!";
 const baseUri = "ipfs://NewUriToReplace"; // This will be replaced automatically
 
 // If you have selected Solana then the collection starts from 0 automatically
 const layerConfigurations = [
   {
     // Males
-    growEditionSizeTo: 10,
+    growEditionSizeTo: 50,
     layersOrder: [
       { name: "Background" },
       { name: "Body" },
@@ -55,7 +55,7 @@ const format = {
 };
 
 const extraMetadata = {
-  external_url: "https://hungry-bartik-f67a11.netlify.app/", // Replace with your website or remove this line if you do not have one.
+  external_url: "https://emokidsclub.xyz/", // Replace with your website or remove this line if you do not have one.
 };
 
 // NFTPort Info
@@ -66,23 +66,23 @@ const LIMIT = 2; // Your API key rate limit
 const CHAIN = 'rinkeby'; // only rinkeby or polygon
 
 // REQUIRED CONTRACT DETAILS THAT CANNOT BE UPDATED LATER!
-const CONTRACT_NAME = 'EKC CollecContract v4';
-const CONTRACT_SYMBOL = 'EMOv4';
+const CONTRACT_NAME = 'EKC v5';
+const CONTRACT_SYMBOL = 'EMOv5';
 const METADATA_UPDATABLE = true; // set to false if you don't want to allow metadata updates after minting
 const OWNER_ADDRESS = '0xEE87f5cd8E4A8E77E8Bd650fB3198a5056aaC4d8';
-const TREASURY_ADDRESS = '0xCfCf1A4D4e4066615407630dF6e4B84d5e498CdF'; //wallet that can withdraw funds from the contract
-const MAX_SUPPLY = 4319; // The maximum number of NFTs that can be minted. CANNOT BE UPDATED!
+const TREASURY_ADDRESS = '0xc3d5523e271253CEEc655bcd5c4CBFF53AD9AfCC'; //wallet that can withdraw funds from the contract
+const MAX_SUPPLY = 50; // The maximum number of NFTs that can be minted. CANNOT BE UPDATED!
 const MINT_PRICE = 0.001; // Minting price per NFT. Rinkeby = ETH, Polygon = MATIC. CANNOT BE UPDATED!
 // Unexpected error was due to the mint price having too many zeros.
 const TOKENS_PER_MINT = 3; // maximum number of NFTs a user can mint in a single transaction. CANNOT BE UPDATED!
 
 // REQUIRED CONTRACT DETAILS THAT CAN BE UPDATED LATER.
-const PUBLIC_MINT_START_DATE = "2022-03-20T11:30:48+00:00"; // This is required. Eg: 2022-02-08T11:30:48+00:00
+const PUBLIC_MINT_START_DATE = "2022-05-20T11:30:48+00:00"; // This is required. Eg: 2022-02-08T11:30:48+00:00
 
 // OPTIONAL CONTRACT DETAILS THAT CAN BE UPDATED LATER.
-const PRESALE_MINT_START_DATE = "2022-03-19T11:30:48+00:00"; // Optional. Eg: 2022-02-08T11:30:48+00:00 => +00 is the time zone
+const PRESALE_MINT_START_DATE = "2022-04-19T11:30:48+00:00"; // Optional. Eg: 2022-02-08T11:30:48+00:00 => +00 is the time zone
 const ROYALTY_SHARE = 350; // Percentage of the token price that goes to the royalty address. 100 bps = 1%
-const ROYALTY_ADDRESS = "0xCfCf1A4D4e4066615407630dF6e4B84d5e498CdF"; // Address that will receive the royalty
+const ROYALTY_ADDRESS = "0xc3d5523e271253CEEc655bcd5c4CBFF53AD9AfCC"; // Address that will receive the royalty
 const BASE_URI = null; // only update if you want to manually set the base uri
 const PREREVEAL_TOKEN_URI = null; // only update if you want to manually set the prereveal token uri
 const PRESALE_WHITELISTED_ADDRESSES = ["0xCfCf1A4D4e4066615407630dF6e4B84d5e498CdF", 

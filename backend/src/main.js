@@ -329,13 +329,13 @@ function shuffle(array) {
 
 const startCreating = async () => {
   let layerConfigIndex = 0;
-  let editionCount = 1;
   let editionStartOffset = 100;
+  let editionCount = 101; // 1;  
   let failedCount = 0;
   let abstractedIndexes = [];
   for (
-    let i = network == NETWORK.sol ? 0 : 0;
-    i <= layerConfigurations[layerConfigurations.length - 1].growEditionSizeTo;
+    let i = editionStartOffset; //;network == NETWORK.sol ? 0 : 0;
+    i < layerConfigurations[layerConfigurations.length - 1].growEditionSizeTo + editionStartOffset;
     i++
   ) {
     abstractedIndexes.push(i);
@@ -351,7 +351,7 @@ const startCreating = async () => {
       layerConfigurations[layerConfigIndex].layersOrder
     );
     while (
-      editionCount <= layerConfigurations[layerConfigIndex].growEditionSizeTo
+      editionCount <= layerConfigurations[layerConfigIndex].growEditionSizeTo + editionStartOffset
     ) {
       let newDna = createDna(layers);
       if (isDnaUnique(dnaList, newDna)) {
