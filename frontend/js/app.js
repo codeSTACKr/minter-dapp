@@ -455,9 +455,9 @@ function setTotalPrice() {
   const totalPrice = document.getElementById("totalPrice");
   const mintButton = document.getElementById("mintButton");
   console.log("Valeu = " + mintInputValue);
-  if (mintInputValue == NaN || mintInputValue < 1 || mintInputValue > info.deploymentConfig.tokensPerMint) {
+  if (isNaN(mintInputValue) || mintInputValue < 1 || mintInputValue > info.deploymentConfig.tokensPerMint) {
     (currentLanguage === "pt") ? totalPrice.innerHTML = invalid_quantity_pt : totalPrice.innerText = invalid_quantity;
-    mintButton.disabled = true;
+    //mintButton.disabled = true;
     //mintInput.disabled = true;    
     mintInput.value = 1;
     return;
