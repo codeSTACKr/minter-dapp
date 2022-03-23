@@ -2,7 +2,7 @@ const contractAddress = "0xb69bfae6B4b72f99980F4fcc312cAf45B0F50242"; //Replace 
 const chain = 'rinkeby'; // rinkeby or polygon
 
 // Force GIT Sync
-const forceSync = "Force Sync = 2";
+const forceSync = "Force Sync = 3";
 
 // English labels
 const welcome_h1 = "Welcome to the Emo Kids Club NFT Project!!";
