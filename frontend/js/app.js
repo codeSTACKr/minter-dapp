@@ -28,6 +28,12 @@ function updatePageLanguage() {
   const minutesP = document.getElementById("minutesP");
   const secondsP = document.getElementById("secondsP");
 
+  const h2Minted = document.getElementById("h2Minted");
+  const pTxnLink = document.getElementById("pTxnLink");
+  const buttonViwTxn = document.getElementById("buttonViwTxn");
+  const pViewCollection = document.getElementById("pViewCollection");
+  const buttonViewCollection = document.getElementById("buttonViewCollection");
+
   if (currentLanguage === "pt") {
     headerMenuAbout.innerText = header_menu_about_pt;
     headerMenuRoadmap.innerText = header_menu_roadmap_pt;
@@ -53,6 +59,12 @@ function updatePageLanguage() {
     minutesP.innerText = minutes_pt;
     secondsP.innerText = seconds_pt;
 
+    h2Minted.innerText = h2_mintedExclamation_pt;
+    pTxnLink.innerText = p_transaction_link_pt;
+    buttonViwTxn.innerText = button_view_transaction_pt;
+    pViewCollection.innerText = p_view_collection_pt;
+    buttonViewCollection.innerText = button_view_collection_pt;
+
   }
   else {
     headerMenuAbout.innerText = header_menu_about;
@@ -73,6 +85,13 @@ function updatePageLanguage() {
     roadmapP.innerText = content_menu_roadmap;
     teamP.innerText = content_menu_team;
     faqP.innerText = content_menu_faq;
+
+    h2Minted.innerText = h2_mintedExclamation;
+    pTxnLink.innerText = p_transaction_link;
+    buttonViwTxn.innerText = button_view_transaction;
+    pViewCollection.innerText = p_view_collection;
+    buttonViewCollection.innerText = button_view_collection;
+
   }
 
 }

@@ -38,6 +38,11 @@ const days = "days";
 const hours = "hours";
 const minutes = "min";
 const seconds = "sec";
+const h2_mintedExclamation = "Minted!";
+const p_transaction_link = "Here's your trasaction link:";
+const button_view_transaction = "View Transaction";
+const p_view_collection = "View it in the collection:";
+const button_view_collection = "View Collection";
 
 // Portuguese labels
 const welcome_h1_pt = "Bem-vindo ao projeto NFT Emo Kids Club!!";
@@ -76,6 +81,11 @@ const days_pt = "dias";
 const hours_pt = "horas";
 const minutes_pt = "min";
 const seconds_pt = "seg";
+const h2_mintedExclamation_pt = "Mintado!";
+const p_transaction_link_pt = "Aqui está o link da transação:";
+const button_view_transaction_pt = "Ver Transação";
+const p_view_collection_pt = "Ver NFT na Coleção:";
+const button_view_collection_pt = "Ver Coleção";
 
 
 const abi = [
