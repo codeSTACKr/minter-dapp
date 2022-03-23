@@ -458,6 +458,8 @@ function setTotalPrice() {
     (currentLanguage === "pt") ? totalPrice.innerHTML = invalid_quantity_pt : totalPrice.innerText = invalid_quantity;
     mintButton.disabled = true;
     //mintInput.disabled = true;
+    console.log(mintInputValue);
+    mintInput.value = 1;
     return;
   }
   const totalPriceWei = BigInt(info.deploymentConfig.mintPrice) * BigInt(mintInputValue);
