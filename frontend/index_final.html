@@ -122,7 +122,7 @@
         <div class="mint-qty">
           <span>
             <button class="input-number-decrement btn" id="mintDecrement">–</button>
-            <input id="mintInput" class="input-number btn" type="number" value="1" min="1" max="5"
+            <input required id="mintInput" class="input-number btn" type="number" value="1" min="1" max="5"
               oninput="this.value = this.value.replace(/[^1-9.]/g, '').replace(/(\..*)\./g, '$1')" />
             <button class="input-number-increment btn" id="mintIncrement">+</button>
           </span>
