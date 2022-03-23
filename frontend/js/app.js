@@ -454,7 +454,7 @@ function setTotalPrice() {
   const mintInputValue = parseInt(mintInput.value);
   const totalPrice = document.getElementById("totalPrice");
   const mintButton = document.getElementById("mintButton");
-  console.log("Valeu = " + mintInputValue);
+
   if (isNaN(mintInputValue) || mintInputValue < 1 || mintInputValue > info.deploymentConfig.tokensPerMint) {
     (currentLanguage === "pt") ? totalPrice.innerHTML = invalid_quantity_pt : totalPrice.innerText = invalid_quantity;
     //mintButton.disabled = true;
@@ -482,6 +482,8 @@ async function mint() {
   const spinner = (currentLanguage === "pt") ? '<div class="dot-elastic"></div><span>Esperando a transação...</span>' : '<div class="dot-elastic"></div><span>Waiting for transaction...</span>';
   mintButton.innerHTML = spinner;
 
+  mainText.style.color = "white";
+
   const amount = parseInt(document.getElementById("mintInput").value);
   const value = BigInt(info.deploymentConfig.mintPrice) * BigInt(amount);
   const publicMintActive = await contract.methods.mintingActive().call();
@@ -508,10 +510,12 @@ async function mint() {
         const mainText = document.getElementById("mainText");
         if (currentLanguage === "pt") {
           mainText.innerText = mint_failed_pt;
+          mainText.style.color = "red";
           mintButton.innerText = button_public_mint_pt;
         }
         else {
           mainText.innerText = mint_failed;
+          mainText.style.color = "red";
           mintButton.innerText = button_public_mint;
         }
 
@@ -523,10 +527,12 @@ async function mint() {
 
       if (currentLanguage === "pt") {
         mainText.innerText = mint_failed_pt;
+        mainText.style.color = "red";
         mintButton.innerText = button_public_mint_pt;
       }
       else {
         mainText.innerText = mint_failed;
+        mainText.style.color = "red";
         mintButton.innerText = button_public_mint;
       }
 
@@ -559,10 +565,12 @@ async function mint() {
         const mainText = document.getElementById("mainText");
         if (currentLanguage === "pt") {
           mainText.innerText = mint_failed_pt;
+          mainText.style.color = "red";
           mintButton.innerText = button_presale_mint_whitelisted_pt;
         }
         else {
           mainText.innerText = mint_failed;
+          mainText.style.color = "red";
           mintButton.innerText = button_presale_mint_whitelisted;
         }
 
@@ -574,10 +582,12 @@ async function mint() {
       const mainText = document.getElementById("mainText");
       if (currentLanguage === "pt") {
         mainText.innerText = mint_failed_pt;
+        mainText.style.color = "red";
         mintButton.innerText = button_presale_mint_whitelisted_pt;
       }
       else {
         mainText.innerText = mint_failed;
+        mainText.style.color = "red";
         mintButton.innerText = button_presale_mint_whitelisted;
       }
       mintButton.disabled = false;
