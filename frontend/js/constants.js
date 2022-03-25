@@ -1,5 +1,5 @@
-const contractAddress = "0xA1ee34E83c4fCaea08f7C19A3ba466110a739a5c"; //Replace with your own contract address
-const chain = 'rinkeby'; // rinkeby or polygon
+const contractAddress = "0xda91334De8BF50c61D46BcA8270205A0C88b9320"; //Replace with your own contract address
+const chain = 'polygon'; // rinkeby or polygon
 
 const welcome_h1 = "Welcome to the Snail Pace NFT Project!!";
 const welcome_h2 = "Connect to MetaMask to Get Started";
