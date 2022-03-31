@@ -50,7 +50,7 @@ const h3_Supply = "Supply";
 const h3_PricePerMint = "Price Per Mint";
 const h3_MaxPerTxn = "Max per Transaction";
 const set_QtyMaxText = "SET MAX";
-
+const p_verified_contract_address = "Verified Smart Contract Address: ";
 
 
 // Portuguese labels
@@ -99,7 +99,7 @@ const h3_Supply_pt = "Oferta";
 const h3_PricePerMint_pt = "Preço Por Mint";
 const h3_MaxPerTxn_pt = "Qtd Max por Transação";
 const set_QtyMaxText_pt = "Quantidade Máxima";
-
+const p_verified_contract_address_pt = "Endereço do Smart Contract: ";
 
 const abi = [
   {

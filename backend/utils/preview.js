@@ -30,7 +30,7 @@ const saveProjectPreviewImage = async (_data) => {
 
   // Iterate all NFTs and insert thumbnail into preview image
   // Don't want to rely on "edition" for assuming index
-  for (let index = 0; index < _data.length; index++) {
+  for (let index = 100; index < _data.length; index++) {
     const nft = _data[index];
     await loadImage(`${buildDir}/images/${nft.custom_fields.edition}.png`).then((image) => {
       previewCtx.drawImage(

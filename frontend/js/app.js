@@ -38,6 +38,9 @@ function updatePageLanguage() {
   const h3PricePerMint = document.getElementById("h3PricePerMint");
   const h3MaxPerTxn = document.getElementById("h3MaxPerTxn");
   const setQtyMaxText = document.getElementById("setQtyMax");
+  
+  const pContractAddress = document.getElementById("pContractAddress");
+  const aContractAddressLink = document.getElementById("setQtyMax");
 
   if (currentLanguage === "pt") {
     headerMenuAbout.innerText = header_menu_about_pt;
@@ -75,6 +78,7 @@ function updatePageLanguage() {
     h3MaxPerTxn.innerText = h3_MaxPerTxn_pt;
     setQtyMaxText.innerText = set_QtyMaxText_pt;
 
+    pContractAddress.innerHTML = p_verified_contract_address_pt;
   }
   else {
     headerMenuAbout.innerText = header_menu_about;
@@ -107,6 +111,7 @@ function updatePageLanguage() {
     h3MaxPerTxn.innerText = h3_MaxPerTxn;
     setQtyMaxText.innerText = set_QtyMaxText;
 
+    pContractAddress.innerHTML = p_verified_contract_address;
   }
 
 }
