@@ -197,6 +197,8 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border: #ffffff;
+  border-style: inset;
 }
 
 .countdown ul {
@@ -323,6 +325,8 @@ section {
   justify-content: center;
   align-items: center;
   width: 100%;
+  border: #ffffff;
+  border-style: inset;
 }
 
 .minted-container h1 {
