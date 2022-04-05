@@ -45,6 +45,30 @@ function updatePageLanguage() {
   // FAQ section
   const faqTitle1 = document.getElementById("faqTitle1");
   const faqDescription1 = document.getElementById("faqDescription1");
+  const faqTitle2 = document.getElementById("faqTitle2");
+  const faqDescription2 = document.getElementById("faqDescription2");
+  const faqTitle3 = document.getElementById("faqTitle3");
+  const faqDescription3 = document.getElementById("faqDescription3");
+  const faqTitle4 = document.getElementById("faqTitle4");
+  const faqDescription4 = document.getElementById("faqDescription4");
+  const faqTitle5 = document.getElementById("faqTitle5");
+  const faqDescription5 = document.getElementById("faqDescription5");
+  const faqTitle6 = document.getElementById("faqTitle6");
+  const faqDescription6 = document.getElementById("faqDescription6");
+  const faqTitle7 = document.getElementById("faqTitle7");
+  const faqDescription7 = document.getElementById("faqDescription7");
+  const faqTitle8 = document.getElementById("faqTitle8");
+  const faqDescription8 = document.getElementById("faqDescription8");
+  const faqTitle9 = document.getElementById("faqTitle9");
+  const faqDescription9 = document.getElementById("faqDescription9");
+  const faqTitle10 = document.getElementById("faqTitle10");
+  const faqDescription10 = document.getElementById("faqDescription10");
+  const faqTitle11 = document.getElementById("faqTitle11");
+  const faqDescription11 = document.getElementById("faqDescription11");
+  const faqTitle12 = document.getElementById("faqTitle12");
+  const faqDescription12 = document.getElementById("faqDescription12");
+  const faqTitle13 = document.getElementById("faqTitle13");
+  const faqDescription13 = document.getElementById("faqDescription13");
 
   if (currentLanguage === "pt") {
     headerMenuAbout.innerText = header_menu_about_pt;
@@ -83,6 +107,34 @@ function updatePageLanguage() {
     setQtyMaxText.innerText = set_QtyMaxText_pt;
 
     pContractAddress.innerHTML = p_verified_contract_address_pt;
+
+    // FAQ
+    faqTitle1.innerText = faq_title_1_pt;
+    faqDescription1.innerText = faq_description_1_pt;
+    faqTitle2.innerText = faq_title_2_pt;
+    faqDescription2.innerText = faq_description_2_pt;
+    faqTitle3.innerText = faq_title_3_pt;
+    faqDescription3.innerText = faq_description_3_pt;
+    faqTitle4.innerText = faq_title_4_pt;
+    faqDescription4.innerText = faq_description_4_pt;
+    faqTitle5.innerText = faq_title_5_pt;
+    faqDescription5.innerText = faq_description_5_pt;
+    faqTitle6.innerText = faq_title_6_pt;
+    faqDescription6.innerText = faq_description_6_pt;
+    faqTitle7.innerText = faq_title_7_pt;
+    faqDescription7.innerText = faq_description_7_pt;
+    faqTitle8.innerText = faq_title_8_pt;
+    faqDescription8.innerText = faq_description_8_pt;
+    faqTitle9.innerText = faq_title_9_pt;
+    faqDescription9.innerText = faq_description_9_pt;
+    faqTitle10.innerText = faq_title_10_pt;
+    faqDescription10.innerText = faq_description_10_pt;
+    faqTitle11.innerText = faq_title_11_pt;
+    faqDescription11.innerText = faq_description_11_pt;
+    faqTitle12.innerText = faq_title_12_pt;
+    faqDescription12.innerText = faq_description_12_pt;
+    faqTitle13.innerText = faq_title_13_pt;
+    faqDescription13.innerText = faq_description_13_pt;
   }
   else {
     headerMenuAbout.innerText = header_menu_about;
@@ -120,6 +172,30 @@ function updatePageLanguage() {
     // FAQ
     faqTitle1.innerText = faq_title_1;
     faqDescription1.innerText = faq_description_1;
+    faqTitle2.innerText = faq_title_2;
+    faqDescription2.innerText = faq_description_2;
+    faqTitle3.innerText = faq_title_3;
+    faqDescription3.innerText = faq_description_3;
+    faqTitle4.innerText = faq_title_4;
+    faqDescription4.innerText = faq_description_4;
+    faqTitle5.innerText = faq_title_5;
+    faqDescription5.innerText = faq_description_5;
+    faqTitle6.innerText = faq_title_6;
+    faqDescription6.innerText = faq_description_6;
+    faqTitle7.innerText = faq_title_7;
+    faqDescription7.innerText = faq_description_7;
+    faqTitle8.innerText = faq_title_8;
+    faqDescription8.innerText = faq_description_8;
+    faqTitle9.innerText = faq_title_9;
+    faqDescription9.innerText = faq_description_9;
+    faqTitle10.innerText = faq_title_10;
+    faqDescription10.innerText = faq_description_10;
+    faqTitle11.innerText = faq_title_11;
+    faqDescription11.innerText = faq_description_11;
+    faqTitle12.innerText = faq_title_12;
+    faqDescription12.innerText = faq_description_12;
+    faqTitle13.innerText = faq_title_13;
+    faqDescription13.innerText = faq_description_13;
   }
 
 }
