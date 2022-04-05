@@ -42,6 +42,10 @@ function updatePageLanguage() {
   const pContractAddress = document.getElementById("pContractAddress");
   const aContractAddressLink = document.getElementById("setQtyMax");
 
+  // FAQ section
+  const faqTitle11 = document.getElementById("faqTitle11");
+  const faqDescription1 = document.getElementById("faqDescription1");
+
   if (currentLanguage === "pt") {
     headerMenuAbout.innerText = header_menu_about_pt;
     headerMenuRoadmap.innerText = header_menu_roadmap_pt;
@@ -112,6 +116,10 @@ function updatePageLanguage() {
     setQtyMaxText.innerText = set_QtyMaxText;
 
     pContractAddress.innerHTML = p_verified_contract_address;
+
+    // FAQ
+    faqTitle11.innerText = faq_title_1;
+    faqDescription1.innerText = faq_description_1;
   }
 
 }

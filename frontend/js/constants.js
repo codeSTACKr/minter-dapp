@@ -52,6 +52,32 @@ const h3_PricePerMint = "Price Per Mint";
 const h3_MaxPerTxn = "Max per Transaction";
 const set_QtyMaxText = "SET MAX";
 const p_verified_contract_address = "Verified Smart Contract Address: ";
+const faq_title_1 = "What is an NFT?";
+const faq_description_1 = "NFT stands for \"Non-Fungible Token\". Non-Fungible means that the item is unique and can't be modified or replaced. Therefore, an NFT is a digital item that is original and unique that resides in the blockchain that has an owner.";
+// const faq_title_1 = "";
+// const faq_description_1 = "";
+// const faq_title_1 = "";
+// const faq_description_1 = "";
+// const faq_title_1 = "";
+// const faq_description_1 = "";
+// const faq_title_1 = "";
+// const faq_description_1 = "";
+// const faq_title_1 = "";
+// const faq_description_1 = "";
+// const faq_title_1 = "";
+// const faq_description_1 = "";
+// const faq_title_1 = "";
+// const faq_description_1 = "";
+// const faq_title_1 = "";
+// const faq_description_1 = "";
+// const faq_title_1 = "";
+// const faq_description_1 = "";
+// const faq_title_1 = "";
+// const faq_description_1 = "";
+// const faq_title_1 = "";
+// const faq_description_1 = "";
+// const faq_title_1 = "";
+// const faq_description_1 = "";
 
 
 // Portuguese labels
