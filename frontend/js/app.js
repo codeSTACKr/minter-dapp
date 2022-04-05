@@ -43,7 +43,7 @@ function updatePageLanguage() {
   const aContractAddressLink = document.getElementById("setQtyMax");
 
   // FAQ section
-  const faqTitle11 = document.getElementById("faqTitle11");
+  const faqTitle1 = document.getElementById("faqTitle1");
   const faqDescription1 = document.getElementById("faqDescription1");
 
   if (currentLanguage === "pt") {
@@ -118,7 +118,7 @@ function updatePageLanguage() {
     pContractAddress.innerHTML = p_verified_contract_address;
 
     // FAQ
-    faqTitle11.innerText = faq_title_1;
+    faqTitle1.innerText = faq_title_1;
     faqDescription1.innerText = faq_description_1;
   }
 
