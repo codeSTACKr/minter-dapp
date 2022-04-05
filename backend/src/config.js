@@ -11,6 +11,7 @@ const namePrefix = "YOUR COLLECTION NAME";
 const description = "Remember to replace this description";
 const baseUri = "ipfs://NewUriToReplace"; // This will be replaced automatically
 
+// TEST
 // If you have selected Solana then the collection starts from 0 automatically
 const layerConfigurations = [
   {
