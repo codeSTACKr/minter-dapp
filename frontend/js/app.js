@@ -295,6 +295,7 @@ async function loadInfo() {
   const mainHeading = document.getElementById("mainHeading");
   const subHeading = document.getElementById("subHeading");
   const mainText = document.getElementById("mainText");
+  const mainTextAlert = document.getElementById("mainTextAlert");
   const actionButton = document.getElementById("actionButton");
   const mintContainer = document.getElementById("mintContainer");
   const mintButton = document.getElementById("mintButton");
@@ -305,11 +306,13 @@ async function loadInfo() {
     if (currentLanguage === "pt") {
       mainHeading.innerText = h1_public_mint_pt;
       mainText.innerText = p_public_mint_pt;
+      mainTextAlert.classList.add('hidden');      
       mintButton.innerText = button_public_mint_pt;
     }
     else {
       mainHeading.innerText = h1_public_mint;
       mainText.innerText = p_public_mint;
+      mainTextAlert.classList.add('hidden');
       mintButton.innerText = button_public_mint;
     }
 
@@ -338,21 +341,27 @@ async function loadInfo() {
       if (!whitelisted) {
 
         if (currentLanguage === "pt") {
-          mainText.innerText = p_presale_mint_not_whitelisted_pt;
+          mainText.innerText = p_presale_mint_not_whitelisted_pt;          
+          mainTextAlert.classList.add('hidden');
           actionButton.innerText = button_presale_mint_not_whitelisted_pt;
         }
         else {
           mainText.innerText = p_presale_mint_not_whitelisted;
+          mainTextAlert.classList.add('hidden');
           actionButton.innerText = button_presale_mint_not_whitelisted;
         }
       } else {
 
         if (currentLanguage === "pt") {
           mainText.innerText = p_presale_mint_whitelisted_pt;
+          mainTextAlert.innerText = p_presale_mint_whitelisted_alert_pt;
+          mainTextAlert.classList.remove('hidden');
           mintButton.innerText = button_presale_mint_whitelisted_pt;
         }
         else {
           mainText.innerText = p_presale_mint_whitelisted;
+          mainTextAlert.innerText = p_presale_mint_whitelisted_alert;
+          mainTextAlert.classList.remove('hidden');
           mintButton.innerText = button_presale_mint_whitelisted;
         }
 
@@ -363,11 +372,13 @@ async function loadInfo() {
       // console.log(e);
 
       if (currentLanguage === "pt") {
-        mainText.innerText = p_presale_mint_already_minted_pt;
+        mainText.innerText = p_presale_mint_already_minted_pt;        
+        mainTextAlert.classList.add('hidden');
         actionButton.innerText = button_presale_already_minted_pt;
       }
       else {
-        mainText.innerText = p_presale_mint_already_minted;
+        mainText.innerText = p_presale_mint_already_minted;        
+        mainTextAlert.classList.add('hidden');
         actionButton.innerText = button_presale_already_minted;
       }
     }
