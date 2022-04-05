@@ -88,7 +88,7 @@ function updatePageLanguage() {
     aboutP.innerText = content_menu_about_pt;
     roadmapP.innerText = content_menu_roadmap_pt;
     teamP.innerText = content_menu_team_pt;
-    faqP.innerText = content_menu_faq_pt;
+    // faqP.innerText = content_menu_faq_pt;
 
     daysP.innerText = days_pt;
     hoursP.innerText = hours_pt;
