@@ -3,6 +3,8 @@ let currentLanguage = (localStorage.getItem("language") === null) ? "en" : local
 
 // English-Portuguese convertion
 function updatePageLanguage() {
+  //
+  const another_force_sync = 0;
   // All HTML elements  
   const headerMenuAbout = document.getElementById("aboutMenu");
   const headerMenuRoadmap = document.getElementById("roadmapMenu");
