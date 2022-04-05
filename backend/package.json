@@ -1,6 +1,6 @@
 {
   "name": "minter-dapp-backend",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Generate an NFT collection and deploy a minting dapp easy!!",
   "main": "index.js",
   "bin": "index.js",
@@ -46,6 +46,7 @@
     "dotenv": "^16.0.0",
     "form-data": "^4.0.0",
     "gif-encoder-2": "^1.0.5",
+    "graceful-fs": "^4.2.9",
     "node-fetch": "^2.6.6",
     "puppeteer": "^13.4.1",
     "puppeteer-extra": "^3.2.3",
