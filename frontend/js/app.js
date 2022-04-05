@@ -102,7 +102,7 @@ function updatePageLanguage() {
     aboutP.innerText = content_menu_about;
     roadmapP.innerText = content_menu_roadmap;
     teamP.innerText = content_menu_team;
-    faqP.innerText = content_menu_faq;
+    // faqP.innerText = content_menu_faq;
 
     h2Minted.innerText = h2_mintedExclamation;
     pTxnLink.innerText = p_transaction_link;
