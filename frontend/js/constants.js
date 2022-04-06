@@ -78,6 +78,12 @@ const faq_title_12 = "What marketplace will the collection be listed?";
 const faq_description_12 = "OpenSea";
 const faq_title_13 = "When is the mint/pre-sale?";
 const faq_description_13 = "Coming Soon!";
+// Team Member Title
+const p_team_member_title_1 = "Art Director";
+const p_team_member_title_2 = "Operations Director";
+const p_team_member_title_3 = "Creative Director";
+const p_team_member_title_4 = "IT Director";
+const p_team_member_title_5 = "Marketing Director";
 
 
 // Portuguese labels
@@ -154,7 +160,14 @@ const faq_description_11_pt = "Em Breve!";
 const faq_title_12_pt = "Qual marketplace a coleção será listada?";
 const faq_description_12_pt = "OpenSea";
 const faq_title_13_pt = "Quando é o mint/pré-venda?";
-const faq_description_13_pt = "Em Breve! ";
+const faq_description_13_pt = "Em Breve!";
+
+// Team Member Title
+const p_team_member_title_1_pt = "Diretor de Arte";
+const p_team_member_title_2_pt = "Diretor de Operações";
+const p_team_member_title_3_pt = "Diretor de Criatividade";
+const p_team_member_title_4_pt = "Diretor de TI";
+const p_team_member_title_5_pt = "Diretor de Marketing";
 
 const abi = [
   {

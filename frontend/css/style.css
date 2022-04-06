@@ -490,3 +490,52 @@ details[open] summary~* {
     margin-top: 0px
   }
 }
+
+/* Meet the Team */
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 20.0%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+.card-team {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container-team {
+  padding: 0 16px;
+  
+}
+
+.container-team::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+  
+}
+
+.title {
+  color: grey;
+}
+
+
+.purple {
+  color: purple;
+}

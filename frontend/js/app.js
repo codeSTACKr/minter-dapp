@@ -18,7 +18,7 @@ function updatePageLanguage() {
 
   const aboutP = document.getElementById("aboutP");
   const roadmapP = document.getElementById("roadmapP");
-  const teamP = document.getElementById("teamP");
+  // const teamP = document.getElementById("teamP");
   const faqP = document.getElementById("faqP");
 
   const welcomeH1 = document.getElementById("welcomeH1");
@@ -72,6 +72,14 @@ function updatePageLanguage() {
   const faqTitle13 = document.getElementById("faqTitle13");
   const faqDescription13 = document.getElementById("faqDescription13");
 
+  // Team Member Title
+const pteamMemberTitle1 = document.getElementById("teamMemberTitle1");
+const pteamMemberTitle2 = document.getElementById("teamMemberTitle2");
+const pteamMemberTitle3 = document.getElementById("teamMemberTitle3");
+const pteamMemberTitle4 = document.getElementById("teamMemberTitle4");
+const pteamMemberTitle5 = document.getElementById("teamMemberTitle5");
+
+
   if (currentLanguage === "pt") {
     headerMenuAbout.innerText = header_menu_about_pt;
     headerMenuRoadmap.innerText = header_menu_roadmap_pt;
@@ -89,7 +97,7 @@ function updatePageLanguage() {
 
     aboutP.innerText = content_menu_about_pt;
     roadmapP.innerText = content_menu_roadmap_pt;
-    teamP.innerText = content_menu_team_pt;
+    // teamP.innerText = content_menu_team_pt;
     // faqP.innerText = content_menu_faq_pt;
 
     daysP.innerText = days_pt;
@@ -137,6 +145,13 @@ function updatePageLanguage() {
     faqDescription12.innerText = faq_description_12_pt;
     faqTitle13.innerText = faq_title_13_pt;
     faqDescription13.innerText = faq_description_13_pt;
+
+    // Team Member Title
+    pteamMemberTitle1.innerText = p_team_member_title_1_pt;
+    pteamMemberTitle2.innerText = p_team_member_title_2_pt;
+    pteamMemberTitle3.innerText = p_team_member_title_3_pt;
+    pteamMemberTitle4.innerText = p_team_member_title_4_pt;
+    pteamMemberTitle5.innerText = p_team_member_title_5_pt;
   }
   else {
     headerMenuAbout.innerText = header_menu_about;
@@ -155,7 +170,7 @@ function updatePageLanguage() {
 
     aboutP.innerText = content_menu_about;
     roadmapP.innerText = content_menu_roadmap;
-    teamP.innerText = content_menu_team;
+    // teamP.innerText = content_menu_team;
     // faqP.innerText = content_menu_faq;
 
     h2Minted.innerText = h2_mintedExclamation;
@@ -198,6 +213,13 @@ function updatePageLanguage() {
     faqDescription12.innerText = faq_description_12;
     faqTitle13.innerText = faq_title_13;
     faqDescription13.innerText = faq_description_13;
+
+    // Team Member Title
+    pteamMemberTitle1.innerText = p_team_member_title_1;
+    pteamMemberTitle2.innerText = p_team_member_title_2;
+    pteamMemberTitle3.innerText = p_team_member_title_3;
+    pteamMemberTitle4.innerText = p_team_member_title_4;
+    pteamMemberTitle5.innerText = p_team_member_title_5;
   }
 
 }
