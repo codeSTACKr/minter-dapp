@@ -582,22 +582,23 @@ div.alt-event {
  
   /* (C2) DIMENSIONS */
   padding: 20px 30px;
-  width: 75%;
+  /* width: 75%; */
+  width: 500px;
   margin-bottom: 10px;
  
   /* (C3) POSITION - DEFAULT LEFT SIDE */
   position: relative;
-  left: -32.7%;
+  left: -60.4%;
 }
  
 /* (C4) CHANGE EVENT POSITION TO RIGHT SIDE */
-div.right { left: 57.2%; }
+div.right { left: 59.6%; }
 
 /* (D) COSMETICS FOR EVENT DATE & TEXT */
 p.date {
   font-size: 2em;
   font-weight: 700;
-  color: white;
+  color: red;
 }
 p.txt {
   margin: 10px 0 0 0;
