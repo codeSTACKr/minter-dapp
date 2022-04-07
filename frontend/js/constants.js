@@ -85,6 +85,13 @@ const p_team_member_title_3 = "Creative Director";
 const p_team_member_title_4 = "IT Director";
 const p_team_member_title_5 = "Marketing Director";
 
+// Road Map
+const p_roadmap_title_1 = "25 Apr 2022";
+const p_roadmap_content_1 = "Emo Kids Club NFT LAUNCH!!";
+const p_roadmap_title_2 = "Coming Soon";
+const p_roadmap_content_2 = "Mint is Open!";
+const p_roadmap_title_3 = "Coming Soon";
+const p_roadmap_content_3 = "...";
 
 // Portuguese labels
 const welcome_h1_pt = "Bem-vindo ao projeto NFT Emo Kids Club!!";
@@ -168,6 +175,14 @@ const p_team_member_title_2_pt = "Diretor de Operações";
 const p_team_member_title_3_pt = "Diretor de Criatividade";
 const p_team_member_title_4_pt = "Diretor de TI";
 const p_team_member_title_5_pt = "Diretor de Marketing";
+
+// Road Map
+const p_roadmap_title_1_pt = "25 Abr 2022";
+const p_roadmap_content_1_pt = "LANÇAMENTO Emo Kids Club NFT!!";
+const p_roadmap_title_2_pt = "Em Breve";
+const p_roadmap_content_2_pt = "Mint está disponível!";
+const p_roadmap_title_3_pt = "Em Breve";
+const p_roadmap_content_3_pt = "...";
 
 const abi = [
   {

@@ -79,6 +79,14 @@ const pteamMemberTitle3 = document.getElementById("teamMemberTitle3");
 const pteamMemberTitle4 = document.getElementById("teamMemberTitle4");
 const pteamMemberTitle5 = document.getElementById("teamMemberTitle5");
 
+// Road Map
+const pRoadmapTitle1 = document.getElementById("roadmapTitle1");
+const pRoadmapContent1 = document.getElementById("roadmapContent1");
+const pRoadmapTitle2 = document.getElementById("roadmapTitle2");
+const pRoadmapContent2 = document.getElementById("roadmapContent2");
+const pRoadmapTitle3 = document.getElementById("roadmapTitle3");
+const pRoadmapContent3 = document.getElementById("roadmapContent3");
+
 
   if (currentLanguage === "pt") {
     headerMenuAbout.innerText = header_menu_about_pt;
@@ -152,6 +160,14 @@ const pteamMemberTitle5 = document.getElementById("teamMemberTitle5");
     pteamMemberTitle3.innerText = p_team_member_title_3_pt;
     pteamMemberTitle4.innerText = p_team_member_title_4_pt;
     pteamMemberTitle5.innerText = p_team_member_title_5_pt;
+
+    // Road Map
+    pRoadmapTitle1.innerText = p_roadmap_title_1_pt;
+    pRoadmapContent1.innerText = p_roadmap_content_1_pt;
+    pRoadmapTitle2.innerText = p_roadmap_title_2_pt;
+    pRoadmapContent2.innerText = p_roadmap_content_2_pt;
+    pRoadmapTitle3.innerText = p_roadmap_title_3_pt;
+    pRoadmapContent3.innerText = p_roadmap_content_3_pt;
   }
   else {
     headerMenuAbout.innerText = header_menu_about;
@@ -220,6 +236,14 @@ const pteamMemberTitle5 = document.getElementById("teamMemberTitle5");
     pteamMemberTitle3.innerText = p_team_member_title_3;
     pteamMemberTitle4.innerText = p_team_member_title_4;
     pteamMemberTitle5.innerText = p_team_member_title_5;
+
+    // Road Map
+    pRoadmapTitle1.innerText = p_roadmap_title_1;
+    pRoadmapContent1.innerText = p_roadmap_content_1;
+    pRoadmapTitle2.innerText = p_roadmap_title_2;
+    pRoadmapContent2.innerText = p_roadmap_content_2;
+    pRoadmapTitle3.innerText = p_roadmap_title_3;
+    pRoadmapContent3.innerText = p_roadmap_content_3;
   }
 
 }
