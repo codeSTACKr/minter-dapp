@@ -87,6 +87,9 @@ const pRoadmapContent2 = document.getElementById("roadmapContent2");
 const pRoadmapTitle3 = document.getElementById("roadmapTitle3");
 const pRoadmapContent3 = document.getElementById("roadmapContent3");
 
+const callForActionP = document.getElementById("callForActionP");
+
+
 
   if (currentLanguage === "pt") {
     headerMenuAbout.innerText = header_menu_about_pt;
@@ -168,6 +171,8 @@ const pRoadmapContent3 = document.getElementById("roadmapContent3");
     pRoadmapContent2.innerText = p_roadmap_content_2_pt;
     pRoadmapTitle3.innerText = p_roadmap_title_3_pt;
     pRoadmapContent3.innerText = p_roadmap_content_3_pt;
+
+    callForActionP.innerText = p_call_for_action_pt;
   }
   else {
     headerMenuAbout.innerText = header_menu_about;
@@ -244,6 +249,8 @@ const pRoadmapContent3 = document.getElementById("roadmapContent3");
     pRoadmapContent2.innerText = p_roadmap_content_2;
     pRoadmapTitle3.innerText = p_roadmap_title_3;
     pRoadmapContent3.innerText = p_roadmap_content_3;
+
+    callForActionP.innerText = p_call_for_action;
   }
 
 }

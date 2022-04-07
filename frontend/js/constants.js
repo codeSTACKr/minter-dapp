@@ -84,7 +84,6 @@ const p_team_member_title_2 = "Operations Director";
 const p_team_member_title_3 = "Creative Director";
 const p_team_member_title_4 = "IT Director";
 const p_team_member_title_5 = "Marketing Director";
-
 // Road Map
 const p_roadmap_title_1 = "25 Apr 2022";
 const p_roadmap_content_1 = "Emo Kids Club NFT LAUNCH!!";
@@ -92,8 +91,15 @@ const p_roadmap_title_2 = "Coming Soon";
 const p_roadmap_content_2 = "Mint is Open!";
 const p_roadmap_title_3 = "Coming Soon";
 const p_roadmap_content_3 = "...";
+const p_call_for_action = "Did you like the project? Follow us on Twitter and Instagram, and make sure to join the community by clicking the Discord icon below to learn about any updates!";
 
+
+
+
+
+//////////////////////////////////
 // Portuguese labels
+//////////////////////////////////
 const welcome_h1_pt = "Bem-vindo ao projeto NFT Emo Kids Club!!";
 const welcome_h2_pt = "Conecte a Metamask para começar.";
 const welcome_p_pt = 'O projeto NFT  Emo Kids Club é uma iniciativa decentralizada afim de promover a cultura Emo, onde as pessoas possam colaborar e se divertir!!';
@@ -168,14 +174,12 @@ const faq_title_12_pt = "Qual marketplace a coleção será listada?";
 const faq_description_12_pt = "OpenSea";
 const faq_title_13_pt = "Quando é o mint/pré-venda?";
 const faq_description_13_pt = "Em Breve!";
-
 // Team Member Title
 const p_team_member_title_1_pt = "Diretor de Arte";
 const p_team_member_title_2_pt = "Diretor de Operações";
 const p_team_member_title_3_pt = "Diretor de Criatividade";
 const p_team_member_title_4_pt = "Diretor de TI";
 const p_team_member_title_5_pt = "Diretor de Marketing";
-
 // Road Map
 const p_roadmap_title_1_pt = "25 Abr 2022";
 const p_roadmap_content_1_pt = "LANÇAMENTO Emo Kids Club NFT!!";
@@ -183,6 +187,12 @@ const p_roadmap_title_2_pt = "Em Breve";
 const p_roadmap_content_2_pt = "Mint está disponível!";
 const p_roadmap_title_3_pt = "Em Breve";
 const p_roadmap_content_3_pt = "...";
+
+const p_call_for_action_pt = "Curtiu o projeto? Siga-nos no Twitter e Instagram, e junte-se a comunidade clicando no icone do Discord abaixo e fique por dentro de todos os detalhes!!";
+
+
+
+
 
 const abi = [
   {
