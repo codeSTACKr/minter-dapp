@@ -57,6 +57,7 @@ body {
   justify-content: center;
   text-align: center;
   /* overflow: hidden; */
+  /* top: 0%; */
 }
 
 .info-menus h1 {
