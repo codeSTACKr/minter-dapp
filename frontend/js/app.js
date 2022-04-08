@@ -550,6 +550,13 @@ async function loadInfo() {
   setTimeout(() => {
     const countdownCard = document.querySelector('.countdown');
     countdownCard.classList.add('show-card');
+
+
+    // Remove lines below for Mint GO Live
+    const countdownContainer = document.querySelector('.count-down');
+    countdownContainer.classList.add('hidden');
+    const presaleCoutnDown = document.getElementById("subHeading");
+    presaleCoutnDown.classList.add('hidden');
   }, 1000);
 
   let priceType = '';
@@ -603,11 +610,6 @@ async function loadInfo() {
   };
   mintButton.onclick = mint;
 
-  // Remove lines below for Mint GO Live
-  const countdownContainer = document.querySelector('.count-down');  
-  countdownContainer.classList.add('hidden');
-  const presaleCoutnDown = document.getElementById("subHeading");
-  presaleCoutnDown.classList.add('hidden');
 }
 
 function setTotalPrice() {
