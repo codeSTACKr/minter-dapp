@@ -15,7 +15,9 @@ function countdown() {
       clockdiv.style.display = "none";
       clearInterval(countdownfunction);
     } else {
-      clockdiv.style.display = "block";
+      // Clear below before GO LIVE
+      clockdiv.style.display = "none";
+     // clockdiv.style.display = "block";
       clockdiv.querySelector(".days").innerHTML = days;
       clockdiv.querySelector(".hours").innerHTML = hours;
       clockdiv.querySelector(".minutes").innerHTML = minutes;
