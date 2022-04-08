@@ -40,7 +40,7 @@ function updatePageLanguage() {
   const h3PricePerMint = document.getElementById("h3PricePerMint");
   const h3MaxPerTxn = document.getElementById("h3MaxPerTxn");
   const setQtyMaxText = document.getElementById("setQtyMax");
-  
+
   const pContractAddress = document.getElementById("pContractAddress");
   const aContractAddressLink = document.getElementById("setQtyMax");
 
@@ -73,21 +73,21 @@ function updatePageLanguage() {
   const faqDescription13 = document.getElementById("faqDescription13");
 
   // Team Member Title
-const pteamMemberTitle1 = document.getElementById("teamMemberTitle1");
-const pteamMemberTitle2 = document.getElementById("teamMemberTitle2");
-const pteamMemberTitle3 = document.getElementById("teamMemberTitle3");
-const pteamMemberTitle4 = document.getElementById("teamMemberTitle4");
-const pteamMemberTitle5 = document.getElementById("teamMemberTitle5");
+  const pteamMemberTitle1 = document.getElementById("teamMemberTitle1");
+  const pteamMemberTitle2 = document.getElementById("teamMemberTitle2");
+  const pteamMemberTitle3 = document.getElementById("teamMemberTitle3");
+  const pteamMemberTitle4 = document.getElementById("teamMemberTitle4");
+  const pteamMemberTitle5 = document.getElementById("teamMemberTitle5");
 
-// Road Map
-const pRoadmapTitle1 = document.getElementById("roadmapTitle1");
-const pRoadmapContent1 = document.getElementById("roadmapContent1");
-const pRoadmapTitle2 = document.getElementById("roadmapTitle2");
-const pRoadmapContent2 = document.getElementById("roadmapContent2");
-const pRoadmapTitle3 = document.getElementById("roadmapTitle3");
-const pRoadmapContent3 = document.getElementById("roadmapContent3");
+  // Road Map
+  const pRoadmapTitle1 = document.getElementById("roadmapTitle1");
+  const pRoadmapContent1 = document.getElementById("roadmapContent1");
+  const pRoadmapTitle2 = document.getElementById("roadmapTitle2");
+  const pRoadmapContent2 = document.getElementById("roadmapContent2");
+  const pRoadmapTitle3 = document.getElementById("roadmapTitle3");
+  const pRoadmapContent3 = document.getElementById("roadmapContent3");
 
-const callForActionP = document.getElementById("callForActionP");
+  const callForActionP = document.getElementById("callForActionP");
 
 
 
@@ -445,7 +445,7 @@ async function loadInfo() {
     if (currentLanguage === "pt") {
       mainHeading.innerText = h1_public_mint_pt;
       mainText.innerText = p_public_mint_pt;
-      mainTextAlert.classList.add('hidden');      
+      mainTextAlert.classList.add('hidden');
       mintButton.innerText = button_public_mint_pt;
     }
     else {
@@ -480,7 +480,7 @@ async function loadInfo() {
       if (!whitelisted) {
 
         if (currentLanguage === "pt") {
-          mainText.innerText = p_presale_mint_not_whitelisted_pt;          
+          mainText.innerText = p_presale_mint_not_whitelisted_pt;
           mainTextAlert.classList.add('hidden');
           actionButton.innerText = button_presale_mint_not_whitelisted_pt;
         }
@@ -511,12 +511,12 @@ async function loadInfo() {
       // console.log(e);
 
       if (currentLanguage === "pt") {
-        mainText.innerText = p_presale_mint_already_minted_pt;        
+        mainText.innerText = p_presale_mint_already_minted_pt;
         mainTextAlert.classList.add('hidden');
         actionButton.innerText = button_presale_already_minted_pt;
       }
       else {
-        mainText.innerText = p_presale_mint_already_minted;        
+        mainText.innerText = p_presale_mint_already_minted;
         mainTextAlert.classList.add('hidden');
         actionButton.innerText = button_presale_already_minted;
       }
@@ -602,6 +602,10 @@ async function loadInfo() {
     }
   };
   mintButton.onclick = mint;
+
+  // Remove lines below for Mint GO Live
+  const countdownContainer = document.querySelector('.countdown');  
+  countdownContainer.classList.add('hidden');
 }
 
 function setTotalPrice() {
