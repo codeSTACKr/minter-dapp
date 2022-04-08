@@ -604,8 +604,10 @@ async function loadInfo() {
   mintButton.onclick = mint;
 
   // Remove lines below for Mint GO Live
-  const countdownContainer = document.querySelector('.countdown');  
+  const countdownContainer = document.querySelector('.count-down');  
   countdownContainer.classList.add('hidden');
+  const presaleCoutnDown = document.getElementById("subHeading");
+  presaleCoutnDown.classList.add('hidden');
 }
 
 function setTotalPrice() {
