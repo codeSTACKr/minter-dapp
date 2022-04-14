@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/codeSTACKr/nft-landing-page#readme",
   "dependencies": {
+    "gatsby-plugin-netlify": "^4.2.0",
     "node-fetch": "^2.6.7"
   }
 }

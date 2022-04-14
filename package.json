@@ -4,5 +4,8 @@
   "description": "Generate an NFT collection and deploy a minting dapp easy!!",
   "scripts": {},
   "author": "Jesse Hall (codeSTACKr)",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "gatsby-plugin-netlify": "^4.2.0"
+  }
 }

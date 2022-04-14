@@ -15,7 +15,7 @@ const baseUri = "ipfs://NewUriToReplace"; // This will be replaced automatically
 const layerConfigurations = [
   {
     // Males
-    growEditionSizeTo: 50,
+    growEditionSizeTo: 10,
     layersOrder: [
       { name: "Background" },
       { name: "Body" },
@@ -29,6 +29,7 @@ const layerConfigurations = [
   },
   // {
   //   // Females
+  // JUST CHANGE THE FOLDER NAME
   //   growEditionSizeTo: 20,
   //   layersOrder: [
   //     { name: "Background" },
