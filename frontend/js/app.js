@@ -77,7 +77,7 @@ function updatePageLanguage() {
   const pteamMemberTitle2 = document.getElementById("teamMemberTitle2");
   const pteamMemberTitle3 = document.getElementById("teamMemberTitle3");
   const pteamMemberTitle4 = document.getElementById("teamMemberTitle4");
-  const pteamMemberTitle5 = document.getElementById("teamMemberTitle5");
+  //const pteamMemberTitle5 = document.getElementById("teamMemberTitle5");
 
   // Road Map
   const pRoadmapTitle1 = document.getElementById("roadmapTitle1");
@@ -162,7 +162,7 @@ function updatePageLanguage() {
     pteamMemberTitle2.innerText = p_team_member_title_2_pt;
     pteamMemberTitle3.innerText = p_team_member_title_3_pt;
     pteamMemberTitle4.innerText = p_team_member_title_4_pt;
-    pteamMemberTitle5.innerText = p_team_member_title_5_pt;
+    //pteamMemberTitle5.innerText = p_team_member_title_5_pt;
 
     // Road Map
     pRoadmapTitle1.innerText = p_roadmap_title_1_pt;
@@ -240,7 +240,7 @@ function updatePageLanguage() {
     pteamMemberTitle2.innerText = p_team_member_title_2;
     pteamMemberTitle3.innerText = p_team_member_title_3;
     pteamMemberTitle4.innerText = p_team_member_title_4;
-    pteamMemberTitle5.innerText = p_team_member_title_5;
+    //pteamMemberTitle5.innerText = p_team_member_title_5;
 
     // Road Map
     pRoadmapTitle1.innerText = p_roadmap_title_1;
