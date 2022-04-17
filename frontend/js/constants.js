@@ -1,9 +1,9 @@
-const contractAddress = "YOUR CONTRACT ADDRESS"; //Replace with your own contract address
+const contractAddress = "0xE773a56016Be264CC937Ef504266c7e2ac4448F1"; //Replace with your own contract address
 const chain = 'rinkeby'; // rinkeby or polygon
 
-const welcome_h1 = "Welcome to the CodeCats NFT Project!!";
+const welcome_h1 = "Welcome to CryptoGels NFT PEACE Project!!";
 const welcome_h2 = "Connect to MetaMask to Get Started";
-const welcome_p = 'The CodeCats NFT Project is a decentralized, open-source project that aims to demonstrate how to develope and launch your own NFT Collection. Follow step by step on the <a href="https://youtube.com/codestackr"  target="_blank" rel="noopener noreferrer">codeSTACKr</a> YouTube channel.';
+const welcome_p = 'The CryptoGels NFT Project is a decentralized, project that aims to demonstrate the peace that humanity needs now with calming color pallettes in a limited 164 in total NFT Collection. Share this website link with friends and family <a href="https://esl.gallery";
 const h1_presale_coming_soon = "NFT Drop Coming Soon!!";
 const h1_presale_mint = "Pre-Sale Minting Open!!";
 const h1_public_mint = "Public Minting Open!!";
