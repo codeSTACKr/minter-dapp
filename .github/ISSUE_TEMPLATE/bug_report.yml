@@ -1,0 +1,63 @@
+name: Bug Report
+description: File a bug report
+title: "[Bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+  - type: checkboxes
+    id: version
+    attributes:
+      label: Version
+      description: Are you using the latest version of this repository?
+      options:
+      - label: "Yes"
+        required: true
+    validations:
+      required: true
+  - type: checkboxes
+    id: general
+    attributes:
+      label: General Question
+      description: Is this a general usage question? If so, visit the [discord server](https://discord.gg/A9CnsVzzkZ).
+      options:
+      - label: "No"
+        required: true
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Also tell us, what did you expect to happen?
+      placeholder: Tell us what you see!
+      value: "A bug happened!"
+    validations:
+      required: true
+  - type: textarea
+    id: troubleshoot
+    attributes:
+      label: What have you tried?
+      description: What steps have you taken to find a solution?
+      placeholder: Tell us what you've done!
+      value: "I Googled and asked the community in the discord server but could not find a solution."
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant log output
+      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
+      render: shell
+  - type: checkboxes
+    id: ppi
+    attributes:
+      label: Protect your information
+      description: I have not included any personal information in this form.
+      options:
+      - label: "I Agree"
+        required: true
+    validations:
+      required: true

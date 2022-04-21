@@ -1,8 +1,0 @@
-{
-  "name": "minter-dapp",
-  "version": "0.0.2",
-  "description": "Generate an NFT collection and deploy a minting dapp easy!!",
-  "scripts": {},
-  "author": "Jesse Hall (codeSTACKr)",
-  "license": "MIT"
-}
