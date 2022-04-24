@@ -195,7 +195,7 @@ section {
   border-radius: 4px 4px 0 0;
 }
 .countdown .clock-item .count-text {
-  background: var(--btn-bg-color);
+  background: yellow;
   font-family: var(--font-secondary);
   font-size: 1.1rem;
   color: var(--bg-color);
@@ -248,7 +248,7 @@ section {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: var(--accent-color);
+  background-color: red;
   border-radius: 5px;
 }
 
