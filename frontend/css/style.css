@@ -182,7 +182,7 @@ section {
   height: auto;
 }
 .countdown .clock-item .count-number {
-  background: var(--accent-color);
+  background: orange;
   color: var(--font-color);
   font-size: 2rem;
   font-weight: 700;
@@ -350,7 +350,7 @@ section {
     max-width: 8rem;
   }
   .not-connected {
-    background-color: var(--bg-color-transparent);
+    background-color: green;
     border-radius: 5px;
     padding: 2rem;
     margin: 0 auto;
