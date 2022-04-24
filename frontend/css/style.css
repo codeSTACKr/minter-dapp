@@ -248,7 +248,8 @@ section {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: red;
+  background-image:radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%) ;
+  background-color: black;
   border-radius: 5px;
 }
 
@@ -323,11 +324,13 @@ section {
 
 .splide__slide {
   border: 1px solid #9966cc;
+  border-radius: 40px;
   
 }
 
 .splide__slide img {
   width: 100%;
+  border-radius: 40px;
 }
 
 /* SPINNER */
@@ -396,12 +399,6 @@ section {
 
 /*BACKGROUNDDD STARSSS */
 
-
-#mintContainer
-{
-
-   background-color: red;
-}
 
 
 
