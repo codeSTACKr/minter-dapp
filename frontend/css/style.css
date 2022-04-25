@@ -353,7 +353,7 @@ section {
     max-width: 8rem;
   }
   .not-connected {
-    background-color: green;
+    background-color: transparent;
     border-radius: 5px;
     padding: 2rem;
     margin: 0 auto;
