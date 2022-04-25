@@ -28,9 +28,13 @@ body {
   background-color: black;
   display: flex;
   flex-flow: column;
-  height: 100vh;
   color: var(--font-color);
   font-family: var(--font-primary);
+}
+
+html{
+
+    overflow: hidden;
 }
 
 .container {
