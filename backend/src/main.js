@@ -170,10 +170,12 @@ const addMetadata = (_dna, _edition) => {
 
 const addAttributes = (_element) => {
   let selectedElement = _element.layer.selectedElement;
+  if(selectedElement.name.trim().toLowerCase() ≢ "null") {
   attributesList.push({
     trait_type: _element.layer.name,
     value: selectedElement.name,
   });
+}
 };
 
 const loadLayerImg = async (_layer) => {
