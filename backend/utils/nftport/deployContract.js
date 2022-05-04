@@ -41,7 +41,7 @@ const deployContract = async () => {
     try {
       let jsonFile = fs.readFileSync(`${basePath}/build/ipfsMetasGeneric/_ipfsMetasResponse.json`);
       let metaData = JSON.parse(jsonFile);
-      if(metaData.response === "OK" && metaData.error === null) {
+      if(metaData.response === "OK") {
         if(!PREREVEAL_TOKEN_URI) {
           PREREVEAL_TOKEN_URI = metaData.metadata_uri;
         }
@@ -57,7 +57,7 @@ const deployContract = async () => {
     try {
       let jsonFile = fs.readFileSync(`${basePath}/build/ipfsMetas/_ipfsMetasResponse.json`);
       let metaData = JSON.parse(jsonFile);
-      if(metaData.response === "OK" && metaData.error === null) {
+      if(metaData.response === "OK") {
         if(!BASE_URI) {
           BASE_URI = metaData.metadata_directory_ipfs_uri;
         }
