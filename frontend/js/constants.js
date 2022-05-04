@@ -3,8 +3,8 @@ const chain = 'rinkeby'; // rinkeby or polygon
 
 const welcome_h1 = "Welcome to Pooch Pack NFTs";
 const welcome_h2 = "Connect to MetaMask to Get Started";
-const welcome_p = 'The Pooch Pack NFT Project is a decentralized, open-source project that aims to demonstrate how to develope and launch your own NFT Collection. Follow step by step on the <a href="https://youtube.com/codestackr"  target="_blank" rel="noopener noreferrer">codeSTACKr</a> YouTube channel.';
-const h1_presale_coming_soon = "NFT Drop Coming Soon!!";
+const welcome_p = 'Every dog knows there’s strength in numbers. Pick from thousands of Pooch Pack dogs, each with its own unique hand drawn traits. Each Pooch is randomly generated with no Pooch being the same. There are also a few Pooches that are extremely rare including original Dogg and Brutus editions.';
+const h1_presale_coming_soon = "NFT Presale starts May 6, 2022";
 const h1_presale_mint = "Pre-Sale Minting Open!!";
 const h1_public_mint = "Public Minting Open!!";
 const h2_presale_coming_soon = "Pre-Sale Minting Countdown";
