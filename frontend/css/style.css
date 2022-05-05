@@ -5,10 +5,10 @@
 /* GLOBAL STYLES */
 
 :root {
-  --font-primary: "HWT Artz", sans-serif;
-  --font-secondary: "English Grotesque", sans-serif;
+  --font-primary: "Poppins", sans-serif;
+  --font-secondary: "Arvo", serif;
   --font-code: "Roboto", monospace;
-  --bg-color: #00163f;
+  --bg-color: #E2554A;
   --bg-color-transparent: #E2554A;
   --font-color: #ffffff;
   --btn-bg-color: #ffffff;
