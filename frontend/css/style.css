@@ -1,18 +1,17 @@
-/* FONTS */
-
-@import url("https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-
 /* GLOBAL STYLES */
 
 :root {
-  --font-primary: "Poppins", sans-serif;
-  --font-secondary: "Arvo", serif;
+  --font-primary: 'Oswald', sans-serif;
+  --font-secondary: 'Merriweather Sans', sans-serif;
   --font-code: "Roboto", monospace;
   --bg-color: #E2554A;
   --bg-color-transparent: #E2554A;
   --font-color: #ffffff;
   --btn-bg-color: #ffffff;
+  --primary-color: #ffffff;
   --accent-color: #53B594;
+  --secondary-color: #FFA300;
+  --secondary-white: #F7F5EB;
   --header-shadow: var(--accent-color) 0px 0px 5px;
   --card-shadow: var(--accent-color) 0px 0px 20px;
 }
@@ -27,19 +26,33 @@ body {
   background-color: var(--bg-color);
   display: flex;
   flex-flow: column;
-  height: 100vh;
+  /* height: 100vh; */
+  height: 100%;
   color: var(--font-color);
   font-family: var(--font-primary);
 }
 
 .container {
   display: flex;
-  flex-direction: column;
-  max-width: 960px;
+  flex-direction: row;
+  /* max-width: 960px; */
+  max-width: 1080px;
   margin: 0 auto;
   padding: 1rem 2rem;
   justify-content: center;
+  flex-flow: row wrap;
   overflow: hidden;
+}
+
+.container .flex-elements{
+  width: 50%;
+  justify-content: center;
+  text-align: center;
+  align-self: center;
+}
+
+.container .flex-elements img{
+  max-width: 100%;
 }
 
 /* HEADER */
@@ -55,10 +68,17 @@ header .container {
   align-items: center;
 }
 
-.menu {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
+h1, h2{
+  text-transform: uppercase;
+}
+
+h2{
+  color: var(--accent-color);
+}
+
+p{
+  color: var(--font-color);
+  font-family: var(--font-secondary);
 }
 
 /* NOT CONNECTED */
@@ -102,16 +122,14 @@ header .container {
 .btn {
   display: inline-block;
   padding: 1rem 2rem;
-  background: var(--btn-bg-color);
-  color: var(--accent-color);
-  font-family: var(--font-secondary);
-  font-style: italic;
+  background: var(--accent-color);
+  color: var(--btn-bg-color);
+  font-family: var(--font-primary);
   font-weight: bold;
   font-size: 1rem;
   text-align: center;
-  text-transform: capitalize;
+  text-transform: uppercase;
   transition: all 0.3s ease;
-  box-shadow: var(--header-shadow);
   cursor: pointer;
   position: relative;
   text-decoration: none;
@@ -126,12 +144,16 @@ header .container {
 
 .wallet-btn {
   border-radius: 5rem;
-  margin-left: 2rem;
-  border-color: transparent;
+  border: 0px;
+  text-transform: uppercase;
+  color: var(--font-primary);
+  background-color: var(--accent-color);
+  font-size: 30px;
+  width: 350px;
 }
 
 .hero-btn {
-  border-radius: 4px;
+  border-radius: 10px;
   font-size: 1.2rem;
   padding: 1.5rem 3rem;
 }
@@ -140,11 +162,9 @@ header .container {
 
 .card {
   position: relative;
-  background-color: var(--bg-color);
-  border-radius: 5px;
-  border: 3px solid var(--accent-color);
-  box-shadow: var(--card-shadow);
-  padding: 5rem;
+  background-color: var(--secondary-white);
+  border-radius: 25px;
+  padding: 2.5rem;
   margin-bottom: 2rem;
   opacity: 0;
   transform: translateX(100vw);
@@ -210,9 +230,8 @@ section {
 }
 
 .countdown h1 {
-  text-shadow: 2px 2px 0 var(--accent-color);
-  font-style: italic;
-  margin: 2rem 0;
+  color: var(--accent-color);
+  margin: 2rem 0 0.5rem 0 ;
   font-size: 3.5rem;
   text-align: center;
 }
@@ -221,8 +240,9 @@ section {
   margin-top: 1rem;
 }
 
-.countdown > p {
-  font-size: 1.1rem;
+.countdown > p#mainText {
+  color: var(--bg-color);
+  font-size: 0.8rem;
   font-family: var(--font-secondary);
   margin-bottom: 2rem;
   text-align: center;
@@ -245,6 +265,21 @@ section {
   margin-bottom: 2rem;
 }
 
+.mint-container .info-container .supply,
+.mint-container .info-container .price,
+.mint-container .info-container .maximum {
+  color: var(--accent-color);
+  font-family: var(--font-primary);
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+#totalSupply, #pricePerMint, #maxPerMint{
+  color: var(--accent-color);
+  font-family: var(--font-primary);
+  text-align: center;
+}
+
 .mint-qty {
   display: flex;
   justify-content: space-between;
@@ -263,6 +298,8 @@ section {
   align-items: center;
   gap: 3rem;
   margin: auto;
+  border: 0;
+  padding: 0.5rem 1rem;
 }
 
 .input-number {
@@ -284,10 +321,13 @@ section {
   justify-content: space-between;
   width: 100%;
   padding: 1rem 0 2rem;
+  color: var(--accent-color);
+  font-family: var(--font-primary);
 }
 
 .total-price-container p {
   color: var(--accent-color);
+  font-family: var(--font-primary);
 }
 
 /* MINTED CONTAINER */
@@ -314,24 +354,6 @@ section {
   margin: 1rem 0;
 }
 
-/* SLIDDER */
-
-.splide {
-  position: absolute;
-  top: 90px;
-  left: 5rem;
-  z-index: -1;
-}
-
-.splide__slide {
-  border: var(--accent-color) solid;
-  border-width: 5px 10px;
-}
-
-.splide__slide img {
-  width: 100%;
-}
-
 /* SPINNER */
 .dot-spin {
   position: absolute;
@@ -343,13 +365,9 @@ section {
 /* MEDIA QUERIES */
 
 @media screen and (max-width: 768px) {
-  .menu {
-    gap: 1rem;
-  }
   .wallet-btn {
     margin-left: 0;
     padding: 0.5rem 1rem;
-    max-width: 8rem;
   }
   .not-connected {
     background-color: var(--bg-color-transparent);
@@ -393,4 +411,275 @@ section {
 
 .hidden {
   display: none;
+}
+
+.parallax-header {
+  /* The image used */
+  background-image: url("../images/PoochHeader.png");
+
+  /* Set a specific height */
+  /* min-height: 500px; */
+  min-height: 100vh;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media only screen and (max-device-width: 1366px) {
+  .parallax {
+    background-attachment: scroll;
+  }
+}
+
+.navbar {
+  width: 100%;
+  padding-left: 30px;
+  padding-right: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .logo {
+  display: inline-block;
+}
+
+.navbar .logo img {
+  width: 491px;
+  vertical-align: middle;
+}
+
+.navbar .nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .nav-links .nav-item {
+  list-style-type: none;
+}
+
+.navbar .nav-links .nav-item a {
+  display: inline-block;
+  padding: 10px 15px;
+  text-decoration: none;
+}
+
+.navbar .nav-links .nav-item a img {
+  width: 64px;
+}
+
+.container div h2{
+  font-size: 40px;
+}
+.container div p{
+  font-size: 18px;
+  text-align: left;
+}
+
+.first-section h1 {
+  color: var(--primary-color);
+  font-size: 55px;
+  text-align: center;
+}
+
+.first-section h1 span {
+  color: var(--secondary-color);
+}
+
+/* .second-section {} */
+
+.third-section .image-section img{
+  max-width: 300px;
+}
+
+.container.fourth-section {
+  padding: 0 2rem;
+  height: 300px;
+  flex-direction: row-reverse;
+}
+
+.container.fourth-section .image-section {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  align-self: end;
+}
+
+.parallax-yellow {
+  /* The image used */
+  background-image: url("../images/Pattern.png");
+  background-color: var(--secondary-color);
+  /* background: rgb(255,216,0); */
+  /* background: linear-gradient(180deg, rgba(255,216,0,1) 0%, rgba(255,190,0,1) 40%, rgba(255,163,0,1) 100%); */
+
+  /* Set a specific height */
+  min-height: 300px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* .fifth-section {} */
+
+.footer {
+  background-color: var(--secondary-color);
+}
+
+/* .footer .navbar{
+  justify-content: end;
+}
+
+.footer .logo{
+  position: absolute;
+  width: 100%;
+  text-align: center;
+} */
+
+.footer .logo img{
+  width: 300px;
+}
+
+.footer .nav-item a img {
+  width: 54px;
+}
+
+@media (max-width: 1047px) {
+  .first-section h1 {
+    font-size: 45px;
+  }
+}
+
+@media (max-width: 900px) {
+  .first-section h1 {
+    font-size: 40px;
+  }
+  .container div h2 {
+    font-size: 35px;
+  }
+}
+
+@media (max-width: 800px) {
+  .navbar .logo img{
+    width: 300px;
+  }
+  .navbar .nav-links .nav-item a img {
+    width: 54px;
+  }
+  .container div h2 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar .logo img{
+    width: 250px;
+  }
+  .navbar .nav-links .nav-item a {
+    padding: 5px;
+  }
+  .navbar .nav-links .nav-item a img {
+    width: 40px;
+  }
+  .container .flex-elements{
+    width: 100%;
+  }
+  .text-section{
+    padding: 2rem 0;
+  }
+  .parallax-yellow {
+    min-height: 500px;
+  }
+  .container.fourth-section {
+    height: 500px;
+  }
+}
+
+@media (max-width: 500px) {
+  .navbar .logo img{
+    width: 200px;
+  }
+  .navbar .nav-links .nav-item a img {
+    width: 30px;
+  }
+}
+
+.container.minting-countdown{
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(calc(50vw - 50%), calc(50vh - 50%));
+}
+
+/* FULL CUSTOM MINTIN MODAL */
+#setQtyMax, .total-price-container, #pricePerMint, #totalSupply{
+  display: none;
+}
+
+.mint-qty {
+  padding: 0;
+  background: none;
+}
+
+.mint-qty span button.btn{
+  border: 0;
+  background: none;
+  color: var(--bg-color);
+  font-size: 1.5rem;
+  padding: 0.3rem 1rem;
+}
+
+.mint-qty span input.input-number.btn{
+  background-color: var(--bg-color);
+  color: var(--btn-bg-color);
+  border: 0;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  padding: 0.3rem 1rem;
+}
+
+#totalSupply, #pricePerMint, #maxPerMint,  #totalPrice{
+  font-family: var(--font-primary);
+  text-align: center;
+  background-color: var(--bg-color);
+  color: var(--btn-bg-color);
+  border-radius: 10px;
+  font-size: 1.5rem;
+  padding: 0.3rem 1rem;
+}
+
+#maxPerMint{
+  margin: 0 50px;
+}
+
+.mint-container .info-container .supply, .mint-container .info-container .price, .mint-container .info-container .maximum {
+  width: 150px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* MINTED MODAL */
+div.minted-container p {
+  color: var(--bg-color);
+  font-family: var(--font-secondary);
+}
+
+div.minted-container a button {
+  border: 0;
+  padding: 1rem 0.5rem;
 }

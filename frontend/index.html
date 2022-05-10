@@ -1,216 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Pooch Pack | Thousands of unleashed NFT pups</title>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- favicon -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="images/x-icon/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="images/x-icon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="images/x-icon/favicon-16x16.png"
-    />
-    <link rel="manifest" href="images/x-icon/site.webmanifest" />
-    <link rel="stylesheet" href="css/three-dots.min.css" />
-    <link rel="stylesheet" href="css/splide.min.css" />
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <header>
-      <div class="container">
-        <div class="logo">
-          <a href="/">
-            <img src="images/header/PoochPackLogoHorizontal.png" alt="logo" />
-          </a>
-        </div>
-        <div class="menu">
-          <a
-            href="https://discord.com/invite/poochpack"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src="images/header/discord.webp" alt="Discord" />
-          </a>
-          <a
-            href="https://twitter.com/Pooch_Pack"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src="images/header/twitter.webp" alt="Twitter" />
-          </a>
-          <a
-            href="https://opensea.io/Pooch_Pack"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src="images/header/opensea.webp" alt="Opensea" />
-          </a>
-          <button class="wallet-btn btn" id="connectWallet">
-            <span>Connect Wallet</span>
-          </button>
-        </div>
-      </div>
-    </header>
+<head>
+  <title>Pooch Pack | Thousands of unleashed NFT pups</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <section class="container not-connected">
-      <div>
-        <h2 id="welcomeH2">Connect to MetaMask to Get Started</h2>
-        <h1 id="welcomeH1">Welcome to the Pooch Pack NFT Project!</h1>
-        <p id="welcomeP">
-          First they took back the dog park and now they’re taking over the blockchain. The Pooch Pack is a collection of thousands of unique "Non-Fungible Tokens" that not only look cool, but help dog rescues around North America.
-        </p>
-      </div>
-    </section>
+  <!-- favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="images/x-icon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/x-icon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="images/x-icon/favicon-16x16.png" />
+  <link rel="manifest" href="images/x-icon/site.webmanifest" />
+  <link rel="stylesheet" href="css/three-dots.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
 
-    <section class="container">
-      <div class="countdown card">
-        <div id="countdown">
-          <ul class="count-down" data-date="">
-            <li class="clock-item">
-              <span class="count-number days">20</span>
-              <p class="count-text">Days</p>
-            </li>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans&family=Oswald:wght@500&display=swap"
+    rel="stylesheet">
+</head>
 
-            <li class="clock-item">
-              <span class="count-number hours">20</span>
-              <p class="count-text">Hour</p>
-            </li>
+<body>
 
-            <li class="clock-item">
-              <span class="count-number minutes">20</span>
-              <p class="count-text">Min</p>
-            </li>
-
-            <li class="clock-item">
-              <span class="count-number seconds">20</span>
-              <p class="count-text">Sec</p>
-            </li>
-          </ul>
-          <h2 id="subHeading">Pre-Sale Countdown</h2>
-        </div>
-        <h1 id="mainHeading">NFT Drop Coming Soon!!</h1>
-        <p id="mainText">
-          The Pooch Pack will be available very soon!
-        </p>
-        <a
-          id="actionButton"
-          href="https://discord.gg/poochpack"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="hero-btn btn"
-          ><span>Join the Pack</span>
+  <header>
+    <div class="parallax-header">
+      <nav class="navbar">
+        <a href="#" class="logo">
+          <img src="./images/logo/PoochPackLogoHorizontal.png" alt="Pooch Logo">
         </a>
-        <div id="mintContainer" class="mint-container hidden">
-          <div class="info-container">
-            <div>
-              <h3>Supply</h3>
-              <p id="totalSupply">100</p>
-            </div>
-            <div>
-              <h3>Price Per Mint</h3>
-              <p id="pricePerMint">1 ETH</p>
-            </div>
-            <div>
-              <h3>Max</h3>
-              <p id="maxPerMint">5 per wallet</p>
-            </div>
-          </div>
-          <div class="mint-qty">
-            <span>
-              <button class="input-number-decrement btn" id="mintDecrement">–</button>
-              <input
-                id="mintInput"
-                class="input-number btn"
-                type="number"
-                value="1"
-                min="1"
-                max="5"
-              />
-              <button class="input-number-increment btn" id="mintIncrement">+</button>
-            </span>
-            <button id="setQtyMax" class="btn">SET MAX</button>
-          </div>
-          <div class="total-price-container">
-            <h3>Total</h3>
-            <p id="totalPrice">.001 ETH</p>
-          </div>
-          <button id="mintButton" class="hero-btn btn mint-btn">Mint</button>
-        </div>
-      </div>
-      <div class="minted-container card show-card hidden">
-        <h1>🎉</h1>
-        <h2>Minted!</h2>
-        <p>Here's your trasaction link:</p>
-        <a id="mintedTxnBtn" href="" target="_blank" rel="noopener noreferrer">
-          <button class="hero-btn btn">View Transaction</button>
-        </a>
-        <p>View it in the collection:</p>
-        <a
-          id="mintedLinkBtn"
-          href="https://testnets.opensea.io/collection/teststackr-collection"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <button class="hero-btn btn">View Collection</button>
-        </a>
-      </div>
-    </section>
-
-    <div id="spinner" class="dot-spin"></div>
-
-    <div class="splide">
-      <div class="splide__track">
-        <ul class="splide__list">
-          <li class="splide__slide">
-            <img src="images/slider/0.png" />
+        <ul class="nav-links">
+          <li class="nav-item">
+            <a href="https://twitter.com/Pooch_Pack" target="_blank" rel="noopener noreferrer">
+              <img src="./images/logo/Twitter-White.png" alt="Twitter" />
+            </a>
           </li>
-          <li class="splide__slide">
-            <img src="images/slider/1.png" />
+          <li class="nav-item">
+            <a href="https://opensea.io/Pooch_Pack" target="_blank" rel="noopener noreferrer">
+              <img src="./images//logo/Open-Sea-White.png" alt="Opensea" />
+            </a>
           </li>
-          <li class="splide__slide">
-            <img src="images/slider/2.png" />
-          </li>
-          <li class="splide__slide">
-            <img src="images/slider/3.png" />
-          </li>
-          <li class="splide__slide">
-            <img src="images/slider/4.png" />
-          </li>
-          <li class="splide__slide">
-            <img src="images/slider/5.png" />
-          </li>
-          <li class="splide__slide">
-            <img src="images/slider/6.png" />
-          </li>
-          <li class="splide__slide">
-            <img src="images/slider/7.png" />
-          </li>
-          <li class="splide__slide">
-            <img src="images/slider/8.png" />
+          <li class="nav-item">
+            <a href="https://discord.com/invite/poochpack" target="_blank" rel="noopener noreferrer">
+              <img src="./images/logo/Discord-White.png" alt="Discord" />
+            </a>
           </li>
         </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container first-section">
+    <h1>
+      These Pooches have taken back the park.
+      <br />
+      <span>
+        Now it's time to take over the metaverse.
+      </span>
+    </h1>
+  </div>
+
+  <div id="spinner" class="dot-spin"></div>
+
+  <div class="container second-section">
+    <button class="wallet-btn btn" id="connectWallet">
+      <span>Connect Wallet</span>
+    </button>
+  </div>
+
+  <div class="container third-section">
+    <div class="flex-elements text-section">
+      <h2>Thousands of Unique Pooches</h2>
+      <p>
+        Every dog knows there’s strength in numbers. Pick from thousands of Pooch Pack dogs, each with its own unique
+        hand drawn traits. Each Pooch is randomly generated with no Pooch being the same.
+      </p>
+    </div>
+    <div class="flex-elements image-section">
+      <img src="./images/PoochGif.gif" alt="Pooch NFT Gif" />
+    </div>
+  </div>
+
+  <div class="parallax-yellow">
+    <div class="container fourth-section">
+      <div class="flex-elements text-section">
+        <h2>Rare and celebrity Pooches</h2>
+        <p>
+          There are also a few Pooches that are extremely rare including original Dogg and Brutus editions or perhaps
+          you
+          prefer a dog with a little more fight like the former heavyweight champ and the only pooch with 24 inch
+          pythons
+          for arms.
+        </p>
+      </div>
+      <div class="flex-elements image-section">
+        <img src="./images/CelebrityNFT.png" alt="Celebrities Pooch" />
       </div>
     </div>
+  </div>
 
-    <script src="js/metamask-onboarding.bundle.js"></script>
-    <script src="js/web3.min.js"></script>
-    <script src="js/splide.min.js"></script>
-    <script src="js/constants.js"></script>
-    <script src="js/countdown.js"></script>
-    <script src="js/app.js"></script>
-  </body>
+  <div class="container fifth-section">
+    <div class="flex-elements text-section">
+      <h2>Protecting The Pack</h2>
+      <p>
+        It’s important to keep the pack strong by helping those in need. That’s why partial proceeds of each NFT will go
+        to dog rescues in North America.
+      </p>
+    </div>
+    <div class="flex-elements image-section">
+      <img src="./images/rescuedogs.png" alt="Rescued Dogs" />
+    </div>
+  </div>
+
+  <div class="footer">
+    <nav class="navbar">
+      <a href="#" class="logo">
+        <img src="./images/logo/PoochPackLogoHorizontal.png" alt="Pooch Logo">
+      </a>
+      <ul class="nav-links">
+        <li class="nav-item">
+          <a href="https://twitter.com/Pooch_Pack" target="_blank" rel="noopener noreferrer">
+            <img src="./images/logo/Twitter-White.png" alt="Twitter" />
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="https://opensea.io/Pooch_Pack" target="_blank" rel="noopener noreferrer">
+            <img src="./images//logo/Open-Sea-White.png" alt="Opensea" />
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="https://discord.com/invite/poochpack" target="_blank" rel="noopener noreferrer">
+            <img src="./images/logo/Discord-White.png" alt="Discord" />
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <section class="container not-connected">
+    <div>
+      <h2 id="welcomeH2">Connect to MetaMask to Get Started</h2>
+      <h1 id="welcomeH1">Welcome to the Pooch Pack NFT Project!</h1>
+      <p id="welcomeP">
+        First they took back the dog park and now they’re taking over the blockchain. The Pooch Pack is a collection of
+        thousands of unique "Non-Fungible Tokens" that not only look cool, but help dog rescues around North America.
+      </p>
+    </div>
+  </section>
+
+  <section class="container minting-countdown">
+    <div class="countdown card">
+      <div id="countdown">
+        <ul class="count-down" data-date="">
+          <li class="clock-item">
+            <span class="count-number days">20</span>
+            <p class="count-text">Days</p>
+          </li>
+          <li class="clock-item">
+            <span class="count-number hours">20</span>
+            <p class="count-text">Hour</p>
+          </li>
+          <li class="clock-item">
+            <span class="count-number minutes">20</span>
+            <p class="count-text">Min</p>
+          </li>
+          <li class="clock-item">
+            <span class="count-number seconds">20</span>
+            <p class="count-text">Sec</p>
+          </li>
+        </ul>
+        <h2 id="subHeading">Pre-Sale Countdown</h2>
+      </div>
+      <h1 id="mainHeading">NFT Drop Coming Soon!!</h1>
+      <p id="mainText">
+        The Pooch Pack will be available very soon!
+      </p>
+      <a id="actionButton" href="https://discord.gg/poochpack" target="_blank" rel="noopener noreferrer"
+        class="hero-btn btn"><span>Join the Pack</span>
+      </a>
+      <div id="mintContainer" class="mint-container hidden">
+        <div class="info-container">
+          <div class="supply">
+            <h3>Supply</h3>
+            <p id="totalSupply">100</p>
+            <!-- Next area it's customized -->
+            <div class="mint-qty">
+              <span>
+                <button class="input-number-decrement btn" id="mintDecrement">–</button>
+                <input id="mintInput" class="input-number btn" type="number" value="1" min="1" max="5" />
+                <button class="input-number-increment btn" id="mintIncrement">+</button>
+              </span>
+              <button id="setQtyMax" class="btn">SET MAX</button>
+            </div>
+          </div>
+          <div class="price">
+            <h3>Price</h3>
+            <p id="pricePerMint">1 ETH</p>
+            <!-- Next line it's customized -->
+            <p id="totalPrice">.001 ETH</p>
+          </div>
+          <div class="maximum">
+            <h3>Max</h3>
+            <p id="maxPerMint">5 per wallet</p>
+          </div>
+        </div>
+        <!-- <div class="mint-qty">
+          <span>
+            <button class="input-number-decrement btn" id="mintDecrement">–</button>
+            <input id="mintInput" class="input-number btn" type="number" value="1" min="1" max="5" />
+            <button class="input-number-increment btn" id="mintIncrement">+</button>
+          </span>
+          <button id="setQtyMax" class="btn">SET MAX</button>
+        </div> -->
+        <div class="total-price-container">
+          <h3>Total</h3>
+          <p id="totalPrice">.001 ETH</p>
+        </div>
+        <button id="mintButton" class="hero-btn btn mint-btn">Mint</button>
+      </div>
+    </div>
+    <div class="minted-container card show-card hidden">
+      <h2>Minted!</h2>
+      <p>Here's your trasaction link:</p>
+      <a id="mintedTxnBtn" href="" target="_blank" rel="noopener noreferrer">
+        <button class="hero-btn btn">View Transaction</button>
+      </a>
+      <p>View it in the collection:</p>
+      <a id="mintedLinkBtn" href="https://testnets.opensea.io/collection/teststackr-collection" target="_blank"
+        rel="noopener noreferrer">
+        <button class="hero-btn btn">View Collection</button>
+      </a>
+    </div>
+  </section>
+
+  <script src="js/metamask-onboarding.bundle.js"></script>
+  <script src="js/web3.min.js"></script>
+  <script src="js/constants.js"></script>
+  <script src="js/countdown.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
 </html>
