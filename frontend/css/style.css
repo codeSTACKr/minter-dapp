@@ -657,7 +657,9 @@ section {
   margin: 0 50px;
 }
 
-.mint-container .info-container .supply, .mint-container .info-container .price, .mint-container .info-container .maximum {
+.mint-container .info-container .supply,
+.mint-container .info-container .price,
+.mint-container .info-container .maximum {
   width: 150px;
 }
 
@@ -671,6 +673,28 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
+}
+
+@media (max-width: 500px) {
+  .mint-container .info-container .supply,
+  .mint-container .info-container .price,
+  .mint-container .info-container .maximum {
+    width: 100px;
+  }
+  #maxPerMint{
+    margin: 0 30px;
+  }
+  .mint-qty span button.btn,
+  .mint-qty span input.input-number.btn,
+  #totalSupply, #pricePerMint, #maxPerMint,  #totalPrice{
+    font-size: 1rem;
+    padding: 0.1rem 0.5rem;
+  }
+  .mint-container .info-container .supply,
+  .mint-container .info-container .price,
+  .mint-container .info-container .maximum {
+    font-size: 1.5rem;
+  }
 }
 
 /* MINTED MODAL */
