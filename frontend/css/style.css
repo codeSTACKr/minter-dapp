@@ -415,7 +415,7 @@ section {
 
 .parallax-header {
   /* The image used */
-  background-image: url("../images/PoochHeader.png");
+  background-image: url("../images/header/PoochHeader.png");
 
   /* Set a specific height */
   /* min-height: 500px; */
