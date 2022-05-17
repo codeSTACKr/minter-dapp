@@ -7,24 +7,124 @@ const { NETWORK } = require(`${basePath}/constants/network.js`);
 const network = NETWORK.eth;
 
 // General metadata for Ethereum
-const namePrefix = "YOUR COLLECTION NAME";
-const description = "Remember to replace this description";
-const baseUri = "ipfs://NewUriToReplace"; // This will be replaced automatically
+const namePrefix = "El Taco Finance";
+const description = "El Taco Finance is a limited collection of Tacos that doubles as an opportunity to be handsomely rewarded every week! Every Tuesday a giveaway will take place for all Taco NFT holders for great rewards!";
+const baseUri = "ipfs://QmaaSRuf2ZMNZUzDDDb4yHg7BeJwJTeNupUFDYZWhNUQZh";
 
 // If you have selected Solana then the collection starts from 0 automatically
 const layerConfigurations = [
+// Boy Taco! 
+{
+  growEditionSizeTo: 5,
+  layersOrder: [
+    { name: "Background Boy" },
+    { name: "Shell Boy"},
+    { name: "Base Boy" },
+    { name: "Feet Boy" },
+    { name: "Bottom Boy" },
+    { name: "Mouth Boy" },
+    { name: "Nose Boy" },
+    { name: "Head Boy" },
+    { name: "Eyes Boy" },
+    { name: "Held Item Boy" },
+  ],
+},
+
+// Girl Tacos!
+{
+  growEditionSizeTo: 10,
+  layersOrder: [
+    { name: "Background Girl" },
+    { name: "Shell Girl"},
+    { name: "Base Girl" },
+    { name: "Feet Girl" },
+    { name: "Bottom Girl" },
+    { name: "Mouth Girl" },
+    { name: "Nose Girl" },
+    { name: "Head Girl" },
+    { name: "Eyes Girl" },
+    { name: "Held Item Girl" },
+  ],
+},
+
+/*
+
+  // Caesar Tacos!
   {
-    growEditionSizeTo: 5,
+    growEditionSizeTo: 41,
     layersOrder: [
-      { name: "Background" },
-      { name: "Eyeball" },
-      { name: "Eye color" },
-      { name: "Iris" },
-      { name: "Shine" },
-      { name: "Bottom lid" },
-      { name: "Top lid" },
+      { name: "Background Caesar" },
+      { name: "Shell Caesar"},
+      { name: "Base Caesar" },
+      { name: "Feet Caesar" },
+      { name: "Bottom Caesar" },
+      { name: "Mouth Caesar" },
+      { name: "Nose Caesar" },
+      { name: "Head Caesar" },
+      { name: "Eyes Caesar" },
+      { name: "Held Item Caesar" },
     ],
   },
+
+*/
+      // Cyborg Tacos!
+      {
+        growEditionSizeTo: 11,
+        layersOrder: [
+          { name: "Background Cyborg" },
+          { name: "Shell Cyborg"},
+          { name: "Base Cyborg" },
+          { name: "Feet Cyborg" },
+          { name: "Bottom Cyborg" },
+          { name: "Mouth Cyborg" },
+          { name: "Nose Cyborg" },
+          { name: "Head Cyborg" },
+          { name: "Eyes Cyborg" },
+          { name: "Held Item Cyborg" },
+        ],
+      },
+  
+
+
+
+      // Floor Sweeper Tacos -- 
+  
+
+      // Boy Sweeping Taco! 
+      {
+        growEditionSizeTo: 21,
+        layersOrder: [
+          { name: "Background Boy" },
+          { name: "Shell Boy"},
+          { name: "Base Boy" },
+          { name: "Feet Boy" },
+          { name: "Bottom Boy" },
+          { name: "Mouth Boy" },
+          { name: "Nose Boy" },
+          { name: "Head Boy" },
+          { name: "Eyes Boy" },
+          { name: "Broom Held Item" },
+        ],
+      },
+
+
+      // Girl Sweeping Tacos!
+{
+  growEditionSizeTo: 25,
+  layersOrder: [
+    { name: "Background Girl" },
+    { name: "Shell Girl"},
+    { name: "Base Girl" },
+    { name: "Feet Girl" },
+    { name: "Bottom Girl" },
+    { name: "Mouth Girl" },
+    { name: "Nose Girl" },
+    { name: "Head Girl" },
+    { name: "Eyes Girl" },
+    { name: "Broom Held Item" },
+  ],
+},
+
 ];
 
 const shuffleLayerConfigurations = true;
