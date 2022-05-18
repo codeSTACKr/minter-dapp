@@ -1,5 +1,5 @@
 const contractAddress = "0x8889cd916d750536ccd4a63dfb07a6dedaecfa9e"; //Replace with your own contract address
-const chain = 'avax'; // AVAX
+const chain = '43114'; // AVAX
 
 const welcome_h1 = "Welcome to El Taco Finance!!";
 const welcome_h2 = "Connect to MetaMask to Get Started";
