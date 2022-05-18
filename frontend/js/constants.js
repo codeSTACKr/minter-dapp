@@ -1,4 +1,4 @@
-const contractAddress = "YOUR CONTRACT ADDRESS"; //Replace with your own contract address
+const contractAddress = "0x8889cd916d750536ccd4a63dfb07a6dedaecfa9e"; //Replace with your own contract address
 const chain = 'c-chain'; // AVAX
 
 const welcome_h1 = "Welcome to El Taco Finance!!";
