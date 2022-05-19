@@ -35,7 +35,7 @@ const format = {
 };
 
 const extraMetadata = {
-  external_url: "nothingbutflex.nft", // Replace with your website or remove this line if you do not have one.
+  external_url: "https://sites.google.com/view/cryptoelmo22", // Replace with your website or remove this line if you do not have one.
 };
 
 // NFTPort Info
