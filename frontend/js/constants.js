@@ -1,12 +1,12 @@
 const contractAddress = "0x55942eFf62982B520302374F99B7634F99581621"; //Replace with your own contract address
 const chain = 'rinkeby'; // rinkeby or polygon
 
-const welcome_h1 = "Welcome to the Nothing But Flex NFT Project!!";
-const welcome_h2 = "Connect to MetaMask to Get Started";
-const welcome_p = 'Welcome to my first ever NFT project, complete from generating the art to deploying it on a dApp"  target="_blank" rel="noopener noreferrer">codeSTACKr</a> YouTube channel.';
+const welcome_h1 = "Nothing But Flex";
+const welcome_h2 = "Connect wallet to Get Started";
+const welcome_p = 'Welcome to the NBF Project - the 500 NFTs that are designed to have NO utility - Mint prices are ridiculous and royalties are set to 20%. But it DOES give the owners the right to flex 💪.....';
 const h1_presale_coming_soon = "NFT Drop Coming Soon!!";
 const h1_presale_mint = "Pre-Sale Minting Open!!";
-const h1_public_mint = "Public Minting Open!!";
+const h1_public_mint = "Public Minting Open!";
 const h2_presale_coming_soon = "Pre-Sale Minting Countdown";
 const h2_presale_mint = "Public Minting Countdown";
 const p_presale_coming_soon = "We are working hard to launch the NFT Collection. Stay tuned for updates!";
