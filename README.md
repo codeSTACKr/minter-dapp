@@ -2,9 +2,13 @@
 
 ## Table of Contents
 
-- [RESOURCES](#resources)
-- [INSTALLATION](#installation)
-- [COMMANDS](#commands)
+- [Minting DAPP](#minting-dapp)
+  - [Table of Contents](#table-of-contents)
+  - [RESOURCES](#resources)
+  - [INSTALLATION](#installation)
+    - [Backend](#backend)
+  - [COMMANDS](#commands)
+  - [Reference the video for more details.](#reference-the-video-for-more-details)
 
 ## RESOURCES
 
