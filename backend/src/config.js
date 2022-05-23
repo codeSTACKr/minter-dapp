@@ -37,7 +37,6 @@ const format = {
   height: 420,
   smoothing: false,
 };
-
 const extraMetadata = {
   external_url: "https://ipfs.io/ipfs/QmU62Vv2pFMjyXAUYDpkcUWNAQgpRYuqLRoDMhWLdpGD3c", // Replace with your website or remove this line if you do not have one.
 };
