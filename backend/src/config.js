@@ -15,7 +15,7 @@ const baseUri = "ipfs://QmaaSRuf2ZMNZUzDDDb4yHg7BeJwJTeNupUFDYZWhNUQZh";
 const layerConfigurations = [
 // Boy Taco! 
 {
-  growEditionSizeTo: 5,
+  growEditionSizeTo: 1,
   layersOrder: [
     { name: "Background Boy" },
     { name: "Shell Boy"},
@@ -32,7 +32,7 @@ const layerConfigurations = [
 
 // Girl Tacos!
 {
-  growEditionSizeTo: 10,
+  growEditionSizeTo: 2,
   layersOrder: [
     { name: "Background Girl" },
     { name: "Shell Girl"},
@@ -69,7 +69,7 @@ const layerConfigurations = [
 */
       // Cyborg Tacos!
       {
-        growEditionSizeTo: 11,
+        growEditionSizeTo: 3,
         layersOrder: [
           { name: "Background Cyborg" },
           { name: "Shell Cyborg"},
@@ -92,7 +92,7 @@ const layerConfigurations = [
 
       // Boy Sweeping Taco! 
       {
-        growEditionSizeTo: 21,
+        growEditionSizeTo: 4,
         layersOrder: [
           { name: "Background Boy" },
           { name: "Shell Boy"},
@@ -110,7 +110,7 @@ const layerConfigurations = [
 
       // Girl Sweeping Tacos!
 {
-  growEditionSizeTo: 25,
+  growEditionSizeTo: 5,
   layersOrder: [
     { name: "Background Girl" },
     { name: "Shell Girl"},
@@ -125,20 +125,44 @@ const layerConfigurations = [
   ],
 },
 
+
+// Whale Taco - Test
+
+{
+  growEditionSizeTo: 6,
+  layersOrder: [
+    { name: "Background Whale" },
+    { name: "Whale"},
+    { name: "Taco Body Whale" },
+    { name: "Eyes Whale" },
+    { name: "Eyebrows Whale" },
+    { name: "Nose Whale" },
+    { name: "Mouth Whale" },
+    { name: "Hair Whale" },
+    { name: "Right Leg Whale" },
+    { name: "Left Leg Whale" },
+    { name: "Shorts Whale" },
+    { name: "Held item Whale" },
+    { name: "Left Arm Whale" },
+  ],
+},
+
+
+
 ];
 
-const shuffleLayerConfigurations = true;
+const shuffleLayerConfigurations = false;
 
 const debugLogs = false;
 
 const format = {
-  width: 512,
-  height: 512,
+  width: 3000,
+  height: 3000,
   smoothing: false,
 };
 
 const extraMetadata = {
-  external_url: "https://codecats.xyz", // Replace with your website or remove this line if you do not have one.
+  external_url: "https://www.eltacofinance.com/", // Replace with your website or remove this line if you do not have one.
 };
 
 // NFTPort Info
@@ -146,7 +170,7 @@ const extraMetadata = {
 // ** REQUIRED **
 const AUTH = process.env.NFTPORT_API_KEY; // Set this in the .env file to prevent exposing your API key when pushing to Github
 const LIMIT = 2; // Your API key rate limit
-const CHAIN = 'rinkeby'; // only rinkeby or polygon
+const CHAIN = 'test_avax'; // only rinkeby or polygon
 
 // REQUIRED CONTRACT DETAILS THAT CANNOT BE UPDATED LATER!
 const CONTRACT_NAME = 'CRYPTOPUNKS';
@@ -154,7 +178,7 @@ const CONTRACT_SYMBOL = 'CP';
 const METADATA_UPDATABLE = true; // set to false if you don't want to allow metadata updates after minting
 const OWNER_ADDRESS = 'YOUR WALLET ADDRESS HERE';
 const TREASURY_ADDRESS = 'YOUR WALLET ADDRESS HERE';
-const MAX_SUPPLY = 5000; // The maximum number of NFTs that can be minted. CANNOT BE UPDATED!
+const MAX_SUPPLY = 6000; // The maximum number of NFTs that can be minted. CANNOT BE UPDATED!
 const MINT_PRICE = 1; // Minting price per NFT. Rinkeby = ETH, Polygon = MATIC. CANNOT BE UPDATED!
 const TOKENS_PER_MINT = 10; // maximum number of NFTs a user can mint in a single transaction. CANNOT BE UPDATED!
 
@@ -198,7 +222,7 @@ const solanaMetadata = {
   external_url: "https://www.youtube.com/c/hashlipsnft",
   creators: [
     {
-      address: "7fXNuer5sbZtaTEPhtJ5g5gNtuyRoKkvxdjEjEnPN4mC",
+      address: "",
       share: 100,
     },
   ],
