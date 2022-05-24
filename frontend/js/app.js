@@ -104,8 +104,8 @@ async function checkChain() {
   let chainId = 0;
   if(chain === 'rinkeby') {
     chainId = 4;
-  } else if(chain === 'polygon') {
-    chainId = 137;
+  } else if(chain === 'avax') {
+    chainId = 43113;
   }
   if (window.ethereum.networkVersion !== chainId) {
     try {
