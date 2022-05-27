@@ -1,9 +1,9 @@
-const contractAddress = "0x837Ff71F2B3743B27E1f1278EfA9b8635e00Db06"; //Replace with your own contract address
-const chain = 'polygon'; // rinkeby or polygon
+const contractAddress = "0x3DAC2127e229e00cE10196bE4C8D1F8e18469Aee"; //Replace with your own contract address
+const chain = 'rinkeby'; // rinkeby or polygon
 
-const welcome_h1 = "Nothing But Flex";
+const welcome_h1 = "Blue Skies Always";
 const welcome_h2 = "Connect Wallet to Get Started";
-const welcome_p = 'Welcome to the NBF Project - the 500 NFTs that are designed to have NO utility - Mint prices are ridiculous and royalties are set to 20%. But it DOES give the owners the right to flex..... 💪';
+const welcome_p = 'Welcome to the BSA Project - The FIRST🍺 ever NFT Project for Skydiving!';
 const h1_presale_coming_soon = "NFT Drop Coming Soon!!";
 const h1_presale_mint = "Pre-Sale Minting Open!!";
 const h1_public_mint = "Public Minting Open!";
