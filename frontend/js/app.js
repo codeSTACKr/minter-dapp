@@ -101,7 +101,7 @@ const updateConnectStatus = async () => {
 };
 
 async function checkChain() {
-  let chainId = 0;
+  let chainId = 43113;
   if(chain === 'FUJI') {
     chainId = 43113;
   } else if(chain === 'polygon') {
