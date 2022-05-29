@@ -103,7 +103,7 @@ const updateConnectStatus = async () => {
 async function checkChain() {
   let chainId = 0;
   if(chain === 'FUJI') {
-    chainId = 0xA86A;
+    chainId = 43113;
   } else if(chain === 'polygon') {
     chainId = 43114;
   }
@@ -377,7 +377,7 @@ async function mint() {
       mintButton.innerText = button_presale_mint_whitelisted;
       mintButton.disabled = false;
 
-      // console.log(e);
+       console.log(e);
     }
   }
 }
