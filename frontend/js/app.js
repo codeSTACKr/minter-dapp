@@ -103,8 +103,8 @@ const updateConnectStatus = async () => {
 async function checkChain() {
   let chainId = 0;
   if(chain === 'rinkeby') {
-    chainId = 4;
-  } else if(chain === 'test_avax') {
+    chainId = 43113;
+  } else if(chain === 'polygon') {
     chainId = 43114;
   }
   if (window.ethereum.networkVersion !== chainId) {
@@ -123,10 +123,11 @@ async function checkChain() {
               method: 'wallet_addEthereumChain',
               params: [
                 {
+                  // Hijacked! for AVAX 
                   chainName: 'Rinkeby Test Network',
                   chainId: web3.utils.toHex(chainId),
-                  nativeCurrency: { name: 'ETH', decimals: 18, symbol: 'ETH' },
-                  rpcUrls: ['https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161'],
+                  nativeCurrency: { name: 'AVAX', decimals: 18, symbol: 'AVAX' },
+                  rpcUrls: ['https://api.avax-test.network/ext/bc/C/rpc'],
                 },
               ],
             });
@@ -222,7 +223,7 @@ async function loadInfo() {
 
   let priceType = '';
   if(chain === 'rinkeby') {
-    priceType = 'ETH';
+    priceType = 'AVAX';
   } else if (chain === 'polygon') {
     priceType = 'MATIC';
   }
@@ -287,7 +288,7 @@ function setTotalPrice() {
   
   let priceType = '';
   if(chain === 'rinkeby') {
-    priceType = 'ETH';
+    priceType = 'AVAX';
   } else if (chain === 'polygon') {
     priceType = 'MATIC';
   }
@@ -316,7 +317,7 @@ async function mint() {
         .send({ from: window.address, value: value.toString() });
       if(mintTransaction) {
         if(chain === 'rinkeby') {
-          const url = `https://rinkeby.etherscan.io/tx/${mintTransaction.transactionHash}`;
+          const url = `https://testnet.snowtrace.io/tx/${mintTransaction.transactionHash}`;
           const mintedContainer = document.querySelector('.minted-container');
           const countdownContainer = document.querySelector('.countdown');
           const mintedTxnBtn = document.getElementById("mintedTxnBtn");
@@ -353,7 +354,7 @@ async function mint() {
         .send({ from: window.address, value: value.toString() });
       if(presaleMintTransaction) {
         if(chain === 'rinkeby') {
-          const url = `https://rinkeby.etherscan.io/tx/${presaleMintTransaction.transactionHash}`;
+          const url = `https://testnet.snowtrace.io/tx/${presaleMintTransaction.transactionHash}`;
           const mintedContainer = document.querySelector('.minted-container');
           const countdownContainer = document.querySelector('.countdown');
           const mintedTxnBtn = document.getElementById("mintedTxnBtn");
