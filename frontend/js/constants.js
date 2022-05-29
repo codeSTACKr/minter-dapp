@@ -1,5 +1,7 @@
-const contractAddress = "0x8889cd916d750536ccd4a63dfb07a6dedaecfa9e"; //Replace with your own contract address
-const chain = 'rinkby'; // AVAX
+const contractAddress = "0x57a08d0704b19d2350b44b349c81743846139305"; //Replace with your own contract address
+
+// TESTING - CHANGE ME
+const chain = 'FUJI'; // Hijacked for Test (FUJI) AVAX - need to revise to PROD once ready
 
 const welcome_h1 = "Welcome to El Taco Finance!!";
 const welcome_h2 = "Connect to MetaMask to Get Started";
