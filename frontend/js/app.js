@@ -102,8 +102,8 @@ const updateConnectStatus = async () => {
 
 async function checkChain() {
   let chainId = 0;
-  if(chain === 'rinkeby') {
-    chainId = 43113;
+  if(chain === 'FUJI') {
+    chainId = 0xA86A;
   } else if(chain === 'polygon') {
     chainId = 43114;
   }
@@ -118,15 +118,15 @@ async function checkChain() {
         // This error code indicates that the chain has not been added to MetaMask.
       if (err.code === 4902) {
         try {
-          if(chain === 'rinkeby') {
+          if(chain === 'AVAX') {
             await window.ethereum.request({
               method: 'wallet_addEthereumChain',
               params: [
                 {
                   // Hijacked! for AVAX 
-                  chainName: 'Rinkeby Test Network',
+                  chainName: 'FUJI Test Network',
                   chainId: web3.utils.toHex(chainId),
-                  nativeCurrency: { name: 'AVAX', decimals: 18, symbol: 'AVAX' },
+                  nativeCurrency: { name: 'Avalanche', decimals: 18, symbol: 'AVAX' },
                   rpcUrls: ['https://api.avax-test.network/ext/bc/C/rpc'],
                 },
               ],
@@ -222,7 +222,7 @@ async function loadInfo() {
   }, 1000);
 
   let priceType = '';
-  if(chain === 'rinkeby') {
+  if(chain === 'FUJI') {
     priceType = 'AVAX';
   } else if (chain === 'polygon') {
     priceType = 'MATIC';
@@ -287,7 +287,7 @@ function setTotalPrice() {
   const totalPriceWei = BigInt(info.deploymentConfig.mintPrice) * BigInt(mintInputValue);
   
   let priceType = '';
-  if(chain === 'rinkeby') {
+  if(chain === 'FUJI') {
     priceType = 'AVAX';
   } else if (chain === 'polygon') {
     priceType = 'MATIC';
@@ -316,7 +316,7 @@ async function mint() {
         .mint(amount)
         .send({ from: window.address, value: value.toString() });
       if(mintTransaction) {
-        if(chain === 'rinkeby') {
+        if(chain === 'FUJI') {
           const url = `https://testnet.snowtrace.io/tx/${mintTransaction.transactionHash}`;
           const mintedContainer = document.querySelector('.minted-container');
           const countdownContainer = document.querySelector('.countdown');
@@ -353,7 +353,7 @@ async function mint() {
         .presaleMint(amount, merkleJson)
         .send({ from: window.address, value: value.toString() });
       if(presaleMintTransaction) {
-        if(chain === 'rinkeby') {
+        if(chain === 'FUJI') {
           const url = `https://testnet.snowtrace.io/tx/${presaleMintTransaction.transactionHash}`;
           const mintedContainer = document.querySelector('.minted-container');
           const countdownContainer = document.querySelector('.countdown');
