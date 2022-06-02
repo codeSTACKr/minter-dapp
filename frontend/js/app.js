@@ -78,7 +78,6 @@ const updateConnectStatus = async () => {
     console.log("ABI :", abi);
     console.log("Wallet: ", address);
     console.log("Chain: ", chain);
-    console.log("ChainID: ", chainId);
     loadInfo();
   } else {
     onboardButton.innerText = "Connect MetaMask!";
