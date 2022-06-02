@@ -74,7 +74,7 @@ const updateConnectStatus = async () => {
     // SHOW SPINNER
     spinner.classList.remove('hidden');
     window.contract = new web3.eth.Contract(abi, contractAddress);
-    console.log("Contract Address: ", contractAddress);
+    
     console.log("ABI :", abi);
     console.log("OWNER ADDRESS: ", OWNER_ADDRESS);
     console.log("Wallet: ", address);
