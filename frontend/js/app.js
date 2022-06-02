@@ -1,4 +1,4 @@
-const { OWNER_ADDRESS } = require("../../backend/src/config");
+import { OWNER_ADDRESS } from "../../backend/src/config";
 
 let accounts;
 
