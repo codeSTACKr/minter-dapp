@@ -1,4 +1,4 @@
-const contractAddress = "0x47956F82dbda2fF642Ad973d7E30B808e6199E7E"; //Replace with your own contract address
+const contractAddress = "0x9299BC6eB73D3BB82Cd73151a4Bf9771b68b6a3e"; //Replace with your own contract address
 
 // TESTING - CHANGE ME
 const chain = 'AVAX'; // Hijacked for Test (FUJI) AVAX - need to revise to PROD once ready
