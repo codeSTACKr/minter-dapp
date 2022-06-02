@@ -146,6 +146,7 @@ async function checkChain() {
           }
           updateConnectStatus();
         } catch (err) {
+          console.log("chain ID is: ", chainId);
           console.log(err);
         }
       }
