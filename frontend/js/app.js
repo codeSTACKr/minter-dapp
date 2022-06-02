@@ -119,6 +119,7 @@ async function checkChain() {
       if (err.code === 4902) {
         try {
           if(chain === 'AVAX') {
+            console.log("chain is: ", chain);
             await window.ethereum.request({
               method: 'wallet_addEthereumChain',
               params: [
