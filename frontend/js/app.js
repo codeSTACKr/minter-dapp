@@ -1,3 +1,5 @@
+const { OWNER_ADDRESS } = require("../../backend/src/config");
+
 let accounts;
 
 // METAMASK CONNECTION
@@ -73,6 +75,11 @@ const updateConnectStatus = async () => {
     spinner.classList.remove('hidden');
     window.contract = new web3.eth.Contract(abi, contractAddress);
     console.log("Contract Address: ", contractAddress);
+    console.log("ABI :", abi);
+    console.log("OWNER ADDRESS: ", OWNER_ADDRESS);
+    console.log("Wallet: ", address);
+    console.log("Chain: ", chain);
+    console.log("ChainID: ", chainId);
     loadInfo();
   } else {
     onboardButton.innerText = "Connect MetaMask!";
