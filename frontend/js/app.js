@@ -102,7 +102,7 @@ const updateConnectStatus = async () => {
 
 async function checkChain() {
   let chainId = 43113;
-  if(chain === 'FUJI') {
+  if(chain === 'AVAX') {
     chainId = 43113;
   } else if(chain === 'polygon') {
     chainId = 43114;
@@ -224,7 +224,7 @@ async function loadInfo() {
   }, 1000);
 
   let priceType = '';
-  if(chain === 'FUJI') {
+  if(chain === 'AVAX') {
     priceType = 'AVAX';
   } else if (chain === 'polygon') {
     priceType = 'MATIC';
@@ -289,7 +289,7 @@ function setTotalPrice() {
   const totalPriceWei = BigInt(info.deploymentConfig.mintPrice) * BigInt(mintInputValue);
   
   let priceType = '';
-  if(chain === 'FUJI') {
+  if(chain === 'AVAX') {
     priceType = 'AVAX';
   } else if (chain === 'polygon') {
     priceType = 'MATIC';
@@ -318,7 +318,7 @@ async function mint() {
         .mint(amount)
         .send({ from: window.address, value: value.toString() });
       if(mintTransaction) {
-        if(chain === 'FUJI') {
+        if(chain === 'AVAX') {
           const url = `https://testnet.snowtrace.io/tx/${mintTransaction.transactionHash}`;
           const mintedContainer = document.querySelector('.minted-container');
           const countdownContainer = document.querySelector('.countdown');
@@ -355,7 +355,7 @@ async function mint() {
         .presaleMint(amount, merkleJson)
         .send({ from: window.address, value: value.toString() });
       if(presaleMintTransaction) {
-        if(chain === 'FUJI') {
+        if(chain === 'AVAX') {
           const url = `https://testnet.snowtrace.io/tx/${presaleMintTransaction.transactionHash}`;
           const mintedContainer = document.querySelector('.minted-container');
           const countdownContainer = document.querySelector('.countdown');
