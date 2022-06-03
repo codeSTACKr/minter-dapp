@@ -14,10 +14,10 @@ contract VampirestownNFT is ERC721A, Ownable, ReentrancyGuard {
     using Strings for uint256;
     
 
-    uint256 price;
-    uint256 _maxSupply;
-    uint256 maxMintAmountPerTx;
-    uint256 maxMintAmountPerWallet;
+    uint256 price = 0.005 ether; //zrobić zmienną 0 ether zależną od total supply
+    uint256 _maxSupply = 6666;
+    uint256 maxMintAmountPerTx = 2; // zmienić na gdy zostanie granica free
+    uint256 maxMintAmountPerWallet = 2; // zmienić na gdy zostanie granica free
 
     string baseURL = "";
     string ExtensionURL = ".json";
