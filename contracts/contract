@@ -14,12 +14,12 @@ contract VampirestownNFT is ERC721A, Ownable, ReentrancyGuard {
     using Strings for uint256;
     
 
-    uint256 price = 0.005 ether;
-    uint256 _maxSupply = 6666;
-    uint256 maxMintAmountPerTx = 2; // change when free mint will run out
-    uint256 maxMintAmountPerWallet = 2; //change when free mint will run out
+    uint256 price;
+    uint256 _maxSupply;
+    uint256 maxMintAmountPerTx; // change when free mint will run out
+    uint256 maxMintAmountPerWallet; //change when free mint will run out
 
-    string baseURL = "";
+    string baseURL = "QmWAoaxG6xba8dGqLLu2FmHL1BQeHsUAkAZJH7pYfBhj6w";
     string ExtensionURL = ".json";
     
 
@@ -28,10 +28,10 @@ contract VampirestownNFT is ERC721A, Ownable, ReentrancyGuard {
     bool paused = false;
     
 
-    constructor(uint256 _price, uint256 __maxSupply, string memory _initBaseURI, uint256 _maxMintAmountPerTx, uint256 _maxMintAmountPerWallet) ERC721A("vampirestown", "VAMPIRE") {
+    constructor(uint256 __maxSupply, string memory _initBaseURI, uint256 _maxMintAmountPerTx, uint256 _maxMintAmountPerWallet) ERC721A("vampirestown", "VAMPIRE") {
 
         baseURL = _initBaseURI;
-        price = _price;
+        price = 0.005 ether;
         _maxSupply = __maxSupply;
         maxMintAmountPerTx = _maxMintAmountPerTx;
         maxMintAmountPerWallet = _maxMintAmountPerWallet;
@@ -39,7 +39,7 @@ contract VampirestownNFT is ERC721A, Ownable, ReentrancyGuard {
 
     }
     function priceUpdate(uint256 _supply) internal pure returns (uint256 _price){
-        if(_supply < 3000) {
+        if(_supply < 25) {
             return 0 ether;
         }
         else {
