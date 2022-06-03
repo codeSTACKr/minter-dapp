@@ -14,16 +14,21 @@ contract VampirestownNFT is ERC721A, Ownable, ReentrancyGuard {
     using Strings for uint256;
     
 
-    uint256 price = 0.005 ether; //zrobić zmienną 0 ether zależną od total supply
+    uint256 price = 0.005 ether;
     uint256 _maxSupply = 6666;
-    uint256 maxMintAmountPerTx = 2; // zmienić na gdy zostanie granica free
-    uint256 maxMintAmountPerWallet = 2; // zmienić na gdy zostanie granica free
+    uint256 maxMintAmountPerTx = 2; // change when free mint will run out
+    uint256 maxMintAmountPerWallet = 2; //change when free mint will run out
 
     string baseURL = "";
     string ExtensionURL = ".json";
     
-
-
+function priceUpdate(uint256 _supply) internal view returns (uint256 _price){
+    if(supply < 3000) {
+        return 0 ether;
+    )
+    else {
+    return 0.005 ether;
+    }
     
     
     bool paused = false;
@@ -44,11 +49,12 @@ contract VampirestownNFT is ERC721A, Ownable, ReentrancyGuard {
     // ================== Mint Function =======================
 
       function mint(address to, uint256 _mintAmount) public payable{
+          uint256 supply = totalSupply();
           require(!paused, "The contract is paused!");
           require(_mintAmount > 0 && _mintAmount <= maxMintAmountPerTx, "Invalid mint amount!");
-          require(totalSupply() + _mintAmount <= _maxSupply, "Max supply exceeded!");
-          require(msg.value >= price * _mintAmount, "You dont have enough funds!");
-          require(balanceOf(msg.sender) + _mintAmount <= maxMintAmountPerWallet, "Max mint per wallet exceeded!");
+          require(supply + _mintAmount <= _maxSupply, "You want to suck too much blood. Max supply exceeded!");
+          require(msg.value >= priceUpdate(supply) * _mintAmount, "Are your fangs too short, or you dont have enough funds?");
+          require(balanceOf(msg.sender) + _mintAmount <= maxMintAmountPerWallet, "Dont be greedy! Max mint per wallet exceeded!");
           
           
     
