@@ -22,13 +22,7 @@ contract VampirestownNFT is ERC721A, Ownable, ReentrancyGuard {
     string baseURL = "";
     string ExtensionURL = ".json";
     
-function priceUpdate(uint256 _supply) internal view returns (uint256 _price){
-    if(supply < 3000) {
-        return 0 ether;
-    )
-    else {
-    return 0.005 ether;
-    }
+
     
     
     bool paused = false;
@@ -41,11 +35,17 @@ function priceUpdate(uint256 _supply) internal view returns (uint256 _price){
         _maxSupply = __maxSupply;
         maxMintAmountPerTx = _maxMintAmountPerTx;
         maxMintAmountPerWallet = _maxMintAmountPerWallet;
-        
-        
-        
-    }
+    
 
+    }
+    function priceUpdate(uint256 _supply) internal pure returns (uint256 _price){
+        if(_supply < 3000) {
+            return 0 ether;
+        }
+        else {
+            return 0.005 ether;
+        }
+ }
     // ================== Mint Function =======================
 
       function mint(address to, uint256 _mintAmount) public payable{
