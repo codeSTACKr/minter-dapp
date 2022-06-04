@@ -7,38 +7,162 @@ const { NETWORK } = require(`${basePath}/constants/network.js`);
 const network = NETWORK.eth;
 
 // General metadata for Ethereum
-const namePrefix = "YOUR COLLECTION NAME";
-const description = "Remember to replace this description";
-const baseUri = "ipfs://NewUriToReplace"; // This will be replaced automatically
+const namePrefix = "El Taco Finance";
+const description = "El Taco Finance is a limited collection of Tacos that doubles as an opportunity to be handsomely rewarded every week! Every Tuesday a giveaway will take place for all Taco NFT holders for great rewards!";
+const baseUri = "ipfs://QmaaSRuf2ZMNZUzDDDb4yHg7BeJwJTeNupUFDYZWhNUQZh";
 
 // If you have selected Solana then the collection starts from 0 automatically
 const layerConfigurations = [
+// Boy Taco! 
+{
+  growEditionSizeTo: 1,
+  layersOrder: [
+    { name: "Background Boy" },
+    { name: "Shell Boy"},
+    { name: "Base Boy" },
+    { name: "Feet Boy" },
+    { name: "Bottom Boy" },
+    { name: "Mouth Boy" },
+    { name: "Nose Boy" },
+    { name: "Head Boy" },
+    { name: "Eyes Boy" },
+    { name: "Held Item Boy" },
+  ],
+},
+
+// Girl Tacos!
+{
+  growEditionSizeTo: 2,
+  layersOrder: [
+    { name: "Background Girl" },
+    { name: "Shell Girl"},
+    { name: "Base Girl" },
+    { name: "Feet Girl" },
+    { name: "Bottom Girl" },
+    { name: "Mouth Girl" },
+    { name: "Nose Girl" },
+    { name: "Head Girl" },
+    { name: "Eyes Girl" },
+    { name: "Held Item Girl" },
+  ],
+},
+
+/*
+
+  // Caesar Tacos!
   {
-    growEditionSizeTo: 5,
+    growEditionSizeTo: 41,
     layersOrder: [
-      { name: "Background" },
-      { name: "Eyeball" },
-      { name: "Eye color" },
-      { name: "Iris" },
-      { name: "Shine" },
-      { name: "Bottom lid" },
-      { name: "Top lid" },
+      { name: "Background Caesar" },
+      { name: "Shell Caesar"},
+      { name: "Base Caesar" },
+      { name: "Feet Caesar" },
+      { name: "Bottom Caesar" },
+      { name: "Mouth Caesar" },
+      { name: "Nose Caesar" },
+      { name: "Head Caesar" },
+      { name: "Eyes Caesar" },
+      { name: "Held Item Caesar" },
     ],
   },
+
+*/
+      // Cyborg Tacos!
+      {
+        growEditionSizeTo: 3,
+        layersOrder: [
+          { name: "Background Cyborg" },
+          { name: "Shell Cyborg"},
+          { name: "Base Cyborg" },
+          { name: "Feet Cyborg" },
+          { name: "Bottom Cyborg" },
+          { name: "Mouth Cyborg" },
+          { name: "Nose Cyborg" },
+          { name: "Head Cyborg" },
+          { name: "Eyes Cyborg" },
+          { name: "Held Item Cyborg" },
+        ],
+      },
+  
+
+
+
+      // Floor Sweeper Tacos -- 
+  
+
+      // Boy Sweeping Taco! 
+      {
+        growEditionSizeTo: 4,
+        layersOrder: [
+          { name: "Background Boy" },
+          { name: "Shell Boy"},
+          { name: "Base Boy" },
+          { name: "Feet Boy" },
+          { name: "Bottom Boy" },
+          { name: "Mouth Boy" },
+          { name: "Nose Boy" },
+          { name: "Head Boy" },
+          { name: "Eyes Boy" },
+          { name: "Broom Held Item" },
+        ],
+      },
+
+
+      // Girl Sweeping Tacos!
+{
+  growEditionSizeTo: 5,
+  layersOrder: [
+    { name: "Background Girl" },
+    { name: "Shell Girl"},
+    { name: "Base Girl" },
+    { name: "Feet Girl" },
+    { name: "Bottom Girl" },
+    { name: "Mouth Girl" },
+    { name: "Nose Girl" },
+    { name: "Head Girl" },
+    { name: "Eyes Girl" },
+    { name: "Broom Held Item" },
+  ],
+},
+
+
+// Whale Taco - Test
+
+{
+  growEditionSizeTo: 6,
+  layersOrder: [
+    { name: "Background Whale" },
+    { name: "Whale"},
+    { name: "Taco Body Whale" },
+    { name: "Eyes Whale" },
+    { name: "Eyebrows Whale" },
+    { name: "Nose Whale" },
+    { name: "Mouth Whale" },
+    { name: "Hair Whale" },
+    { name: "Right Leg Whale" },
+    { name: "Left Leg Whale" },
+    { name: "Shorts Whale" },
+    { name: "Held item Whale" },
+    { name: "Left Arm Whale" },
+  ],
+},
+
+
+
 ];
 
-const shuffleLayerConfigurations = true;
+const shuffleLayerConfigurations = false;
 
 const debugLogs = false;
 
 const format = {
-  width: 512,
-  height: 512,
+  width: 3000,
+  height: 3000,
   smoothing: false,
 };
 
 const extraMetadata = {
-  external_url: "https://codecats.xyz", // Replace with your website or remove this line if you do not have one.
+  external_url: "https://www.eltacofinance.com/", // Replace with your website or remove this line if you do not have one.
 };
 
 // NFTPort Info
@@ -46,28 +170,28 @@ const extraMetadata = {
 // ** REQUIRED **
 const AUTH = process.env.NFTPORT_API_KEY; // Set this in the .env file to prevent exposing your API key when pushing to Github
 const LIMIT = 2; // Your API key rate limit
-const CHAIN = 'rinkeby'; // only rinkeby or polygon
+const CHAIN = 'AVAX'; // only rinkeby or polygon
 
 // REQUIRED CONTRACT DETAILS THAT CANNOT BE UPDATED LATER!
-const CONTRACT_NAME = 'CRYPTOPUNKS';
-const CONTRACT_SYMBOL = 'CP';
+const CONTRACT_NAME = 'El Taco Finance TEST';
+const CONTRACT_SYMBOL = 'ETF';
 const METADATA_UPDATABLE = true; // set to false if you don't want to allow metadata updates after minting
-const OWNER_ADDRESS = 'YOUR WALLET ADDRESS HERE';
-const TREASURY_ADDRESS = 'YOUR WALLET ADDRESS HERE';
-const MAX_SUPPLY = 5000; // The maximum number of NFTs that can be minted. CANNOT BE UPDATED!
-const MINT_PRICE = 1; // Minting price per NFT. Rinkeby = ETH, Polygon = MATIC. CANNOT BE UPDATED!
-const TOKENS_PER_MINT = 10; // maximum number of NFTs a user can mint in a single transaction. CANNOT BE UPDATED!
+const OWNER_ADDRESS = '0xd87BFdC6b26277D53aF09A7c45Bb1c7452e98d50';
+const TREASURY_ADDRESS = '0xd87BFdC6b26277D53aF09A7c45Bb1c7452e98d50';
+const MAX_SUPPLY = 6000; // The maximum number of NFTs that can be minted. CANNOT BE UPDATED!
+const MINT_PRICE = 1.5; // Minting price per NFT. Rinkeby = ETH, Polygon = MATIC. CANNOT BE UPDATED!
+const TOKENS_PER_MINT = 30; // maximum number of NFTs a user can mint in a single transaction. CANNOT BE UPDATED!
 
 // REQUIRED CONTRACT DETAILS THAT CAN BE UPDATED LATER.
-const PUBLIC_MINT_START_DATE = "2022-03-20T11:30:48+00:00"; // This is required. Eg: 2022-02-08T11:30:48+00:00
+const PUBLIC_MINT_START_DATE = "2022-06-30T11:30:48+00:00"; // This is required. Eg: 2022-02-08T11:30:48+00:00
 
 // OPTIONAL CONTRACT DETAILS THAT CAN BE UPDATED LATER.
 const PRESALE_MINT_START_DATE = null; // Optional. Eg: 2022-02-08T11:30:48+00:00
-const ROYALTY_SHARE = 1000; // Percentage of the token price that goes to the royalty address. 100 bps = 1%
-const ROYALTY_ADDRESS = "0xd8B808A887326F45B2D0cd999709Aa6264CeF919"; // Address that will receive the royalty
+const ROYALTY_SHARE = 10000; // Percentage of the token price that goes to the royalty address. 100 bps = 1%
+const ROYALTY_ADDRESS = "0xd87BFdC6b26277D53aF09A7c45Bb1c7452e98d50"; // Address that will receive the royalty
 const BASE_URI = null; // only update if you want to manually set the base uri
 const PREREVEAL_TOKEN_URI = null; // only update if you want to manually set the prereveal token uri
-const PRESALE_WHITELISTED_ADDRESSES = []; // only update if you want to manually set the whitelisted addresses
+const PRESALE_WHITELISTED_ADDRESSES = ["0x5B38Da6a701c568545dCfcB03FcB875f56beddC4","0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2","0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2","0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2"]; // only update if you want to manually set the whitelisted addresses
 
 // ** OPTIONAL **
 let CONTRACT_ADDRESS = "YOUR CONTRACT ADDRESS"; // If you want to manually include it
@@ -75,7 +199,7 @@ let CONTRACT_ADDRESS = "YOUR CONTRACT ADDRESS"; // If you want to manually inclu
 // Generic Metadata is optional if you want to reveal your NFTs
 const GENERIC = true; // Set to true if you want to upload generic metas and reveal the real NFTs in the future
 const GENERIC_TITLE = CONTRACT_NAME; // Replace with what you want the generic titles to say if you want it to be different from the contract name.
-const GENERIC_DESCRIPTION = "REPLACE THIS"; // Replace with what you want the generic descriptions to say.
+const GENERIC_DESCRIPTION = "El Taco Finance is a limited collection of Tacos that doubles as an opportunity to be handsomely rewarded every week! Every Tuesday a giveaway will take place for all Taco NFT holders for great rewards!"; // Replace with what you want the generic descriptions to say.
 const GENERIC_IMAGE = "https://ipfs.io/ipfs/QmUf9tDbkqnfHkQaMdFWSGAeXwVXWA61pFED7ypx4hcsfh"; // Replace with your generic image that will display for all NFTs pre-reveal.
 
 // Automatically set contract address if deployed using the deployContract.js script
@@ -98,7 +222,7 @@ const solanaMetadata = {
   external_url: "https://www.youtube.com/c/hashlipsnft",
   creators: [
     {
-      address: "7fXNuer5sbZtaTEPhtJ5g5gNtuyRoKkvxdjEjEnPN4mC",
+      address: "",
       share: 100,
     },
   ],

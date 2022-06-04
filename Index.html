@@ -1,0 +1,58 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MetaMask Connect</title>
+    <meta charset="UTF-8"/>
+    <script src="./node_modules/@metamask/onboarding/dist/metamask-onboarding.bundle.js"></script>
+</head>
+<body>
+<h1>Connect Metamask with your app</h1>
+<button id="onboard">Loading...</button>
+<p>Your wallet address : </p>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const onboarding = new MetaMaskOnboarding();
+    const onboardButton = document.getElementById('onboard');
+    let accounts;
+
+    const updateButton = () => {
+      if (!MetaMaskOnboarding.isMetaMaskInstalled()) {
+        onboardButton.innerText = 'Click here to install MetaMask!';
+        onboardButton.onclick = () => {
+          onboardButton.innerText = 'Onboarding in progress';
+          onboardButton.disabled = true;
+          onboarding.startOnboarding();
+        };
+      } else if (accounts && accounts.length > 0) {
+        onboardButton.innerText = 'Connected';
+        onboardButton.disabled = true;
+        onboarding.stopOnboarding();
+      } else {
+        onboardButton.innerText = 'Connect';
+        onboardButton.onclick = async () => {
+          getAccounts();
+        };
+      }
+    };
+    updateButton();
+
+    async function getAccounts() {
+      accounts = await window.ethereum.request({method: 'eth_requestAccounts'});
+      const account = accounts[0];
+      const response = fetch("/wallet", {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json"
+        },
+        body: JSON.stringify({address: account})
+      })
+      let address_display = document.querySelector("p");
+      address_display.innerText = "Your wallet address : " + account;
+      updateButton();
+    }
+  });
+
+</script>
+</body>
+</html>

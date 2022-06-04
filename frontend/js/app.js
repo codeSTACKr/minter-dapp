@@ -1,3 +1,5 @@
+
+
 let accounts;
 
 // METAMASK CONNECTION
@@ -72,6 +74,10 @@ const updateConnectStatus = async () => {
     // SHOW SPINNER
     spinner.classList.remove('hidden');
     window.contract = new web3.eth.Contract(abi, contractAddress);
+    console.log("Contract Address: ", contractAddress);
+    console.log("ABI :", abi);
+    console.log("Wallet: ", address);
+    console.log("Chain: ", chain);
     loadInfo();
   } else {
     onboardButton.innerText = "Connect MetaMask!";
@@ -101,11 +107,11 @@ const updateConnectStatus = async () => {
 };
 
 async function checkChain() {
-  let chainId = 0;
-  if(chain === 'rinkeby') {
-    chainId = 4;
+  let chainId = 43113;
+  if(chain === 'AVAX') {
+    chainId = 43113;
   } else if(chain === 'polygon') {
-    chainId = 137;
+    chainId = 43114;
   }
   if (window.ethereum.networkVersion !== chainId) {
     try {
@@ -118,15 +124,17 @@ async function checkChain() {
         // This error code indicates that the chain has not been added to MetaMask.
       if (err.code === 4902) {
         try {
-          if(chain === 'rinkeby') {
+          if(chain === 'AVAX') {
+            console.log("chain is: ", chain);
             await window.ethereum.request({
               method: 'wallet_addEthereumChain',
               params: [
                 {
-                  chainName: 'Rinkeby Test Network',
+                  // Hijacked! for AVAX 
+                  chainName: 'FUJI Test Network',
                   chainId: web3.utils.toHex(chainId),
-                  nativeCurrency: { name: 'ETH', decimals: 18, symbol: 'ETH' },
-                  rpcUrls: ['https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161'],
+                  nativeCurrency: { name: 'Avalanche', decimals: 18, symbol: 'AVAX' },
+                  rpcUrls: ['https://api.avax-test.network/ext/bc/C/rpc'],
                 },
               ],
             });
@@ -145,6 +153,7 @@ async function checkChain() {
           }
           updateConnectStatus();
         } catch (err) {
+          console.log("chain ID is: ", chainId);
           console.log(err);
         }
       }
@@ -153,7 +162,7 @@ async function checkChain() {
 }
 
 async function loadInfo() {
-  window.info = await window.contract.methods.getInfo().call();
+ // window.info = await window.contract.methods.getInfo().call();
   const publicMintActive = await contract.methods.mintingActive().call();
   const presaleMintActive = await contract.methods.presaleActive().call();
   const mainHeading = document.getElementById("mainHeading");
@@ -221,8 +230,8 @@ async function loadInfo() {
   }, 1000);
 
   let priceType = '';
-  if(chain === 'rinkeby') {
-    priceType = 'ETH';
+  if(chain === 'AVAX') {
+    priceType = 'AVAX';
   } else if (chain === 'polygon') {
     priceType = 'MATIC';
   }
@@ -286,8 +295,8 @@ function setTotalPrice() {
   const totalPriceWei = BigInt(info.deploymentConfig.mintPrice) * BigInt(mintInputValue);
   
   let priceType = '';
-  if(chain === 'rinkeby') {
-    priceType = 'ETH';
+  if(chain === 'AVAX') {
+    priceType = 'AVAX';
   } else if (chain === 'polygon') {
     priceType = 'MATIC';
   }
@@ -315,8 +324,8 @@ async function mint() {
         .mint(amount)
         .send({ from: window.address, value: value.toString() });
       if(mintTransaction) {
-        if(chain === 'rinkeby') {
-          const url = `https://rinkeby.etherscan.io/tx/${mintTransaction.transactionHash}`;
+        if(chain === 'AVAX') {
+          const url = `https://testnet.snowtrace.io/tx/${mintTransaction.transactionHash}`;
           const mintedContainer = document.querySelector('.minted-container');
           const countdownContainer = document.querySelector('.countdown');
           const mintedTxnBtn = document.getElementById("mintedTxnBtn");
@@ -352,8 +361,8 @@ async function mint() {
         .presaleMint(amount, merkleJson)
         .send({ from: window.address, value: value.toString() });
       if(presaleMintTransaction) {
-        if(chain === 'rinkeby') {
-          const url = `https://rinkeby.etherscan.io/tx/${presaleMintTransaction.transactionHash}`;
+        if(chain === 'AVAX') {
+          const url = `https://testnet.snowtrace.io/tx/${presaleMintTransaction.transactionHash}`;
           const mintedContainer = document.querySelector('.minted-container');
           const countdownContainer = document.querySelector('.countdown');
           const mintedTxnBtn = document.getElementById("mintedTxnBtn");
@@ -376,7 +385,7 @@ async function mint() {
       mintButton.innerText = button_presale_mint_whitelisted;
       mintButton.disabled = false;
 
-      // console.log(e);
+       console.log(e);
     }
   }
 }
