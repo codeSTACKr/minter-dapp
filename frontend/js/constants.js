@@ -3,7 +3,7 @@ const chain = 'rinkeby'; // rinkeby or polygon
 
 const welcome_h1 = "Welcome to OC-GEN!";
 const welcome_h2 = "Connect to MetaMask to Get Started!";
-const welcome_p = "The OC-GEN Project is a new and fun way to generate random original characters! Out of ideas? Want to add new characters to your story? just collecting characters? Then you're in the right place! \n No roadmap! \n No 'utility'! \n This is all about the ART and creating FUN characters! :)";
+const welcome_p = "The OC-GEN Project is a new and fun way to generate random original characters! Out of ideas? Want to add new characters to your story? just collecting characters? Then you're in the right place! \n No roadmap! \n No fake 'utility'! \n This is all about the ART and creating FUN characters! :)";
 const h1_presale_coming_soon = "Pre-Sale coming soon!!";
 const h1_presale_mint = "Pre-Sale Minting Open!!";
 const h1_public_mint = "Public Minting Open!!";
