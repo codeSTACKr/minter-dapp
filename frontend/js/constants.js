@@ -1,15 +1,15 @@
 const contractAddress = "YOUR CONTRACT ADDRESS"; //Replace with your own contract address
 const chain = 'rinkeby'; // rinkeby or polygon
 
-const welcome_h1 = "Welcome to [PLACEHOLDER]!";
+const welcome_h1 = "Welcome to OC-GEN!";
 const welcome_h2 = "Connect to MetaMask to Get Started!";
-const welcome_p = "The [PLACEHOLDER] Project is a new and fun way to generate random original characters! Out of ideas? Want to add new characters to your story? just collecting characters? Then you're in the right place!  ";
+const welcome_p = "The OC-GEN Project is a new and fun way to generate random original characters! Out of ideas? Want to add new characters to your story? just collecting characters? Then you're in the right place!";
 const h1_presale_coming_soon = "Pre-Sale coming soon!!";
 const h1_presale_mint = "Pre-Sale Minting Open!!";
 const h1_public_mint = "Public Minting Open!!";
 const h2_presale_coming_soon = "Pre-Sale Minting Countdown";
 const h2_presale_mint = "Public Minting Countdown";
-const p_presale_coming_soon = "We are working hard to launch [PLACEHOLDER]. Stay tuned for updates!";
+const p_presale_coming_soon = "We are working hard to launch OC-GEN. Stay tuned for updates!";
 const p_presale_mint_not_whitelisted = "You are not whitelisted for the pre-sale.. :(";
 const p_presale_mint_whitelisted = "You're on the whitelist for the pre-sale!";
 const p_presale_mint_already_minted = "You've already claimed your whitelist mint. Thank you! You can come back when the public sale is open.";

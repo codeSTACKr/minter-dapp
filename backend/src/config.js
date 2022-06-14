@@ -7,8 +7,8 @@ const { NETWORK } = require(`${basePath}/constants/network.js`);
 const network = NETWORK.eth;
 
 // General metadata for Ethereum
-const namePrefix = "shitcum";
-const description = "Remdhis description";
+const namePrefix = "OC-GEN";
+const description = "OC-GEN is a new way to generate unique and interesting original characters. There will only be 5000 characters, 1000 of each species, 500 male and 500 female. They can be minted from https://charactergenerator.live. After the 5000 OCs are minted, you will be able to trade them freely here.";
 const baseUri = "ipfs://NewUriToReplace"; // This will be replaced automatically
 
 // If you have selected Solana then the collection starts from 0 automatically
@@ -49,8 +49,8 @@ const LIMIT = 3; // Your API key rate limit
 const CHAIN = 'rinkeby'; // only rinkeby or polygon
 
 // REQUIRED CONTRACT DETAILS THAT CANNOT BE UPDATED LATER!
-const CONTRACT_NAME = 'TestPest';
-const CONTRACT_SYMBOL = 'TP';
+const CONTRACT_NAME = 'OC-GEN';
+const CONTRACT_SYMBOL = 'CG';
 const METADATA_UPDATABLE = true; // set to false if you don't want to allow metadata updates after minting
 const OWNER_ADDRESS = '0x8654FE925701a6cb66C1cBA2786eF4d3a68ad6fE';
 const TREASURY_ADDRESS = '0x8654FE925701a6cb66C1cBA2786eF4d3a68ad6fE';
