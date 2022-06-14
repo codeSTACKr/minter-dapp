@@ -9,10 +9,10 @@
   --font-secondary: "Montserrat", serif;
   --font-code: "Montserrat", monospace;
   --bg-color: #000000;
-  --bg-color-transparent: #6f20a0;
+  --bg-color-transparent: #b562e8;
   --font-color: #ffffff;
-  --btn-bg-color: #ffffff;
-  --accent-color: #030303;
+  --btn-bg-color: #3753cf;
+  --accent-color: #2387a0;
   --header-shadow: var(--accent-color) 0px 0px 5px;
   --card-shadow: var(--accent-color) 0px 0px 20px;
 }
