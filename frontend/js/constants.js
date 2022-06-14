@@ -1,7 +1,7 @@
 const contractAddress = "0x682551a14eC8AbBe90c977C2963199547f985833"; //Replace with your own contract address
 const chain = 'rinkeby'; // rinkeby or polygon
 
-const welcome_h1 = "Welcome to the Cryptoswitzerland";
+const welcome_h1 = "Welcome to Cryptoswitzerland";
 const welcome_h2 = "Connect to MetaMask to Get Started";
 const welcome_p = 'Cryptoswitzerland is the leading education platform of the cryptoverse';
 const h1_presale_coming_soon = "NFT Drop Coming Soon!!";
