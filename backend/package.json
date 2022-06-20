@@ -1,6 +1,6 @@
 {
   "name": "minter-dapp-backend",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Generate an NFT collection and deploy a minting dapp easy!!",
   "main": "index.js",
   "bin": "index.js",

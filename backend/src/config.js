@@ -11,7 +11,6 @@ const namePrefix = "YOUR COLLECTION NAME";
 const description = "Remember to replace this description";
 const baseUri = "ipfs://NewUriToReplace"; // This will be replaced automatically
 
-// If you have selected Solana then the collection starts from 0 automatically
 const layerConfigurations = [
   {
     growEditionSizeTo: 5,
@@ -46,7 +45,7 @@ const extraMetadata = {
 // ** REQUIRED **
 const AUTH = process.env.NFTPORT_API_KEY; // Set this in the .env file to prevent exposing your API key when pushing to Github
 const LIMIT = 2; // Your API key rate limit
-const CHAIN = 'rinkeby'; // only rinkeby or polygon
+const CHAIN = 'rinkeby'; // only rinkeby, polygon, or ethereum
 
 // REQUIRED CONTRACT DETAILS THAT CANNOT BE UPDATED LATER!
 const CONTRACT_NAME = 'CRYPTOPUNKS';
@@ -55,7 +54,7 @@ const METADATA_UPDATABLE = true; // set to false if you don't want to allow meta
 const OWNER_ADDRESS = 'YOUR WALLET ADDRESS HERE';
 const TREASURY_ADDRESS = 'YOUR WALLET ADDRESS HERE';
 const MAX_SUPPLY = 5000; // The maximum number of NFTs that can be minted. CANNOT BE UPDATED!
-const MINT_PRICE = 1; // Minting price per NFT. Rinkeby = ETH, Polygon = MATIC. CANNOT BE UPDATED!
+const MINT_PRICE = 0.01; // Minting price per NFT. Rinkeby = ETH, Ethereum = ETH, Polygon = MATIC. CANNOT BE UPDATED!
 const TOKENS_PER_MINT = 10; // maximum number of NFTs a user can mint in a single transaction. CANNOT BE UPDATED!
 
 // REQUIRED CONTRACT DETAILS THAT CAN BE UPDATED LATER.
