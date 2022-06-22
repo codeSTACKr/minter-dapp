@@ -83,7 +83,7 @@ try {
     `${basePath}/build/contract/_contract.json`
   );
   const contractData = JSON.parse(rawContractData);
-  if (contractData.response === "OK" && contractData.error === null) {
+  if (contractData.response === "OK") {
     CONTRACT_ADDRESS = contractData.contract_address;
   }
 } catch (error) {
