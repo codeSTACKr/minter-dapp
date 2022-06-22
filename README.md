@@ -4,7 +4,8 @@
 
 - [RESOURCES](#resources)
 - [INSTALLATION](#installation)
-- [COMMANDS](#commands)
+- [BACKEND COMMANDS](#commands)
+- [FRONTEND](#frontend)
 
 ## RESOURCES
 
@@ -26,12 +27,13 @@ Join the Discord server for more help from the community: [codeSTACKr Discord](h
 - Unzip, if needed, and open the folder in VS Code.
 - From the terminal run: 
 ```
+ cd backend
  npm install
 ```
 - Copy your image layers into the `/backend/layers` folder.
 - Use the `/backend/src/config.js` file to set up your layers and NFT information.
 
-## COMMANDS
+### Backend Commands
 
 Generate: 
 ```
@@ -100,7 +102,7 @@ Get Contract:
 $ npm run get_contract
 ```
 
-- Gets the deployed contract details using the transactions hash from the Deploy Contract command. 
+- Gets the deployed contract details including the contracts ABI using the transactions hash from the Deploy Contract command.
 
 Update Contract:
 ```
@@ -132,5 +134,12 @@ $ npm run refresh_os --start=1 --end=100
 
 - Refreshes the listing for the specified editions on OpenSea.
 - Both the `--start` and `--end` flags are required.
+
+### Frontend
+
+- Update the `frontend/js/abi.js` file with the ABI from `backend/build/contract/_contract_abi.json`.
+- Update your information in the `frontend/js/constants.js` file.
+- Deploy your dApp to Netlify. (Reference the video for full instructions.)
+
 
 ## Reference the [video](https://youtu.be/cLB7u0KQFIs) for more details.
