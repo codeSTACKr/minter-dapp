@@ -4,8 +4,9 @@
 
 - [RESOURCES](#resources)
 - [INSTALLATION](#installation)
-- [BACKEND COMMANDS](#commands)
-- [FRONTEND](#frontend)
+  - [BACKEND](#backend)
+  - [BACKEND COMMANDS](#backend-commands)
+  - [FRONTEND](#frontend)
 
 ## RESOURCES
 
