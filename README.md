@@ -9,9 +9,13 @@
 
 ## RESOURCES
 
-Video: 
+### Main Video
 
 🌟 [EASY Minting dApp | Whitelisting | Entire Process!! Create an Entire NFT Collection (10,000+)](https://youtu.be/cLB7u0KQFIs)
+
+### Update Video adding Ethereum support!
+
+🚀 [How To Deploy a Smart Contract to Ethereum!! (Updated Minting dApp)](https://youtu.be/-EB2TTQxSWc)
 
 Base art generator code is from [hashlips_art_engine](https://github.com/HashLips/hashlips_art_engine)
 
@@ -142,4 +146,4 @@ $ npm run refresh_os --start=1 --end=100
 - Deploy your dApp to Netlify. (Reference the video for full instructions.)
 
 
-## Reference the [video](https://youtu.be/cLB7u0KQFIs) for more details.
+## Reference the [main video](https://youtu.be/cLB7u0KQFIs) and [update video](https://youtu.be/-EB2TTQxSWc) for more details.
