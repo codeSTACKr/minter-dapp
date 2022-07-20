@@ -60,7 +60,7 @@ const extraMetadata = {
 // ** REQUIRED **
 const AUTH = process.env.NFTPORT_API_KEY; // Set this in the .env file to prevent exposing your API key when pushing to Github
 const LIMIT = 2; // Your API key rate limit
-const CHAIN = 'rinkeby'; // only rinkeby or polygon
+const CHAIN = 'rinkeby'; // only rinkeby, polygon, or ethereum
 
 // REQUIRED CONTRACT DETAILS THAT CANNOT BE UPDATED LATER!
 const CONTRACT_NAME = 'Socrates Gadfly';
@@ -98,7 +98,7 @@ try {
     `${basePath}/build/contract/_contract.json`
   );
   const contractData = JSON.parse(rawContractData);
-  if (contractData.response === "OK" && contractData.error === null) {
+  if (contractData.response === "OK") {
     CONTRACT_ADDRESS = contractData.contract_address;
   }
 } catch (error) {

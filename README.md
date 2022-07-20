@@ -4,13 +4,19 @@
 
 - [RESOURCES](#resources)
 - [INSTALLATION](#installation)
-- [COMMANDS](#commands)
+  - [BACKEND](#backend)
+  - [BACKEND COMMANDS](#backend-commands)
+  - [FRONTEND](#frontend)
 
 ## RESOURCES
 
-Video: 
+### Main Video
 
 🌟 [EASY Minting dApp | Whitelisting | Entire Process!! Create an Entire NFT Collection (10,000+)](https://youtu.be/cLB7u0KQFIs)
+
+### Update Video adding Ethereum support!
+
+🚀 [How To Deploy a Smart Contract to Ethereum!! (Updated Minting dApp)](https://youtu.be/-EB2TTQxSWc)
 
 Base art generator code is from [hashlips_art_engine](https://github.com/HashLips/hashlips_art_engine)
 
@@ -26,12 +32,13 @@ Join the Discord server for more help from the community: [codeSTACKr Discord](h
 - Unzip, if needed, and open the folder in VS Code.
 - From the terminal run: 
 ```
+ cd backend
  npm install
 ```
 - Copy your image layers into the `/backend/layers` folder.
 - Use the `/backend/src/config.js` file to set up your layers and NFT information.
 
-## COMMANDS
+### Backend Commands
 
 Generate: 
 ```
@@ -100,7 +107,7 @@ Get Contract:
 $ npm run get_contract
 ```
 
-- Gets the deployed contract details using the transactions hash from the Deploy Contract command. 
+- Gets the deployed contract details including the contracts ABI using the transactions hash from the Deploy Contract command.
 
 Update Contract:
 ```
@@ -133,4 +140,11 @@ $ npm run refresh_os --start=1 --end=100
 - Refreshes the listing for the specified editions on OpenSea.
 - Both the `--start` and `--end` flags are required.
 
-## Reference the [video](https://youtu.be/cLB7u0KQFIs) for more details.
+### Frontend
+
+- Update the `frontend/js/abi.js` file with the ABI from `backend/build/contract/_contract_abi.json`.
+- Update your information in the `frontend/js/constants.js` file.
+- Deploy your dApp to Netlify. (Reference the video for full instructions.)
+
+
+## Reference the [main video](https://youtu.be/cLB7u0KQFIs) and [update video](https://youtu.be/-EB2TTQxSWc) for more details.
