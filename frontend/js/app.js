@@ -30,9 +30,9 @@ window.addEventListener("DOMContentLoaded", async () => {
     perMove: 3,
     pagination: false,
     autoplay: true,
-    direction: 'ttb',
+    direction: "ttb",
     height: "calc(100vh - 90px)",
-    width: '30vw',
+    width: "30vw",
     autoHeight: true,
   });
   splide.mount();
@@ -49,7 +49,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 const updateConnectStatus = async () => {
   const onboarding = new MetaMaskOnboarding();
   const onboardButton = document.getElementById("connectWallet");
-  const notConnected = document.querySelector('.not-connected');
+  const notConnected = document.querySelector(".not-connected");
   const spinner = document.getElementById("spinner");
   if (!MetaMaskOnboarding.isMetaMaskInstalled()) {
     onboardButton.innerText = "Install MetaMask!";
@@ -58,27 +58,27 @@ const updateConnectStatus = async () => {
       onboardButton.disabled = true;
       onboarding.startOnboarding();
       // HIDE SPINNER
-      spinner.classList.add('hidden');
-      notConnected.classList.remove('hidden');
-      notConnected.classList.add('show-not-connected');
+      spinner.classList.add("hidden");
+      notConnected.classList.remove("hidden");
+      notConnected.classList.add("show-not-connected");
     };
   } else if (accounts && accounts.length > 0) {
     onboardButton.innerText = `✔ ...${accounts[0].slice(-4)}`;
     window.address = accounts[0];
     onboardButton.disabled = true;
     onboarding.stopOnboarding();
-    notConnected.classList.remove('show-not-connected');
-    notConnected.classList.add('hidden');
+    notConnected.classList.remove("show-not-connected");
+    notConnected.classList.add("hidden");
     // SHOW SPINNER
-    spinner.classList.remove('hidden');
+    spinner.classList.remove("hidden");
     window.contract = new web3.eth.Contract(abi, contractAddress);
     loadInfo();
   } else {
     onboardButton.innerText = "Connect MetaMask!";
     // HIDE SPINNER
-    spinner.classList.add('hidden');
-    notConnected.classList.remove('hidden');
-    notConnected.classList.add('show-not-connected');
+    spinner.classList.add("hidden");
+    notConnected.classList.remove("hidden");
+    notConnected.classList.add("show-not-connected");
     onboardButton.onclick = async () => {
       await window.ethereum
         .request({
@@ -86,10 +86,10 @@ const updateConnectStatus = async () => {
         })
         .then(function (accts) {
           onboardButton.innerText = `✔ ...${accts[0].slice(-4)}`;
-          notConnected.classList.remove('show-not-connected');
-          notConnected.classList.add('hidden');
+          notConnected.classList.remove("show-not-connected");
+          notConnected.classList.add("hidden");
           // SHOW SPINNER
-          spinner.classList.remove('hidden');
+          spinner.classList.remove("hidden");
           onboardButton.disabled = true;
           window.address = accts[0];
           accounts = accts;
@@ -102,45 +102,51 @@ const updateConnectStatus = async () => {
 
 async function checkChain() {
   let chainId = 0;
-  if(chain === 'rinkeby') {
+  if (chain === "rinkeby") {
     chainId = 4;
-  } else if(chain === 'polygon') {
+  } else if (chain === "polygon") {
     chainId = 137;
-  } else if(chain === 'ethereum') {
+  } else if (chain === "ethereum") {
     chainId = 1;
   }
   if (window.ethereum.networkVersion !== chainId) {
     try {
       await window.ethereum.request({
-        method: 'wallet_switchEthereumChain',
+        method: "wallet_switchEthereumChain",
         params: [{ chainId: web3.utils.toHex(chainId) }],
       });
       updateConnectStatus();
     } catch (err) {
-        // This error code indicates that the chain has not been added to MetaMask.
+      // This error code indicates that the chain has not been added to MetaMask.
       if (err.code === 4902) {
         try {
-          if(chain === 'rinkeby') {
+          if (chain === "rinkeby") {
             await window.ethereum.request({
-              method: 'wallet_addEthereumChain',
+              method: "wallet_addEthereumChain",
               params: [
                 {
-                  chainName: 'Rinkeby Test Network',
+                  chainName: "Rinkeby Test Network",
                   chainId: web3.utils.toHex(chainId),
-                  nativeCurrency: { name: 'ETH', decimals: 18, symbol: 'ETH' },
-                  rpcUrls: ['https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161'],
+                  nativeCurrency: { name: "ETH", decimals: 18, symbol: "ETH" },
+                  rpcUrls: [
+                    "https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161",
+                  ],
                 },
               ],
             });
-          } else if(chain === 'polygon') {
+          } else if (chain === "polygon") {
             await window.ethereum.request({
-              method: 'wallet_addEthereumChain',
+              method: "wallet_addEthereumChain",
               params: [
                 {
-                  chainName: 'Polygon Mainnet',
+                  chainName: "Polygon Mainnet",
                   chainId: web3.utils.toHex(chainId),
-                  nativeCurrency: { name: 'MATIC', decimals: 18, symbol: 'MATIC' },
-                  rpcUrls: ['https://polygon-rpc.com/'],
+                  nativeCurrency: {
+                    name: "MATIC",
+                    decimals: 18,
+                    symbol: "MATIC",
+                  },
+                  rpcUrls: ["https://polygon-rpc.com/"],
                 },
               ],
             });
@@ -170,32 +176,34 @@ async function loadInfo() {
   if (publicMintActive) {
     mainHeading.innerText = h1_public_mint;
     mainText.innerText = p_public_mint;
-    actionButton.classList.add('hidden');
+    actionButton.classList.add("hidden");
     mintButton.innerText = button_public_mint;
-    mintContainer.classList.remove('hidden');
+    mintContainer.classList.remove("hidden");
     setTotalPrice();
   } else if (presaleMintActive) {
     startTime = window.info.runtimeConfig.publicMintStart;
     mainHeading.innerText = h1_presale_mint;
     subHeading.innerText = h2_presale_mint;
-    
+
     try {
       // CHECK IF WHITELISTED
       const merkleData = await fetch(
         `/.netlify/functions/merkleProof/?wallet=${window.address}&chain=${chain}&contract=${contractAddress}`
       );
       const merkleJson = await merkleData.json();
-      const whitelisted = await contract.methods.isWhitelisted(window.address, merkleJson).call();
-      if(!whitelisted) {
+      const whitelisted = await contract.methods
+        .isWhitelisted(window.address, merkleJson)
+        .call();
+      if (!whitelisted) {
         mainText.innerText = p_presale_mint_not_whitelisted;
         actionButton.innerText = button_presale_mint_not_whitelisted;
       } else {
         mainText.innerText = p_presale_mint_whitelisted;
-        actionButton.classList.add('hidden');
+        actionButton.classList.add("hidden");
         mintButton.innerText = button_presale_mint_whitelisted;
-        mintContainer.classList.remove('hidden');
+        mintContainer.classList.remove("hidden");
       }
-    } catch(e) {
+    } catch (e) {
       // console.log(e);
       mainText.innerText = p_presale_mint_already_minted;
       actionButton.innerText = button_presale_already_minted;
@@ -214,26 +222,26 @@ async function loadInfo() {
   countdown();
 
   // HIDE SPINNER
-  spinner.classList.add('hidden');
+  spinner.classList.add("hidden");
 
   // SHOW CARD
   setTimeout(() => {
-    const countdownCard = document.querySelector('.countdown');
-    countdownCard.classList.add('show-card');
+    const countdownCard = document.querySelector(".countdown");
+    countdownCard.classList.add("show-card");
   }, 1000);
 
-  let priceType = '';
-  if(chain === 'rinkeby' || chain === 'ethereum') {
-    priceType = 'ETH';
-  } else if (chain === 'polygon') {
-    priceType = 'MATIC';
+  let priceType = "";
+  if (chain === "rinkeby" || chain === "ethereum") {
+    priceType = "ETH";
+  } else if (chain === "polygon") {
+    priceType = "MATIC";
   }
-  const price = web3.utils.fromWei(info.deploymentConfig.mintPrice, 'ether');
+  const price = web3.utils.fromWei(info.deploymentConfig.mintPrice, "ether");
   const pricePerMint = document.getElementById("pricePerMint");
   const maxPerMint = document.getElementById("maxPerMint");
   const totalSupply = document.getElementById("totalSupply");
   const mintInput = document.getElementById("mintInput");
-  
+
   pricePerMint.innerText = `${price} ${priceType}`;
   maxPerMint.innerText = `${info.deploymentConfig.tokensPerMint}`;
   totalSupply.innerText = `${info.deploymentConfig.maxSupply}`;
@@ -247,24 +255,24 @@ async function loadInfo() {
   const max = mintInput.attributes.max.value || false;
   mintDecrement.onclick = () => {
     let value = parseInt(mintInput.value) - 1 || 1;
-    if(!min || value >= min) {
+    if (!min || value >= min) {
       mintInput.value = value;
-      setTotalPrice()
+      setTotalPrice();
     }
   };
   mintIncrement.onclick = () => {
     let value = parseInt(mintInput.value) + 1 || 1;
-    if(!max || value <= max) {
+    if (!max || value <= max) {
       mintInput.value = value;
-      setTotalPrice()
+      setTotalPrice();
     }
   };
   setQtyMax.onclick = () => {
     mintInput.value = max;
-    setTotalPrice()
+    setTotalPrice();
   };
   mintInput.onchange = () => {
-    setTotalPrice()
+    setTotalPrice();
   };
   mintInput.onkeyup = async (e) => {
     if (e.keyCode === 13) {
@@ -279,21 +287,25 @@ function setTotalPrice() {
   const mintInputValue = parseInt(mintInput.value);
   const totalPrice = document.getElementById("totalPrice");
   const mintButton = document.getElementById("mintButton");
-  if(mintInputValue < 1 || mintInputValue > info.deploymentConfig.tokensPerMint) {
-    totalPrice.innerText = 'INVALID QUANTITY';
+  if (
+    mintInputValue < 1 ||
+    mintInputValue > info.deploymentConfig.tokensPerMint
+  ) {
+    totalPrice.innerText = "INVALID QUANTITY";
     mintButton.disabled = true;
     mintInput.disabled = true;
     return;
   }
-  const totalPriceWei = BigInt(info.deploymentConfig.mintPrice) * BigInt(mintInputValue);
-  
-  let priceType = '';
-  if(chain === 'rinkeby' || chain === 'ethereum') {
-    priceType = 'ETH';
-  } else if (chain === 'polygon') {
-    priceType = 'MATIC';
+  const totalPriceWei =
+    BigInt(info.deploymentConfig.mintPrice) * BigInt(mintInputValue);
+
+  let priceType = "";
+  if (chain === "rinkeby" || chain === "ethereum") {
+    priceType = "ETH";
+  } else if (chain === "polygon") {
+    priceType = "MATIC";
   }
-  const price = web3.utils.fromWei(totalPriceWei.toString(), 'ether');
+  const price = web3.utils.fromWei(totalPriceWei.toString(), "ether");
   totalPrice.innerText = `${price} ${priceType}`;
   mintButton.disabled = false;
   mintInput.disabled = false;
@@ -302,7 +314,8 @@ function setTotalPrice() {
 async function mint() {
   const mintButton = document.getElementById("mintButton");
   mintButton.disabled = true;
-  const spinner = '<div class="dot-elastic"></div><span>Waiting for transaction...</span>';
+  const spinner =
+    '<div class="dot-elastic"></div><span>Waiting for transaction...</span>';
   mintButton.innerHTML = spinner;
 
   const amount = parseInt(document.getElementById("mintInput").value);
@@ -316,17 +329,20 @@ async function mint() {
       const mintTransaction = await contract.methods
         .mint(amount)
         .send({ from: window.address, value: value.toString() });
-      if(mintTransaction) {
-        if(chain === 'rinkeby') {
+      if (mintTransaction) {
+        if (chain === "rinkeby") {
           const url = `https://rinkeby.etherscan.io/tx/${mintTransaction.transactionHash}`;
-          const mintedContainer = document.querySelector('.minted-container');
-          const countdownContainer = document.querySelector('.countdown');
+          const mintedContainer = document.querySelector(".minted-container");
+          const countdownContainer = document.querySelector(".countdown");
           const mintedTxnBtn = document.getElementById("mintedTxnBtn");
           mintedTxnBtn.href = url;
-          countdownContainer.classList.add('hidden');
-          mintedContainer.classList.remove('hidden');
+          countdownContainer.classList.add("hidden");
+          mintedContainer.classList.remove("hidden");
         }
-        console.log("Minted successfully!", `Transaction Hash: ${mintTransaction.transactionHash}`);
+        console.log(
+          "Minted successfully!",
+          `Transaction Hash: ${mintTransaction.transactionHash}`
+        );
       } else {
         const mainText = document.getElementById("mainText");
         mainText.innerText = mint_failed;
@@ -335,7 +351,7 @@ async function mint() {
 
         console.log("Failed to mint!");
       }
-    } catch(e) {
+    } catch (e) {
       const mainText = document.getElementById("mainText");
       mainText.innerText = mint_failed;
       mintButton.innerText = button_public_mint;
@@ -353,17 +369,20 @@ async function mint() {
       const presaleMintTransaction = await contract.methods
         .presaleMint(amount, merkleJson)
         .send({ from: window.address, value: value.toString() });
-      if(presaleMintTransaction) {
-        if(chain === 'rinkeby') {
+      if (presaleMintTransaction) {
+        if (chain === "rinkeby") {
           const url = `https://rinkeby.etherscan.io/tx/${presaleMintTransaction.transactionHash}`;
-          const mintedContainer = document.querySelector('.minted-container');
-          const countdownContainer = document.querySelector('.countdown');
+          const mintedContainer = document.querySelector(".minted-container");
+          const countdownContainer = document.querySelector(".countdown");
           const mintedTxnBtn = document.getElementById("mintedTxnBtn");
           mintedTxnBtn.href = url;
-          countdownContainer.classList.add('hidden');
-          mintedContainer.classList.remove('hidden');
+          countdownContainer.classList.add("hidden");
+          mintedContainer.classList.remove("hidden");
         }
-        console.log("Minted successfully!", `Transaction Hash: ${presaleMintTransaction.transactionHash}`);
+        console.log(
+          "Minted successfully!",
+          `Transaction Hash: ${presaleMintTransaction.transactionHash}`
+        );
       } else {
         const mainText = document.getElementById("mainText");
         mainText.innerText = mint_failed;
@@ -372,7 +391,7 @@ async function mint() {
 
         console.log("Failed to mint!");
       }
-    } catch(e) {
+    } catch (e) {
       const mainText = document.getElementById("mainText");
       mainText.innerText = mint_failed;
       mintButton.innerText = button_presale_mint_whitelisted;

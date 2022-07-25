@@ -4,7 +4,7 @@ const chain = "rinkeby"; // rinkeby, polygon, or ethereum
 const welcome_h1 = "Welcome to the Centurion NFT Project!!";
 const welcome_h2 = "Connect to MetaMask to Get Started";
 const welcome_p =
-  "The CENTURION NFT is a collection of 3,333 unique NFTs on the Polygon Blockchain. A centurion—an officer who was leading the ancient Roman army-inspired these NFT concepts. We combine the centurion and his horse in one frame to solidify their comradeship.";
+  "Centurion NFT is dedicated to assisting the cryptocurrency community, particularly Beginners. It aims to support by investing in and promoting the project";
 const h1_presale_coming_soon = "NFT Drop Coming Soon!!";
 const h1_presale_mint = "Pre-Sale Minting Open!!";
 const h1_public_mint = "Public Minting Open!!";
