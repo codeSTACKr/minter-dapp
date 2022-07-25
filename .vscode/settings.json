@@ -1,3 +1,6 @@
 {
-    "editor.foldingMaximumRegions": 10000
+    "editor.foldingMaximumRegions": 10000,
+    "githubPullRequests.ignoredPullRequestBranches": [
+        "main"
+    ]
 }
