@@ -37,7 +37,7 @@
     "⏬⏬⏬": "FOR MAC USERS: Replace %npm_config_xyz% with $npm_config_xyz ⏬⏬⏬",
     "refresh_os": "node utils/functions/refreshOpensea %npm_config_start% %npm_config_end%"
   },
-  "author": "Jesse Hall (codeSTACKr)",
+  "author": "Jesse Hall (codeSTACKr), Mahya (CYS)",
   "license": "MIT",
   "dependencies": {
     "async-sema": "^3.1.1",
