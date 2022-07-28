@@ -11,18 +11,69 @@ const namePrefix = "YOUR COLLECTION NAME";
 const description = "Remember to replace this description";
 const baseUri = "ipfs://NewUriToReplace"; // This will be replaced automatically
 
+const backgroundLayer = { name: "Common Layers/BACKGROUND" }; //NO ---
+const backHairLayer = { name: "Common Layers/backhair" }; //YES - YES - NO - CRASHES WHEN UNCOMMENTED - YES - NO
+const HairLayer = { name: "Common Layers/HAIR" }; //NO
+const eyesLayer = { name: "Common Layers/EYES" }; //NO
+const mouthLayer = { name: "Common Layers/MOUTH" };//NO
+const eyebrowsLayer = { name: "Common Layers/EYEBROWS" };//NO
+const faceDecorationLayer = { name: "Common Layers/DECORATION" }; //YES YES NO NO NO
+const clothesLayer = { name: "Common Layers/CLOTHES" }; //NO ---
+
+const LayerOrder = (i) => {
+  // console.log(i);
+  return [
+    backgroundLayer,
+    { name: 'skin'+i+'/SPECIES' },
+    
+    eyebrowsLayer,
+    eyesLayer,
+    HairLayer,
+    faceDecorationLayer,
+    mouthLayer,
+    { name: 'skin'+i+'/NOSE' },
+    { name: 'skin'+i+'/ear' },
+    clothesLayer,
+];}
+
 const layerConfigurations = [
   {
-    growEditionSizeTo: 5,
-    layersOrder: [
-      { name: "Background" },
-      { name: "Eyeball" },
-      { name: "Eye color" },
-      { name: "Iris" },
-      { name: "Shine" },
-      { name: "Bottom lid" },
-      { name: "Top lid" },
-    ],
+    growEditionSizeTo: 100,
+    layersOrder: LayerOrder(1),
+  },
+  {
+    growEditionSizeTo: 200,
+    layersOrder: LayerOrder(2),
+  },
+  {
+    growEditionSizeTo: 300,
+    layersOrder: LayerOrder(3),
+  },
+  {
+    growEditionSizeTo: 400,
+    layersOrder: LayerOrder(4),
+  }, 
+  {
+    growEditionSizeTo: 500,
+    layersOrder: LayerOrder(5),
+  }, {
+    growEditionSizeTo: 600,
+    layersOrder: LayerOrder(6),
+  }, {
+    growEditionSizeTo: 700,
+    layersOrder: LayerOrder(7),
+  }, 
+  {
+    growEditionSizeTo: 800,
+    layersOrder: LayerOrder(8),
+  },
+  {
+    growEditionSizeTo: 900,
+    layersOrder: LayerOrder(9),
+  },
+  {
+    growEditionSizeTo: 1000,
+    layersOrder: LayerOrder(10),
   },
 ];
 
@@ -31,13 +82,13 @@ const shuffleLayerConfigurations = true;
 const debugLogs = false;
 
 const format = {
-  width: 512,
-  height: 512,
+  width: 3400,
+  height: 3400,
   smoothing: false,
 };
 
 const extraMetadata = {
-  external_url: "https://codecats.xyz", // Replace with your website or remove this line if you do not have one.
+  // external_url: "https://codecats.xyz", // Replace with your website or remove this line if you do not have one.
 };
 
 // NFTPort Info
@@ -83,7 +134,7 @@ try {
     `${basePath}/build/contract/_contract.json`
   );
   const contractData = JSON.parse(rawContractData);
-  if (contractData.response === "OK") {
+  if (contractData.response === "OK" && contractData.error === null) {
     CONTRACT_ADDRESS = contractData.contract_address;
   }
 } catch (error) {
