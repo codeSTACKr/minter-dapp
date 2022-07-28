@@ -168,16 +168,36 @@ const addMetadata = (_dna, _edition) => {
   attributesList = [];
 };
 
+const filterTraitType = (_str) => {
+
+  let nameWithoutPath = _str;
+
+  return nameWithoutPath.replace('skin1/', "")
+        .replace('skin2/', "")
+        .replace('skin3/', "")
+        .replace('skin4/', "")
+        .replace('skin5/', "")
+        .replace('skin6/', "")
+        .replace('skin7/', "")
+        .replace('skin8/', "")
+        .replace('skin9/', "")
+        .replace('skin10/', "")
+        .replace("Common Layers/", "");
+};
+
 const addAttributes = (_element) => {
   let selectedElement = _element.layer.selectedElement;
-  attributesList.push({
-    trait_type: _element.layer.name,
-    value: selectedElement.name,
-  });
+  if (!_element.layer.name.includes("ear")){
+    attributesList.push({
+      trait_type: filterTraitType(_element.layer.name),
+      value: selectedElement.name,
+    });
+  }
 };
 
 const loadLayerImg = async (_layer) => {
   return new Promise(async (resolve) => {
+    // console.log(_layer.selectedElement.path);
     const image = await loadImage(`${_layer.selectedElement.path}`);
     resolve({ layer: _layer, loadedImage: image });
   });
@@ -264,6 +284,7 @@ const filterDNAOptions = (_dna) => {
  */
 const removeQueryStrings = (_dna) => {
   const query = /(\?.*$)/;
+  
   return _dna.replace(query, "");
 };
 
@@ -349,6 +370,7 @@ const startCreating = async () => {
     const layers = layersSetup(
       layerConfigurations[layerConfigIndex].layersOrder
     );
+    // console.log(layers);
     while (
       editionCount <= layerConfigurations[layerConfigIndex].growEditionSizeTo
     ) {
@@ -358,6 +380,7 @@ const startCreating = async () => {
         let loadedElements = [];
 
         results.forEach((layer) => {
+          
           loadedElements.push(loadLayerImg(layer));
         });
 
