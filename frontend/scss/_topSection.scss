@@ -1,0 +1,21 @@
+.top-section{
+
+    background-image: url(../../assets/svg/left_swirl.svg),url(../../assets/svg/right_swirl.svg);
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat, no-repeat;
+    background-size: calc(min(350px, 40%)), calc(min(350px, 50%));
+    background-position: bottom left, top right;
+    position: sticky;
+    &_1{
+        margin: 0px calc(20% - 3rem);
+    }
+
+}
+
+.mySlides{
+    z-index: -1;
+    display: static;
+   width: calc(min(320px, 60%));
+    
+}

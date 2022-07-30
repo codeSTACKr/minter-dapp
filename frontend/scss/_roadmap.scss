@@ -1,0 +1,65 @@
+.roadmap{
+    background-image: url(../../assets/svg/desert_bg01.svg);
+    // position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    margin-top: 7rem;
+    height: 820px;
+
+    &__area{
+        margin: 100px auto 30px;
+        margin-bottom: 0px;
+        width: calc(min(700px, 80%));
+        padding: 0 10px 0px 30px;
+        border-left: 2px solid black;
+        align-items: flex-end;
+        text-align: start;
+    }
+
+    &__item{
+        margin-top: 0px;
+
+        &:not(:last-child){
+            margin-bottom: 3rem;
+        }
+
+
+    }
+    
+}
+
+.roadmap__item:before{
+    content:"";
+    display:block;
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background-color:#000;
+    border:3px solid #ddd;
+    position:absolute;
+    top:10px;
+    left:-40px;
+}
+
+.roadmap__item:after{
+    content:"";
+    width:0;
+    height:0;
+    border-style:solid;
+    border-color:transparent #ddd transparent transparent;
+    border-width: 8px;
+    position: absolute;
+    left: -17px;
+    top: 10px;
+}
+
+.divider{
+    background: url(/assets/svg/roadmap_faq_divider.svg);
+    margin-top: -8px;
+    // inline-size: -webkit-fill-available;
+    background-repeat: no-repeat;
+    background-size:cover;
+    position: relative;
+    height: 220px;
+}

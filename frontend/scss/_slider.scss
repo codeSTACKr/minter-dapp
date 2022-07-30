@@ -1,0 +1,70 @@
+
+// .mySlides {
+    
+//     // display: inline-block;
+// }
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  display: inline;
+  margin: 24px;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  color: $black;
+  font-size: 2.5rem;
+  user-select: none;
+  border-radius: 50px ;
+  right: 0;
+  left: 0;
+  &:hover{
+    color: $brown;
+  }
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    
+}
+.next:hover .prev:hover{
+    color: black;
+}
+
+
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+    background-color: $strokeColor;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    height: 15px;
+    width: 15px;
+    background-color: $brown;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}

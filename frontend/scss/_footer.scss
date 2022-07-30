@@ -1,0 +1,22 @@
+.footer{
+    background: $black;
+
+    &_bottom{
+
+    margin-top: 2rem;
+    padding-bottom: 1rem;
+    }
+}
+
+.icon{
+    &:not(:last-child){
+        margin-right: 0.5rem;
+    }
+    svg {
+        width: 25px;
+        height: 25px;
+        path{
+            fill: white ;
+        }
+    }
+}

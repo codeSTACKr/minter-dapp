@@ -1,0 +1,121 @@
+.faq{
+    background-image: url(../../assets/images/crazy_explosion.png), url(../../assets/images/img_tag.png);
+    min-height: 800px;
+    background-repeat: no-repeat, no-repeat;
+    background-size: auto 100%, 100px;
+    background-position: right top, left bottom;
+    background-color: $black;
+
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    
+    img{
+        display:block; 
+        position:absolute;
+        width: 100px;
+        max-width: 135px;
+        margin-left: 1rem;
+        // z-index: -1;
+    }
+    &__item {
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(7px);
+        color: $white;
+        width: 75%;
+        min-height: 5px;
+        max-width: 540px;
+        padding: 20px 20px 20px 20px;
+        margin: 0 auto;
+        // position: relative;
+        text-align: left;
+        border: 1px solid $white;
+        border-radius: 15px;
+        box-sizing: border-box;
+        transition: all .3s;
+        margin-bottom: 2rem;
+
+        &:only(:first-child){
+            margin-top: 4rem;
+        }
+        
+
+        &[open] {
+            min-height: 50px;
+            background-color: $white;
+            color: $black;
+        }
+
+        &:focus::after {
+            content: "";
+            height: 100%;
+            width: 100%;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            box-shadow: 0 0 0 5px rebeccapurple;
+          }
+
+
+        &::-webkit-details-marker {
+            display: none
+        }
+
+        & p {
+            color: #96999d;
+            margin-top: 1rem;
+        }
+
+        summary {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            cursor: pointer;
+
+        }
+        
+        summary:focus {
+            outline: none;
+        }
+        
+        summary:focus::after {
+            content: "";
+            height: 100%;
+            width: 100%;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .fa-plus ,.fa-minus{
+              color: $white;
+        }
+
+        .fa-plus {
+            fill: rgb(105, 81, 129);
+            transition: .3s ease;
+            pointer-events: none;
+        }
+          
+        .fa-minus{
+            display: none;
+        }
+
+        &[open] .fa-plus {
+            display: none;
+        }
+           
+        &[open] .fa-minus {
+             display: initial;
+             color: black;
+             transition: .3s ease;
+        }
+
+    }
+}
+
