@@ -38,41 +38,41 @@ const LayerOrder = (i) => {
 
 const layerConfigurations = [
   {
-    growEditionSizeTo: 100,
+    growEditionSizeTo: 5,
     layersOrder: LayerOrder(1),
   },
   {
-    growEditionSizeTo: 200,
+    growEditionSizeTo: 10,
     layersOrder: LayerOrder(2),
   },
   {
-    growEditionSizeTo: 300,
+    growEditionSizeTo: 15,
     layersOrder: LayerOrder(3),
   },
   {
-    growEditionSizeTo: 400,
+    growEditionSizeTo: 20,
     layersOrder: LayerOrder(4),
   }, 
   {
-    growEditionSizeTo: 500,
+    growEditionSizeTo: 25,
     layersOrder: LayerOrder(5),
   }, {
-    growEditionSizeTo: 600,
+    growEditionSizeTo: 30,
     layersOrder: LayerOrder(6),
   }, {
-    growEditionSizeTo: 700,
+    growEditionSizeTo: 35,
     layersOrder: LayerOrder(7),
   }, 
   {
-    growEditionSizeTo: 800,
+    growEditionSizeTo: 40,
     layersOrder: LayerOrder(8),
   },
   {
-    growEditionSizeTo: 900,
+    growEditionSizeTo: 45,
     layersOrder: LayerOrder(9),
   },
   {
-    growEditionSizeTo: 1000,
+    growEditionSizeTo: 50,
     layersOrder: LayerOrder(10),
   },
 ];
@@ -109,18 +109,18 @@ const MINT_PRICE = 0.07; // Minting price per NFT. Rinkeby = ETH, Ethereum = ETH
 const TOKENS_PER_MINT = 10; // maximum number of NFTs a user can mint in a single transaction. CANNOT BE UPDATED!
 
 // REQUIRED CONTRACT DETAILS THAT CAN BE UPDATED LATER.
-const PUBLIC_MINT_START_DATE = "2022-10-29T11:30:48+00:00"; // This is required. Eg: 2022-02-08T11:30:48+00:00
+const PUBLIC_MINT_START_DATE = "2022-08-05T11:30:48+00:00"; // This is required. Eg: 2022-02-08T11:30:48+00:00
 
 // OPTIONAL CONTRACT DETAILS THAT CAN BE UPDATED LATER.
-const PRESALE_MINT_START_DATE = "2022-10-28T11:30:48+00:00"; // Optional. Eg: 2022-02-08T11:30:48+00:00
-const ROYALTY_SHARE = 700; // Percentage of the token price that goes to the royalty address. 100 bps = 1%
+const PRESALE_MINT_START_DATE = "2022-08-04T11:30:48+00:00"; // Optional. Eg: 2022-02-08T11:30:48+00:00
+const ROYALTY_SHARE = 1000; // Percentage of the token price that goes to the royalty address. 100 bps = 1%
 const ROYALTY_ADDRESS = "0x1D2814c36b4b2835413890d91202644C49C9F120"; // Address that will receive the royalty
 const BASE_URI = null; // only update if you want to manually set the base uri
 const PREREVEAL_TOKEN_URI = null; // only update if you want to manually set the prereveal token uri
 const PRESALE_WHITELISTED_ADDRESSES = []; // only update if you want to manually set the whitelisted addresses
 
 // ** OPTIONAL **
-let CONTRACT_ADDRESS = "YOUR CONTRACT ADDRESS"; // If you want to manually include it
+let CONTRACT_ADDRESS = "0x1F59986fA9692D445f5c02Cb2714ab0ae3c4ec00"; // If you want to manually include it
 
 // Generic Metadata is optional if you want to reveal your NFTs
 const GENERIC = true; // Set to true if you want to upload generic metas and reveal the real NFTs in the future
