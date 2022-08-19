@@ -3,5 +3,6 @@
   "git.enabled": true,
 
   // Path to the git executable
-  "git.path": "C:\\git.exe"
+  "git.path": "C:\\git.exe",
+  "liveServer.settings.port": 5501
 }

@@ -33,7 +33,7 @@ function scrollHandler(e) {
 
   if (dist > timeline.offsetHeight + 50 && !full) {
     full = true;
-    line.style.bottom = `250px`;
+    line.style.bottom = `-50px`;
   }
 
   sections.forEach((item) => {

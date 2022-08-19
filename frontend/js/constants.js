@@ -1,10 +1,10 @@
 const contractAddress = "0x3eC307D71f5a9032965fFFf7c879b7ab79d17b46"; // Replace with your own contract address
 const chain = "rinkeby"; // rinkeby, polygon, or ethereum
 
-const welcome_h1 = "Welcome to the Centurion NFT Project!!";
-const welcome_h2 = "Connect to MetaMask to Get Started";
+const welcome_h1 = "We Secure Your Future!!!";
+const welcome_h2 = "Welcome to the Centurion Project!!";
 const welcome_p =
-  "Centurion NFT is dedicated to assisting the cryptocurrency community, particularly Beginners. It aims to support by investing in and promoting the project";
+  "Building a unique NFT that will provide you <br> with non-ending benefits that can be passed down <br> to future generations, assuring your <br> <b>FINANCIAL SECURITY </b> for today and the future.";
 const h1_presale_coming_soon = "NFT Drop Coming Soon!!";
 const h1_presale_mint = "Pre-Sale Minting Open!!";
 const h1_public_mint = "Public Minting Open!!";

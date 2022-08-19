@@ -12,189 +12,269 @@
 
     <link rel="manifest" href="images/x-icon/site.webmanifest" />
     <link rel="stylesheet" href="css/three-dots.min.css" />
-    <link rel="stylesheet" href="css/splide.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Quicksand&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <header>
-      <div class="container">
+      <div class="navbar">
         <div class="logo">
           <a href="/">
             <img src="images/header/icon.png" alt="logo" />
           </a>
         </div>
-        <div class="menu">
-          <a
-            href="https://discord.gg/A9CnsVzzkZ"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src="images/header/discord.webp" alt="Discord" />
-          </a>
-          <a
-            href="https://twitter.com/centurionnft_?s=20&t=4FjryZehYR2TCDR4pKUc0Q"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src="images/header/twitter.webp" alt="Twitter" />
-          </a>
-          <a
-            href="https://opensea.io/collection/codecats"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src="images/header/opensea.webp" alt="Opensea" />
-          </a>
-          <button class="wallet-btn btn" id="connectWallet">
-            <span>Connect Wallet</span>
-          </button>
+        <div class="menu" id="menu">
+          <i class="fa fa-close" onclick="hidemenu()"></i>
+          <ul>
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#nft">NFT</a></li>
+            <li><a href="#capital">Capital</a></li>
+            <li><a href="#roadmap">ROADMAP</a></li>
+            <li><a href="#team">TEAM</a></li>
+            <li><a href="#faqm">FAQ</a></li>
+            <!-- <button class="wallet-btn btn" id="connectWallet"> -->
+              <span class="temp-conn">Connect Wallet</span>
+            </button>
+          </ul>
         </div>
+        <i class="fa fa-bars" onclick="showmenu()"></i>
       </div>
     </header>
-    <div class="home">
+    <div id="particles-js" class="particles-js"></div>
+
+    <div id="home" class="home">
       <section class="container not-connected">
         <div>
           <h2 id="welcomeH2">Connect to MetaMask to Get Started</h2>
-          <h1 id="welcomeH1">Welcome to the Centurion NFT!</h1>
+          <h1 id="welcomeH1"></h1>
           <p id="welcomeP">
-            Centurion NFT is dedicated to assisting the Crypto currency
-            community, particularly Token beginners. It aims to support by
-            investing in and promoting the project.
-            <a
-              href="https://youtube.com/codestackr"
-              target="_blank"
-              rel="noopener noreferrer"
-              >codeSTACKr</a
+            <a href="000" target="_blank" rel="noopener noreferrer"></a>
+          </p>
+        </div>
+        <div class="pdf">
+          <p>
+            Download the Whitepaper here:
+            <button
+              class="whitepaper"
+              onclick="location.href='pdf-file/whitepaper.pdf';"
             >
+              WhitePaper
+            </button>
           </p>
-        </div>
-      </section>
-
-      <section class="container">
-        <div class="countdown card">
-          <div id="countdown">
-            <ul class="count-down" data-date="">
-              <li class="clock-item">
-                <span class="count-number days">20</span>
-                <p class="count-text">Days</p>
-              </li>
-
-              <li class="clock-item">
-                <span class="count-number hours">20</span>
-                <p class="count-text">Hour</p>
-              </li>
-
-              <li class="clock-item">
-                <span class="count-number minutes">20</span>
-                <p class="count-text">Min</p>
-              </li>
-
-              <li class="clock-item">
-                <span class="count-number seconds">20</span>
-                <p class="count-text">Sec</p>
-              </li>
-            </ul>
-            <h2 id="subHeading">Pre-Sale Countdown</h2>
-          </div>
-          <h1 id="mainHeading">NFT Drop Coming Soon!!</h1>
-          <p id="mainText">
-            A new batch of cute cats will be available very soon!
-          </p>
-          <a
-            id="actionButton"
-            href="https://discord.gg/A9CnsVzzkZ"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="hero-btn btn"
-            ><span>Join the Catmmunity</span>
-          </a>
-          <div id="mintContainer" class="mint-container hidden">
-            <div class="info-container">
-              <div>
-                <h3>Supply</h3>
-                <p id="totalSupply">100</p>
-              </div>
-              <div>
-                <h3>Price Per Mint</h3>
-                <p id="pricePerMint">1 ETH</p>
-              </div>
-              <div>
-                <h3>Max</h3>
-                <p id="maxPerMint">5 per wallet</p>
-              </div>
-            </div>
-            <div class="mint-qty">
-              <span>
-                <button class="input-number-decrement btn" id="mintDecrement">
-                  –
-                </button>
-                <input
-                  id="mintInput"
-                  class="input-number btn"
-                  type="number"
-                  value="1"
-                  min="1"
-                  max="5"
-                />
-                <button class="input-number-increment btn" id="mintIncrement">
-                  +
-                </button>
-              </span>
-              <button id="setQtyMax" class="btn">SET MAX</button>
-            </div>
-            <div class="total-price-container">
-              <h3>Total</h3>
-              <p id="totalPrice">.001 ETH</p>
-            </div>
-            <button id="mintButton" class="hero-btn btn mint-btn">Mint</button>
-          </div>
-        </div>
-        <div class="minted-container card show-card hidden">
-          <h1>🎉</h1>
-          <h2>Minted!</h2>
-          <p>Here's your trasaction link:</p>
-          <a
-            id="mintedTxnBtn"
-            href=""
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <button class="hero-btn btn">View Transaction</button>
-          </a>
-          <p>View it in the collection:</p>
-          <a
-            id="mintedLinkBtn"
-            href="https://testnets.opensea.io/collection/teststackr-collection"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <button class="hero-btn btn">View Collection</button>
-          </a>
         </div>
       </section>
     </div>
+    <section class="container">
+      <div class="countdown card">
+        <div id="countdown">
+          <ul class="count-down" data-date="">
+            <li class="clock-item">
+              <span class="count-number days">20</span>
+              <p class="count-text">Days</p>
+            </li>
+
+            <li class="clock-item">
+              <span class="count-number hours">20</span>
+              <p class="count-text">Hour</p>
+            </li>
+
+            <li class="clock-item">
+              <span class="count-number minutes">20</span>
+              <p class="count-text">Min</p>
+            </li>
+
+            <li class="clock-item">
+              <span class="count-number seconds">20</span>
+              <p class="count-text">Sec</p>
+            </li>
+          </ul>
+          <h2 id="subHeading">Pre-Sale Countdown</h2>
+        </div>
+        <h1 id="mainHeading">NFT Drop Coming Soon!!</h1>
+        <p id="mainText"></p>
+        <a
+          id="actionButton"
+          href=""
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hero-btn btn"
+          ><span>Join the Centurion Community</span>
+        </a>
+        <div id="mintContainer" class="mint-container hidden">
+          <div class="info-container">
+            <div>
+              <h3>Supply</h3>
+              <p id="totalSupply">100</p>
+            </div>
+            <div>
+              <h3>Price Per Mint</h3>
+              <p id="pricePerMint">0.001 ETH</p>
+            </div>
+            <div>
+              <h3>Max</h3>
+              <p id="maxPerMint">5 per wallet</p>
+            </div>
+          </div>
+          <div class="mint-qty">
+            <span>
+              <button class="input-number-decrement btn" id="mintDecrement">
+                –
+              </button>
+              <input
+                id="mintInput"
+                class="input-number btn"
+                type="number"
+                value="1"
+                min="1"
+                max="5"
+              />
+              <button class="input-number-increment btn" id="mintIncrement">
+                +
+              </button>
+            </span>
+            <button id="setQtyMax" class="btn">SET MAX</button>
+          </div>
+          <div class="total-price-container">
+            <h3>Total</h3>
+            <p id="totalPrice">.001 ETH</p>
+          </div>
+          <button id="mintButton" class="hero-btn btn mint-btn">Mint</button>
+        </div>
+      </div>
+      <div class="minted-container card show-card hidden">
+        <h1>🎉</h1>
+        <h2>Minted!</h2>
+        <p>Here's your transaction link:</p>
+        <a id="mintedTxnBtn" href="" target="_blank" rel="noopener noreferrer">
+          <button class="hero-btn btn">View Transaction</button>
+        </a>
+        <p>View it in the collection:</p>
+        <a
+          id="mintedLinkBtn"
+          href="https://testnets.opensea.io/collection/centurion-rlnlea64wg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <button class="hero-btn btn">View Collection</button>
+        </a>
+      </div>
+    </section>
+
+    <div id="spinner" class="dot-spin"></div>
+
     <!-- nft section -->
-    <section class="nft">
+    <section id="nft" class="nft">
+      <h1>NFT</h1>
+      <p>
+        The <b> CENTURION NFT </b> is a collection of unique artworks on the Polygon
+        Blockchain. A centurion—an officer who was leading the ancient Roman
+        army-inspired these NFT concepts. We combine the centurion and his horse
+        in one frame to solidify their comradeship.
+      </p>
+
+      <div class="rotating-img">
+        <div class="slider">
+          <span style="--i: 1"><img src="images/nft/1.png" alt="" /></span>
+          <span style="--i: 2"><img src="images/nft/2.png" alt="" /></span>
+          <span style="--i: 3"><img src="images/nft/3.png" alt="" /></span>
+          <span style="--i: 4"><img src="images/nft/4.png" alt="" /></span>
+          <span style="--i: 5"><img src="images/nft/5.png" alt="" /></span>
+          <span style="--i: 6"><img src="images/nft/6.png" alt="" /></span>
+          <span style="--i: 7"><img src="images/nft/7.png" alt="" /></span>
+          <span style="--i: 8"><img src="images/nft/8.jpg" alt="" /></span>
+        </div>
+      </div>
+
       <div class="container">
-        <h1>NFT</h1>
-        <p>
-          Description The CENTURION NFT is a collection of unique artworks on
-          the Blockchain. A centurion—an officer who was leading the ancient
-          Roman army-inspired these NFT concepts. We combine the centurion and
-          his horse in one frame to solidify their comradeship.
-        </p>
+        <div class="row">
+          <div class="col-2">
+            <p>
+              The Team will allocate the 87% of the funds from the sales of all
+              sold NFTs to Centurion Capital, held by the team. <br />
+              <b class="more">see WhitePaper for more info.</b>
+
+              <br />
+              <br />5% goes to the team who created this Project.<br />
+              <br />5% Project Development fund will be used to maintain and
+              further development of this website and Project. <br />
+              <br />We allotted a certain amount of funds for charity as we are
+              committed into providing assistance to individuals in need,
+              especially now that calamities are occurring in many regions of
+              the world.
+            </p>
+          </div>
+          <div class="col-2">
+            <img src="images/capital/a1.png" width="350" />
+            <div class="percent">
+              <div class="bead1"><p>87% Centurion Capital</p></div>
+              <div class="bead2"><p>5% Team</p></div>
+              <div class="bead3"><p>5% Project Development</p></div>
+              <div class="bead4"><p>3% Charity</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- capital section -->
+
+    <section id="capital" class="capital">
+      <h1>Centurion Capital</h1>
+      <p>
+        The CENTURION CAPITAL serves as the Centurion’s <b> Venture Capital, </b> this is
+        the Centurion’s one-of-a-kind weapon for growth and building a strong
+        community. It serves as a conduit for all NFT holders to receive
+        <b> Airdrops,</b> through a comprehensive assessment of high-potential start-up
+        tokens in the global market.
+      </p>
+      <div class="container">
+        <div class="row">
+          <div class="col-2">
+            <p>
+              50% of each Coin/Token acquired through Centurion Capital
+              investment will be <b> Airdropped 
+              </b> to all NFT holders. <br />
+              <br />40% of Coin/Token acquired will go back to Centurion Capital
+              Treasury And will be used to reinvest to another potential
+              project.
+              <br />
+              <br />5% will be split into Two, 1 part goes to the Centurion Team
+              and the other one goes to Centurion Capital research Team.
+              <br />
+              <br />5% will be used to fund the Real World Project that will
+              <b> generate revenue </b> to sustain the treasury of Centurion Capital and
+              the whole ecosystem. <br />
+              <b class="more">see WhitePaper for more info.</b>
+            </p>
+          </div>
+          <div class="col-2">
+            <img src="images/capital/A.png" width="350" />
+            <div class="percent">
+              <div class="bead1"><p>50% Airdrop to NFT Holders</p></div>
+              <div class="bead2"><p>40% Treasury/Centurion Capital</p></div>
+              <div class="bead3"><p>5% Team</p></div>
+              <div class="bead4"><p>5% Real World Project</p></div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- Roadmap section -->
-    <section class="roadmap">
+    <section id="roadmap" class="roadmap">
       <div class="container">
         <div class="top-section">
           <h1>Roadmap</h1>
           <p>
-            The Centurion NFT Roadmap informs the community on the project's
-            progress and Future Plan; for further information , see the
-            Annoncement section of this website.
+            We are committed to establishing  a long-term Roadmap for the community's future.
           </p>
         </div>
         <div class="timeline">
@@ -224,11 +304,11 @@
           <div class="section">
             <div class="bead"><i>Q3</i></div>
             <div class="content">
-              <h2>frontend</h2>
+              <h2></h2>
               <p>
-                <b>*</b> Launching of Website <br />
-                <b>*</b>Launch Minting <br />
-                <b>*</b>Marketing.
+                <b>*</b> Launching of Website. <br />
+                <b>*</b>Marketing. <br />
+                <b>*</b>Launch of Minting.
               </p>
             </div>
           </div>
@@ -236,115 +316,283 @@
           <div class="section">
             <div class="bead"><i>Q4</i></div>
             <div class="content">
-              <h2>backend</h2>
-              <p></p>
+              <h2></h2>
+              <p>
+                <b>*</b> Start operation of Centurion Capital <br />
+                <b>*</b> Onboarding of Team of Engineers For the Real world
+                Project.
+              </p>
             </div>
           </div>
+        </div>
+        <div class="bottom-section">
+          <p>Roadmap V2 Comming</p>
         </div>
       </div>
     </section>
 
     <!-- team -->
 
-    <section class="team">
+    <section id="team" class="team">
       <h1>Team</h1>
       <p class="int">
-        Our team consists of people with different expertise who are highly
-        motivated to bring their knowledge and skills to the project in order to
-        create something great.
+        Our team is made up of experts from a multitude of sectors, including
+        <b> Engineering </b> and <b> Technology </b>, <b> Finance,</b> and <b> Arts </b>, and we are all passionate
+        about cryptocurrencies. We are really motivated and committed to
+        contributing our expertise to the project in order to produce something
+        outstanding.
       </p>
 
       <div class="team-row">
         <div class="profile-box">
           <h4>Mark Peñero</h4>
-          <h5>FOUNDER/CEO</h5>
-          <img src="images/team/profile.png" />
+          <h5>CO-FOUNDER/CEO</h5>
+          <img src="images/team/Mark.png" />
           <p>
-            A Site Engineer and a Web developer. He founded Quadratic to support
-            the Alephzero ecosystem and help future artists.
+            BS-Civil Engineering. Worked in various Construction companies as a
+            site Engineer also a Web Developer.
+          </p>
+        </div>
+        <div class="profile-box">
+          <h4>Jonathan Capili</h4>
+          <h5>CO-FOUNDER/COO</h5>
+          <img src="images/team/jonathan.jpg" />
+          <p>
+            BS-Civil Engineering. Worked as a Project Engineer in the Middle
+            East for 11 Yrs.
+          </p>
+        </div>
+        <div class="profile-box">
+          <h4>Erica Herreros</h4>
+          <h5>CO-FOUNDER/CTO</h5>
+          <img src="images/team/erica.png" />
+          <p>
+            BS-Electronics & Communication Engineering. Working as Associate
+            Software Engineer-Support Analyst in various Tech Company in the
+            Philippines
           </p>
         </div>
         <div class="profile-box">
           <h4>Joel Peñero</h4>
-          <h5>CO-FOUNDER/CTO</h5>
-          <img src="images/team/7.jpg" />
+          <h5>CO-FOUNDER/CMO</h5>
+          <img src="images/team/joel.png" />
           <p>
-            A Business Management graduate, former business analyst for the
-            Philippines' leading pawnshop and money transfer firm.
+            BA-Management. Former business analyst for the Philippines' leading
+            pawnshop & money transfer firm. His 7 years of experience in various
+            Pawnshop corps. and financial industry has transformed him into an
+            asset and help in the development of the company's competitiveness.
           </p>
         </div>
-        <div class="profile-box">
-          <h4>Joey Colaste</h4>
-          <h5>CO-FOUNDER/Research Dep t Head</h5>
-          <img src="images/team/1.jpg" />
-          <p>
-            Graduate in BS-Political science, Crypto Enthusiast. Research
-            department team leader of Quadratic.
-          </p>
-        </div>
+
         <div class="profile-box">
           <h4>Jinky Lanzaderas</h4>
-          <h5>CO-FOUNDER/Finance Dept Head</h5>
-          <img src="images/team/2.jpg" />
-          <p>
-            Graduate of BS-Banking and Finance, worked as an Assessment Clerk at
-            a government office, and was the cooperative's secretariat for six
-            years. Her knowledge has proven invaluable to the organization, and
-            she has been assigned to lead the Finance Department.
-          </p>
-        </div>
-      </div>
-
-      <div class="team-row">
-        <div class="profile-box">
-          <h4>Reanie Colaste</h4>
-          <h5>Social Media Department Head</h5>
-          <img src="images/team/3.jpg" />
-          <p>
-            Student of Financial Management, Content Creator, and Former Radio
-            Producer She established techniques to create and supervise social
-            media marketing campaigns, produce content, and interface/
-            communicate with customers or audiences as a result of her expertise
-            as a radio producer.
-          </p>
+          <h5>CO-FOUNDER/CFO</h5>
+          <img src="images/team/jinky.png" />
+          <p>BS-Banking & Finance. Former COO of E&J Trading.</p>
         </div>
         <div class="profile-box">
           <h4>Ritchard Colaste</h4>
-          <h5>Digital Artist Dept Head</h5>
-          <img src="images/team/4.jpg" />
+          <h5>CO-FOUNDER/Digital Artist</h5>
+          <img src="images/team/ritchard.png" />
           <p>
-            Graduate of BS-financial management with a passion for portraiture,
-            graphic design, and digital art. He is also a crypto enthusiast. He
-            now supervises an artist department at Quadratic.
+            BS-Financial Management. Has passion for portraiture, graphic
+            design, and digital art. He is also a crypto enthusiast.
           </p>
         </div>
         <div class="profile-box">
-          <h4>Ellin Jin Lanzaderas</h4>
-          <h5>Digital Artist</h5>
+          <h4>Sahrah Jane E. Ventura</h4>
+          <h5>Financial Adviser</h5>
+          <img src="images/team/sahra.png" />
+          <p>
+            BS-Human Resource. Licensed Financial Advisor & Unit Head of AXA
+            Philippines. Also a former employee of Paypal, Concentrix and EXL
+            Service Philippines .
+          </p>
+        </div>
+        <div class="profile-box">
+          <h4>Janella Macabugao</h4>
+          <h5>Software Engineer</h5>
           <img src="images/team/5.jpg" />
+          <p>BS-Computer Science. Work as a Software Engineer of Fujitsu.</p>
+        </div>
+        <div class="profile-box">
+          <h4>Nel Caltivo Montilla</h4>
+          <h5>Software Engineer</h5>
+          <img src="images/team/nel.jpg" />
           <p>
-            A civil engineering student, Crypto Enthusiast and now one of the
-            companys NFT artists.
+            BS-Computer Science. Work in various tech company in the Philippines
+            as a software Engineer.
           </p>
         </div>
         <div class="profile-box">
-          <h4>Yumie</h4>
-          <h5>Artist/Animator</h5>
-          <img src="images/team/6.jpg" />
-          <p>Graphic designer, digital artist. and a Crypto enthusiast.</p>
+          <h4>Jasmin Polvorosa</h4>
+          <h5>Web Developer</h5>
+          <img src="images/team/jasmin.jpg" />
+          <p>Student of BS-Computer Science</p>
+        </div>
+
+        <div class="profile-box">
+          <h4>Joey Colaste</h4>
+          <h5>Graphics designer</h5>
+          <img src="images/team/joey.png" />
+          <p>
+            BS-Political Science. Digital Artist, Graphics designer and Crypto
+            Enthusiasts.
+          </p>
+        </div>
+        <div class="profile-box">
+          <h4>Reanie Colaste</h4>
+          <h5>Social Media Moderator</h5>
+          <img src="images/team/reanni.png" />
+          <p>
+            Student of BS-Financial Management, Content Creator, and Former
+            Radio Producer She established techniques to create and supervise
+            social media marketing campaigns.
+          </p>
+        </div>
+        <div class="profile-box">
+          <h4>Ellinjane Lanzaderas</h4>
+          <h5>Social Media Moderator</h5>
+          <img src="images/team/ellinjane.png" />
+          <p>Student of BS- Civil Engineering, Cryptocurrency Enthusiast.</p>
         </div>
       </div>
     </section>
 
-    <div id="spinner" class="dot-spin"></div>
+    <!------ faq section ------>
+    <section id="faqm" class="faqm">
+      <h2>FAQs</h2>
+      <div class="faq-container">
+        <div class="faq active">
+          <h3 class="faq-title">How many Centurion NFT’s are there?</h3>
+
+          <p class="faq-text">
+            There are only 4,444 limited edition Centurion NFT's that will be
+            minted.
+          </p>
+
+          <button class="faq-toggle">
+            <i class="fas fa-chevron-down"></i>
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+
+        <div class="faq">
+          <h3 class="faq-title">What is the price of each NFT?</h3>
+          <p class="faq-text">The price will be 120 Matic per one NFT.</p>
+          <button class="faq-toggle">
+            <i class="fas fa-chevron-down"></i>
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+
+        <div class="faq">
+          <h3 class="faq-title">How many Centurion NFT can I Mint?</h3>
+          <p class="faq-text">
+            You can only have a maximum of 10 NFT’s and a minimum of 1 NFT.
+          </p>
+          <button class="faq-toggle">
+            <i class="fas fa-chevron-down"></i>
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+
+        <div class="faq">
+          <h3 class="faq-title">Will there be a whitelist?</h3>
+          <p class="faq-text">
+            No whitelist needed. The mint day is a first come first serve bases.
+          </p>
+          <button class="faq-toggle">
+            <i class="fas fa-chevron-down"></i>
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+
+        <div class="faq">
+          <h3 class="faq-title">Who is eligible for an Airdrop?</h3>
+          <p class="faq-text">
+            All NFT holders is Eligible for the Airdrop. More details will be
+            announce in the future.
+          </p>
+          <button class="faq-toggle">
+            <i class="fas fa-chevron-down"></i>
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer>
+      <section class="footer">
+        <div class="info">
+          <h1>Contact Us</h1>
+
+          <a href="contact.html">Send Us A Message</a>
+
+          <p><i class="fa-solid fa-envelope"></i> nftcenturion4000@gmail.com</p>
+          <p>
+            <i class="fa-solid fa-location-dot"></i> 80-G, Holy Spirit, Quezon
+            City 1127 Philippines.
+          </p>
+        </div>
+
+        <div class="quicklinks">
+          <h1>Quick Links</h1>
+          <ul>
+            <li>
+              <a href="#home">Home</a>
+            </li>
+            <li>
+              <a href="#nft">NFT</a>
+            </li>
+            <li>
+              <a href="#capital">Capital</a>
+            </li>
+            <li>
+              <a href="#team">About</a>
+            </li>
+            <li>
+              <a href="#faqm">Faqs</a>
+            </li>
+          </ul>
+        </div>
+        <div class="social">
+          <h1>Follow Us</h1>
+          <a
+            href="https://twitter.com/centurionnft_?s=20&t=4FjryZehYR2TCDR4pKUc0Q"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a
+            href="https://t.me/centurionnfts?fbclid=IwAR01VdprpQKTErrVMX6ajomnk3zf08ScAscpsOJfk0gB_2EPTiCRi1aTAeM"
+            ><i class="fab fa-telegram"></i
+          ></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href=""
+            ><img src="images/x-icon/opns.svg" width="25px" alt="Opensea"
+          /></a>
+
+          <!-- https://testnets.opensea.io/collection/centurion-rlnlea64wg -->
+        </div>
+      </section>
+      <p class="copyright">
+        Copyright © 2022 CenturionNFT All Rights Reserved.
+      </p>
+    </footer>
+
+    <!-- java script section -->
 
     <script src="js/metamask-onboarding.bundle.js"></script>
     <script src="js/web3.min.js"></script>
-    <script src="js/splide.min.js"></script>
+    <script src="js/app.js"></script>
     <script src="js/constants.js"></script>
     <script src="js/abi.js"></script>
     <script src="js/countdown.js"></script>
-    <script src="js/app.js"></script>
     <script src="js/roadmap.js"></script>
+    <script src="js/faq.js"></script>
+    <script src="js/mobile.js"></script>
+    <script src="jquery-3.2.1.min.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/particles.min.js"></script>
   </body>
 </html>
