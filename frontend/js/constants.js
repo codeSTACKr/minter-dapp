@@ -1,5 +1,5 @@
-const contractAddress = "0xDac9696C0f2F4BB80CaEb09a0662DE730D421Dfe"; // Replace with your own contract address
-const chain = 'rinkeby'; // rinkeby, polygon, or ethereum
+const contractAddress = "0x2C340E103D92f75909B930C8adD659172Da141a1"; // Replace with your own contract address
+const chain = 'polygon'; // rinkeby, polygon, or ethereum
 
 const welcome_h1 = "Welcome to the Rhino Family NFT Project!!";
 const welcome_h2 = "Connect to MetaMask to Get Started";
