@@ -1195,7 +1195,7 @@ section {
     transition: 0.5s;
   }
   .profile-box img:hover {
-    transform: translateX(-60px) scale(1.5);
+    transform: translateX(-35px) scale(1.5);
   }
   .profile-box h4 {
     margin-top: 16px;
