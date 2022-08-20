@@ -122,7 +122,7 @@ header .navbar {
       rgba(0, 0, 0, 0.5) 50%,
       rgba(0, 0, 0, 0.5) 50%
     ),
-    url(/frontend/images/header/bg2.png);
+    url(/images/header/bg2.png);
   background-size: cover;
 }
 
@@ -799,6 +799,9 @@ section {
     transform-style: preserve-3d;
     transform: rotateY(calc(var(--i) * 45deg)) translateZ(200px);
   }
+  .nft .col-2 img {
+    width: 300px;
+  }
 }
 
 /* capital section  */
@@ -902,12 +905,16 @@ section {
     font-size: 18px;
     width: 90%;
   }
+  .capital .col-2 img {
+    width: 300px;
+  }
   .capital .container p {
     font-size: 18px;
     width: 90%;
   }
   .capital .col-2 .percent {
     transform: translateX(-18%);
+    margin-bottom: 10px;
   }
 }
 

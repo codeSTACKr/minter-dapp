@@ -43,7 +43,7 @@ body {
   height: 100%;
   left: 0;
   top: 0;
-  background: url(/frontend/images/header/bg2.png);
+  background: url(/images/header/bg2.png);
   background-size: cover;
   filter: blur(20px);
   z-index: -1;
@@ -62,12 +62,24 @@ body {
 .left {
   background: linear-gradient(
       to top,
-      rgba(0, 0, 0, 0.5) 50%,
-      rgba(0, 0, 0, 0.5) 50%
+      rgba(0, 0, 0, 0.8) 50%,
+      rgba(0, 0, 0, 0.5) 80%
     ),
-    url(/frontend/images/team/1.jpg);
+    url(/images/team/1.jpg);
   background-size: cover;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.left h1 {
+  color: var(--bg-color);
+  font-family: "Lucida Sans Unicode";
+  font-size: 50px;
+}
+.left h3 {
+  color: #fff;
 }
 
 .right {
@@ -163,6 +175,15 @@ textarea {
   }
   .left {
     height: 200px;
+  }
+  .left h1 {
+    font-size: 30px;
+    line-height: 25px;
+    margin-top: 30px;
+    text-shadow: 1px 1px #f1eded;
+  }
+  .left h3 {
+    font-size: 18px;
   }
   .right {
     width: 100%;
