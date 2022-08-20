@@ -1055,6 +1055,11 @@ section {
   .roadmap p {
     font-size: 18px;
   }
+
+  .roadmap .timeline p {
+    font-size: 15px;
+    line-height: 20px;
+  }
 }
 
 /* ----TEAM section---- */
