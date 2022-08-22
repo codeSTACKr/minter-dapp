@@ -204,7 +204,7 @@ header .navbar {
 
 /* BUTTONS */
 
-.temp-conn {
+/* .temp-conn {
   display: inline-block;
   padding: 1rem 2rem;
   background: var(--line-color);
@@ -228,7 +228,7 @@ header .navbar {
   box-shadow: var(--header-shadow);
   background-color: var(--cornering);
   color: var(--font-color);
-}
+} */
 
 .btn {
   display: inline-block;
@@ -1487,4 +1487,12 @@ footer .copyright {
   text-align: center;
   color: #999;
   background-color: rgb(42, 42, 43);
+}
+
+/* media quiry */
+
+@media screen and (max-width: 768px) {
+  footer .social {
+    text-align: center;
+  }
 }
