@@ -1172,11 +1172,11 @@ section {
     width: 90%;
     /* justify-content: space-between; */
 
-    gap: 1rem;
+    gap: 0.5rem;
   }
   .profile-box {
-    width: 160px;
-    height: 280px;
+    width: 150px;
+    height: 290px;
     background: var(--accent-color);
     border-radius: 8px;
     margin-bottom: 30px;
@@ -1350,6 +1350,68 @@ section {
 
 .faq-toggle i {
   color: var(--header-shadow);
+}
+
+/* partners */
+
+.partners {
+  text-align: center;
+  margin-top: 100px;
+  height: 500px;
+}
+
+.partners h1 {
+  font-size: 50px;
+  font-weight: 400px;
+  color: var(--font-color);
+  padding-bottom: 30px;
+}
+
+.partners p {
+  width: 60%;
+  font-size: 25px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #fff;
+  text-align: center;
+  display: inline-block;
+  padding-bottom: 50px;
+}
+
+.partners .apply {
+  margin-top: 160px;
+  float: left;
+  margin-left: 20px;
+}
+
+h3 {
+  font-size: 25px;
+}
+.partners .apply a {
+  display: inline-block;
+  padding: 0.5rem 2rem;
+  background: var(--bg-color);
+  color: #000;
+  font-family: var(--font-secondary);
+  font-style: italicno;
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: center;
+  text-transform: capitalize;
+  transition: all 0.5s ease;
+  box-shadow: var(--header-shadow);
+  cursor: pointer;
+  border-radius: 10px;
+  position: relative;
+  text-decoration: none;
+  outline: none;
+  margin: 10px 0;
+}
+
+.partners .apply a:hover {
+  box-shadow: var(--header-shadow);
+  background-color: var(--cornering);
+  color: #fff;
 }
 
 /* footer */

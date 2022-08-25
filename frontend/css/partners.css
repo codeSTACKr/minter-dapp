@@ -49,7 +49,7 @@ body {
   z-index: -1;
 }
 .contact-box {
-  max-width: 850px;
+  max-width: 1000px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-content: center;
@@ -65,7 +65,7 @@ body {
       rgba(0, 0, 0, 0.8) 50%,
       rgba(0, 0, 0, 0.5) 80%
     ),
-    url(/images/team/1.jpg);
+    url(/images/team/5.jpg);
   background-size: cover;
   background-position: center;
   height: 100%;
@@ -77,7 +77,7 @@ body {
 .left h1 {
   color: var(--bg-color);
   font-family: "Lucida Sans Unicode";
-  font-size: 50px;
+  font-size: 40px;
   text-shadow: 1px 1px #f1eded;
 }
 .left h3 {
@@ -105,6 +105,10 @@ h2:after {
   border-radius: 2px;
   background-color: var(--line-color);
 }
+p {
+  float: left;
+  font-size: 20px;
+}
 
 .field {
   width: 100%;
@@ -129,7 +133,7 @@ textarea {
   width: 100%;
   padding: 0.5rem 1rem;
   background-color: var(--line-color);
-  color: #fff;
+  color: #000;
   font-size: 1.1rem;
   border: none;
   outline: none;
@@ -139,6 +143,7 @@ textarea {
 
 .btn:hover {
   background-color: var(--btn-bg-color);
+  color: #fff;
 }
 
 .field:focus {
@@ -163,7 +168,7 @@ textarea {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 30px 20px;
+    padding: 0 20px;
   }
 
   .contact-box {
@@ -176,18 +181,36 @@ textarea {
     box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.19);
   }
   .left {
-    height: 200px;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.8) 50%,
+        rgba(0, 0, 0, 0.5) 80%
+      ),
+      url(/images/team/5.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
   }
+
   .left h1 {
     font-size: 30px;
     line-height: 25px;
-    margin-top: 30px;
+    margin-bottom: 20px;
     text-shadow: 1px 1px #f1eded;
   }
   .left h3 {
     font-size: 18px;
+    margin-bottom: 10px;
   }
   .right {
     width: 100%;
+  }
+  p {
+    float: left;
+    font-size: 18px;
   }
 }
