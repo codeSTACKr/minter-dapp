@@ -1378,6 +1378,14 @@ section {
   padding-bottom: 50px;
 }
 
+.partners .partnership img {
+  margin: 50px;
+  transition: 0.3s;
+}
+.partners .partnership img:hover {
+  transform: translateZ(-60px) scale(1.3);
+}
+
 .partners .apply {
   margin-top: 160px;
   float: left;
