@@ -1433,7 +1433,8 @@ h3 {
 /* feature */
 
 .featured {
-  height: 400px;
+  height: 500px;
+  width: 90%;
   text-align: center;
   margin-top: 100px;
 }
@@ -1442,7 +1443,7 @@ h3 {
   font-size: 50px;
   font-weight: 400px;
   color: var(--font-color);
-  padding-bottom: 30px;
+  padding-bottom: 20px;
 }
 
 .featured p {
@@ -1453,7 +1454,9 @@ h3 {
   color: #fff;
   text-align: center;
   display: inline-block;
-  padding-bottom: 50px;
+}
+.featured .feature {
+  display: inline-block;
 }
 
 .featured .feature img {
@@ -1465,9 +1468,13 @@ h3 {
 }
 @media screen and (max-width: 768px) {
   .featured {
-    height: 1000px;
+    height: 600px;
     text-align: center;
     margin-top: 100px;
+  }
+  .featured .feature img {
+    width: 120px;
+    margin: 20px;
   }
 }
 
