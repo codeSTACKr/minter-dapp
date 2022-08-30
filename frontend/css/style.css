@@ -164,6 +164,17 @@ header .navbar {
   color: #fff;
 }
 
+.not-connected .twitter-follow {
+  margin: 30px;
+  transform: translateY(30px);
+}
+.not-connected .twitter-follow p {
+  font-size: 18px;
+}
+.not-connected .twitter-follow .twitter-follow-button {
+  font-size: 30px;
+}
+
 /* NOT CONNECTED */
 .not-connected {
   margin: auto;
@@ -1480,13 +1491,18 @@ h3 {
 }
 @media screen and (max-width: 768px) {
   .featured {
-    height: 600px;
+    height: 700px;
     text-align: center;
     margin-top: 100px;
   }
   .featured .feature img {
     width: 120px;
+    height: 60px;
     margin: 10px;
+  }
+  .featured p {
+    font-size: 15px;
+    margin-bottom: 30px;
   }
 }
 
