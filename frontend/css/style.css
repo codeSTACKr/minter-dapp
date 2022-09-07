@@ -1269,7 +1269,7 @@ section {
 
 .partners p {
   width: 60%;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 300;
   line-height: 1.8;
   color: #fff;
@@ -1287,7 +1287,7 @@ section {
 }
 
 .partners .apply {
-  margin-top: 160px;
+  margin-top: 100px;
   float: left;
   margin-left: 20px;
 }
@@ -1322,10 +1322,21 @@ h3 {
   color: #fff;
 }
 @media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 768px) {
   .partners {
-    height: 800px;
+    height: 700px;
     text-align: center;
     margin-top: 100px;
+  }
+  .partners .partnership img {
+    width: 120px;
+    height: 60px;
+    margin: 10px;
+  }
+  .partners p {
+    font-size: 15px;
+    margin-bottom: 30px;
   }
 }
 
@@ -1466,7 +1477,7 @@ h3 {
 
 .featured p {
   width: 60%;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 300;
   line-height: 1.8;
   color: #fff;
