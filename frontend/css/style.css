@@ -1264,7 +1264,7 @@ section {
   font-size: 50px;
   font-weight: 400px;
   color: var(--font-color);
-  padding-bottom: 30px;
+  padding-bottom: 10px;
 }
 
 .partners p {
@@ -1275,11 +1275,11 @@ section {
   color: #fff;
   text-align: center;
   display: inline-block;
-  padding-bottom: 50px;
+  padding-bottom: 30px;
 }
 
 .partners .partnership img {
-  margin: 50px;
+  margin: 40px;
   transition: 0.3s;
 }
 .partners .partnership img:hover {
@@ -1337,6 +1337,37 @@ h3 {
   .partners p {
     font-size: 15px;
     margin-bottom: 30px;
+  }
+  .partners .apply {
+    margin-top: 100px;
+    float: none;
+  }
+  h3 {
+    font-size: 18px;
+  }
+  .partners .apply a {
+    padding: 0.5rem 2rem;
+    background: var(--bg-color);
+    color: #000;
+    font-family: var(--font-secondary);
+    font-weight: bold;
+    font-size: 0.8rem;
+    text-align: center;
+    text-transform: capitalize;
+    transition: all 0.5s ease;
+    box-shadow: var(--header-shadow);
+    cursor: pointer;
+    border-radius: 10px;
+    position: relative;
+    text-decoration: none;
+    outline: none;
+    margin: 10px 0;
+  }
+
+  .partners .apply a:hover {
+    box-shadow: var(--header-shadow);
+    background-color: var(--cornering);
+    color: #fff;
   }
 }
 
@@ -1465,10 +1496,12 @@ h3 {
   height: 700px;
   width: 90%;
   text-align: center;
+  align-items: center;
   margin-top: 100px;
 }
 
 .featured h1 {
+  text-align: center;
   font-size: 50px;
   font-weight: 400px;
   color: var(--font-color);
