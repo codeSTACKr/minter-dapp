@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/contact-style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Quicksand&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" type="x-icon" href="images/header/icon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <title>Centurion-Contact Us</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="contact-box">
+        <div class="left">
+          <h1>We love to hear from you.</h1>
+          <h3>
+            Please use the form to reach out and share your comments and
+            suggestions.
+          </h3>
+        </div>
+        <div class="right">
+          <a onclick="back()"> <i class="fa fa-close"></i> </a>
+          <h2>Contact Us</h2>
+          <form
+            action="https://formsubmit.co/110945613fd2086b377644d13f2be465"
+            method="POST"
+          >
+            <input
+              type="name"
+              name="Name"
+              class="field"
+              placeholder="Full Name"
+              required
+            />
+            <input
+              type="email"
+              name="Email"
+              class="field"
+              placeholder="Email Address"
+              required
+            />
+            <input
+              type="country"
+              name="Country"
+              class="field"
+              placeholder="Country"
+            />
+            <textarea
+              placeholder="Message"
+              name="Message"
+              class="field"
+            ></textarea>
+            <button class="btn">Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      function back() {
+        window.history.back();
+      }
+    </script>
+  </body>
+</html>

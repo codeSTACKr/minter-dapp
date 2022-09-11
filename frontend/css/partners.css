@@ -1,0 +1,216 @@
+:root {
+  --font-primary: "Poppins", sans-serif;
+  --font-secondary: "Arvo", serif;
+  --font-code: "Roboto", monospace;
+  --bg-color: #00b4d8;
+  --bg-color-transparent: #00163f80;
+  --font-color: #ffffff;
+  --line-color: #4adede;
+  --btn-bg-color: #0a3056;
+  --accent-color: #0f3056;
+  --cornering: #616464;
+  --button-hov: #1528ce;
+  --header-shadow: #000 0px 0px 5px;
+  --card-shadow: var(--accent-color) 0px 0px 20px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 100px;
+}
+
+.container:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: url(/images/header/bg2.png);
+  background-size: cover;
+  filter: blur(20px);
+  z-index: -1;
+}
+.contact-box {
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.19);
+}
+
+.left {
+  background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.8) 50%,
+      rgba(0, 0, 0, 0.5) 80%
+    ),
+    url(/images/team/5.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.left h1 {
+  color: var(--bg-color);
+  font-family: "Lucida Sans Unicode";
+  font-size: 40px;
+  text-shadow: 1px 1px #f1eded;
+}
+.left h3 {
+  color: #fff;
+}
+
+.right {
+  padding: 25px 40px;
+}
+
+h2 {
+  position: relative;
+  padding: 0 0 10px;
+  margin-bottom: 10px;
+}
+
+h2:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  height: 4px;
+  width: 50px;
+  border-radius: 2px;
+  background-color: var(--line-color);
+}
+p {
+  float: left;
+  font-size: 20px;
+}
+
+.field {
+  width: 100%;
+  border: 2px solid rgba(0, 0, 0, 0);
+  outline: none;
+  background-color: rgba(230, 230, 230, 0.6);
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  margin-bottom: 22px;
+  transition: 0.3s;
+}
+
+.field:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+textarea {
+  min-height: 150px;
+}
+
+.btn {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background-color: var(--line-color);
+  color: #000;
+  font-size: 1.1rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--btn-bg-color);
+  color: #fff;
+}
+
+.field:focus {
+  border: 2px solid rgba(30, 85, 250, 0.47);
+  background-color: #fff;
+}
+.fa {
+  display: block;
+  color: #000;
+  cursor: pointer;
+  font-size: 30px;
+  float: right;
+  margin-top: -20px;
+  margin-right: -30px;
+}
+
+@media screen and (max-width: 763px) {
+  .container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+  }
+
+  .contact-box {
+    max-width: 1000px;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.19);
+  }
+  .left {
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.8) 50%,
+        rgba(0, 0, 0, 0.5) 80%
+      ),
+      url(/images/team/5.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .left h1 {
+    font-size: 30px;
+    line-height: 25px;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px #f1eded;
+  }
+  .left h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .right {
+    width: 100%;
+  }
+  p {
+    float: left;
+    font-size: 18px;
+  }
+}

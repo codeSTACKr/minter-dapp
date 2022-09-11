@@ -1,81 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>CodeCats</title>
+    <title>Centurion</title>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- favicon -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="images/x-icon/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="images/x-icon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="images/x-icon/favicon-16x16.png"
-    />
+
+    <link rel="shortcut icon" type="x-icon" href="images/header/icon.png" />
+
     <link rel="manifest" href="images/x-icon/site.webmanifest" />
     <link rel="stylesheet" href="css/three-dots.min.css" />
-    <link rel="stylesheet" href="css/splide.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Quicksand&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
     <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-7YMH4K3L9C"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-7YMH4K3L9C");
+    </script>
   </head>
   <body>
     <header>
-      <div class="container">
+      <div class="navbar">
         <div class="logo">
           <a href="/">
-            <img src="images/x-icon/favicon-32x32.png" alt="logo" />
+            <img src="images/header/icon.png" alt="logo" />
           </a>
         </div>
-        <div class="menu">
-          <a
-            href="https://discord.gg/A9CnsVzzkZ"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src="images/header/discord.webp" alt="Discord" />
-          </a>
-          <a
-            href="https://twitter.com/codeSTACKr"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src="images/header/twitter.webp" alt="Twitter" />
-          </a>
-          <a
-            href="https://opensea.io/collection/codecats"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src="images/header/opensea.webp" alt="Opensea" />
-          </a>
-          <button class="wallet-btn btn" id="connectWallet">
-            <span>Connect Wallet</span>
-          </button>
+        <div class="menu" id="menu">
+          <i class="fa fa-close" onclick="hidemenu()"></i>
+          <ul>
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#nft">NFT</a></li>
+            <li><a href="#capital">Capital</a></li>
+            <li><a href="#roadmap">ROADMAP</a></li>
+            <li><a href="#team">TEAM</a></li>
+            <li><a href="#faqm">FAQ</a></li>
+            <button class="wallet-btn btn" id="connectWallet">
+              <span>Connect Wallet</span>
+            </button>
+          </ul>
         </div>
+        <i class="fa fa-bars" onclick="showmenu()"></i>
       </div>
     </header>
+    <div id="particles-js" class="particles-js"></div>
 
-    <section class="container not-connected">
-      <div>
-        <h2 id="welcomeH2">Connect to MetaMask to Get Started</h2>
-        <h1 id="welcomeH1">Welcome to the CodeCats NFT Project!</h1>
-        <p id="welcomeP">
-          The CodeCats NFT Project is a decentralized, open-source project that aims to demonstrate how to develope and launch your own NFT Collection. Follow step by step on the <a href="https://youtube.com/codestackr"  target="_blank" rel="noopener noreferrer">codeSTACKr</a> YouTube channel.
-        </p>
-      </div>
-    </section>
-
+    <div id="home" class="home">
+      <section class="container not-connected">
+        <div>
+          <h2 id="welcomeH2">Connect to MetaMask to Get Started</h2>
+          <h1 id="welcomeH1"></h1>
+          <p id="welcomeP">
+            <a href="000" target="_blank" rel="noopener noreferrer"></a>
+          </p>
+        </div>
+        <div class="pdf">
+          <p>
+            Download the Whitepaper here:
+            <button
+              class="whitepaper"
+              onclick="location.href='pdf-file/Centurion-whitepaper.pdf';"
+            >
+              WhitePaper
+            </button>
+          </p>
+        </div>
+        <div class="twitter-follow">
+          <p>For news and updates, follow us on twitter</p>
+          <a
+            href="https://twitter.com/centurionnft_?ref_src=twsrc%5Etfw"
+            class="twitter-follow-button"
+            data-show-count="true"
+            data-size="large"
+            >Follow @centurionnft_</a
+          >
+        </div>
+      </section>
+    </div>
     <section class="container">
       <div class="countdown card">
         <div id="countdown">
@@ -103,16 +123,14 @@
           <h2 id="subHeading">Pre-Sale Countdown</h2>
         </div>
         <h1 id="mainHeading">NFT Drop Coming Soon!!</h1>
-        <p id="mainText">
-          A new batch of cute cats will be available very soon!
-        </p>
+        <p id="mainText"></p>
         <a
           id="actionButton"
-          href="https://discord.gg/A9CnsVzzkZ"
+          href=""
           target="_blank"
           rel="noopener noreferrer"
           class="hero-btn btn"
-          ><span>Join the Catmmunity</span>
+          ><span>Join the Centurion Community</span>
         </a>
         <div id="mintContainer" class="mint-container hidden">
           <div class="info-container">
@@ -122,7 +140,7 @@
             </div>
             <div>
               <h3>Price Per Mint</h3>
-              <p id="pricePerMint">1 ETH</p>
+              <p id="pricePerMint">0.001 ETH</p>
             </div>
             <div>
               <h3>Max</h3>
@@ -131,7 +149,9 @@
           </div>
           <div class="mint-qty">
             <span>
-              <button class="input-number-decrement btn" id="mintDecrement">–</button>
+              <button class="input-number-decrement btn" id="mintDecrement">
+                –
+              </button>
               <input
                 id="mintInput"
                 class="input-number btn"
@@ -140,7 +160,9 @@
                 min="1"
                 max="5"
               />
-              <button class="input-number-increment btn" id="mintIncrement">+</button>
+              <button class="input-number-increment btn" id="mintIncrement">
+                +
+              </button>
             </span>
             <button id="setQtyMax" class="btn">SET MAX</button>
           </div>
@@ -154,14 +176,14 @@
       <div class="minted-container card show-card hidden">
         <h1>🎉</h1>
         <h2>Minted!</h2>
-        <p>Here's your trasaction link:</p>
+        <p>Here's your transaction link:</p>
         <a id="mintedTxnBtn" href="" target="_blank" rel="noopener noreferrer">
           <button class="hero-btn btn">View Transaction</button>
         </a>
         <p>View it in the collection:</p>
         <a
           id="mintedLinkBtn"
-          href="https://testnets.opensea.io/collection/teststackr-collection"
+          href="https://testnets.opensea.io/collection/centurion-rlnlea64wg"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -172,46 +194,592 @@
 
     <div id="spinner" class="dot-spin"></div>
 
-    <div class="splide">
-      <div class="splide__track">
-        <ul class="splide__list">
-          <li class="splide__slide">
-            <img src="images/slider/0.png" />
-          </li>
-          <li class="splide__slide">
-            <img src="images/slider/1.png" />
-          </li>
-          <li class="splide__slide">
-            <img src="images/slider/2.png" />
-          </li>
-          <li class="splide__slide">
-            <img src="images/slider/3.png" />
-          </li>
-          <li class="splide__slide">
-            <img src="images/slider/4.png" />
-          </li>
-          <li class="splide__slide">
-            <img src="images/slider/5.png" />
-          </li>
-          <li class="splide__slide">
-            <img src="images/slider/6.png" />
-          </li>
-          <li class="splide__slide">
-            <img src="images/slider/7.png" />
-          </li>
-          <li class="splide__slide">
-            <img src="images/slider/8.png" />
-          </li>
-        </ul>
-      </div>
-    </div>
+    <!-- nft section -->
+    <section id="nft" class="nft">
+      <h1>NFT</h1>
+      <p>
+        The <b> CENTURION NFT </b> is a collection of unique artworks on the
+        Polygon Blockchain. A centurion—an officer who was leading the ancient
+        Roman army-inspired these NFT concepts. We combine the centurion and his
+        horse in one frame to solidify their comradeship.
+      </p>
 
-    <script src="js/metamask-onboarding.bundle.js"></script>
+      <div class="rotating-img">
+        <div class="slider">
+          <span style="--i: 1"><img src="images/nft/1.png" alt="" /></span>
+          <span style="--i: 2"><img src="images/nft/2.png" alt="" /></span>
+          <span style="--i: 3"><img src="images/nft/3.png" alt="" /></span>
+          <span style="--i: 4"><img src="images/nft/4.png" alt="" /></span>
+          <span style="--i: 5"><img src="images/nft/5.png" alt="" /></span>
+          <span style="--i: 6"><img src="images/nft/6.png" alt="" /></span>
+          <span style="--i: 7"><img src="images/nft/7.png" alt="" /></span>
+          <span style="--i: 8"><img src="images/nft/8.jpg" alt="" /></span>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-2">
+            <p>
+              The Team will allocate the 87% of the funds from the sales of all
+              sold NFTs to Centurion Capital, held by the team. <br />
+              <b class="more">see WhitePaper for more info.</b>
+
+              <br />
+              <br />5% goes to the team who created this Project.<br />
+              <br />5% Project Development fund will be used to maintain and
+              further development of this website and Project. <br />
+              <br />We allotted a certain amount of funds for charity as we are
+              committed into providing assistance to individuals in need,
+              especially now that calamities are occurring in many regions of
+              the world.
+            </p>
+          </div>
+          <div class="col-2">
+            <img src="images/capital/a1.png" width="350" />
+            <div class="percent">
+              <div class="bead1"><p>87% Centurion Capital</p></div>
+              <div class="bead2"><p>5% Team</p></div>
+              <div class="bead3"><p>5% Project Development</p></div>
+              <div class="bead4"><p>3% Charity</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- capital section -->
+
+    <section id="capital" class="capital">
+      <h1>Centurion Capital</h1>
+      <p>
+        The CENTURION CAPITAL serves as the Centurion’s
+        <b> Venture Capital, </b> this is the Centurion’s one-of-a-kind weapon
+        for growth and building a strong community. It serves as a conduit for
+        all NFT holders to receive <b> Airdrops,</b> through a comprehensive
+        assessment of high-potential start-up tokens in the global market.
+      </p>
+      <div class="container">
+        <div class="row">
+          <div class="col-2">
+            <p>
+              50% of each Coin/Token acquired through Centurion Capital
+              investment will be <b> Airdropped </b> to all NFT holders. <br />
+              <br />40% of Coin/Token acquired will go back to Centurion Capital
+              Treasury And will be used to reinvest to another potential
+              project.
+              <br />
+              <br />5% will be split into Two, 1 part goes to the Centurion Team
+              and the other one goes to Centurion Capital research Team.
+              <br />
+              <br />5% will be used to fund the Real World Project that will
+              <b> generate revenue </b> to sustain the treasury of Centurion
+              Capital and the whole ecosystem. <br />
+              <b class="more">see WhitePaper for more info.</b>
+            </p>
+          </div>
+          <div class="col-2">
+            <img src="images/capital/A.png" width="350" />
+            <div class="percent">
+              <div class="bead1"><p>50% Airdrop to NFT Holders.</p></div>
+              <div class="bead2">
+                <p>40% Treasury of Centurion Capital.</p>
+              </div>
+              <div class="bead3"><p>5% Team</p></div>
+              <div class="bead4"><p>5% Real World Project</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Roadmap section -->
+    <section id="roadmap" class="roadmap">
+      <div class="container">
+        <div class="top-section">
+          <h1>Roadmap</h1>
+          <p>
+            We are committed to establishing a long-term Roadmap for the
+            community's future.
+          </p>
+        </div>
+        <div class="timeline">
+          <div class="line"></div>
+          <div class="section">
+            <div class="bead"><i>Q1</i></div>
+            <div class="content">
+              <h2><img src="images/x-icon/check.png" alt="" srcset="" /></h2>
+              <p>
+                <b>*</b>Team Creation <br />
+                <br />
+                <b>*</b> Planning
+              </p>
+            </div>
+          </div>
+
+          <div class="section">
+            <div class="bead"><i> Q2</i></div>
+            <div class="content">
+              <h2><img src="images/x-icon/check.png" alt="" srcset="" /></h2>
+              <p>
+                <b>*</b>Launching of Twitter and Telegram account <br />
+                <br />
+                <b>*</b>Building of website <br />
+              </p>
+            </div>
+          </div>
+
+          <div class="section">
+            <div class="bead"><i>Q3</i></div>
+            <div class="content">
+              <h2></h2>
+              <p>
+                <b>*</b> Launching of Website. <br />
+                <br />
+                <b>*</b>Marketing. <br />
+                <br />
+                <b>*</b>Partnership.
+              </p>
+            </div>
+          </div>
+
+          <div class="section">
+            <div class="bead"><i>Q4</i></div>
+            <div class="content">
+              <h2></h2>
+              <p>
+                <b>*</b>Launch of Minting. <br />
+                <br />
+                <b>*</b> Start operation of Centurion Capital <br />
+                <br />
+                <b>*</b> Onboarding of Team of Engineers For the Real world
+                Project.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="bottom-section">
+          <p>Roadmap V2 Comming</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- team -->
+
+    <section id="team" class="team">
+      <h1>Team</h1>
+      <p class="int">
+        Our team is made up of experts from a multitude of sectors, including
+        <b> Engineering </b> and <b> Technology </b>, <b> Finance,</b> and
+        <b> Arts </b>, and we are all passionate about cryptocurrencies. We are
+        really motivated and committed to contributing our expertise to the
+        project in order to produce something outstanding.
+      </p>
+
+      <div class="team-row">
+        <div class="profile-box">
+          <h4>Mark Peñero</h4>
+          <h5>CO-FOUNDER/CEO</h5>
+          <img src="images/team/Mark.png" />
+          <p>
+            BS-Civil Engineering. Worked in various Construction companies as a
+            site Engineer also a Web Developer.
+          </p>
+        </div>
+        <div class="profile-box">
+          <h4>Jonathan Capili</h4>
+          <h5>CO-FOUNDER/COO</h5>
+          <img src="images/team/jonathan.jpg" />
+          <p>
+            BS-Civil Engineering. Worked as a Project Engineer in the Middle
+            East for 11 Yrs.
+          </p>
+        </div>
+        <div class="profile-box">
+          <h4>Erica Herreros</h4>
+          <h5>CO-FOUNDER/CTO</h5>
+          <img src="images/team/erica.png" />
+          <p>
+            BS-Electronics & Communication Engineering. Working as Associate
+            Software Engineer-Support Analyst in various Tech Company in the
+            Philippines
+          </p>
+        </div>
+        <div class="profile-box">
+          <h4>Joel Peñero</h4>
+          <h5>CO-FOUNDER/CMO</h5>
+          <img src="images/team/joel.png" />
+          <p>
+            BA-Management. Former business analyst for the Philippines' leading
+            pawnshop & money transfer firm. His 7 years of experience in
+            financial industry has transformed him into an asset and help in the
+            development of the company's competitiveness.
+          </p>
+        </div>
+
+        <div class="profile-box">
+          <h4>Jinky Lanzaderas</h4>
+          <h5>CO-FOUNDER/CFO</h5>
+          <img src="images/team/jinky.png" />
+          <p>BA-Banking & Finance. Former COO of E&J Trading.</p>
+        </div>
+        <div class="profile-box">
+          <h4>Ritchard Colaste</h4>
+          <h5>CO-FOUNDER/Digital Artist</h5>
+          <img src="images/team/ritchard.png" />
+          <p>
+            BA-Financial Management. Has passion for portraiture, graphic
+            design, and digital art. He is also a crypto enthusiast.
+          </p>
+        </div>
+        <div class="profile-box">
+          <h4>Sahrah Jane E. Ventura</h4>
+          <h5>Financial Adviser</h5>
+          <img src="images/team/sahra.png" />
+          <p>
+            BA-Human Resource. Licensed Financial Advisor & Unit Head of AXA
+            Philippines. Also a former employee of Paypal, Concentrix and EXL
+            Service Philippines .
+          </p>
+        </div>
+        <div class="profile-box">
+          <h4>Janella Macabugao</h4>
+          <h5>Software Engineer</h5>
+          <img src="images/team/janella.jpg" />
+          <p>BS-Computer Science. Work as a Software Engineer of Fujitsu.</p>
+        </div>
+        <div class="profile-box">
+          <h4>Nel Montilla</h4>
+          <h5>Software Engineer</h5>
+          <img src="images/team/nel.jpg" />
+          <p>
+            BS-Computer Science. Work in various tech company in the Philippines
+            as a software Engineer.
+          </p>
+        </div>
+        <div class="profile-box">
+          <h4>Jasmin Polvorosa</h4>
+          <h5>Web Developer</h5>
+          <img src="images/team/jasmin.jpg" />
+          <p>Student of BS-Computer Science. Crypto Enthusiast.</p>
+        </div>
+
+        <div class="profile-box">
+          <h4>Joey Colaste</h4>
+          <h5>Graphics designer</h5>
+          <img src="images/team/joey.png" />
+          <p>
+            BS-Political Science. Digital Artist, Graphics designer and Crypto
+            Enthusiasts.
+          </p>
+        </div>
+        <div class="profile-box">
+          <h4>Reanie Colaste</h4>
+          <h5>Community Manager</h5>
+          <img src="images/team/reanni.png" />
+          <p>
+            Student of BA-Financial Management, Content Creator, and Former
+            Radio Producer She established techniques to create and supervise
+            social media marketing campaigns.
+          </p>
+        </div>
+        <div class="profile-box">
+          <h4>Ellin jin Lanzaderas</h4>
+          <h5>Social Media Moderator</h5>
+          <img src="images/team/ellinjane.png" />
+          <p>Student of BS- Civil Engineering, Cryptocurrency Enthusiast.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- partnership -->
+
+    <section class="partners">
+      <h1>Partners</h1>
+      <p>Click the logo to visit our partners</p>
+      <div class="wrapper">
+        <div class="logo-slider">
+          <div class="slide">
+            <a
+              href="https://nftstudio24.com/collection/the-centurion-nft/?fbclid=IwAR0hICcZ-CbAw0_KYGKKRsO6AwVq6MfnkTcoDggQKpSkVNu9-zr_fYaxcTw"
+              ><img
+                src="images/partners/WHITE FONT TRANS.png"
+                alt="nftstudio24"
+            /></a>
+            <a
+              href="https://upcomingnft.net/event/centurion-nft/?fbclid=IwAR1JluUStmEE9pd_f9bpDfAW7aaB9kAC7736N5Ge3DPfPlf2x-F-J9ZSHow"
+              ><img
+                src="images/partners/upcomingnft_maillogo_w.png"
+                alt="upcomingnft"
+            /></a>
+            <a href="https://losthopesociety-nft.com/"
+              ><img
+                src="images/partners/losthopesociety.jpg"
+                alt="Lost_hope_society"
+            /></a>
+            <a href="https://moongate.id/"
+              ><img src="images/partners/moongate.svg" alt="Moongate"
+            /></a>
+            <a href="https://cosmicmeta.io/"
+              ><img src="images/partners/comicmeta.png" alt="comicmeta"
+            /></a>
+          </div>
+          <div class="slide">
+            <a
+              href="https://nftstudio24.com/collection/the-centurion-nft/?fbclid=IwAR0hICcZ-CbAw0_KYGKKRsO6AwVq6MfnkTcoDggQKpSkVNu9-zr_fYaxcTw"
+              ><img
+                src="images/partners/WHITE FONT TRANS.png"
+                alt="nftstudio24"
+            /></a>
+            <a
+              href="https://upcomingnft.net/event/centurion-nft/?fbclid=IwAR1JluUStmEE9pd_f9bpDfAW7aaB9kAC7736N5Ge3DPfPlf2x-F-J9ZSHow"
+              ><img
+                src="images/partners/upcomingnft_maillogo_w.png"
+                alt="upcomingnft"
+            /></a>
+            <a href="https://losthopesociety-nft.com/"
+              ><img
+                src="images/partners/losthopesociety.jpg"
+                alt="Lost_hope_society"
+            /></a>
+            <a href="https://moongate.id/"
+              ><img src="images/partners/moongate.svg" alt="Moongate"
+            /></a>
+            <a href="https://cosmicmeta.io/"
+              ><img src="images/partners/comicmeta.png" alt="comicmeta"
+            /></a>
+          </div>
+        </div>
+      </div>
+      <div class="apply">
+        <h3>Be one of our partners.</h3>
+        <a href="partners">CONTACT US</a>
+      </div>
+    </section>
+
+    <!------ faq section ------>
+    <section id="faqm" class="faqm">
+      <h2>FAQs</h2>
+      <div class="faq-container">
+        <div class="faq active">
+          <h3 class="faq-title">How many Centurion NFT’s are there?</h3>
+
+          <p class="faq-text">
+            There are only 4,444 limited edition Centurion NFT's that will be
+            minted.
+          </p>
+
+          <button class="faq-toggle">
+            <i class="fas fa-chevron-down"></i>
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+
+        <div class="faq">
+          <h3 class="faq-title">What is the price of each NFT?</h3>
+          <p class="faq-text">The price will be 120 Matic per one NFT.</p>
+          <button class="faq-toggle">
+            <i class="fas fa-chevron-down"></i>
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+
+        <div class="faq">
+          <h3 class="faq-title">How many Centurion NFT can I Mint?</h3>
+          <p class="faq-text">
+            Maximum of 5 NFTs on Pre-minting and 10 NFTs on Public minting and a
+            mininmum of 1 NFT in all Minting phases.
+          </p>
+          <button class="faq-toggle">
+            <i class="fas fa-chevron-down"></i>
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+
+        <div class="faq">
+          <h3 class="faq-title">When is the Pre-minting and Public Minting?</h3>
+          <p class="faq-text">To be announce.</p>
+          <button class="faq-toggle">
+            <i class="fas fa-chevron-down"></i>
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+
+        <div class="faq">
+          <h3 class="faq-title">Who is eligible for an Airdrop?</h3>
+          <p class="faq-text">
+            All NFT holders is Eligible for the Airdrop. More details will be
+            announce in the future.
+          </p>
+          <button class="faq-toggle">
+            <i class="fas fa-chevron-down"></i>
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- feature -->
+    <section class="featured">
+      <h1>Featured on</h1>
+      <p>Click the Logo to view</p>
+      <div class="feature">
+        <a
+          href="https://nftstudio24.com/collection/the-centurion-nft/?fbclid=IwAR0hICcZ-CbAw0_KYGKKRsO6AwVq6MfnkTcoDggQKpSkVNu9-zr_fYaxcTw"
+          ><img
+            src="images/partners/WHITE FONT TRANS.png"
+            width="200px"
+            alt="nftstudio24"
+        /></a>
+        <a
+          href="https://upcomingnft.net/event/centurion-nft/?fbclid=IwAR1JluUStmEE9pd_f9bpDfAW7aaB9kAC7736N5Ge3DPfPlf2x-F-J9ZSHow"
+          ><img
+            src="images/partners/upcomingnft_maillogo_w.png"
+            width="250px"
+            alt="upcomingnft"
+        /></a>
+        <a
+          href="https://www.fiverr.com/joelpenero/selling-4k-pcs-nft-and-you-rewarded-an-airdrop?context_referrer=search_gigs&source=top-bar&ref_ctx_id=049736fde723d1bd943d372328742fde&pckg_id=1&pos=1&context_type=auto&funnel=049736fde723d1bd943d372328742fde&imp_id=d6652245-b75a-4677-a400-8bafe60006bd"
+          ><img
+            src="images/partners/fiverr.png"
+            width="150px"
+            height="70px"
+            alt="fiverr"
+        /></a>
+        <a
+          href="https://nfteller.io/nft-calendar-drops/listing/centurion-nft/?fbclid=IwAR1NlYUiqLdvwB-sG6RuZoxbpUCETKiHvmVkHY0C1gAg0YAZWIAmazg1XWk"
+          ><img src="images/partners/nfteller.png" width="250px" alt="nfteller"
+        /></a>
+        <a
+          href="https://nftcalendar.io/event/centurion-nft-sauce/?fbclid=IwAR0FBUtRldwFDRsFKFI0cN7sYT8jMqwvVB4gnUNpB0CH4mbjzhgZIPjtZ_4"
+          ><img
+            src="images/partners/nftcalendar.png"
+            width="150px"
+            height="70px"
+            alt="nftcalendar"
+        /></a>
+        <a
+          id="nnd"
+          href="http://nextnftdrop.com/projects/centurion-nft/?fbclid=IwAR2LHxGw00jxmPJJZbuVuFdWHjUNpUE2dfYJeQWrmS3Q5JI1q76j2xffepQ"
+          ><img
+            src="images/partners/nnd.png"
+            width="150px"
+            height="100px"
+            alt="Next nft drop"
+        /></a>
+        <a href="https://www.nftdropscalendar.com/nft-drops/centurion-nft"
+          ><img
+            src="images/partners/nftcalendar (2).png"
+            width="150px"
+            height="70px"
+            alt="nftdropcalendar"
+        /></a>
+        <a href="https://nft.projectdrop.io/project/centurion-nft/"
+          ><img
+            src="images/partners/nftprojectdrop.png"
+            width="150px"
+            height="70px"
+            alt="nftprojectdrop"
+        /></a>
+        <a
+          href="https://nftevening.com/event/centurion-nft-minting-is-coming/?fbclid=IwAR1hyhOnRQSyXl7lZD9_VLqlS28hzgfSR0Ltpf79C-4q79FQ1pbXZMLtWgM"
+          ><img
+            src="images/partners/nft-evening.png"
+            width="150px"
+            height="70px"
+            alt="nftevening"
+        /></a>
+        <a
+          href="https://www.issuewire.com/the-leading-nft-of-the-future-which-will-provide-various-benefits-centurion-nft-httpscenturion-1742584770260639?fbclid=IwAR1G4UfngONpnnc5Grupfgv90b-rJlqq_PtH50wVYYi2aS-M2D-Ufpj7PHI"
+          ><img
+            src="images/partners/issuewire.png"
+            width="150px"
+            height="60px"
+            alt="isuewire"
+        /></a>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer>
+      <section class="footer">
+        <div class="info">
+          <h1>Contact Us</h1>
+
+          <a href="contact">Send Us A Message</a>
+
+          <p><i class="fa-solid fa-envelope"></i> nftcenturion4000@gmail.com</p>
+          <p>
+            <i class="fa-solid fa-location-dot"></i> 80-G, Holy Spirit, Quezon
+            City 1127 Philippines.
+          </p>
+        </div>
+
+        <div class="quicklinks">
+          <h1>Quick Links</h1>
+          <ul>
+            <li>
+              <a href="#home">Home</a>
+            </li>
+            <li>
+              <a href="#nft">NFT</a>
+            </li>
+            <li>
+              <a href="#capital">Capital</a>
+            </li>
+            <li>
+              <a href="#team">About</a>
+            </li>
+            <li>
+              <a href="#faqm">Faqs</a>
+            </li>
+          </ul>
+        </div>
+        <div class="social">
+          <h1>Follow Us</h1>
+          <a
+            href="https://twitter.com/centurionnft_?s=20&t=4FjryZehYR2TCDR4pKUc0Q"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a href="https://www.instagram.com/centurion_nft/"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a
+            href="https://t.me/centurionnfts?fbclid=IwAR01VdprpQKTErrVMX6ajomnk3zf08ScAscpsOJfk0gB_2EPTiCRi1aTAeM"
+            ><i class="fab fa-telegram"></i
+          ></a>
+          <a href=""
+            ><img src="images/x-icon/opns.svg" width="25px" alt="Opensea"
+          /></a>
+
+          <!-- https://testnets.opensea.io/collection/centurion-rlnlea64wg -->
+        </div>
+      </section>
+      <p class="copyright">
+        Copyright © 2022 CenturionNFT All Rights Reserved.
+      </p>
+    </footer>
+
+    <!-- java script section -->
+
+    <!-- twitter integration -->
+    <script
+      async
+      src="https://platform.twitter.com/widgets.js"
+      charset="utf-8"
+    ></script>
+
+    <!-- <script src="js/metamask-onboarding.bundle.js"></script> -->
     <script src="js/web3.min.js"></script>
-    <script src="js/splide.min.js"></script>
+    <script src="js/app.js"></script>
     <script src="js/constants.js"></script>
     <script src="js/abi.js"></script>
     <script src="js/countdown.js"></script>
-    <script src="js/app.js"></script>
+    <script src="js/roadmap.js"></script>
+    <script src="js/faq.js"></script>
+    <script src="js/mobile.js"></script>
+    <script src="jquery-3.2.1.min.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/particles.min.js"></script>
   </body>
 </html>
