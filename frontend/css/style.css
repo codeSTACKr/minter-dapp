@@ -57,6 +57,10 @@ body {
   width: 50px;
   margin-right: 70px;
 }
+h4 {
+  margin-top: -10px;
+  margin-left: -20px;
+}
 
 /* HEADER */
 
@@ -73,9 +77,8 @@ header {
 header .navbar {
   display: flex;
   justify-content: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 30px;
+  max-width: 100%;
+  padding: 0 80px;
 }
 
 .menu ul {
@@ -474,6 +477,14 @@ section {
     font-size: 1rem;
     width: 100px;
   }
+  header .navbar {
+    padding: 0 50px;
+  }
+
+  .menu ul li {
+    margin-right: -12px;
+    margin-left: -12px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -647,6 +658,10 @@ section {
   color: var(--font-color);
   padding-bottom: 30px;
 }
+.nft h2 {
+  padding-bottom: 30px;
+  font-size: 30px;
+}
 
 .nft p {
   width: 60%;
@@ -819,6 +834,61 @@ section {
   }
   .nft .col-2 img {
     width: 300px;
+  }
+}
+
+/* centurion forest */
+
+.forest {
+  text-align: center;
+  align-items: center;
+}
+
+.forest h1 {
+  font-size: 50px;
+  font-weight: 500px;
+  padding-bottom: 80px;
+}
+.forest .content {
+  display: flex;
+  justify-content: space-around;
+}
+.forest img {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  transition: 0.5s;
+}
+.forest img:hover {
+  transform: translateX(-0px) scale(1.1);
+}
+.forest p {
+  width: 50%;
+  font-size: 25px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #fff;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .forest h1 {
+    margin-top: 50px;
+  }
+  .forest .content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .forest img {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+  }
+  .forest p {
+    font-size: 18px;
+    width: 90%;
   }
 }
 
