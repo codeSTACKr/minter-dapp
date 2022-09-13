@@ -57,7 +57,7 @@ body {
   width: 50px;
   margin-right: 70px;
 }
-h4 {
+header h4 {
   margin-top: -10px;
   margin-left: -20px;
 }
@@ -478,12 +478,12 @@ section {
     width: 100px;
   }
   header .navbar {
-    padding: 0 50px;
+    padding: 0 20px;
   }
 
   .menu ul li {
-    margin-right: -12px;
-    margin-left: -12px;
+    margin-right: -14px;
+    margin-left: -14px;
   }
 }
 
@@ -582,7 +582,10 @@ section {
     float: left;
   }
   .logo img {
-    width: 40px;
+    width: 35px;
+  }
+  header h4 {
+    font-size: 15px;
   }
   .not-connected h1 {
     font-size: 40px;
@@ -798,6 +801,7 @@ section {
   }
   .nft p {
     width: 90%;
+    line-height: 1.2;
   }
   .rotating-img {
     height: 50vh;
@@ -835,6 +839,12 @@ section {
   .nft .col-2 img {
     width: 300px;
   }
+  .nft .container h2 {
+    line-height: 1.2;
+  }
+  .nft .container p {
+    line-height: 1.2;
+  }
 }
 
 /* centurion forest */
@@ -864,11 +874,23 @@ section {
 }
 .forest p {
   width: 50%;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 300;
   line-height: 1.5;
   color: #fff;
-  text-align: center;
+  text-align: justify;
+}
+
+/* media quiry */
+
+@media screen and (max-width: 1200px) {
+  .forest img {
+    width: 300px;
+    height: 300px;
+  }
+  .forest p {
+    font-size: 20px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -909,7 +931,7 @@ section {
 .capital p {
   width: 60%;
   font-size: 25px;
-  font-weight: 300;
+  font-weight: 300px;
   line-height: 1.5;
   color: #fff;
   text-align: center;
@@ -918,10 +940,10 @@ section {
 }
 
 .capital .container {
-  /* width: 80%; */
+  display: flex;
+  align-items: center;
   margin: auto;
   text-align: center;
-  /* height: 600px; */
 }
 
 .capital .container .col-2 p {
@@ -935,19 +957,23 @@ section {
 }
 .capital .row {
   display: flex;
-  align-items: center;
   flex-wrap: wrap;
-  justify-content: space-around;
   color: #fff;
 }
 
 .capital .col-2 {
+  align-items: center;
   flex-basis: 50%;
   min-width: 400px;
 }
 
+.capital .col-2 h2 {
+  font-size: 30px;
+  margin-bottom: 50px;
+}
+
 .capital .container .col-2 .percent {
-  margin-left: 20%;
+  margin-left: 10%;
   justify-content: center;
   display: flex;
   flex-direction: column;
@@ -977,8 +1003,7 @@ section {
 
 .capital .container .col-2 .percent p {
   text-align: justify;
-  width: 500px;
-  margin-left: 10px;
+  width: 400px;
 }
 
 .more {
@@ -987,29 +1012,33 @@ section {
   font-size: 15px;
 }
 
-/* Media Quiry */
+/* Media Query */
 @media screen and (max-width: 768px) {
   .capital p {
-    font-size: 18px;
+    font-size: 20px;
+    width: 90%;
+    line-height: 1.5;
+  }
+  .capital .col-2 h2 {
+    text-align: center;
     width: 90%;
   }
   .capital .col-2 img {
-    width: 300px;
+    width: 250px;
   }
-  .capital .container p {
+  .capital .container .col-2 p {
     font-size: 18px;
-    width: 90%;
+    line-height: 1.2;
   }
   .capital .col-2 .percent {
-    transform: translateX(-18%);
-    margin-bottom: 10px;
+    /* transform: translateX(-18%); */
+    margin-bottom: 50px;
   }
 }
 
 /* Roadmap */
 
 .roadmap {
-  margin: 0;
   margin-bottom: -300px;
   padding-bottom: 0;
   line-height: 1.5;
@@ -1019,8 +1048,8 @@ section {
 }
 
 .roadmap .container {
-  padding: 2rem;
-  padding-bottom: 400px;
+  padding: 1rem;
+  padding-bottom: 200px;
   margin: 0 auto;
   max-width: 800px;
 }
@@ -1142,11 +1171,12 @@ section {
 @media screen and (max-width: 768px) {
   .roadmap p {
     font-size: 18px;
+    align-items: center;
   }
 
   .roadmap .timeline p {
     font-size: 15px;
-    line-height: 20px;
+    line-height: 1.2;
   }
 }
 
@@ -1670,7 +1700,6 @@ h3 {
 
 .featured {
   height: 700px;
-  width: 90%;
   text-align: center;
   align-items: center;
   margin-top: 100px;
@@ -1814,6 +1843,7 @@ footer .quicklinks ul li a:hover {
 }
 footer .social {
   position: relative;
+  width: 120px;
 }
 footer .social h1 {
   text-align: center;

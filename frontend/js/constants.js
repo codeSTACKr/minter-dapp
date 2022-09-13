@@ -2,7 +2,7 @@ const contractAddress = "0x3eC307D71f5a9032965fFFf7c879b7ab79d17b46"; // Replace
 const chain = "rinkeby"; // rinkeby, polygon, or ethereum
 
 const welcome_h1 = "We Secure Your Future!!!";
-const welcome_h2 = "Welcome to the Centurion Project!!";
+const welcome_h2 = "";
 const welcome_p =
   "Building a unique NFT that will provide you <br> with non-ending benefits that can be passed down <br> to future generations, assuring your <br> <b>FINANCIAL SECURITY </b> for today and the future.";
 const h1_presale_coming_soon = "NFT Drop Coming Soon!!";
