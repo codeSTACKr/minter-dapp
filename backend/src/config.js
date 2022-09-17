@@ -7,7 +7,7 @@ const { NETWORK } = require(`${basePath}/constants/network.js`);
 const network = NETWORK.eth;
 
 // General metadata for Ethereum
-const namePrefix = "YOUR COLLECTION NAME";
+const namePrefix = "MY COLLECTION ";
 const description = "Remember to replace this description";
 const baseUri = "ipfs://NewUriToReplace"; // This will be replaced automatically
 
@@ -37,7 +37,7 @@ const format = {
 };
 
 const extraMetadata = {
-  external_url: "https://codecats.xyz", // Replace with your website or remove this line if you do not have one.
+  external_url: "https://astonishing-parfait-37e0cd.netlify.app/", // Replace with your website or remove this line if you do not have one.
 };
 
 // NFTPort Info
@@ -97,8 +97,8 @@ const solanaMetadata = {
   external_url: "https://www.youtube.com/c/hashlipsnft",
   creators: [
     {
-      address: "7fXNuer5sbZtaTEPhtJ5g5gNtuyRoKkvxdjEjEnPN4mC",
-      share: 100,
+      address: "0x6AdaF03FaB41eDa20169dBA94c24984D29be22f6",
+      share: 1,
     },
   ],
 };
