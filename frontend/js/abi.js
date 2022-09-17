@@ -1,4 +1,4 @@
-const abi = [ {
+ [ {
     "inputs": [
       {
         "components": [
