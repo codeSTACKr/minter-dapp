@@ -1,3 +1,2 @@
-
-  [build]
-   ignore = "/bin/false"
+[build]
+  functions = "functions"
