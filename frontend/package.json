@@ -16,8 +16,14 @@
   "bugs": {
     "url": "https://github.com/codeSTACKr/nft-landing-page/issues"
   },
-  "homepage": "https://github.com/codeSTACKr/nft-landing-page#readme",
+  "homepage": "https://velvety-chaja-a01fe8.netlify.app",
   "dependencies": {
     "node-fetch": "^2.6.7"
+  },
+  "env" :{
+    "es2020": true,
+    "browser": true,
+    "node": true,
+    "mocha": true
   }
 }
