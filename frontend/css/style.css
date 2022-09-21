@@ -733,11 +733,11 @@ section {
   height: 100%;
 }
 
-.nft .container p {
+.nft .container .col-2 p {
   width: 80%;
   font-size: 20px;
   font-weight: 300;
-  line-height: 1.8;
+  line-height: 1.5;
   padding: 10px;
   padding-bottom: 100px;
   text-align: justify;
@@ -842,82 +842,15 @@ section {
   .nft .container h2 {
     line-height: 1.2;
   }
-  .nft .container p {
+  .nft .container .col-2 p {
     line-height: 1.2;
-  }
-}
-
-/* centurion forest */
-
-.forest {
-  text-align: center;
-  align-items: center;
-}
-
-.forest h1 {
-  font-size: 50px;
-  font-weight: 500px;
-  padding-bottom: 80px;
-}
-.forest .content {
-  display: flex;
-  justify-content: space-around;
-}
-.forest img {
-  width: 400px;
-  height: 400px;
-  border-radius: 50%;
-  transition: 0.5s;
-}
-.forest img:hover {
-  transform: translateX(-0px) scale(1.1);
-}
-.forest p {
-  width: 50%;
-  font-size: 20px;
-  font-weight: 300;
-  line-height: 1.5;
-  color: #fff;
-  text-align: justify;
-}
-
-/* media quiry */
-
-@media screen and (max-width: 1200px) {
-  .forest img {
-    width: 300px;
-    height: 300px;
-  }
-  .forest p {
-    font-size: 20px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .forest h1 {
-    margin-top: 50px;
-  }
-  .forest .content {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-  }
-  .forest img {
-    width: 200px;
-    height: 200px;
-    margin-bottom: 20px;
-  }
-  .forest p {
-    font-size: 18px;
-    width: 90%;
   }
 }
 
 /* capital section  */
 
 .capital {
-  margin-top: 200px;
+  margin-top: 100px;
   text-align: center;
 }
 
@@ -1033,6 +966,73 @@ section {
   .capital .col-2 .percent {
     /* transform: translateX(-18%); */
     margin-bottom: 50px;
+  }
+}
+
+/* centurion forest */
+
+.forest {
+  text-align: center;
+  align-items: center;
+}
+
+.forest h1 {
+  font-size: 50px;
+  font-weight: 500px;
+  padding-bottom: 80px;
+}
+.forest .content {
+  display: flex;
+  justify-content: space-around;
+}
+.forest img {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  transition: 0.5s;
+}
+.forest img:hover {
+  transform: translateX(-0px) scale(1.1);
+}
+.forest p {
+  width: 50%;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #fff;
+  text-align: justify;
+}
+
+/* media quiry */
+
+@media screen and (max-width: 1200px) {
+  .forest img {
+    width: 300px;
+    height: 300px;
+  }
+  .forest p {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .forest h1 {
+    margin-top: 50px;
+  }
+  .forest .content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .forest img {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+  }
+  .forest p {
+    font-size: 18px;
+    width: 90%;
   }
 }
 
