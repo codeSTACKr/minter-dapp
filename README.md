@@ -36,6 +36,7 @@ Join the Discord server for more help from the community: [codeSTACKr Discord](h
  npm install
 ```
 - Copy your image layers into the `/backend/layers` folder.
+- Copy `/backend/.env.example` to `/backend/.env` and paste your NFTPort api key.
 - Use the `/backend/src/config.js` file to set up your layers and NFT information.
 
 ### Backend Commands
