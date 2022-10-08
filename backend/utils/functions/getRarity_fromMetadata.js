@@ -17,7 +17,7 @@ function processRarity(nfts) {
     // check if attributes exist
     if(nft?.attributes?.length > 0) {
       // loop through all attributes
-      for(attribute of nft.attributes) {
+      for(const attribute of nft.attributes) {
         // add trait type to rarity object if it doesn't exist
         if(!rarity[attribute.trait_type]) {
           rarity[attribute.trait_type] = {}
@@ -57,7 +57,7 @@ function processRarity(nfts) {
   })
 
   // sort nfts by edition again
-  nfts.sort((a, b) => a.custom_fields.edition - b.custom_fields.edition)
+  nfts.sort((a, b) => a.edition - b.edition)
 
   fs.writeFileSync(`${basePath}/build/json/_metadata_with_rarity.json`, JSON.stringify(nfts, null, 2));
 }
