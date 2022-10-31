@@ -1,5 +1,5 @@
 var MetaMaskOnboarding = (function () {
-  'use strict';
+  "use strict";
 
   /*! *****************************************************************************
   Copyright (c) Microsoft Corporation.
@@ -17,158 +17,251 @@ var MetaMaskOnboarding = (function () {
   ***************************************************************************** */
 
   function __awaiter(thisArg, _arguments, P, generator) {
-      function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-      return new (P || (P = Promise))(function (resolve, reject) {
-          function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-          function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-          function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-          step((generator = generator.apply(thisArg, _arguments || [])).next());
-      });
+    function adopt(value) {
+      return value instanceof P
+        ? value
+        : new P(function (resolve) {
+            resolve(value);
+          });
+    }
+    return new (P || (P = Promise))(function (resolve, reject) {
+      function fulfilled(value) {
+        try {
+          step(generator.next(value));
+        } catch (e) {
+          reject(e);
+        }
+      }
+      function rejected(value) {
+        try {
+          step(generator["throw"](value));
+        } catch (e) {
+          reject(e);
+        }
+      }
+      function step(result) {
+        result.done
+          ? resolve(result.value)
+          : adopt(result.value).then(fulfilled, rejected);
+      }
+      step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
   }
 
   function __generator(thisArg, body) {
-      var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-      return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-      function verb(n) { return function (v) { return step([n, v]); }; }
-      function step(op) {
-          if (f) throw new TypeError("Generator is already executing.");
-          while (_) try {
-              if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-              if (y = 0, t) op = [op[0] & 2, t.value];
-              switch (op[0]) {
-                  case 0: case 1: t = op; break;
-                  case 4: _.label++; return { value: op[1], done: false };
-                  case 5: _.label++; y = op[1]; op = [0]; continue;
-                  case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                  default:
-                      if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                      if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                      if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                      if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                      if (t[2]) _.ops.pop();
-                      _.trys.pop(); continue;
+    var _ = {
+        label: 0,
+        sent: function () {
+          if (t[0] & 1) throw t[1];
+          return t[1];
+        },
+        trys: [],
+        ops: [],
+      },
+      f,
+      y,
+      t,
+      g;
+    return (
+      (g = { next: verb(0), throw: verb(1), return: verb(2) }),
+      typeof Symbol === "function" &&
+        (g[Symbol.iterator] = function () {
+          return this;
+        }),
+      g
+    );
+    function verb(n) {
+      return function (v) {
+        return step([n, v]);
+      };
+    }
+    function step(op) {
+      if (f) throw new TypeError("Generator is already executing.");
+      while (_)
+        try {
+          if (
+            ((f = 1),
+            y &&
+              (t =
+                op[0] & 2
+                  ? y["return"]
+                  : op[0]
+                  ? y["throw"] || ((t = y["return"]) && t.call(y), 0)
+                  : y.next) &&
+              !(t = t.call(y, op[1])).done)
+          )
+            return t;
+          if (((y = 0), t)) op = [op[0] & 2, t.value];
+          switch (op[0]) {
+            case 0:
+            case 1:
+              t = op;
+              break;
+            case 4:
+              _.label++;
+              return { value: op[1], done: false };
+            case 5:
+              _.label++;
+              y = op[1];
+              op = [0];
+              continue;
+            case 7:
+              op = _.ops.pop();
+              _.trys.pop();
+              continue;
+            default:
+              if (
+                !((t = _.trys), (t = t.length > 0 && t[t.length - 1])) &&
+                (op[0] === 6 || op[0] === 2)
+              ) {
+                _ = 0;
+                continue;
               }
-              op = body.call(thisArg, _);
-          } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-          if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-      }
+              if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) {
+                _.label = op[1];
+                break;
+              }
+              if (op[0] === 6 && _.label < t[1]) {
+                _.label = t[1];
+                t = op;
+                break;
+              }
+              if (t && _.label < t[2]) {
+                _.label = t[2];
+                _.ops.push(op);
+                break;
+              }
+              if (t[2]) _.ops.pop();
+              _.trys.pop();
+              continue;
+          }
+          op = body.call(thisArg, _);
+        } catch (e) {
+          op = [6, e];
+          y = 0;
+        } finally {
+          f = t = 0;
+        }
+      if (op[0] & 5) throw op[1];
+      return { value: op[0] ? op[1] : void 0, done: true };
+    }
   }
 
   // NOTE: this list must be up-to-date with browsers listed in
   // test/acceptance/useragentstrings.yml
   const BROWSER_ALIASES_MAP = {
-    'Amazon Silk': 'amazon_silk',
-    'Android Browser': 'android',
-    Bada: 'bada',
-    BlackBerry: 'blackberry',
-    Chrome: 'chrome',
-    Chromium: 'chromium',
-    Electron: 'electron',
-    Epiphany: 'epiphany',
-    Firefox: 'firefox',
-    Focus: 'focus',
-    Generic: 'generic',
-    'Google Search': 'google_search',
-    Googlebot: 'googlebot',
-    'Internet Explorer': 'ie',
-    'K-Meleon': 'k_meleon',
-    Maxthon: 'maxthon',
-    'Microsoft Edge': 'edge',
-    'MZ Browser': 'mz',
-    'NAVER Whale Browser': 'naver',
-    Opera: 'opera',
-    'Opera Coast': 'opera_coast',
-    PhantomJS: 'phantomjs',
-    Puffin: 'puffin',
-    QupZilla: 'qupzilla',
-    QQ: 'qq',
-    QQLite: 'qqlite',
-    Safari: 'safari',
-    Sailfish: 'sailfish',
-    'Samsung Internet for Android': 'samsung_internet',
-    SeaMonkey: 'seamonkey',
-    Sleipnir: 'sleipnir',
-    Swing: 'swing',
-    Tizen: 'tizen',
-    'UC Browser': 'uc',
-    Vivaldi: 'vivaldi',
-    'WebOS Browser': 'webos',
-    WeChat: 'wechat',
-    'Yandex Browser': 'yandex',
-    Roku: 'roku',
+    "Amazon Silk": "amazon_silk",
+    "Android Browser": "android",
+    Bada: "bada",
+    BlackBerry: "blackberry",
+    Chrome: "chrome",
+    Chromium: "chromium",
+    Electron: "electron",
+    Epiphany: "epiphany",
+    Firefox: "firefox",
+    Focus: "focus",
+    Generic: "generic",
+    "Google Search": "google_search",
+    Googlebot: "googlebot",
+    "Internet Explorer": "ie",
+    "K-Meleon": "k_meleon",
+    Maxthon: "maxthon",
+    "Microsoft Edge": "edge",
+    "MZ Browser": "mz",
+    "NAVER Whale Browser": "naver",
+    Opera: "opera",
+    "Opera Coast": "opera_coast",
+    PhantomJS: "phantomjs",
+    Puffin: "puffin",
+    QupZilla: "qupzilla",
+    QQ: "qq",
+    QQLite: "qqlite",
+    Safari: "safari",
+    Sailfish: "sailfish",
+    "Samsung Internet for Android": "samsung_internet",
+    SeaMonkey: "seamonkey",
+    Sleipnir: "sleipnir",
+    Swing: "swing",
+    Tizen: "tizen",
+    "UC Browser": "uc",
+    Vivaldi: "vivaldi",
+    "WebOS Browser": "webos",
+    WeChat: "wechat",
+    "Yandex Browser": "yandex",
+    Roku: "roku",
   };
 
   const BROWSER_MAP = {
-    amazon_silk: 'Amazon Silk',
-    android: 'Android Browser',
-    bada: 'Bada',
-    blackberry: 'BlackBerry',
-    chrome: 'Chrome',
-    chromium: 'Chromium',
-    electron: 'Electron',
-    epiphany: 'Epiphany',
-    firefox: 'Firefox',
-    focus: 'Focus',
-    generic: 'Generic',
-    googlebot: 'Googlebot',
-    google_search: 'Google Search',
-    ie: 'Internet Explorer',
-    k_meleon: 'K-Meleon',
-    maxthon: 'Maxthon',
-    edge: 'Microsoft Edge',
-    mz: 'MZ Browser',
-    naver: 'NAVER Whale Browser',
-    opera: 'Opera',
-    opera_coast: 'Opera Coast',
-    phantomjs: 'PhantomJS',
-    puffin: 'Puffin',
-    qupzilla: 'QupZilla',
-    qq: 'QQ Browser',
-    qqlite: 'QQ Browser Lite',
-    safari: 'Safari',
-    sailfish: 'Sailfish',
-    samsung_internet: 'Samsung Internet for Android',
-    seamonkey: 'SeaMonkey',
-    sleipnir: 'Sleipnir',
-    swing: 'Swing',
-    tizen: 'Tizen',
-    uc: 'UC Browser',
-    vivaldi: 'Vivaldi',
-    webos: 'WebOS Browser',
-    wechat: 'WeChat',
-    yandex: 'Yandex Browser',
+    amazon_silk: "Amazon Silk",
+    android: "Android Browser",
+    bada: "Bada",
+    blackberry: "BlackBerry",
+    chrome: "Chrome",
+    chromium: "Chromium",
+    electron: "Electron",
+    epiphany: "Epiphany",
+    firefox: "Firefox",
+    focus: "Focus",
+    generic: "Generic",
+    googlebot: "Googlebot",
+    google_search: "Google Search",
+    ie: "Internet Explorer",
+    k_meleon: "K-Meleon",
+    maxthon: "Maxthon",
+    edge: "Microsoft Edge",
+    mz: "MZ Browser",
+    naver: "NAVER Whale Browser",
+    opera: "Opera",
+    opera_coast: "Opera Coast",
+    phantomjs: "PhantomJS",
+    puffin: "Puffin",
+    qupzilla: "QupZilla",
+    qq: "QQ Browser",
+    qqlite: "QQ Browser Lite",
+    safari: "Safari",
+    sailfish: "Sailfish",
+    samsung_internet: "Samsung Internet for Android",
+    seamonkey: "SeaMonkey",
+    sleipnir: "Sleipnir",
+    swing: "Swing",
+    tizen: "Tizen",
+    uc: "UC Browser",
+    vivaldi: "Vivaldi",
+    webos: "WebOS Browser",
+    wechat: "WeChat",
+    yandex: "Yandex Browser",
   };
 
   const PLATFORMS_MAP = {
-    tablet: 'tablet',
-    mobile: 'mobile',
-    desktop: 'desktop',
-    tv: 'tv',
+    tablet: "tablet",
+    mobile: "mobile",
+    desktop: "desktop",
+    tv: "tv",
   };
 
   const OS_MAP = {
-    WindowsPhone: 'Windows Phone',
-    Windows: 'Windows',
-    MacOS: 'macOS',
-    iOS: 'iOS',
-    Android: 'Android',
-    WebOS: 'WebOS',
-    BlackBerry: 'BlackBerry',
-    Bada: 'Bada',
-    Tizen: 'Tizen',
-    Linux: 'Linux',
-    ChromeOS: 'Chrome OS',
-    PlayStation4: 'PlayStation 4',
-    Roku: 'Roku',
+    WindowsPhone: "Windows Phone",
+    Windows: "Windows",
+    MacOS: "macOS",
+    iOS: "iOS",
+    Android: "Android",
+    WebOS: "WebOS",
+    BlackBerry: "BlackBerry",
+    Bada: "Bada",
+    Tizen: "Tizen",
+    Linux: "Linux",
+    ChromeOS: "Chrome OS",
+    PlayStation4: "PlayStation 4",
+    Roku: "Roku",
   };
 
   const ENGINE_MAP = {
-    EdgeHTML: 'EdgeHTML',
-    Blink: 'Blink',
-    Trident: 'Trident',
-    Presto: 'Presto',
-    Gecko: 'Gecko',
-    WebKit: 'WebKit',
+    EdgeHTML: "EdgeHTML",
+    Blink: "Blink",
+    Trident: "Trident",
+    Presto: "Presto",
+    Gecko: "Gecko",
+    WebKit: "WebKit",
   };
 
   class Utils {
@@ -180,7 +273,7 @@ var MetaMaskOnboarding = (function () {
      */
     static getFirstMatch(regexp, ua) {
       const match = ua.match(regexp);
-      return (match && match.length > 0 && match[1]) || '';
+      return (match && match.length > 0 && match[1]) || "";
     }
 
     /**
@@ -191,7 +284,7 @@ var MetaMaskOnboarding = (function () {
      */
     static getSecondMatch(regexp, ua) {
       const match = ua.match(regexp);
-      return (match && match.length > 1 && match[2]) || '';
+      return (match && match.length > 1 && match[2]) || "";
     }
 
     /**
@@ -205,22 +298,33 @@ var MetaMaskOnboarding = (function () {
       if (regexp.test(ua)) {
         return _const;
       }
-      return void (0);
+      return void 0;
     }
 
     static getWindowsVersionName(version) {
       switch (version) {
-        case 'NT': return 'NT';
-        case 'XP': return 'XP';
-        case 'NT 5.0': return '2000';
-        case 'NT 5.1': return 'XP';
-        case 'NT 5.2': return '2003';
-        case 'NT 6.0': return 'Vista';
-        case 'NT 6.1': return '7';
-        case 'NT 6.2': return '8';
-        case 'NT 6.3': return '8.1';
-        case 'NT 10.0': return '10';
-        default: return undefined;
+        case "NT":
+          return "NT";
+        case "XP":
+          return "XP";
+        case "NT 5.0":
+          return "2000";
+        case "NT 5.1":
+          return "XP";
+        case "NT 5.2":
+          return "2003";
+        case "NT 6.0":
+          return "Vista";
+        case "NT 6.1":
+          return "7";
+        case "NT 6.2":
+          return "8";
+        case "NT 6.3":
+          return "8.1";
+        case "NT 10.0":
+          return "10";
+        default:
+          return undefined;
       }
     }
 
@@ -245,22 +349,37 @@ var MetaMaskOnboarding = (function () {
      * @return {string} versionName
      */
     static getMacOSVersionName(version) {
-      const v = version.split('.').splice(0, 2).map(s => parseInt(s, 10) || 0);
+      const v = version
+        .split(".")
+        .splice(0, 2)
+        .map((s) => parseInt(s, 10) || 0);
       v.push(0);
       if (v[0] !== 10) return undefined;
       switch (v[1]) {
-        case 5: return 'Leopard';
-        case 6: return 'Snow Leopard';
-        case 7: return 'Lion';
-        case 8: return 'Mountain Lion';
-        case 9: return 'Mavericks';
-        case 10: return 'Yosemite';
-        case 11: return 'El Capitan';
-        case 12: return 'Sierra';
-        case 13: return 'High Sierra';
-        case 14: return 'Mojave';
-        case 15: return 'Catalina';
-        default: return undefined;
+        case 5:
+          return "Leopard";
+        case 6:
+          return "Snow Leopard";
+        case 7:
+          return "Lion";
+        case 8:
+          return "Mountain Lion";
+        case 9:
+          return "Mavericks";
+        case 10:
+          return "Yosemite";
+        case 11:
+          return "El Capitan";
+        case 12:
+          return "Sierra";
+        case 13:
+          return "High Sierra";
+        case 14:
+          return "Mojave";
+        case 15:
+          return "Catalina";
+        default:
+          return undefined;
       }
     }
 
@@ -289,23 +408,26 @@ var MetaMaskOnboarding = (function () {
      * @return {string} versionName
      */
     static getAndroidVersionName(version) {
-      const v = version.split('.').splice(0, 2).map(s => parseInt(s, 10) || 0);
+      const v = version
+        .split(".")
+        .splice(0, 2)
+        .map((s) => parseInt(s, 10) || 0);
       v.push(0);
       if (v[0] === 1 && v[1] < 5) return undefined;
-      if (v[0] === 1 && v[1] < 6) return 'Cupcake';
-      if (v[0] === 1 && v[1] >= 6) return 'Donut';
-      if (v[0] === 2 && v[1] < 2) return 'Eclair';
-      if (v[0] === 2 && v[1] === 2) return 'Froyo';
-      if (v[0] === 2 && v[1] > 2) return 'Gingerbread';
-      if (v[0] === 3) return 'Honeycomb';
-      if (v[0] === 4 && v[1] < 1) return 'Ice Cream Sandwich';
-      if (v[0] === 4 && v[1] < 4) return 'Jelly Bean';
-      if (v[0] === 4 && v[1] >= 4) return 'KitKat';
-      if (v[0] === 5) return 'Lollipop';
-      if (v[0] === 6) return 'Marshmallow';
-      if (v[0] === 7) return 'Nougat';
-      if (v[0] === 8) return 'Oreo';
-      if (v[0] === 9) return 'Pie';
+      if (v[0] === 1 && v[1] < 6) return "Cupcake";
+      if (v[0] === 1 && v[1] >= 6) return "Donut";
+      if (v[0] === 2 && v[1] < 2) return "Eclair";
+      if (v[0] === 2 && v[1] === 2) return "Froyo";
+      if (v[0] === 2 && v[1] > 2) return "Gingerbread";
+      if (v[0] === 3) return "Honeycomb";
+      if (v[0] === 4 && v[1] < 1) return "Ice Cream Sandwich";
+      if (v[0] === 4 && v[1] < 4) return "Jelly Bean";
+      if (v[0] === 4 && v[1] >= 4) return "KitKat";
+      if (v[0] === 5) return "Lollipop";
+      if (v[0] === 6) return "Marshmallow";
+      if (v[0] === 7) return "Nougat";
+      if (v[0] === 8) return "Oreo";
+      if (v[0] === 9) return "Pie";
       return undefined;
     }
 
@@ -319,7 +441,7 @@ var MetaMaskOnboarding = (function () {
      * @return {number}
      */
     static getVersionPrecision(version) {
-      return version.split('.').length;
+      return version.split(".").length;
     }
 
     /**
@@ -351,15 +473,19 @@ var MetaMaskOnboarding = (function () {
         const delta = precision - Utils.getVersionPrecision(version);
 
         // 2) "9" -> "9.0" (for precision = 2)
-        const _version = version + new Array(delta + 1).join('.0');
+        const _version = version + new Array(delta + 1).join(".0");
 
         // 3) "9.0" -> ["000000000"", "000000009"]
-        return Utils.map(_version.split('.'), chunk => new Array(20 - chunk.length).join('0') + chunk).reverse();
+        return Utils.map(
+          _version.split("."),
+          (chunk) => new Array(20 - chunk.length).join("0") + chunk
+        ).reverse();
       });
 
       // adjust precision for loose comparison
       if (isLoose) {
-        lastPrecision = precision - Math.min(versionAPrecision, versionBPrecision);
+        lastPrecision =
+          precision - Math.min(versionAPrecision, versionBPrecision);
       }
 
       // iterate in reverse order by reversed chunks array
@@ -442,7 +568,7 @@ var MetaMaskOnboarding = (function () {
       }
       for (i = 0, l = assigners.length; i < l; i += 1) {
         const assigner = assigners[i];
-        if (typeof assigner === 'object' && assigner !== null) {
+        if (typeof assigner === "object" && assigner !== null) {
           const keys = Object.keys(assigner);
           keys.forEach((key) => {
             result[key] = assigner[key];
@@ -475,7 +601,7 @@ var MetaMaskOnboarding = (function () {
      * @return {string}
      */
     static getBrowserTypeByAlias(browserAlias) {
-      return BROWSER_MAP[browserAlias] || '';
+      return BROWSER_MAP[browserAlias] || "";
     }
   }
 
@@ -512,9 +638,11 @@ var MetaMaskOnboarding = (function () {
       test: [/googlebot/i],
       describe(ua) {
         const browser = {
-          name: 'Googlebot',
+          name: "Googlebot",
         };
-        const version = Utils.getFirstMatch(/googlebot\/(\d+(\.\d+))/i, ua) || Utils.getFirstMatch(commonVersionIdentifier, ua);
+        const version =
+          Utils.getFirstMatch(/googlebot\/(\d+(\.\d+))/i, ua) ||
+          Utils.getFirstMatch(commonVersionIdentifier, ua);
 
         if (version) {
           browser.version = version;
@@ -529,9 +657,11 @@ var MetaMaskOnboarding = (function () {
       test: [/opera/i],
       describe(ua) {
         const browser = {
-          name: 'Opera',
+          name: "Opera",
         };
-        const version = Utils.getFirstMatch(commonVersionIdentifier, ua) || Utils.getFirstMatch(/(?:opera)[\s/](\d+(\.?_?\d+)+)/i, ua);
+        const version =
+          Utils.getFirstMatch(commonVersionIdentifier, ua) ||
+          Utils.getFirstMatch(/(?:opera)[\s/](\d+(\.?_?\d+)+)/i, ua);
 
         if (version) {
           browser.version = version;
@@ -546,9 +676,11 @@ var MetaMaskOnboarding = (function () {
       test: [/opr\/|opios/i],
       describe(ua) {
         const browser = {
-          name: 'Opera',
+          name: "Opera",
         };
-        const version = Utils.getFirstMatch(/(?:opr|opios)[\s/](\S+)/i, ua) || Utils.getFirstMatch(commonVersionIdentifier, ua);
+        const version =
+          Utils.getFirstMatch(/(?:opr|opios)[\s/](\S+)/i, ua) ||
+          Utils.getFirstMatch(commonVersionIdentifier, ua);
 
         if (version) {
           browser.version = version;
@@ -561,9 +693,11 @@ var MetaMaskOnboarding = (function () {
       test: [/SamsungBrowser/i],
       describe(ua) {
         const browser = {
-          name: 'Samsung Internet for Android',
+          name: "Samsung Internet for Android",
         };
-        const version = Utils.getFirstMatch(commonVersionIdentifier, ua) || Utils.getFirstMatch(/(?:SamsungBrowser)[\s/](\d+(\.?_?\d+)+)/i, ua);
+        const version =
+          Utils.getFirstMatch(commonVersionIdentifier, ua) ||
+          Utils.getFirstMatch(/(?:SamsungBrowser)[\s/](\d+(\.?_?\d+)+)/i, ua);
 
         if (version) {
           browser.version = version;
@@ -576,9 +710,11 @@ var MetaMaskOnboarding = (function () {
       test: [/Whale/i],
       describe(ua) {
         const browser = {
-          name: 'NAVER Whale Browser',
+          name: "NAVER Whale Browser",
         };
-        const version = Utils.getFirstMatch(commonVersionIdentifier, ua) || Utils.getFirstMatch(/(?:whale)[\s/](\d+(?:\.\d+)+)/i, ua);
+        const version =
+          Utils.getFirstMatch(commonVersionIdentifier, ua) ||
+          Utils.getFirstMatch(/(?:whale)[\s/](\d+(?:\.\d+)+)/i, ua);
 
         if (version) {
           browser.version = version;
@@ -591,9 +727,11 @@ var MetaMaskOnboarding = (function () {
       test: [/MZBrowser/i],
       describe(ua) {
         const browser = {
-          name: 'MZ Browser',
+          name: "MZ Browser",
         };
-        const version = Utils.getFirstMatch(/(?:MZBrowser)[\s/](\d+(?:\.\d+)+)/i, ua) || Utils.getFirstMatch(commonVersionIdentifier, ua);
+        const version =
+          Utils.getFirstMatch(/(?:MZBrowser)[\s/](\d+(?:\.\d+)+)/i, ua) ||
+          Utils.getFirstMatch(commonVersionIdentifier, ua);
 
         if (version) {
           browser.version = version;
@@ -606,9 +744,11 @@ var MetaMaskOnboarding = (function () {
       test: [/focus/i],
       describe(ua) {
         const browser = {
-          name: 'Focus',
+          name: "Focus",
         };
-        const version = Utils.getFirstMatch(/(?:focus)[\s/](\d+(?:\.\d+)+)/i, ua) || Utils.getFirstMatch(commonVersionIdentifier, ua);
+        const version =
+          Utils.getFirstMatch(/(?:focus)[\s/](\d+(?:\.\d+)+)/i, ua) ||
+          Utils.getFirstMatch(commonVersionIdentifier, ua);
 
         if (version) {
           browser.version = version;
@@ -621,9 +761,11 @@ var MetaMaskOnboarding = (function () {
       test: [/swing/i],
       describe(ua) {
         const browser = {
-          name: 'Swing',
+          name: "Swing",
         };
-        const version = Utils.getFirstMatch(/(?:swing)[\s/](\d+(?:\.\d+)+)/i, ua) || Utils.getFirstMatch(commonVersionIdentifier, ua);
+        const version =
+          Utils.getFirstMatch(/(?:swing)[\s/](\d+(?:\.\d+)+)/i, ua) ||
+          Utils.getFirstMatch(commonVersionIdentifier, ua);
 
         if (version) {
           browser.version = version;
@@ -636,9 +778,11 @@ var MetaMaskOnboarding = (function () {
       test: [/coast/i],
       describe(ua) {
         const browser = {
-          name: 'Opera Coast',
+          name: "Opera Coast",
         };
-        const version = Utils.getFirstMatch(commonVersionIdentifier, ua) || Utils.getFirstMatch(/(?:coast)[\s/](\d+(\.?_?\d+)+)/i, ua);
+        const version =
+          Utils.getFirstMatch(commonVersionIdentifier, ua) ||
+          Utils.getFirstMatch(/(?:coast)[\s/](\d+(\.?_?\d+)+)/i, ua);
 
         if (version) {
           browser.version = version;
@@ -651,9 +795,11 @@ var MetaMaskOnboarding = (function () {
       test: [/yabrowser/i],
       describe(ua) {
         const browser = {
-          name: 'Yandex Browser',
+          name: "Yandex Browser",
         };
-        const version = Utils.getFirstMatch(/(?:yabrowser)[\s/](\d+(\.?_?\d+)+)/i, ua) || Utils.getFirstMatch(commonVersionIdentifier, ua);
+        const version =
+          Utils.getFirstMatch(/(?:yabrowser)[\s/](\d+(\.?_?\d+)+)/i, ua) ||
+          Utils.getFirstMatch(commonVersionIdentifier, ua);
 
         if (version) {
           browser.version = version;
@@ -666,9 +812,11 @@ var MetaMaskOnboarding = (function () {
       test: [/ucbrowser/i],
       describe(ua) {
         const browser = {
-          name: 'UC Browser',
+          name: "UC Browser",
         };
-        const version = Utils.getFirstMatch(commonVersionIdentifier, ua) || Utils.getFirstMatch(/(?:ucbrowser)[\s/](\d+(\.?_?\d+)+)/i, ua);
+        const version =
+          Utils.getFirstMatch(commonVersionIdentifier, ua) ||
+          Utils.getFirstMatch(/(?:ucbrowser)[\s/](\d+(\.?_?\d+)+)/i, ua);
 
         if (version) {
           browser.version = version;
@@ -681,9 +829,11 @@ var MetaMaskOnboarding = (function () {
       test: [/Maxthon|mxios/i],
       describe(ua) {
         const browser = {
-          name: 'Maxthon',
+          name: "Maxthon",
         };
-        const version = Utils.getFirstMatch(commonVersionIdentifier, ua) || Utils.getFirstMatch(/(?:Maxthon|mxios)[\s/](\d+(\.?_?\d+)+)/i, ua);
+        const version =
+          Utils.getFirstMatch(commonVersionIdentifier, ua) ||
+          Utils.getFirstMatch(/(?:Maxthon|mxios)[\s/](\d+(\.?_?\d+)+)/i, ua);
 
         if (version) {
           browser.version = version;
@@ -696,9 +846,11 @@ var MetaMaskOnboarding = (function () {
       test: [/epiphany/i],
       describe(ua) {
         const browser = {
-          name: 'Epiphany',
+          name: "Epiphany",
         };
-        const version = Utils.getFirstMatch(commonVersionIdentifier, ua) || Utils.getFirstMatch(/(?:epiphany)[\s/](\d+(\.?_?\d+)+)/i, ua);
+        const version =
+          Utils.getFirstMatch(commonVersionIdentifier, ua) ||
+          Utils.getFirstMatch(/(?:epiphany)[\s/](\d+(\.?_?\d+)+)/i, ua);
 
         if (version) {
           browser.version = version;
@@ -711,9 +863,11 @@ var MetaMaskOnboarding = (function () {
       test: [/puffin/i],
       describe(ua) {
         const browser = {
-          name: 'Puffin',
+          name: "Puffin",
         };
-        const version = Utils.getFirstMatch(commonVersionIdentifier, ua) || Utils.getFirstMatch(/(?:puffin)[\s/](\d+(\.?_?\d+)+)/i, ua);
+        const version =
+          Utils.getFirstMatch(commonVersionIdentifier, ua) ||
+          Utils.getFirstMatch(/(?:puffin)[\s/](\d+(\.?_?\d+)+)/i, ua);
 
         if (version) {
           browser.version = version;
@@ -726,9 +880,11 @@ var MetaMaskOnboarding = (function () {
       test: [/sleipnir/i],
       describe(ua) {
         const browser = {
-          name: 'Sleipnir',
+          name: "Sleipnir",
         };
-        const version = Utils.getFirstMatch(commonVersionIdentifier, ua) || Utils.getFirstMatch(/(?:sleipnir)[\s/](\d+(\.?_?\d+)+)/i, ua);
+        const version =
+          Utils.getFirstMatch(commonVersionIdentifier, ua) ||
+          Utils.getFirstMatch(/(?:sleipnir)[\s/](\d+(\.?_?\d+)+)/i, ua);
 
         if (version) {
           browser.version = version;
@@ -741,9 +897,11 @@ var MetaMaskOnboarding = (function () {
       test: [/k-meleon/i],
       describe(ua) {
         const browser = {
-          name: 'K-Meleon',
+          name: "K-Meleon",
         };
-        const version = Utils.getFirstMatch(commonVersionIdentifier, ua) || Utils.getFirstMatch(/(?:k-meleon)[\s/](\d+(\.?_?\d+)+)/i, ua);
+        const version =
+          Utils.getFirstMatch(commonVersionIdentifier, ua) ||
+          Utils.getFirstMatch(/(?:k-meleon)[\s/](\d+(\.?_?\d+)+)/i, ua);
 
         if (version) {
           browser.version = version;
@@ -756,9 +914,11 @@ var MetaMaskOnboarding = (function () {
       test: [/micromessenger/i],
       describe(ua) {
         const browser = {
-          name: 'WeChat',
+          name: "WeChat",
         };
-        const version = Utils.getFirstMatch(/(?:micromessenger)[\s/](\d+(\.?_?\d+)+)/i, ua) || Utils.getFirstMatch(commonVersionIdentifier, ua);
+        const version =
+          Utils.getFirstMatch(/(?:micromessenger)[\s/](\d+(\.?_?\d+)+)/i, ua) ||
+          Utils.getFirstMatch(commonVersionIdentifier, ua);
 
         if (version) {
           browser.version = version;
@@ -771,9 +931,13 @@ var MetaMaskOnboarding = (function () {
       test: [/qqbrowser/i],
       describe(ua) {
         const browser = {
-          name: (/qqbrowserlite/i).test(ua) ? 'QQ Browser Lite' : 'QQ Browser',
+          name: /qqbrowserlite/i.test(ua) ? "QQ Browser Lite" : "QQ Browser",
         };
-        const version = Utils.getFirstMatch(/(?:qqbrowserlite|qqbrowser)[/](\d+(\.?_?\d+)+)/i, ua) || Utils.getFirstMatch(commonVersionIdentifier, ua);
+        const version =
+          Utils.getFirstMatch(
+            /(?:qqbrowserlite|qqbrowser)[/](\d+(\.?_?\d+)+)/i,
+            ua
+          ) || Utils.getFirstMatch(commonVersionIdentifier, ua);
 
         if (version) {
           browser.version = version;
@@ -786,9 +950,12 @@ var MetaMaskOnboarding = (function () {
       test: [/msie|trident/i],
       describe(ua) {
         const browser = {
-          name: 'Internet Explorer',
+          name: "Internet Explorer",
         };
-        const version = Utils.getFirstMatch(/(?:msie |rv:)(\d+(\.?_?\d+)+)/i, ua);
+        const version = Utils.getFirstMatch(
+          /(?:msie |rv:)(\d+(\.?_?\d+)+)/i,
+          ua
+        );
 
         if (version) {
           browser.version = version;
@@ -801,7 +968,7 @@ var MetaMaskOnboarding = (function () {
       test: [/\sedg\//i],
       describe(ua) {
         const browser = {
-          name: 'Microsoft Edge',
+          name: "Microsoft Edge",
         };
 
         const version = Utils.getFirstMatch(/\sedg\/(\d+(\.?_?\d+)+)/i, ua);
@@ -817,10 +984,13 @@ var MetaMaskOnboarding = (function () {
       test: [/edg([ea]|ios)/i],
       describe(ua) {
         const browser = {
-          name: 'Microsoft Edge',
+          name: "Microsoft Edge",
         };
 
-        const version = Utils.getSecondMatch(/edg([ea]|ios)\/(\d+(\.?_?\d+)+)/i, ua);
+        const version = Utils.getSecondMatch(
+          /edg([ea]|ios)\/(\d+(\.?_?\d+)+)/i,
+          ua
+        );
 
         if (version) {
           browser.version = version;
@@ -833,7 +1003,7 @@ var MetaMaskOnboarding = (function () {
       test: [/vivaldi/i],
       describe(ua) {
         const browser = {
-          name: 'Vivaldi',
+          name: "Vivaldi",
         };
         const version = Utils.getFirstMatch(/vivaldi\/(\d+(\.?_?\d+)+)/i, ua);
 
@@ -848,7 +1018,7 @@ var MetaMaskOnboarding = (function () {
       test: [/seamonkey/i],
       describe(ua) {
         const browser = {
-          name: 'SeaMonkey',
+          name: "SeaMonkey",
         };
         const version = Utils.getFirstMatch(/seamonkey\/(\d+(\.?_?\d+)+)/i, ua);
 
@@ -863,10 +1033,13 @@ var MetaMaskOnboarding = (function () {
       test: [/sailfish/i],
       describe(ua) {
         const browser = {
-          name: 'Sailfish',
+          name: "Sailfish",
         };
 
-        const version = Utils.getFirstMatch(/sailfish\s?browser\/(\d+(\.\d+)?)/i, ua);
+        const version = Utils.getFirstMatch(
+          /sailfish\s?browser\/(\d+(\.\d+)?)/i,
+          ua
+        );
 
         if (version) {
           browser.version = version;
@@ -879,7 +1052,7 @@ var MetaMaskOnboarding = (function () {
       test: [/silk/i],
       describe(ua) {
         const browser = {
-          name: 'Amazon Silk',
+          name: "Amazon Silk",
         };
         const version = Utils.getFirstMatch(/silk\/(\d+(\.?_?\d+)+)/i, ua);
 
@@ -894,7 +1067,7 @@ var MetaMaskOnboarding = (function () {
       test: [/phantom/i],
       describe(ua) {
         const browser = {
-          name: 'PhantomJS',
+          name: "PhantomJS",
         };
         const version = Utils.getFirstMatch(/phantomjs\/(\d+(\.?_?\d+)+)/i, ua);
 
@@ -909,7 +1082,7 @@ var MetaMaskOnboarding = (function () {
       test: [/slimerjs/i],
       describe(ua) {
         const browser = {
-          name: 'SlimerJS',
+          name: "SlimerJS",
         };
         const version = Utils.getFirstMatch(/slimerjs\/(\d+(\.?_?\d+)+)/i, ua);
 
@@ -924,9 +1097,11 @@ var MetaMaskOnboarding = (function () {
       test: [/blackberry|\bbb\d+/i, /rim\stablet/i],
       describe(ua) {
         const browser = {
-          name: 'BlackBerry',
+          name: "BlackBerry",
         };
-        const version = Utils.getFirstMatch(commonVersionIdentifier, ua) || Utils.getFirstMatch(/blackberry[\d]+\/(\d+(\.?_?\d+)+)/i, ua);
+        const version =
+          Utils.getFirstMatch(commonVersionIdentifier, ua) ||
+          Utils.getFirstMatch(/blackberry[\d]+\/(\d+(\.?_?\d+)+)/i, ua);
 
         if (version) {
           browser.version = version;
@@ -939,9 +1114,11 @@ var MetaMaskOnboarding = (function () {
       test: [/(web|hpw)[o0]s/i],
       describe(ua) {
         const browser = {
-          name: 'WebOS Browser',
+          name: "WebOS Browser",
         };
-        const version = Utils.getFirstMatch(commonVersionIdentifier, ua) || Utils.getFirstMatch(/w(?:eb)?[o0]sbrowser\/(\d+(\.?_?\d+)+)/i, ua);
+        const version =
+          Utils.getFirstMatch(commonVersionIdentifier, ua) ||
+          Utils.getFirstMatch(/w(?:eb)?[o0]sbrowser\/(\d+(\.?_?\d+)+)/i, ua);
 
         if (version) {
           browser.version = version;
@@ -954,7 +1131,7 @@ var MetaMaskOnboarding = (function () {
       test: [/bada/i],
       describe(ua) {
         const browser = {
-          name: 'Bada',
+          name: "Bada",
         };
         const version = Utils.getFirstMatch(/dolfin\/(\d+(\.?_?\d+)+)/i, ua);
 
@@ -969,9 +1146,11 @@ var MetaMaskOnboarding = (function () {
       test: [/tizen/i],
       describe(ua) {
         const browser = {
-          name: 'Tizen',
+          name: "Tizen",
         };
-        const version = Utils.getFirstMatch(/(?:tizen\s?)?browser\/(\d+(\.?_?\d+)+)/i, ua) || Utils.getFirstMatch(commonVersionIdentifier, ua);
+        const version =
+          Utils.getFirstMatch(/(?:tizen\s?)?browser\/(\d+(\.?_?\d+)+)/i, ua) ||
+          Utils.getFirstMatch(commonVersionIdentifier, ua);
 
         if (version) {
           browser.version = version;
@@ -984,9 +1163,11 @@ var MetaMaskOnboarding = (function () {
       test: [/qupzilla/i],
       describe(ua) {
         const browser = {
-          name: 'QupZilla',
+          name: "QupZilla",
         };
-        const version = Utils.getFirstMatch(/(?:qupzilla)[\s/](\d+(\.?_?\d+)+)/i, ua) || Utils.getFirstMatch(commonVersionIdentifier, ua);
+        const version =
+          Utils.getFirstMatch(/(?:qupzilla)[\s/](\d+(\.?_?\d+)+)/i, ua) ||
+          Utils.getFirstMatch(commonVersionIdentifier, ua);
 
         if (version) {
           browser.version = version;
@@ -999,9 +1180,12 @@ var MetaMaskOnboarding = (function () {
       test: [/firefox|iceweasel|fxios/i],
       describe(ua) {
         const browser = {
-          name: 'Firefox',
+          name: "Firefox",
         };
-        const version = Utils.getFirstMatch(/(?:firefox|iceweasel|fxios)[\s/](\d+(\.?_?\d+)+)/i, ua);
+        const version = Utils.getFirstMatch(
+          /(?:firefox|iceweasel|fxios)[\s/](\d+(\.?_?\d+)+)/i,
+          ua
+        );
 
         if (version) {
           browser.version = version;
@@ -1014,9 +1198,12 @@ var MetaMaskOnboarding = (function () {
       test: [/electron/i],
       describe(ua) {
         const browser = {
-          name: 'Electron',
+          name: "Electron",
         };
-        const version = Utils.getFirstMatch(/(?:electron)\/(\d+(\.?_?\d+)+)/i, ua);
+        const version = Utils.getFirstMatch(
+          /(?:electron)\/(\d+(\.?_?\d+)+)/i,
+          ua
+        );
 
         if (version) {
           browser.version = version;
@@ -1029,9 +1216,11 @@ var MetaMaskOnboarding = (function () {
       test: [/chromium/i],
       describe(ua) {
         const browser = {
-          name: 'Chromium',
+          name: "Chromium",
         };
-        const version = Utils.getFirstMatch(/(?:chromium)[\s/](\d+(\.?_?\d+)+)/i, ua) || Utils.getFirstMatch(commonVersionIdentifier, ua);
+        const version =
+          Utils.getFirstMatch(/(?:chromium)[\s/](\d+(\.?_?\d+)+)/i, ua) ||
+          Utils.getFirstMatch(commonVersionIdentifier, ua);
 
         if (version) {
           browser.version = version;
@@ -1044,9 +1233,12 @@ var MetaMaskOnboarding = (function () {
       test: [/chrome|crios|crmo/i],
       describe(ua) {
         const browser = {
-          name: 'Chrome',
+          name: "Chrome",
         };
-        const version = Utils.getFirstMatch(/(?:chrome|crios|crmo)\/(\d+(\.?_?\d+)+)/i, ua);
+        const version = Utils.getFirstMatch(
+          /(?:chrome|crios|crmo)\/(\d+(\.?_?\d+)+)/i,
+          ua
+        );
 
         if (version) {
           browser.version = version;
@@ -1059,7 +1251,7 @@ var MetaMaskOnboarding = (function () {
       test: [/GSA/i],
       describe(ua) {
         const browser = {
-          name: 'Google Search',
+          name: "Google Search",
         };
         const version = Utils.getFirstMatch(/(?:GSA)\/(\d+(\.?_?\d+)+)/i, ua);
 
@@ -1080,7 +1272,7 @@ var MetaMaskOnboarding = (function () {
       },
       describe(ua) {
         const browser = {
-          name: 'Android Browser',
+          name: "Android Browser",
         };
         const version = Utils.getFirstMatch(commonVersionIdentifier, ua);
 
@@ -1097,7 +1289,7 @@ var MetaMaskOnboarding = (function () {
       test: [/playstation 4/i],
       describe(ua) {
         const browser = {
-          name: 'PlayStation 4',
+          name: "PlayStation 4",
         };
         const version = Utils.getFirstMatch(commonVersionIdentifier, ua);
 
@@ -1114,7 +1306,7 @@ var MetaMaskOnboarding = (function () {
       test: [/safari|applewebkit/i],
       describe(ua) {
         const browser = {
-          name: 'Safari',
+          name: "Safari",
         };
         const version = Utils.getFirstMatch(commonVersionIdentifier, ua);
 
@@ -1136,8 +1328,10 @@ var MetaMaskOnboarding = (function () {
          */
         const regexpWithoutDeviceSpec = /^(.*)\/(.*) /;
         const regexpWithDeviceSpec = /^(.*)\/(.*)[ \t]\((.*)/;
-        const hasDeviceSpec = ua.search('\\(') !== -1;
-        const regexp = hasDeviceSpec ? regexpWithDeviceSpec : regexpWithoutDeviceSpec;
+        const hasDeviceSpec = ua.search("\\(") !== -1;
+        const regexp = hasDeviceSpec
+          ? regexpWithDeviceSpec
+          : regexpWithoutDeviceSpec;
         return {
           name: Utils.getFirstMatch(regexp, ua),
           version: Utils.getSecondMatch(regexp, ua),
@@ -1163,7 +1357,10 @@ var MetaMaskOnboarding = (function () {
     {
       test: [/windows phone/i],
       describe(ua) {
-        const version = Utils.getFirstMatch(/windows phone (?:os)?\s?(\d+(\.\d+)*)/i, ua);
+        const version = Utils.getFirstMatch(
+          /windows phone (?:os)?\s?(\d+(\.\d+)*)/i,
+          ua
+        );
         return {
           name: OS_MAP.WindowsPhone,
           version,
@@ -1175,7 +1372,10 @@ var MetaMaskOnboarding = (function () {
     {
       test: [/windows /i],
       describe(ua) {
-        const version = Utils.getFirstMatch(/Windows ((NT|XP)( \d\d?.\d)?)/i, ua);
+        const version = Utils.getFirstMatch(
+          /Windows ((NT|XP)( \d\d?.\d)?)/i,
+          ua
+        );
         const versionName = Utils.getWindowsVersionName(version);
 
         return {
@@ -1202,7 +1402,10 @@ var MetaMaskOnboarding = (function () {
     {
       test: [/macintosh/i],
       describe(ua) {
-        const version = Utils.getFirstMatch(/mac os x (\d+(\.?_?\d+)+)/i, ua).replace(/[_\s]/g, '.');
+        const version = Utils.getFirstMatch(
+          /mac os x (\d+(\.?_?\d+)+)/i,
+          ua
+        ).replace(/[_\s]/g, ".");
         const versionName = Utils.getMacOSVersionName(version);
 
         const os = {
@@ -1220,7 +1423,10 @@ var MetaMaskOnboarding = (function () {
     {
       test: [/(ipod|iphone|ipad)/i],
       describe(ua) {
-        const version = Utils.getFirstMatch(/os (\d+([_\s]\d+)*) like mac os x/i, ua).replace(/[_\s]/g, '.');
+        const version = Utils.getFirstMatch(
+          /os (\d+([_\s]\d+)*) like mac os x/i,
+          ua
+        ).replace(/[_\s]/g, ".");
 
         return {
           name: OS_MAP.iOS,
@@ -1254,7 +1460,10 @@ var MetaMaskOnboarding = (function () {
     {
       test: [/(web|hpw)[o0]s/i],
       describe(ua) {
-        const version = Utils.getFirstMatch(/(?:web|hpw)[o0]s\/(\d+(\.\d+)*)/i, ua);
+        const version = Utils.getFirstMatch(
+          /(?:web|hpw)[o0]s\/(\d+(\.\d+)*)/i,
+          ua
+        );
         const os = {
           name: OS_MAP.WebOS,
         };
@@ -1270,9 +1479,10 @@ var MetaMaskOnboarding = (function () {
     {
       test: [/blackberry|\bbb\d+/i, /rim\stablet/i],
       describe(ua) {
-        const version = Utils.getFirstMatch(/rim\stablet\sos\s(\d+(\.\d+)*)/i, ua)
-          || Utils.getFirstMatch(/blackberry\d+\/(\d+([_\s]\d+)*)/i, ua)
-          || Utils.getFirstMatch(/\bbb(\d+)/i, ua);
+        const version =
+          Utils.getFirstMatch(/rim\stablet\sos\s(\d+(\.\d+)*)/i, ua) ||
+          Utils.getFirstMatch(/blackberry\d+\/(\d+([_\s]\d+)*)/i, ua) ||
+          Utils.getFirstMatch(/\bbb(\d+)/i, ua);
 
         return {
           name: OS_MAP.BlackBerry,
@@ -1331,7 +1541,10 @@ var MetaMaskOnboarding = (function () {
     {
       test: [/PlayStation 4/],
       describe(ua) {
-        const version = Utils.getFirstMatch(/PlayStation 4[/\s](\d+(\.\d+)*)/i, ua);
+        const version = Utils.getFirstMatch(
+          /PlayStation 4[/\s](\d+(\.\d+)*)/i,
+          ua
+        );
         return {
           name: OS_MAP.PlayStation4,
           version,
@@ -1351,8 +1564,8 @@ var MetaMaskOnboarding = (function () {
       test: [/googlebot/i],
       describe() {
         return {
-          type: 'bot',
-          vendor: 'Google',
+          type: "bot",
+          vendor: "Google",
         };
       },
     },
@@ -1361,10 +1574,10 @@ var MetaMaskOnboarding = (function () {
     {
       test: [/huawei/i],
       describe(ua) {
-        const model = Utils.getFirstMatch(/(can-l01)/i, ua) && 'Nova';
+        const model = Utils.getFirstMatch(/(can-l01)/i, ua) && "Nova";
         const platform = {
           type: PLATFORMS_MAP.mobile,
-          vendor: 'Huawei',
+          vendor: "Huawei",
         };
         if (model) {
           platform.model = model;
@@ -1379,7 +1592,7 @@ var MetaMaskOnboarding = (function () {
       describe() {
         return {
           type: PLATFORMS_MAP.tablet,
-          vendor: 'Nexus',
+          vendor: "Nexus",
         };
       },
     },
@@ -1390,8 +1603,8 @@ var MetaMaskOnboarding = (function () {
       describe() {
         return {
           type: PLATFORMS_MAP.tablet,
-          vendor: 'Apple',
-          model: 'iPad',
+          vendor: "Apple",
+          model: "iPad",
         };
       },
     },
@@ -1402,8 +1615,8 @@ var MetaMaskOnboarding = (function () {
       describe() {
         return {
           type: PLATFORMS_MAP.tablet,
-          vendor: 'Apple',
-          model: 'iPad',
+          vendor: "Apple",
+          model: "iPad",
         };
       },
     },
@@ -1414,8 +1627,8 @@ var MetaMaskOnboarding = (function () {
       describe() {
         return {
           type: PLATFORMS_MAP.tablet,
-          vendor: 'Amazon',
-          model: 'Kindle Fire HD 7',
+          vendor: "Amazon",
+          model: "Kindle Fire HD 7",
         };
       },
     },
@@ -1426,7 +1639,7 @@ var MetaMaskOnboarding = (function () {
       describe() {
         return {
           type: PLATFORMS_MAP.tablet,
-          vendor: 'Amazon',
+          vendor: "Amazon",
         };
       },
     },
@@ -1452,7 +1665,7 @@ var MetaMaskOnboarding = (function () {
         const model = Utils.getFirstMatch(/(ipod|iphone)/i, ua);
         return {
           type: PLATFORMS_MAP.mobile,
-          vendor: 'Apple',
+          vendor: "Apple",
           model,
         };
       },
@@ -1464,7 +1677,7 @@ var MetaMaskOnboarding = (function () {
       describe() {
         return {
           type: PLATFORMS_MAP.mobile,
-          vendor: 'Nexus',
+          vendor: "Nexus",
         };
       },
     },
@@ -1482,12 +1695,12 @@ var MetaMaskOnboarding = (function () {
     /* BlackBerry */
     {
       test(parser) {
-        return parser.getBrowserName(true) === 'blackberry';
+        return parser.getBrowserName(true) === "blackberry";
       },
       describe() {
         return {
           type: PLATFORMS_MAP.mobile,
-          vendor: 'BlackBerry',
+          vendor: "BlackBerry",
         };
       },
     },
@@ -1495,7 +1708,7 @@ var MetaMaskOnboarding = (function () {
     /* Bada */
     {
       test(parser) {
-        return parser.getBrowserName(true) === 'bada';
+        return parser.getBrowserName(true) === "bada";
       },
       describe() {
         return {
@@ -1507,12 +1720,12 @@ var MetaMaskOnboarding = (function () {
     /* Windows Phone */
     {
       test(parser) {
-        return parser.getBrowserName() === 'windows phone';
+        return parser.getBrowserName() === "windows phone";
       },
       describe() {
         return {
           type: PLATFORMS_MAP.mobile,
-          vendor: 'Microsoft',
+          vendor: "Microsoft",
         };
       },
     },
@@ -1520,8 +1733,10 @@ var MetaMaskOnboarding = (function () {
     /* Android Tablet */
     {
       test(parser) {
-        const osMajorVersion = Number(String(parser.getOSVersion()).split('.')[0]);
-        return parser.getOSName(true) === 'android' && (osMajorVersion >= 3);
+        const osMajorVersion = Number(
+          String(parser.getOSVersion()).split(".")[0]
+        );
+        return parser.getOSName(true) === "android" && osMajorVersion >= 3;
       },
       describe() {
         return {
@@ -1533,7 +1748,7 @@ var MetaMaskOnboarding = (function () {
     /* Android Mobile */
     {
       test(parser) {
-        return parser.getOSName(true) === 'android';
+        return parser.getOSName(true) === "android";
       },
       describe() {
         return {
@@ -1545,12 +1760,12 @@ var MetaMaskOnboarding = (function () {
     /* desktop */
     {
       test(parser) {
-        return parser.getOSName(true) === 'macos';
+        return parser.getOSName(true) === "macos";
       },
       describe() {
         return {
           type: PLATFORMS_MAP.desktop,
-          vendor: 'Apple',
+          vendor: "Apple",
         };
       },
     },
@@ -1558,7 +1773,7 @@ var MetaMaskOnboarding = (function () {
     /* Windows */
     {
       test(parser) {
-        return parser.getOSName(true) === 'windows';
+        return parser.getOSName(true) === "windows";
       },
       describe() {
         return {
@@ -1570,7 +1785,7 @@ var MetaMaskOnboarding = (function () {
     /* Linux */
     {
       test(parser) {
-        return parser.getOSName(true) === 'linux';
+        return parser.getOSName(true) === "linux";
       },
       describe() {
         return {
@@ -1582,7 +1797,7 @@ var MetaMaskOnboarding = (function () {
     /* PlayStation 4 */
     {
       test(parser) {
-        return parser.getOSName(true) === 'playstation 4';
+        return parser.getOSName(true) === "playstation 4";
       },
       describe() {
         return {
@@ -1594,7 +1809,7 @@ var MetaMaskOnboarding = (function () {
     /* Roku */
     {
       test(parser) {
-        return parser.getOSName(true) === 'roku';
+        return parser.getOSName(true) === "roku";
       },
       describe() {
         return {
@@ -1611,7 +1826,7 @@ var MetaMaskOnboarding = (function () {
     /* EdgeHTML */
     {
       test(parser) {
-        return parser.getBrowserName(true) === 'microsoft edge';
+        return parser.getBrowserName(true) === "microsoft edge";
       },
       describe(ua) {
         const isBlinkBased = /\sedg\//i.test(ua);
@@ -1739,7 +1954,7 @@ var MetaMaskOnboarding = (function () {
      * @constructor
      */
     constructor(UA, skipParsing = false) {
-      if (UA === void (0) || UA === null || UA === '') {
+      if (UA === void 0 || UA === null || UA === "") {
         throw new Error("UserAgent parameter can't be empty");
       }
 
@@ -1801,12 +2016,12 @@ var MetaMaskOnboarding = (function () {
       this.parsedResult.browser = {};
 
       const browserDescriptor = Utils.find(browsersList, (_browser) => {
-        if (typeof _browser.test === 'function') {
+        if (typeof _browser.test === "function") {
           return _browser.test(this);
         }
 
         if (_browser.test instanceof Array) {
-          return _browser.test.some(condition => this.test(condition));
+          return _browser.test.some((condition) => this.test(condition));
         }
 
         throw new Error("Browser's test function is not valid");
@@ -1841,11 +2056,10 @@ var MetaMaskOnboarding = (function () {
      */
     getBrowserName(toLowerCase) {
       if (toLowerCase) {
-        return String(this.getBrowser().name).toLowerCase() || '';
+        return String(this.getBrowser().name).toLowerCase() || "";
       }
-      return this.getBrowser().name || '';
+      return this.getBrowser().name || "";
     }
-
 
     /**
      * Get browser's version
@@ -1884,12 +2098,12 @@ var MetaMaskOnboarding = (function () {
       this.parsedResult.os = {};
 
       const os = Utils.find(osParsersList, (_os) => {
-        if (typeof _os.test === 'function') {
+        if (typeof _os.test === "function") {
           return _os.test(this);
         }
 
         if (_os.test instanceof Array) {
-          return _os.test.some(condition => this.test(condition));
+          return _os.test.some((condition) => this.test(condition));
         }
 
         throw new Error("Browser's test function is not valid");
@@ -1911,10 +2125,10 @@ var MetaMaskOnboarding = (function () {
       const { name } = this.getOS();
 
       if (toLowerCase) {
-        return String(name).toLowerCase() || '';
+        return String(name).toLowerCase() || "";
       }
 
-      return name || '';
+      return name || "";
     }
 
     /**
@@ -1946,10 +2160,10 @@ var MetaMaskOnboarding = (function () {
       const { type } = this.getPlatform();
 
       if (toLowerCase) {
-        return String(type).toLowerCase() || '';
+        return String(type).toLowerCase() || "";
       }
 
-      return type || '';
+      return type || "";
     }
 
     /**
@@ -1960,12 +2174,12 @@ var MetaMaskOnboarding = (function () {
       this.parsedResult.platform = {};
 
       const platform = Utils.find(platformParsersList, (_platform) => {
-        if (typeof _platform.test === 'function') {
+        if (typeof _platform.test === "function") {
           return _platform.test(this);
         }
 
         if (_platform.test instanceof Array) {
-          return _platform.test.some(condition => this.test(condition));
+          return _platform.test.some((condition) => this.test(condition));
         }
 
         throw new Error("Browser's test function is not valid");
@@ -1998,9 +2212,9 @@ var MetaMaskOnboarding = (function () {
      */
     getEngineName(toLowerCase) {
       if (toLowerCase) {
-        return String(this.getEngine().name).toLowerCase() || '';
+        return String(this.getEngine().name).toLowerCase() || "";
       }
-      return this.getEngine().name || '';
+      return this.getEngine().name || "";
     }
 
     /**
@@ -2011,12 +2225,12 @@ var MetaMaskOnboarding = (function () {
       this.parsedResult.engine = {};
 
       const engine = Utils.find(enginesParsersList, (_engine) => {
-        if (typeof _engine.test === 'function') {
+        if (typeof _engine.test === "function") {
           return _engine.test(this);
         }
 
         if (_engine.test instanceof Array) {
-          return _engine.test.some(condition => this.test(condition));
+          return _engine.test.some((condition) => this.test(condition));
         }
 
         throw new Error("Browser's test function is not valid");
@@ -2077,10 +2291,10 @@ var MetaMaskOnboarding = (function () {
 
       allDefinitions.forEach((key) => {
         const currentDefinition = checkTree[key];
-        if (typeof currentDefinition === 'string') {
+        if (typeof currentDefinition === "string") {
           browsers[key] = currentDefinition;
           browsersCounter += 1;
-        } else if (typeof currentDefinition === 'object') {
+        } else if (typeof currentDefinition === "object") {
           platformsAndOSes[key] = currentDefinition;
           platformsAndOSCounter += 1;
         }
@@ -2088,10 +2302,14 @@ var MetaMaskOnboarding = (function () {
 
       if (platformsAndOSCounter > 0) {
         const platformsAndOSNames = Object.keys(platformsAndOSes);
-        const OSMatchingDefinition = Utils.find(platformsAndOSNames, name => (this.isOS(name)));
+        const OSMatchingDefinition = Utils.find(platformsAndOSNames, (name) =>
+          this.isOS(name)
+        );
 
         if (OSMatchingDefinition) {
-          const osResult = this.satisfies(platformsAndOSes[OSMatchingDefinition]);
+          const osResult = this.satisfies(
+            platformsAndOSes[OSMatchingDefinition]
+          );
 
           if (osResult !== void 0) {
             return osResult;
@@ -2100,10 +2318,12 @@ var MetaMaskOnboarding = (function () {
 
         const platformMatchingDefinition = Utils.find(
           platformsAndOSNames,
-          name => (this.isPlatform(name)),
+          (name) => this.isPlatform(name)
         );
         if (platformMatchingDefinition) {
-          const platformResult = this.satisfies(platformsAndOSes[platformMatchingDefinition]);
+          const platformResult = this.satisfies(
+            platformsAndOSes[platformMatchingDefinition]
+          );
 
           if (platformResult !== void 0) {
             return platformResult;
@@ -2113,7 +2333,9 @@ var MetaMaskOnboarding = (function () {
 
       if (browsersCounter > 0) {
         const browserNames = Object.keys(browsers);
-        const matchingDefinition = Utils.find(browserNames, name => (this.isBrowser(name, true)));
+        const matchingDefinition = Utils.find(browserNames, (name) =>
+          this.isBrowser(name, true)
+        );
 
         if (matchingDefinition !== void 0) {
           return this.compareVersion(browsers[matchingDefinition]);
@@ -2147,33 +2369,39 @@ var MetaMaskOnboarding = (function () {
 
       const currentBrowserVersion = this.getBrowserVersion();
 
-      if (typeof currentBrowserVersion !== 'string') {
+      if (typeof currentBrowserVersion !== "string") {
         return void 0;
       }
 
-      if (version[0] === '>' || version[0] === '<') {
+      if (version[0] === ">" || version[0] === "<") {
         comparableVersion = version.substr(1);
-        if (version[1] === '=') {
+        if (version[1] === "=") {
           isLoose = true;
           comparableVersion = version.substr(2);
         } else {
           expectedResults = [];
         }
-        if (version[0] === '>') {
+        if (version[0] === ">") {
           expectedResults.push(1);
         } else {
           expectedResults.push(-1);
         }
-      } else if (version[0] === '=') {
+      } else if (version[0] === "=") {
         comparableVersion = version.substr(1);
-      } else if (version[0] === '~') {
+      } else if (version[0] === "~") {
         isLoose = true;
         comparableVersion = version.substr(1);
       }
 
-      return expectedResults.indexOf(
-        Utils.compareVersions(currentBrowserVersion, comparableVersion, isLoose),
-      ) > -1;
+      return (
+        expectedResults.indexOf(
+          Utils.compareVersions(
+            currentBrowserVersion,
+            comparableVersion,
+            isLoose
+          )
+        ) > -1
+      );
     }
 
     isOS(osName) {
@@ -2195,7 +2423,11 @@ var MetaMaskOnboarding = (function () {
      * @returns {Boolean}
      */
     is(anything) {
-      return this.isBrowser(anything) || this.isOS(anything) || this.isPlatform(anything);
+      return (
+        this.isBrowser(anything) ||
+        this.isOS(anything) ||
+        this.isPlatform(anything)
+      );
     }
 
     /**
@@ -2204,7 +2436,7 @@ var MetaMaskOnboarding = (function () {
      * @returns {Boolean}
      */
     some(anythings = []) {
-      return anythings.some(anything => this.is(anything));
+      return anythings.some((anything) => this.is(anything));
     }
   }
 
@@ -2241,8 +2473,8 @@ var MetaMaskOnboarding = (function () {
      * const result = parser.getResult();
      */
     static getParser(UA, skipParsing = false) {
-      if (typeof UA !== 'string') {
-        throw new Error('UserAgent should be a string');
+      if (typeof UA !== "string") {
+        throw new Error("UserAgent should be a string");
       }
       return new Parser(UA, skipParsing);
     }
@@ -2257,7 +2489,7 @@ var MetaMaskOnboarding = (function () {
      * const result = Bowser.parse(window.navigator.userAgent);
      */
     static parse(UA) {
-      return (new Parser(UA)).getResult();
+      return new Parser(UA).getResult();
     }
 
     static get BROWSER_MAP() {
@@ -2278,185 +2510,206 @@ var MetaMaskOnboarding = (function () {
   }
 
   var ONBOARDING_STATE = {
-      INSTALLED: 'INSTALLED',
-      NOT_INSTALLED: 'NOT_INSTALLED',
-      REGISTERED: 'REGISTERED',
-      REGISTERING: 'REGISTERING',
-      RELOADING: 'RELOADING',
+    INSTALLED: "INSTALLED",
+    NOT_INSTALLED: "NOT_INSTALLED",
+    REGISTERED: "REGISTERED",
+    REGISTERING: "REGISTERING",
+    RELOADING: "RELOADING",
   };
   var EXTENSION_DOWNLOAD_URL = {
-      CHROME: 'https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn',
-      FIREFOX: 'https://addons.mozilla.org/firefox/addon/ether-metamask/',
-      DEFAULT: 'https://metamask.io',
+    CHROME:
+      "https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn",
+    FIREFOX: "https://addons.mozilla.org/firefox/addon/ether-metamask/",
+    DEFAULT: "https://metamask.io",
   };
   // sessionStorage key
-  var REGISTRATION_IN_PROGRESS = 'REGISTRATION_IN_PROGRESS';
+  var REGISTRATION_IN_PROGRESS = "REGISTRATION_IN_PROGRESS";
   // forwarder iframe id
-  var FORWARDER_ID = 'FORWARDER_ID';
+  var FORWARDER_ID = "FORWARDER_ID";
   var Onboarding = /** @class */ (function () {
-      function Onboarding(_a) {
-          var _b = _a === void 0 ? {} : _a, _c = _b.forwarderOrigin, forwarderOrigin = _c === void 0 ? 'https://fwd.metamask.io' : _c, _d = _b.forwarderMode, forwarderMode = _d === void 0 ? Onboarding.FORWARDER_MODE.INJECT : _d;
-          this.forwarderOrigin = forwarderOrigin;
-          this.forwarderMode = forwarderMode;
-          this.state = Onboarding.isMetaMaskInstalled()
-              ? ONBOARDING_STATE.INSTALLED
-              : ONBOARDING_STATE.NOT_INSTALLED;
-          var browser = Onboarding._detectBrowser();
-          if (browser) {
-              this.downloadUrl = EXTENSION_DOWNLOAD_URL[browser];
-          }
-          else {
-              this.downloadUrl = EXTENSION_DOWNLOAD_URL.DEFAULT;
-          }
-          this._onMessage = this._onMessage.bind(this);
-          this._onMessageFromForwarder = this._onMessageFromForwarder.bind(this);
-          this._openForwarder = this._openForwarder.bind(this);
-          this._openDownloadPage = this._openDownloadPage.bind(this);
-          this.startOnboarding = this.startOnboarding.bind(this);
-          this.stopOnboarding = this.stopOnboarding.bind(this);
-          window.addEventListener('message', this._onMessage);
-          if (forwarderMode === Onboarding.FORWARDER_MODE.INJECT &&
-              sessionStorage.getItem(REGISTRATION_IN_PROGRESS) === 'true') {
-              Onboarding._injectForwarder(this.forwarderOrigin);
-          }
+    function Onboarding(_a) {
+      var _b = _a === void 0 ? {} : _a,
+        _c = _b.forwarderOrigin,
+        forwarderOrigin = _c === void 0 ? "https://fwd.metamask.io" : _c,
+        _d = _b.forwarderMode,
+        forwarderMode = _d === void 0 ? Onboarding.FORWARDER_MODE.INJECT : _d;
+      this.forwarderOrigin = forwarderOrigin;
+      this.forwarderMode = forwarderMode;
+      this.state = Onboarding.isMetaMaskInstalled()
+        ? ONBOARDING_STATE.INSTALLED
+        : ONBOARDING_STATE.NOT_INSTALLED;
+      var browser = Onboarding._detectBrowser();
+      if (browser) {
+        this.downloadUrl = EXTENSION_DOWNLOAD_URL[browser];
+      } else {
+        this.downloadUrl = EXTENSION_DOWNLOAD_URL.DEFAULT;
       }
-      Onboarding.prototype._onMessage = function (event) {
-          if (event.origin !== this.forwarderOrigin) {
-              // Ignoring non-forwarder message
-              return undefined;
-          }
-          if (event.data.type === 'metamask:reload') {
-              return this._onMessageFromForwarder(event);
-          }
-          console.debug("Unknown message from '" + event.origin + "' with data " + JSON.stringify(event.data));
-          return undefined;
-      };
-      Onboarding.prototype._onMessageUnknownStateError = function (state) {
-          throw new Error("Unknown state: '" + state + "'");
-      };
-      Onboarding.prototype._onMessageFromForwarder = function (event) {
-          return __awaiter(this, void 0, void 0, function () {
-              var _a;
-              return __generator(this, function (_b) {
-                  switch (_b.label) {
-                      case 0:
-                          _a = this.state;
-                          switch (_a) {
-                              case ONBOARDING_STATE.RELOADING: return [3 /*break*/, 1];
-                              case ONBOARDING_STATE.NOT_INSTALLED: return [3 /*break*/, 2];
-                              case ONBOARDING_STATE.INSTALLED: return [3 /*break*/, 3];
-                              case ONBOARDING_STATE.REGISTERING: return [3 /*break*/, 5];
-                              case ONBOARDING_STATE.REGISTERED: return [3 /*break*/, 6];
-                          }
-                          return [3 /*break*/, 7];
-                      case 1:
-                          console.debug('Ignoring message while reloading');
-                          return [3 /*break*/, 8];
-                      case 2:
-                          console.debug('Reloading now to register with MetaMask');
-                          this.state = ONBOARDING_STATE.RELOADING;
-                          location.reload();
-                          return [3 /*break*/, 8];
-                      case 3:
-                          console.debug('Registering with MetaMask');
-                          this.state = ONBOARDING_STATE.REGISTERING;
-                          return [4 /*yield*/, Onboarding._register()];
-                      case 4:
-                          _b.sent();
-                          this.state = ONBOARDING_STATE.REGISTERED;
-                          event.source.postMessage({ type: 'metamask:registrationCompleted' }, event.origin);
-                          this.stopOnboarding();
-                          return [3 /*break*/, 8];
-                      case 5:
-                          console.debug('Already registering - ignoring reload message');
-                          return [3 /*break*/, 8];
-                      case 6:
-                          console.debug('Already registered - ignoring reload message');
-                          return [3 /*break*/, 8];
-                      case 7:
-                          this._onMessageUnknownStateError(this.state);
-                          _b.label = 8;
-                      case 8: return [2 /*return*/];
-                  }
-              });
-          });
-      };
-      /**
-       * Starts onboarding by opening the MetaMask download page and the Onboarding forwarder
-       */
-      Onboarding.prototype.startOnboarding = function () {
-          sessionStorage.setItem(REGISTRATION_IN_PROGRESS, 'true');
-          this._openDownloadPage();
-          this._openForwarder();
-      };
-      /**
-       * Stops onboarding registration, including removing the injected forwarder (if any)
-       *
-       * Typically this function is not necessary, but it can be useful for cases where
-       * onboarding completes before the forwarder has registered.
-       */
-      Onboarding.prototype.stopOnboarding = function () {
-          if (sessionStorage.getItem(REGISTRATION_IN_PROGRESS) === 'true') {
-              if (this.forwarderMode === Onboarding.FORWARDER_MODE.INJECT) {
-                  console.debug('Removing forwarder');
-                  Onboarding._removeForwarder();
+      this._onMessage = this._onMessage.bind(this);
+      this._onMessageFromForwarder = this._onMessageFromForwarder.bind(this);
+      this._openForwarder = this._openForwarder.bind(this);
+      this._openDownloadPage = this._openDownloadPage.bind(this);
+      this.startOnboarding = this.startOnboarding.bind(this);
+      this.stopOnboarding = this.stopOnboarding.bind(this);
+      window.addEventListener("message", this._onMessage);
+      if (
+        forwarderMode === Onboarding.FORWARDER_MODE.INJECT &&
+        sessionStorage.getItem(REGISTRATION_IN_PROGRESS) === "true"
+      ) {
+        Onboarding._injectForwarder(this.forwarderOrigin);
+      }
+    }
+    Onboarding.prototype._onMessage = function (event) {
+      if (event.origin !== this.forwarderOrigin) {
+        // Ignoring non-forwarder message
+        return undefined;
+      }
+      if (event.data.type === "metamask:reload") {
+        return this._onMessageFromForwarder(event);
+      }
+      console.debug(
+        "Unknown message from '" +
+          event.origin +
+          "' with data " +
+          JSON.stringify(event.data)
+      );
+      return undefined;
+    };
+    Onboarding.prototype._onMessageUnknownStateError = function (state) {
+      throw new Error("Unknown state: '" + state + "'");
+    };
+    Onboarding.prototype._onMessageFromForwarder = function (event) {
+      return __awaiter(this, void 0, void 0, function () {
+        var _a;
+        return __generator(this, function (_b) {
+          switch (_b.label) {
+            case 0:
+              _a = this.state;
+              switch (_a) {
+                case ONBOARDING_STATE.RELOADING:
+                  return [3 /*break*/, 1];
+                case ONBOARDING_STATE.NOT_INSTALLED:
+                  return [3 /*break*/, 2];
+                case ONBOARDING_STATE.INSTALLED:
+                  return [3 /*break*/, 3];
+                case ONBOARDING_STATE.REGISTERING:
+                  return [3 /*break*/, 5];
+                case ONBOARDING_STATE.REGISTERED:
+                  return [3 /*break*/, 6];
               }
-              sessionStorage.setItem(REGISTRATION_IN_PROGRESS, 'false');
+              return [3 /*break*/, 7];
+            case 1:
+              console.debug("Ignoring message while reloading");
+              return [3 /*break*/, 8];
+            case 2:
+              console.debug("Reloading now to register with MetaMask");
+              this.state = ONBOARDING_STATE.RELOADING;
+              location.reload();
+              return [3 /*break*/, 8];
+            case 3:
+              console.debug("Registering with MetaMask");
+              this.state = ONBOARDING_STATE.REGISTERING;
+              return [4 /*yield*/, Onboarding._register()];
+            case 4:
+              _b.sent();
+              this.state = ONBOARDING_STATE.REGISTERED;
+              event.source.postMessage(
+                { type: "metamask:registrationCompleted" },
+                event.origin
+              );
+              this.stopOnboarding();
+              return [3 /*break*/, 8];
+            case 5:
+              console.debug("Already registering - ignoring reload message");
+              return [3 /*break*/, 8];
+            case 6:
+              console.debug("Already registered - ignoring reload message");
+              return [3 /*break*/, 8];
+            case 7:
+              this._onMessageUnknownStateError(this.state);
+              _b.label = 8;
+            case 8:
+              return [2 /*return*/];
           }
-      };
-      Onboarding.prototype._openForwarder = function () {
-          if (this.forwarderMode === Onboarding.FORWARDER_MODE.OPEN_TAB) {
-              window.open(this.forwarderOrigin, '_blank');
-          }
-          else {
-              Onboarding._injectForwarder(this.forwarderOrigin);
-          }
-      };
-      Onboarding.prototype._openDownloadPage = function () {
-          window.open(this.downloadUrl, '_blank');
-      };
-      /**
-       * Checks whether the MetaMask extension is installed
-       */
-      Onboarding.isMetaMaskInstalled = function () {
-          return Boolean(window.ethereum && window.ethereum.isMetaMask);
-      };
-      Onboarding._register = function () {
-          return window.ethereum.request({
-              method: 'wallet_registerOnboarding',
-          });
-      };
-      Onboarding._injectForwarder = function (forwarderOrigin) {
-          var container = document.body;
-          var iframe = document.createElement('iframe');
-          iframe.setAttribute('height', '0');
-          iframe.setAttribute('width', '0');
-          iframe.setAttribute('style', 'display: none;');
-          iframe.setAttribute('src', forwarderOrigin);
-          iframe.setAttribute('id', FORWARDER_ID);
-          container.insertBefore(iframe, container.children[0]);
-      };
-      Onboarding._removeForwarder = function () {
-          var _a;
-          (_a = document.getElementById(FORWARDER_ID)) === null || _a === void 0 ? void 0 : _a.remove();
-      };
-      Onboarding._detectBrowser = function () {
-          var browserInfo = Bowser.parse(window.navigator.userAgent);
-          if (browserInfo.browser.name === 'Firefox') {
-              return 'FIREFOX';
-          }
-          else if (['Chrome', 'Chromium'].includes(browserInfo.browser.name || '')) {
-              return 'CHROME';
-          }
-          return null;
-      };
-      Onboarding.FORWARDER_MODE = {
-          INJECT: 'INJECT',
-          OPEN_TAB: 'OPEN_TAB',
-      };
-      return Onboarding;
-  }());
+        });
+      });
+    };
+    /**
+     * Starts onboarding by opening the MetaMask download page and the Onboarding forwarder
+     */
+    Onboarding.prototype.startOnboarding = function () {
+      sessionStorage.setItem(REGISTRATION_IN_PROGRESS, "true");
+      this._openDownloadPage();
+      this._openForwarder();
+    };
+    /**
+     * Stops onboarding registration, including removing the injected forwarder (if any)
+     *
+     * Typically this function is not necessary, but it can be useful for cases where
+     * onboarding completes before the forwarder has registered.
+     */
+    Onboarding.prototype.stopOnboarding = function () {
+      if (sessionStorage.getItem(REGISTRATION_IN_PROGRESS) === "true") {
+        if (this.forwarderMode === Onboarding.FORWARDER_MODE.INJECT) {
+          console.debug("Removing forwarder");
+          Onboarding._removeForwarder();
+        }
+        sessionStorage.setItem(REGISTRATION_IN_PROGRESS, "false");
+      }
+    };
+    Onboarding.prototype._openForwarder = function () {
+      if (this.forwarderMode === Onboarding.FORWARDER_MODE.OPEN_TAB) {
+        window.open(this.forwarderOrigin, "_blank");
+      } else {
+        Onboarding._injectForwarder(this.forwarderOrigin);
+      }
+    };
+    Onboarding.prototype._openDownloadPage = function () {
+      window.open(this.downloadUrl, "_blank");
+    };
+    /**
+     * Checks whether the MetaMask extension is installed
+     */
+    Onboarding.isMetaMaskInstalled = function () {
+      return Boolean(window.ethereum && window.ethereum.isMetaMask);
+    };
+    Onboarding._register = function () {
+      return window.ethereum.request({
+        method: "wallet_registerOnboarding",
+      });
+    };
+    Onboarding._injectForwarder = function (forwarderOrigin) {
+      var container = document.body;
+      var iframe = document.createElement("iframe");
+      iframe.setAttribute("height", "0");
+      iframe.setAttribute("width", "0");
+      iframe.setAttribute("style", "display: none;");
+      iframe.setAttribute("src", forwarderOrigin);
+      iframe.setAttribute("id", FORWARDER_ID);
+      container.insertBefore(iframe, container.children[0]);
+    };
+    Onboarding._removeForwarder = function () {
+      var _a;
+      (_a = document.getElementById(FORWARDER_ID)) === null || _a === void 0
+        ? void 0
+        : _a.remove();
+    };
+    Onboarding._detectBrowser = function () {
+      var browserInfo = Bowser.parse(window.navigator.userAgent);
+      if (browserInfo.browser.name === "Firefox") {
+        return "FIREFOX";
+      } else if (
+        ["Chrome", "Chromium"].includes(browserInfo.browser.name || "")
+      ) {
+        return "CHROME";
+      }
+      return null;
+    };
+    Onboarding.FORWARDER_MODE = {
+      INJECT: "INJECT",
+      OPEN_TAB: "OPEN_TAB",
+    };
+    return Onboarding;
+  })();
 
   return Onboarding;
-
-}());
+})();

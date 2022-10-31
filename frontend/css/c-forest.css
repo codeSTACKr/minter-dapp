@@ -1,0 +1,114 @@
+:root {
+  --font-primary: "Poppins", sans-serif;
+  --font-secondary: "Arvo", serif;
+  --font-code: "Roboto", monospace;
+  --bg-color: #00b4d8;
+  --bg-color-transparent: #00163f80;
+  --font-color: #ffffff;
+  --line-color: #4adede;
+  --btn-bg-color: #0a3056;
+  --accent-color: #0f3056;
+  --cornering: #616464;
+  --button-hov: #1528ce;
+  --header-shadow: #000 0px 0px 5px;
+  --card-shadow: var(--accent-color) 0px 0px 20px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+}
+
+header {
+  position: absolute;
+}
+
+.btn {
+  float: left;
+  background: #006400;
+  color: #fff;
+  padding: 8px 30px;
+  margin: 30px;
+  border-radius: 30px;
+  transition: 0.5s;
+}
+
+.btn:hover {
+  background: #32cd32;
+}
+
+/* centurion forest */
+
+.home {
+  min-height: 100vh;
+  align-items: center;
+  background: url(/frontend/images/centurion_forest/CF2.png);
+  background-size: cover;
+}
+
+.home .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.home h1 {
+  padding-top: 80px;
+  width: 70%;
+  text-align: center;
+  font-size: 80px;
+  font-weight: 500px;
+  font-family: "poppins", sans-serif;
+  text-shadow: 5px 5px #111111;
+  color: var(--font-color);
+}
+
+.home p {
+  width: 50%;
+  font-size: 20px;
+  /* font-weight: 300;   */
+  line-height: 1.5;
+  color: #fff;
+  text-align: justify;
+  background-color: rgba(21, 18, 14, 0.9);
+}
+
+/* media quiry */
+
+@media screen and (max-width: 1200px) {
+  .home p {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .home h1 {
+    margin-top: 50px;
+  }
+  .home .content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .home p {
+    font-size: 18px;
+    width: 90%;
+  }
+}
+
+/* movement */
+
+.movement {
+  height: 1000px;
+}

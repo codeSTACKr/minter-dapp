@@ -172,7 +172,7 @@ header .navbar {
   transform: translateY(30px);
 }
 .not-connected .twitter-follow p {
-  font-size: 18px;
+  font-size: 20px;
 }
 .not-connected .twitter-follow .twitter-follow-button {
   font-size: 30px;
@@ -218,32 +218,6 @@ header .navbar {
 
 /* BUTTONS */
 
-/* .temp-conn {
-  display: inline-block;
-  padding: 1rem 2rem;
-  background: var(--line-color);
-  color: var(--cornering);
-  font-family: var(--font-secondary);
-  font-style: italic;
-  font-weight: bold;
-  font-size: 1rem;
-  text-align: center;
-  text-transform: capitalize;
-  transition: all 0.3s ease;
-  box-shadow: var(--header-shadow);
-  border-radius: 30px;
-  cursor: pointer;
-  position: relative;
-  text-decoration: none;
-  outline: none;
-}
-
-.temp-conn:hover {
-  box-shadow: var(--header-shadow);
-  background-color: var(--cornering);
-  color: var(--font-color);
-} */
-
 .btn {
   display: inline-block;
   padding: 1rem 2rem;
@@ -275,7 +249,6 @@ header .navbar {
   border-radius: 3rem;
   margin-left: 2rem;
   border-color: transparent;
-  /* display: none; */
 }
 
 .hero-btn {
@@ -296,14 +269,14 @@ header .navbar {
   margin-top: 120px;
   margin-bottom: 2rem;
   padding-top: 20px;
-  opacity: 0;
-  transform: translateX(100vw);
+  opacity: 1;
+  /* transform: translateX(100vw); */
   transition: all 0.5s ease-in-out;
 }
 
 .show-card {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateX(0vw);
 }
 
 /* welcome */
@@ -839,6 +812,9 @@ section {
   .nft .col-2 img {
     width: 300px;
   }
+  .slider span:hover img {
+    transform: none;
+  }
   .nft .container h2 {
     line-height: 1.2;
   }
@@ -1001,6 +977,20 @@ section {
   line-height: 1.5;
   color: #fff;
   text-align: justify;
+}
+
+.forest .explore {
+  display: inline-block;
+  background: #006400;
+  color: #fff;
+  padding: 8px 30px;
+  margin: 30px;
+  border-radius: 30px;
+  transition: 0.5s;
+}
+
+.forest .explore:hover {
+  background: #32cd32;
 }
 
 /* media quiry */

@@ -4,23 +4,35 @@ const fs = require("fs");
 const { MODE } = require(`${basePath}/constants/blend_mode.js`);
 const { NETWORK } = require(`${basePath}/constants/network.js`);
 
-const network = NETWORK.rinkeby;
+const network = NETWORK.polygon;
 
 // General metadata for Ethereum
-const namePrefix = "Centurion";
+const namePrefix = "CenturionNFT";
 const description =
-  "The CENTURION NFT is a collection of 3,333 unique NFTs on the Polygon Blockchain. A centurion—an officer who was leading the ancient Roman army-inspired these NFT concepts. We combine the centurion and his horse in one frame to solidify their comradeship.";
+  "The CENTURION NFT is a collection of 4,444 unique NFTs on the Polygon Blockchain. A centurion—an officer who was leading the ancient Roman army-inspired these NFT concepts. We combine the centurion and his horse in one frame to solidify their comradeship.";
 const baseUri = "ipfs://NewUriToReplace"; // This will be replaced automatically
 
 const layerConfigurations = [
   {
-    growEditionSizeTo: 20,
+    growEditionSizeTo: 444,
     layersOrder: [
       { name: "Background" },
-      { name: "Body" },
+      { name: "Cyborg fur" },
+      { name: "Cyborg clothes" },
+      { name: "Cyborg eyes" },
+      { name: "Cyborg hat" },
+      { name: "Cyborg mouth" },
+    ],
+  },
+  {
+    growEditionSizeTo: 4444,
+    layersOrder: [
+      { name: "Background" },
+      { name: "Fur" },
+      { name: "Clothes" },
       { name: "Eyes" },
-      { name: "Hair" },
-      { name: "Nose" },
+      { name: "Hat" },
+      { name: "Mouth" },
     ],
   },
 ];
@@ -36,7 +48,7 @@ const format = {
 };
 
 const extraMetadata = {
-  external_url: "", // Replace with your website or remove this line if you do not have one.
+  external_url: "https://centurionnft.io/", // Replace with your website or remove this line if you do not have one.
 };
 
 // NFTPort Info
@@ -44,40 +56,38 @@ const extraMetadata = {
 // ** REQUIRED **
 const AUTH = process.env.NFTPORT_API_KEY; // Set this in the .env file to prevent exposing your API key when pushing to Github
 const LIMIT = 2; // Your API key rate limit
-const CHAIN = "rinkeby"; // only rinkeby, polygon, or ethereum
+const CHAIN = "polygon"; // only rinkeby, polygon, or ethereum
 
 // REQUIRED CONTRACT DETAILS THAT CANNOT BE UPDATED LATER!
 const CONTRACT_NAME = "Centurion";
 const CONTRACT_SYMBOL = "CTN";
-const METADATA_UPDATABLE = true; // set to false if you don't want to allow metadata updates after minting
-const OWNER_ADDRESS = "0x7E5BfEe47F306cBA07E8DbAeb44aa1465c1c00C2";
-const TREASURY_ADDRESS = "0x7E5BfEe47F306cBA07E8DbAeb44aa1465c1c00C2";
-const MAX_SUPPLY = 20; // The maximum number of NFTs that can be minted. CANNOT BE UPDATED!
-const MINT_PRICE = 0.001; // Minting price per NFT. Rinkeby = ETH, Ethereum = ETH, Polygon = MATIC. CANNOT BE UPDATED!
+const METADATA_UPDATABLE = false; // set to false if you don't want to allow metadata updates after minting
+const OWNER_ADDRESS = "0x571A77Aa95BA556792233003d9DEa7f1d293CBd7";
+const TREASURY_ADDRESS = "0x571A77Aa95BA556792233003d9DEa7f1d293CBd7";
+const MAX_SUPPLY = 4444; // The maximum number of NFTs that can be minted. CANNOT BE UPDATED!
+const MINT_PRICE = 120; // Minting price per NFT. Rinkeby = ETH, Ethereum = ETH, Polygon = MATIC. CANNOT BE UPDATED!
 const TOKENS_PER_MINT = 10; // maximum number of NFTs a user can mint in a single transaction. CANNOT BE UPDATED!
 
 // REQUIRED CONTRACT DETAILS THAT CAN BE UPDATED LATER.
-const PUBLIC_MINT_START_DATE = "2022-08-05T11:30:48+00:00"; // This is required. Eg: 2022-02-08T11:30:48+00:00
+const PUBLIC_MINT_START_DATE = "2022-10-30T10:30:30+00:00"; // This is required. Eg: 2022-02-08T11:30:48+00:00
 
 // OPTIONAL CONTRACT DETAILS THAT CAN BE UPDATED LATER.
-const PRESALE_MINT_START_DATE = "2022-07-01T11:30:48+00:00"; // Optional. Eg: 2022-02-08T11:30:48+00:00
-const ROYALTY_SHARE = 100; // Percentage of the token price that goes to the royalty address. 100 bps = 1%
-const ROYALTY_ADDRESS = "0x7E5BfEe47F306cBA07E8DbAeb44aa1465c1c00C2"; // Address that will receive the royalty
+const PRESALE_MINT_START_DATE = "2022-10-20T11:30:30+00:00"; // Optional. Eg: 2022-02-08T11:30:48+00:00
+const ROYALTY_SHARE = 300; // Percentage of the token price that goes to the royalty address. 100 bps = 1%
+const ROYALTY_ADDRESS = "0x571A77Aa95BA556792233003d9DEa7f1d293CBd7"; // Address that will receive the royalty
 const BASE_URI = null; // only update if you want to manually set the base uri
 const PREREVEAL_TOKEN_URI = null; // only update if you want to manually set the prereveal token uri
-const PRESALE_WHITELISTED_ADDRESSES = [
-  "0x6311260610f37dc84E579CE8eE483856F2C75bc9",
-]; // only update if you want to manually set the whitelisted addresses
+const PRESALE_WHITELISTED_ADDRESSES = []; // only update if you want to manually set the whitelisted addresses
 
 // ** OPTIONAL **
 let CONTRACT_ADDRESS = "YOUR CONTRACT ADDRESS"; // If you want to manually include it
 
 // Generic Metadata is optional if you want to reveal your NFTs
-const GENERIC = true; // Set to true if you want to upload generic metas and reveal the real NFTs in the future
+const GENERIC = false; // Set to true if you want to upload generic metas and reveal the real NFTs in the future
 const GENERIC_TITLE = CONTRACT_NAME; // Replace with what you want the generic titles to say if you want it to be different from the contract name.
 const GENERIC_DESCRIPTION = "NFT reveal soon"; // Replace with what you want the generic descriptions to say.
 const GENERIC_IMAGE =
-  "https://ipfs.io/ipfs/bafkreiea3gvhop37yi2747iz3xxkjyatwocmrrpgujfcvpruvpux7znv4i"; // Replace with your generic image that will display for all NFTs pre-reveal.
+  "https://ipfs.io/ipfs/bafkreif4m6bcmplyjzvvho5i7leei6dgeh3sq4f6pe4gmkewozaoppstmy"; // Replace with your generic image that will display for all NFTs pre-reveal.
 
 // Automatically set contract address if deployed using the deployContract.js script
 try {
