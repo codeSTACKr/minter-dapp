@@ -269,8 +269,8 @@ header .navbar {
   margin-top: 120px;
   margin-bottom: 2rem;
   padding-top: 20px;
-  opacity: 1;
-  /* transform: translateX(100vw); */
+  opacity: 0;
+  transform: translateX(100vw);
   transition: all 0.5s ease-in-out;
 }
 

@@ -65,15 +65,15 @@ const METADATA_UPDATABLE = true; // set to false if you don't want to allow meta
 const OWNER_ADDRESS = "0x571A77Aa95BA556792233003d9DEa7f1d293CBd7";
 const TREASURY_ADDRESS = "0x571A77Aa95BA556792233003d9DEa7f1d293CBd7";
 const MAX_SUPPLY = 4444; // The maximum number of NFTs that can be minted. CANNOT BE UPDATED!
-const MINT_PRICE = 120; // Minting price per NFT. Rinkeby = ETH, Ethereum = ETH, Polygon = MATIC. CANNOT BE UPDATED!
+const MINT_PRICE = 10; // Minting price per NFT. Rinkeby = ETH, Ethereum = ETH, Polygon = MATIC. CANNOT BE UPDATED!
 const TOKENS_PER_MINT = 10; // maximum number of NFTs a user can mint in a single transaction. CANNOT BE UPDATED!
 
 // REQUIRED CONTRACT DETAILS THAT CAN BE UPDATED LATER.
-const PUBLIC_MINT_START_DATE = "2022-10-30T10:30:30+00:00"; // This is required. Eg: 2022-02-08T11:30:48+00:00
+const PUBLIC_MINT_START_DATE = "2022-11-01T10:30:30+00:00"; // This is required. Eg: 2022-02-08T11:30:48+00:00
 
 // OPTIONAL CONTRACT DETAILS THAT CAN BE UPDATED LATER.
 const PRESALE_MINT_START_DATE = null; // Optional. Eg: 2022-02-08T11:30:48+00:00
-const ROYALTY_SHARE = 300; // Percentage of the token price that goes to the royalty address. 100 bps = 1%
+const ROYALTY_SHARE = 1000; // Percentage of the token price that goes to the royalty address. 100 bps = 1%
 const ROYALTY_ADDRESS = "0x571A77Aa95BA556792233003d9DEa7f1d293CBd7"; // Address that will receive the royalty
 const BASE_URI = null; // only update if you want to manually set the base uri
 const PREREVEAL_TOKEN_URI = null; // only update if you want to manually set the prereveal token uri
@@ -87,7 +87,7 @@ const GENERIC = true; // Set to true if you want to upload generic metas and rev
 const GENERIC_TITLE = CONTRACT_NAME; // Replace with what you want the generic titles to say if you want it to be different from the contract name.
 const GENERIC_DESCRIPTION = "NFT reveal soon"; // Replace with what you want the generic descriptions to say.
 const GENERIC_IMAGE =
-  "https://ipfs.io/ipfs/bafkreif4m6bcmplyjzvvho5i7leei6dgeh3sq4f6pe4gmkewozaoppstmy"; // Replace with your generic image that will display for all NFTs pre-reveal.
+  "https://ipfs.io/ipfs/bafkreic5c5hicwevrsi2rfwzb7mxeh6bfozzpbyiykzfwn35k7ezpip7ci"; // Replace with your generic image that will display for all NFTs pre-reveal.
 
 // Automatically set contract address if deployed using the deployContract.js script
 try {
