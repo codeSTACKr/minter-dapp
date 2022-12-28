@@ -51,6 +51,7 @@ build/Release
 
 build/
 dist/
+backend/node_modules/
 node_modules/
 jspm_packages/
 package-lock.json
