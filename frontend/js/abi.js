@@ -1,4 +1,4 @@
-const abi = [[
+const abi = [
     {
       "inputs": [],
       "stateMutability": "nonpayable",
@@ -1366,4 +1366,4 @@ const abi = [[
       "stateMutability": "nonpayable",
       "type": "function"
     }
-  ]]
+  ]
