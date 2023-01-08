@@ -35,7 +35,7 @@
     "update_base_uri": "node utils/nftport/updateContract.js -u base_uri",
     "update_prereveal_token_uri": "node utils/nftport/updateContract.js -u prereveal_token_uri",
     "⏬⏬⏬": "FOR MAC USERS: Replace %npm_config_xyz% with $npm_config_xyz ⏬⏬⏬",
-    "refresh_os": "node utils/functions/refreshOpensea %npm_config_start% %npm_config_end%"
+    "refresh_os": "node utils/functions/refreshOpensea $npm_config_start $npm_config_end"
   },
   "author": "Jesse Hall (codeSTACKr)",
   "license": "MIT",
