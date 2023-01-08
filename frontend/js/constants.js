@@ -3,7 +3,7 @@ const chain = 'goerli'; // goerli, polygon, or ethereum
 
 const welcome_h1 = "Welcome to Edo 1!!";
 const welcome_h2 = "Connect to MetaMask to Get Started";
-const welcome_p = 'The CodeCats NFT Project is a decentralized, open-source project that aims to demonstrate how to develope and launch your own NFT Collection. Follow step by step on the <a href="https://youtube.com/codestackr"  target="_blank" rel="noopener noreferrer">codeSTACKr</a> YouTube channel.';
+const welcome_p = 'TEST EDO decentralized, open-source project that aims to demonstrate how to develope and launch your own NFT Collection. Follow step by step on the <a href="https://youtube.com/codestackr"  target="_blank" rel="noopener noreferrer">codeSTACKr</a> YouTube channel.';
 const h1_presale_coming_soon = "NFT Drop Coming Soon Edo!!";
 const h1_presale_mint = "Pre-Sale Minting Edo Open!!";
 const h1_public_mint = "Public Minting Open Edo!!";
