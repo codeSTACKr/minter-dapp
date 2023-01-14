@@ -1,9 +1,9 @@
 const contractAddress = "0x6a74a3E6A707d2CB0eA09ab0f24ed1B2f50F5814"; // Replace with your own contract address
 const chain = 'goerli'; // goerli, polygon, or ethereum
 
-const welcome_h1 = "Welcome to Dx0xE Projcet";
+const welcome_h1 = "Welcome to Dx0xE Projcet!";
 const welcome_h2 = "Connect to MetaMask to Get Started";
-const welcome_p = 'Get ready, to be a part of Dx0xE NFT project. Together we will launch unique NFT Collection. Connect MetaMask NOW and Mint your future!"  target="_blank" rel="noopener noreferrer">codeSTACKr</a> YouTube channel.';
+const welcome_p = 'Get ready, to be a part of Dx0xE NFT project. Together we will launch unique NFT Collection. Connect MetaMask NOW and Mint your future!';
 const h1_presale_coming_soon = "NFT Drop Coming Soon!!";
 const h1_presale_mint = "Pre-Sale Minting Open!!";
 const h1_public_mint = "Public Minting Open!!";
